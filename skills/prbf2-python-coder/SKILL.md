@@ -1,35 +1,89 @@
 ---
 name: prbf2-python-coder
-description: Find bugs, generate code, and suggest optimized revisions for Project Reality: BF2 Python 2.7.18 scripts.
+description: Expert assistant for debugging, drafting, documenting, and consulting on Project Reality BF2's Python 2.7.18 scripts. Use this skill whenever the user mentions working with Project Reality Python code in mods/pr_repo/python, writing game logic handlers, interacting with BF2 server/host APIs, debugging server crashes or logic errors, or following PR coding standards.
 ---
 
-# Python Coder Assistant for Project Reality: BF2
+# Project Reality Python Coder (`prbf2-python-coder`)
 
-This skill provides specialized assistance for developing, debugging, and optimizing Python 2.7.18 game logic for the Project Reality: BF2 mod.
+This skill provides expert guidance for developing, debugging, documenting, and testing Python scripts in the **Project Reality: Battlefield 2 (PR:BF2)** modification codebase (`mods/pr_repo/python`).
 
-## Workflow: Find Bugs
+## 1. Core Environment & Constraints
 
-1.  **Analyze Version**: Check for Python 3 syntax (e.g., `print()` as a function, `range()` vs `xrange()`). Reference [python27_tips.md](references/python27_tips.md).
-2.  **Verify PR Patterns**: Ensure the module uses the custom event system (`realityevents.py`) and adheres to modularity standards. Reference [pr_bf2_standards.md](references/pr_bf2_standards.md).
-3.  **Check Engine Calls**: Look for potentially unsafe or inefficient `host` engine calls (e.g., accessing invalid player objects).
-4.  **Identify Logic Errors**: Trace event flow from `realityevents.py` to the module's handlers.
+- **Python Version:** **Python 2.7.18**. All code must be compatible with Python 2.7 syntax and semantics (e.g., standard print statements, old-style division rules unless `__future__` division is imported, `xrange` over `range` for large loops).
+- **Engine Context:** Code runs inside the BF2 dedicated/listen server Python environment managed by the game engine (`host`, `bf2`, and native C extension modules like `_realitycore`).
+- **Platform Considerations:** Scripts must respect platform differences between Windows and Linux server builds (e.g., checking `rmemory.isWindowsListenServer` where virtual table pointers or memory hooks differ).
 
-## Workflow: Generate Code
+## 2. Naming & Coding Conventions
 
-1.  **Template First**: Use `assets/templates/reality_module_template.py` as a starting point for new modules.
-2.  **Define Initialization**: Always include an `init()` function and call `realityevents.events.newRegisterHandler()` for relevant events.
-3.  **Use Constants**: Reference `game.realityconstants` for game-specific values (e.g., kits, factions).
-4.  **Apply Conventions**: Prefix filenames with `reality` and follow the `camelCase` or `snake_case` established in the file you are editing.
+Adhere strictly to the established Project Reality codebase patterns (blending PEP8 with PR idioms):
 
-## Workflow: Optimize Revisions
+- **Classes:** Use `PascalCase` (e.g., `ReportSupplies`, `DeviationOnSwitch`, `ProjectileHandler`).
+- **Functions & Methods:** Use `camelCase` (e.g., `playerConnect`, `playerChangeWeapon`, `calcDistanceSquared`, `sendRoundStatistics`).
+- **Global Variables & Constants:** Use `g_` prefix followed by camelCase or snake_case (e.g., `g_maxPlayers`, `g_serverName`, `g_supply_objects`).
+- **Module Aliasing:** When importing internal PR modules, use standard short `r` aliases for namespacing clarity:
 
-1.  **Reduce Engine Calls**: Minimize calls to `host.get_info()` and `host.rcon()`. Use local variables for frequently accessed engine data.
-2.  **Python 2.7 Optimization**: Use `xrange()`, `iteritems()`, and avoid large temporary object creation in event handlers.
-3.  **Event Subscription**: Instead of broad event listeners, subscribe only to the necessary events in `realityevents.py`.
-4.  **Modular Consolidation**: Suggest moving shared logic into `realitycore.py` if it applies to multiple modules.
+    ```python
+    import realityadmin as radmin
+    import realityconstants as rconstants
+    import realitycore as rcore
+    import realitydebug as rdebug
+    import realityevents as revents
+    import realitymemory as rmemory
+    import realityserver as rserver
+    import realityspawner as rspawner
+    import realitytimer as rtimer
+    import realityvehicles as rvehicles
+    import realityzones as rzones
+    ```
 
-## Key Reference Files
+## 3. Core Architectural Patterns
 
-- [Python 2.7 Tips](references/python27_tips.md): Core language differences and common 2.7 pitfalls.
-- [PR BF2 Standards](references/pr_bf2_standards.md): Architectural patterns and Project Reality specific coding conventions.
-- [Module Template](assets/templates/reality_module_template.py): Boilerplate for new PR Python modules.
+### A. Static Class / Namespace Pattern (`@classmethod`)
+
+Rather than instantiating heavy stateful objects everywhere, feature handlers and utility systems are structured as classes containing `@classmethod` methods (`init`, `refresh`, `send`, `stop`, etc.):
+
+```python
+class FeatureHandler:
+    trackedItems = set()
+
+    @classmethod
+    def init(cls):
+        if rmemory.isWindowsListenServer:
+            return
+        rtimer.repeatingTask(cls.refresh, 1.0)
+        host.registerHandler('PlayerConnect', cls.playerConnect, 1)
+
+    @classmethod
+    def playerConnect(cls, player):
+        cls.trackedItems.add(player)
+
+    @classmethod
+    def refresh(cls, args=None):
+        for player in bf2.playerManager.getPlayers():
+            if player not in cls.trackedItems:
+                continue
+            # Logic here
+```
+
+### B. Event Handling & Priorities
+
+- Register engine event callbacks using `host.registerHandler('EventName', callback, priority)`.
+- Common events: `'PlayerConnect'`, `'PlayerDisconnect'`, `'PlayerChangeWeapon'`, `'PlayerDeath'`, `'Chat'`, etc.
+
+### C. Timers & Asynchronous Tasks
+
+- Use `rtimer.repeatingTask(callback, intervalSeconds)` for periodic polling or updates.
+- Use `rtimer.callLater(delaySeconds, callback, *args)` for delayed execution.
+
+### D. Debugging & Logging
+
+- Use `rdebug.debugMessage(message, category)` for targeted runtime diagnostics.
+
+## 4. Reference Documentation Index
+
+For deeper diving, consult the bundled reference files:
+
+- [Coding Standards](references/coding-standards.md)
+- [Common Architectural Patterns](references/common-patterns.md)
+- [Debugging & Memory Safety Playbook](references/debugging-playbook.md)
+- [Unit Testing & Mocking Guide](references/testing-guide.md)
