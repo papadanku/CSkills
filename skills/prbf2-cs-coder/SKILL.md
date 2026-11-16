@@ -1,38 +1,36 @@
 ---
 name: prbf2-cs-coder
-description: Assistant for CS-Script in Project Reality BF2 build scripts. Use when finding bugs, generating code, or suggesting optimizations for .csx scripts in the Project Reality workspace.
+description: Expert assistant for CS-Script (.csx) in Project Reality BF2 build scripts. Use when debugging, drafting, documenting, consulting, refactoring, or writing C# scripts for build automation, asset validation, map generation, and data processing in the Project Reality workspace.
 ---
 
-# CS-Script Assistant (prbf2-cs-coder)
+# CS-Script Expert Assistant (`prbf2-cs-coder`)
 
-This skill provides specialized assistance for working with Project Reality BF2's CS-Script (`.csx`) environment. It is designed to find bugs, generate idiomatic code, and suggest optimizations for build scripts.
+This skill provides comprehensive, expert-level assistance for developing, debugging, drafting, documenting, and consulting on Project Reality BF2's CS-Script (`.csx`) build and automation scripts. It combines the rigorous patterns of the Project Reality build repository with Microsoft's official C# coding conventions and identifier naming rules.
 
 ## Core Capabilities
 
-- **Bug Hunting**: Identifies common pitfalls like missing `#load` directives, incorrect parallelism configuration, or thread-unsafe operations in `Parallel.ForEach`.
-- **Code Generation**: Generates boilerplate for new scripts, including the mandatory `#category`, `#name`, and `#desc` directives, and correctly integrating with the `ScriptUI` and `ScriptProgress`.
-- **Optimized Revisions**: Suggests performance improvements such as leveraging `AsParallel()`, `WithDegreeOfParallelism(Build.GetParallelism())`, and efficient file enumeration using the `Common/Files.csx` utility.
+- **Debugging & Bug Hunting**:
+    - Identifies thread-safety violations in parallel loops (`Parallel.ForEach`, `AsParallel()`).
+    - Detects missing `#load` directives, incorrect relative/absolute paths, and unhandled exception propagation.
+    - Fixes unhandled null references when parsing `.con`, `.tweak`, and asset files.
+- **Code Drafting & Generation**:
+    - Generates robust script boilerplates with mandatory `#category`, `#name`, `#desc`, and `#load` directives.
+    - Integrates seamlessly with `ScriptUI`, `ScriptProgress`, and `ScriptResult`.
+- **Documentation & Architecture Analysis**:
+    - Authors detailed XML doc comments and header block comments (`/* ... */`) explaining script logic, input/output contracts, and performance characteristics.
+- **Consulting & Optimization**:
+    - Recommends optimal parallelism configurations (`Build.GetParallelism()`).
+    - Advises on efficient file enumeration using `Common/Files.csx` and specialized parsers like `ConFileParser.csx`.
 
-## Key Patterns and Utilities
+## Key Patterns & Architecture
 
-- **Common Namespaces**: `Reality.BF2`, `Reality.BF2.Build`, `Reality.BF2.Console`, `Reality.Utils`.
-- **Directories**: Always use `Directories.CurrentModDirectory` or `Directories.CurrentModLevelsDirectory`.
-- **Parallelism**: Use `Build.GetParallelism()` for all parallel operations.
-- **Reporting**: Scripts should return a `ScriptResult` object.
+- **Namespaces & Utilities**: `Reality.BF2`, `Reality.BF2.Build`, `Reality.BF2.Console`, `Reality.Utils`, and `Common/*.csx`.
+- **Path Resolution**: Always use `Directories.CurrentModDirectory` or `Directories.CurrentModLevelsDirectory` combined with `Path.Combine`.
+- **Parallelism**: Use `Build.GetParallelism()` with `ParallelOptions`, guarding shared state via `Interlocked` operations and locks.
+- **Result Contracts**: Scripts must return a `ScriptResult` object (`Success`, `Header`, `Message`).
 
-For detailed code patterns, see [patterns.md](references/patterns.md).
+## Reference Guides
 
-## Usage Guidelines
-
-- When **finding bugs**, check for:
-    - Thread safety issues when using `ScriptProgress` or writing to files inside parallel loops.
-    - Missing `#load` directives for common utility files (e.g., `Files.csx`, `Map.csx`, `Sound.csx`).
-    - Using hardcoded paths instead of the `Directories` class.
-- When **generating code**, ensure:
-    - The top-level directives are correctly formatted.
-    - The script includes a `Main` method or a clear entry point that returns a `ScriptResult`.
-    - UI progress updates are provided for long-running operations.
-- When **optimizing code**, recommend:
-    - Moving sequential I/O operations into parallel blocks where possible.
-    - Using the specialized parsers in `Common/` (e.g., `ConFileParser.csx`, `GpoParser.csx`).
-    - Minimizing the scope of locks in parallel loops.
+- [Coding Conventions & Style Rules](references/coding-conventions.md)
+- [Code Patterns & Boilerplates](references/patterns.md)
+- [Common Utilities & API Reference](references/api-reference.md)

@@ -1,64 +1,158 @@
-# Patterns for CS-Script in Project Reality BF2
 
-## Script Directives
-At the top of every script:
+# Code Patterns & Boilerplates for CS-Script (.csx)
+
+## 1. Standard Script Skeleton
+
+Every `.csx` script should follow this established structure:
+
 ```csharp
-#category "Category Name"
-#name "Script Name"
-#desc "Description of the script"
+#category "4 • Find Missing Objects"
+#name "Find Missing Sounds"
+#desc "Finds and logs any referenced sounds that are missing"
 
-#load "Common/Files.csx" // If needed
-#r "System.Xml" // If needed
-```
+#load "Common/Sound.csx"
 
-## UI Usage
-```csharp
-ScriptProgress.Title = "Working...";
-ScriptProgress.Text = "Starting task...";
-ScriptProgress.Indeterminate = true;
-ScriptProgress.Value = 0;
-ScriptProgress.Maximum = 100;
-ScriptProgress.Show();
+/*
+    Detailed description of the script's purpose, parsing mechanics,
+    parallel execution strategy, error handling, and output report generation.
+*/
 
-// Update during loops
-ScriptProgress.Indeterminate = false;
-ScriptProgress.Value = current;
-ScriptProgress.Text = $"Processing {current}/{total}";
-```
-
-## Parallel Processing
-Always use `Build.GetParallelism()` for the degree of parallelism.
-```csharp
-Parallel.ForEach(items, new ParallelOptions { MaxDegreeOfParallelism = Build.GetParallelism() }, (item) => {
-    // Thread-safe operations here
-});
-
-// LINQ style
-var results = items.AsParallel()
-                  .WithDegreeOfParallelism(Build.GetParallelism())
-                  .Where(x => x.Valid)
-                  .ToList();
-```
-
-## File Paths
-Always use `Directories` class from `Reality.BF2`.
-- `Directories.CurrentModDirectory`
-- `Directories.CurrentModLevelsDirectory`
-
-## Return Result
-Scripts should return a `ScriptResult`.
-```csharp
-return new ScriptResult() {
-    Success = true,
-    Header = "Success",
-    Message = "Task completed successfully."
-};
-```
-
-## Common Namespaces
-```csharp
+using System.Globalization;
+using System.Threading;
 using Reality.BF2;
 using Reality.BF2.Build;
 using Reality.BF2.Console;
-using Reality.Utils;
+
+public class FindMissingSounds
+{
+    private static ScriptResult GenerateScriptResult(bool success, string header, string message)
+    {
+        return new ScriptResult()
+        {
+            Success = success,
+            Header = header,
+            Message = message
+        };
+    }
+
+    public static ScriptResult Main()
+    {
+        ScriptProgress.Title = "Finding Missing Sounds...";
+        ScriptProgress.Text = "Collecting sounds...";
+        ScriptProgress.Indeterminate = true;
+        ScriptProgress.Value = 0;
+        ScriptProgress.Maximum = 0;
+        ScriptProgress.Show();
+
+        ParallelOptions parallelOptions = new ParallelOptions()
+        {
+            MaxDegreeOfParallelism = Build.GetParallelism()
+        };
+
+        try
+        {
+            string[] sounds = SoundUtilities.GetFiles(Directories.CurrentModDirectory).ToArray();
+            StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+
+            int counter = 0;
+            int numMissing = 0;
+            string error = null;
+
+            ScriptProgress.Indeterminate = false;
+            ScriptProgress.Maximum = sounds.Length;
+
+            Parallel.ForEach(sounds, parallelOptions, (soundFilePath, loopState) =>
+            {
+                ScriptProgress.Value = Interlocked.Increment(ref counter);
+                ScriptProgress.Text = String.Format("Validating sounds • {0}/{1}", ScriptProgress.Value, ScriptProgress.Maximum);
+
+                try
+                {
+                    Sound sound = SoundUtilities.ValidateFile(soundFilePath);
+                    if (sound.MissingSounds.Length > 0)
+                    {
+                        Interlocked.Increment(ref numMissing);
+                        lock (stringWriter)
+                        {
+                            stringWriter.WriteLine(sound.File);
+                            stringWriter.WriteLine("Is missing the following sounds:");
+                            foreach (string missing in sound.MissingSounds)
+                            {
+                                stringWriter.WriteLine("\t" + missing);
+                            }
+                            stringWriter.WriteLine();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    error = ex.ToString();
+                    loopState.Break();
+                }
+            });
+
+            if (error != null)
+            {
+                return GenerateScriptResult(false, "Error", error);
+            }
+
+            string outputPath = Path.Combine(Directories.CurrentModDirectory, "MissingSounds.txt");
+            if (numMissing > 0)
+            {
+                File.WriteAllText(outputPath, stringWriter.ToString());
+                return GenerateScriptResult(true, "Scan Complete", "Missing sounds found!\nDetails in:\n\n" + outputPath);
+            }
+            else
+            {
+                if (File.Exists(outputPath)) File.Delete(outputPath);
+                return GenerateScriptResult(true, "Scan Complete", "There are no missing sounds!");
+            }
+        }
+        catch (Exception e)
+        {
+            return GenerateScriptResult(false, "Error", e.ToString());
+        }
+    }
+}
+
+FindMissingSounds.Main();
+```
+
+---
+
+## 2. Parallel Processing & Thread Safety
+
+- **Degree of Parallelism**: Always configure via `Build.GetParallelism()`.
+- **Counters**: Use `Interlocked.Increment(ref counter)` or `Interlocked.Add(ref total, value)`.
+- **Writers/Collections**: Protect shared streams (`StringWriter`) or non-thread-safe collections with `lock (syncObject)`.
+
+```csharp
+ParallelOptions po = new ParallelOptions()
+{
+    MaxDegreeOfParallelism = Build.GetParallelism()
+};
+
+Parallel.ForEach(items, po, (item, loopState) =>
+{
+    // Thread-safe operations
+});
+```
+
+---
+
+## 3. UI Progress Management (`ScriptProgress`)
+
+```csharp
+ScriptProgress.Title = "Processing Assets...";
+ScriptProgress.Text = "Initializing...";
+ScriptProgress.Indeterminate = true;
+ScriptProgress.Value = 0;
+ScriptProgress.Maximum = 0;
+ScriptProgress.Show();
+
+// During execution:
+ScriptProgress.Indeterminate = false;
+ScriptProgress.Value = currentIndex;
+ScriptProgress.Maximum = totalCount;
+ScriptProgress.Text = String.Format("Processing • {0}/{1}", ScriptProgress.Value, ScriptProgress.Maximum);
 ```
