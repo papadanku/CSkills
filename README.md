@@ -64,25 +64,41 @@ CSkills is supported in the following products:
 - **OpenCode**: https://opencode.ai/
 - And more... https://agentskills.io/clients
 
-### Installation Instructions - CLI Agents
+### Installation Instructions - Plugin
 
-**Copy** CSkills' `skills` folder into the following paths:
+#### Prerequisite: Download Plugin
 
-- **Antigravity (Google)**
-    - `~/.gemini/config/skills/` (global)
-    - `<workspace-root>/.agents/skills/` (workspace)
-- **Claude Code (Anthropic)**
-    - `~/.claude/skills/` (global)
-    - `<workspace-root>/.claude/skills/` (workspace)
-- **Codex (OpenAI)**
-    - `~/.agents/skills/` (global)
-    - `<workspace-root>/.agents/skills/` (workspace)
-- **OpenCode**
-    - `~/.config/opencode/skills/` (global)
-    - `<workspace-root>/.opencode/skills/` (workspace)
-- **Vibe (Mistral AI)**
-    - `~/.vibe/skills/` (global)
-    - `<workspace-root>/.vibe/skills/` (workspace)
+You need to download the repository as a `.zip` file from either method below.
+
+- Clicking the **Download ZIP** button on GitHub's green **<> Code** button.
+- Clicking the **Download .zip** button on CSkills' project page (https://papadanku.github.io/CSkills/)
+
+#### ChatGPT (OpenAI)
+
+1. **Install the Plugin in ChatGPT Desktop App**:
+    1. Open the ChatGPT desktop app.
+    1. Click on the plugin icon on the top-left corner.
+    1. Click the **Add** button on the top-right corner.
+    1. On the **Add** menu, select the **Upload plugin archive** option.
+    1. Drag and drop the downloaded `.zip` file into the upload box.
+    1. Click the **Install plugin** button.
+1. **Enable the Plugin**:
+    1. Once installed, the plugin will appear in your list of available plugins.
+    2. Enable the plugin to make the skills available for use in ChatGPT.
+
+#### Claude (Anthropic)
+
+1. **Install the Plugin in Claude Desktop App**:
+    1. Open the Claude desktop app.
+    1. Click on the **Plugins** icon on the top-left corner.
+    1. Click the **Add** button in the top-right corner.
+    1. Choose the **Upload plugin** option.
+    1. Drag the `.zip` file you created from the `/plugin` folder into the **Plugin file** box.
+    1. Click the **Upload** button.
+    1. Wait for the installation to complete.
+1. **Enable the Plugin**:
+    1. Once installed, the plugin will appear in your list of available plugins.
+    1. Enable the plugin to make the skills available for use in Claude.
 
 ### Installation Instructions - Skills
 
@@ -121,41 +137,25 @@ CSkills is supported in the following products:
     1. Paste the content below the `---` line into the **Write your skill instructions here** placeholder.
 1. Click **Create** to finalize the skill setup.
 
-### Installation Instructions - Plugin
+### Installation Instructions - CLI Agents
 
-#### Prerequisite: Download Plugin
+**Copy** CSkills' `skills` folder into the following paths:
 
-You need to download the repository as a `.zip` file from either method below.
-
-- Clicking the **Download ZIP** button on GitHub's green **<> Code** button.
-- Clicking the **Download .zip** button on CSkills' project page (https://papadanku.github.io/CSkills/)
-
-#### ChatGPT (OpenAI)
-
-1. **Install the Plugin in ChatGPT Desktop App**:
-    1. Open the ChatGPT desktop app.
-    1. Click on the plugin icon on the top-left corner.
-    1. Click the **Add** button on the top-right corner.
-    1. On the **Add** menu, select the **Upload plugin archive** option.
-    1. Drag and drop the downloaded `.zip` file into the upload box.
-    1. Click the **Install plugin** button.
-1. **Enable the Plugin**:
-    1. Once installed, the plugin will appear in your list of available plugins.
-    2. Enable the plugin to make the skills available for use in ChatGPT.
-
-#### Claude (Anthropic)
-
-1. **Install the Plugin in Claude Desktop App**:
-    1. Open the Claude desktop app.
-    1. Click on the **Plugins** icon on the top-left corner.
-    1. Click the **Add** button in the top-right corner.
-    1. Choose the **Upload plugin** option.
-    1. Drag the `.zip` file you created from the `/plugin` folder into the **Plugin file** box.
-    1. Click the **Upload** button.
-    1. Wait for the installation to complete.
-1. **Enable the Plugin**:
-    1. Once installed, the plugin will appear in your list of available plugins.
-    1. Enable the plugin to make the skills available for use in Claude.
+- **Antigravity (Google)**
+    - `~/.gemini/config/skills/` (global)
+    - `<workspace-root>/.agents/skills/` (workspace)
+- **Claude Code (Anthropic)**
+    - `~/.claude/skills/` (global)
+    - `<workspace-root>/.claude/skills/` (workspace)
+- **Codex (OpenAI)**
+    - `~/.agents/skills/` (global)
+    - `<workspace-root>/.agents/skills/` (workspace)
+- **OpenCode**
+    - `~/.config/opencode/skills/` (global)
+    - `<workspace-root>/.opencode/skills/` (workspace)
+- **Vibe (Mistral AI)**
+    - `~/.vibe/skills/` (global)
+    - `<workspace-root>/.vibe/skills/` (workspace)
 
 # AI Diligence Statement
 
