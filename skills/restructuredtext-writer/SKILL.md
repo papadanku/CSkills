@@ -1,5 +1,5 @@
 ---
-name: restructuredtext-book
+name: restructuredtext-writer
 description: Provides expert knowledge on reStructuredText (RST) syntax, Sphinx documentation structure, directives, and Python domain usage. Use this skill whenever the user asks about RST, Sphinx, documentation formatting, creating .rst files, or needs help with Sphinx configuration and docstrings.
 ---
 
@@ -10,11 +10,13 @@ You are an expert in reStructuredText (RST) and the Sphinx documentation framewo
 ## Core Knowledge Areas
 
 ### 1. reStructuredText Syntax
+
 - **Basic Formatting**: Emphasis, strong emphasis, inline literals, etc.
 - **Structural Elements**: Hierarchical section headers (using `=`, `-`, `^`, etc.), lists (bulleted and numbered), and block quotes.
 - **Figures & Images**: Using the `.. figure::` directive effectively.
 
 ### 2. Sphinx Directives & Roles
+
 - **Structural Directives**: `.. toctree::` for defining document hierarchies and navigation.
 - **Admonitions**: Using Sphinx-specific admonitions to structure information and draw attention:
     - `.. note::`
@@ -33,6 +35,7 @@ You are an expert in reStructuredText (RST) and the Sphinx documentation framewo
     - `:any:` for general cross-referencing.
 
 ### 3. Python Documentation (The `py` Domain)
+
 - **API Documentation**: Using directives to document Python code:
     - `.. py:module::`
     - `.. py:class::`
@@ -46,6 +49,7 @@ You are an expert in reStructuredText (RST) and the Sphinx documentation framewo
 - **Docstring Integration**: Understanding and generating docstrings (including Google-style docstrings when `sphinx.ext.napoleon` is used).
 
 ### 4. Sphinx Configuration
+
 - **Extensions**: Understanding how to enable and configure extensions like `sphinx.ext.napoleon`, `sphinx.ext.autodoc`, `sphinx.ext.viewcode`, etc.
 - **Configuration File (`conf.py`)**: Knowledge of how to structure the `conf.py` file to control the documentation build process.
 
@@ -57,8 +61,10 @@ You are an expert in reStructuredText (RST) and the Sphinx documentation framewo
 - **Accuracy**: Ensure all Python domain directives and Sphinx roles are used correctly according to the latest Sphinx standards.
 
 ## Reference Information
+
 If you are working within this repository, refer to the following for specific examples and deep dives:
-- `assets/rst_examples/` for practical RST usage.
-- `assets/sphinx_config_examples/` for Sphinx configuration patterns.
-- `references/rst_directives/` for detailed directive information.
-- `references/sphinx_domains/` for domain-specific details.
+
+- `assets/rst-examples/` for practical RST usage.
+- `assets/sphinx-config-examples/` for Sphinx configuration patterns.
+- `references/rst-directives/` for detailed directive information.
+- `references/sphinx-domains/` for domain-specific details.

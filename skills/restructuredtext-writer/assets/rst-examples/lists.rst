@@ -12,13 +12,13 @@ Enumerated Lists
 
 1. Arabic numerals.
 
-   a) lower alpha)
+    a) lower alpha)
 
-      (i) (lower roman)
+        (i) (lower roman)
 
-          A. upper alpha.
+            A. upper alpha.
 
-             I) upper roman)
+                I) upper roman)
 
 2. Lists that don't start at 1:
 
@@ -109,14 +109,14 @@ This is a glossary with definition terms for things like :term:`Writing`:
 
 .. glossary::
 
-  Documentation
-     Provides users with the knowledge they need to use something.
+   Documentation
+      Provides users with the knowledge they need to use something.
 
-  Reading
-     The process of taking information into ones mind through the use of eyes.
+   Reading
+      The process of taking information into ones mind through the use of eyes.
 
-  Writing
-     The process of putting thoughts into a medium for other people to :term:`read <Reading>`.
+   Writing
+      The process of putting thoughts into a medium for other people to :term:`read <Reading>`.
 
 Here's another glossary, with more detail. The important bit here is that the contents of the definition are multi-paragraph.
 
