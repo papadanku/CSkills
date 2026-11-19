@@ -147,10 +147,7 @@ You need to download the repository as a `.zip` file from either method below.
 
 1. **Install the Plugin in Claude Desktop App**:
     1. Open the Claude desktop app.
-    1. Click your profile icon in the bottom-left corner.
-    1. Select **Settings** from the dropdown menu.
-    1. In Settings, select **Customize**.
-    1. In Customize, select **Plugins**.
+    1. Click on the **Plugins** icon on the top-left corner.
     1. Click the **Add** button in the top-right corner.
     1. Choose the **Upload plugin** option.
     1. Drag the `.zip` file you created from the `/plugin` folder into the **Plugin file** box.
