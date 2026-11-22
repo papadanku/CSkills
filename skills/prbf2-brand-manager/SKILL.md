@@ -1,5 +1,5 @@
 ---
-name: prbf2-branding-manager
+name: prbf2-brand-manager
 description: Audit, review, and apply Project Reality brand guidelines across software GUIs, UI themes, desktop launchers, web documentation, promotional images, screenshots, and videos. Use when the user asks to review an app interface or promotional media for Project Reality brand compliance, check colors/fonts/logos against Project Reality standards, or restyle/theme software UIs (CSS, Tailwind, Qt, Electron, React, Sphinx, HonKit, etc.) using Project Reality's official visual identity.
 ---
 

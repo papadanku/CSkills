@@ -28,7 +28,7 @@ CSkills is a repository of specialized skills designed to extend the capabilitie
 The **Skills** directory contains expert instructions and automation tools for diverse technical domains:
 
 - **git-diff-summarizer**: Summarizes staged changes concisely using the Conventional Commits format or objective plain English.
-- **prbf2-branding-manager**: Assistant for managing branding assets and configurations in Project Reality: BF2.
+- **prbf2-brand-manager**: Assistant for managing branding assets and configurations in Project Reality: BF2.
 - **prbf2-cs-coder**: Assistant for finding bugs, generating, and optimizing CS-Script (.csx) build scripts in Project Reality BF2.
 - **prbf2-python-coder**: Assistant for debugging, generating, and optimizing Python 2.7.18 game logic for Project Reality: BF2.
 - **prbf2-shader-coder**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
