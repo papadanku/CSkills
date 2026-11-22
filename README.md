@@ -62,7 +62,9 @@ CSkills is supported in the following products:
     - Download Antigravity: https://antigravity.google/
     - Download Gemini: https://gemini.google/desktop/
     - Docs (Skills): https://docs.cloud.google.com/gemini/enterprise/docs/skills
-- **Vibe (Mistral AI)**: https://mistral.ai/products/vibe/
+- **Vibe (Mistral AI)**:
+    - Download Vibe: https://mistral.ai/products/vibe/
+    - Docs (Skills): https://docs.mistral.ai/getting-started/quickstarts/vibe-work/create-first-skill
 - **OpenCode**: https://opencode.ai/
 - And more... https://agentskills.io/clients
 
@@ -104,18 +106,6 @@ You need to download the repository as a `.zip` file from either method below.
 
 ### Installation Instructions - Skills
 
-#### Claude (Anthropic)
-
-1. Open the Claude desktop app.
-1. Click your profile icon in the bottom-left corner.
-1. Select **Settings** from the dropdown menu.
-1. In Settings, select **Customize**.
-1. In Customize, select **Skills**.
-1. Click the **Add** button in the top-right corner.
-1. Choose the **Upload Skill** option.
-1. Drag and drop the `SKILL.md` file from your desired skill folder (e.g., `skills/youtube-creator/SKILL.md`) into the upload box.
-1. Click **Upload** to add the skill to your Claude interface.
-
 #### Gemini (Google)
 
 1. Open the Gemini desktop app.
@@ -128,16 +118,14 @@ You need to download the repository as a `.zip` file from either method below.
 
 #### Vibe (Mistral AI)
 
-1. Open https://chat.mistral.ai/chat
-1. Click the box in the top-right corner and select **Studio**. This will redirect you to https://console.mistral.ai/
-1. Navigate to the **Skills** section under **Context**.
-1. Click the **Create Skill** button in the top-left corner.
-1. Open the `SKILL.md` file from your desired skill folder (e.g., `skills/youtube-creator/SKILL.md`).
-1. Copy and paste the following content into the appropriate boxes:
-    1. Paste the `name:` field content into the **new-skill** placeholder.
-    1. Paste the `description:` field content into the **Required. Use this skill when the user asks to...** placeholder.
-    1. Paste the content below the `---` line into the **Write your skill instructions here** placeholder.
-1. Click **Create** to finalize the skill setup.
+1. Open the Vibe desktop app.
+1. Click the **Context** icon in the top-left corner.
+1. In the Context menu, select **Skills**.
+1. Click the **Import** button in the top-right corner (next to the **+ New skill** button).
+1. Choose **Upload skill folder** from the options.
+1. Select an entire skill folder (e.g., `skills/git-diff-summarizer/`).
+1. Click the **Upload** button.
+1. Once the upload completes, click the **Create skill** button on the top-left corner to add the skill.
 
 ### Installation Instructions - CLI Agents
 
