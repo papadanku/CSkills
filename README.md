@@ -3,33 +3,25 @@
 
 CSkills is a repository of specialized skills designed to extend the capabilities of various AI development tools that support agent skills.
 
-## About CSkills
+- **Who is CSkills for?**
 
-### Who is CSkills for?
+    CSkills was created and is maintained for developers and AI tool users looking to extend their CLI and desktop agent capabilities with domain-specific expertise.
 
-CSkills was created and is maintained for developers and AI tool users looking to extend their CLI and desktop agent capabilities with domain-specific expertise.
+- **What is CSkills?**
 
-### What is CSkills?
+    CSkills is a collection of specialized skills designed to help AI agents perform specific tasks, generate content, or interact with various systems more effectively.
 
-CSkills is a collection of specialized skills designed to help AI agents perform specific tasks, generate content, or interact with various systems more effectively.
+- **Where was CSkills created?**
 
-### Where was CSkills created?
+    CSkills originated in the developer workspace.
 
-CSkills originated in the developer workspace.
+- **When was CSkills created?**
 
-### When was CSkills created?
+    CSkills was developed to address evolving needs in multi-agent and CLI-based development tooling.
 
-CSkills was developed to address evolving needs in multi-agent and CLI-based development tooling.
+- **Why CSkills?**
 
-### Why CSkills?
-
-CSkills aims to provide a **free, open-source framework** to help create **streamlined, efficient, specialized AI agent workflows** accessible to all developers.
-
-## Philosophy
-
-- **Zero External Dependencies:** All skills and scripts are lightweight, portable, and independent of heavy external libraries or frameworks.
-- **Platform-Agnostic:** Designed to work smoothly across multiple AI CLI and desktop tools.
-- **Domain Expertise:** Deep technical references and workflows for specialized game modding, shader coding, and documentation generation.
+    CSkills aims to provide a **free, open-source framework** to help create **streamlined, efficient, specialized AI agent workflows** accessible to all developers.
 
 ## Features
 
@@ -45,7 +37,86 @@ The **Skills** directory contains expert instructions and automation tools for d
 - **restructuredtext-writer**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
 - **youtube-creator**: Facilitates the creation and management of YouTube video projects, including scripts and assets.
 
-## Supported Platforms
+## Installation Instructions - Plugin
+
+### Prerequisite: Download Plugin
+
+You need to download the repository as a `.zip` file from either method below.
+
+- Clicking the **Download ZIP** button on GitHub's green **<> Code** button.
+- Clicking the **Download .zip** button on CSkills' project page (https://papadanku.github.io/CSkills/)
+
+### ChatGPT (OpenAI)
+
+1. **Install the Plugin in ChatGPT Desktop App**:
+    1. Open the ChatGPT desktop app.
+    1. Click on the plugin icon on the top-left corner.
+    1. Click the **Add** button on the top-right corner.
+    1. On the **Add** menu, select the **Upload plugin archive** option.
+    1. Drag and drop the downloaded `.zip` file into the upload box.
+    1. Click the **Install plugin** button.
+1. **Enable the Plugin**:
+    1. Once installed, the plugin will appear in your list of available plugins.
+    2. Enable the plugin to make the skills available for use in ChatGPT.
+
+### Claude (Anthropic)
+
+1. **Install the Plugin in Claude Desktop App**:
+    1. Open the Claude desktop app.
+    1. Click on the **Plugins** icon on the top-left corner.
+    1. Click the **Add** button in the top-right corner.
+    1. Choose the **Upload plugin** option.
+    1. Drag the `.zip` file you created from the `/plugin` folder into the **Plugin file** box.
+    1. Click the **Upload** button.
+    1. Wait for the installation to complete.
+1. **Enable the Plugin**:
+    1. Once installed, the plugin will appear in your list of available plugins.
+    1. Enable the plugin to make the skills available for use in Claude.
+
+## Installation Instructions - Skills
+
+### Gemini (Google)
+
+1. Open the Gemini desktop app.
+1. Click the settings gear icon in the bottom-left corner.
+1. In the settings menu, select **Skills**.
+1. Click the **Create** button in the top-right corner.
+1. Choose **Upload** from the options.
+1. Drag and drop the entire skill folder (e.g., `skills/youtube-creator/`) into the upload box.
+1. Once the upload completes, click **Create** to add the skill.
+
+### Vibe (Mistral AI)
+
+1. Open the Vibe desktop app.
+1. Click the **Context** icon in the top-left corner.
+1. In the Context menu, select **Skills**.
+1. Click the **Import** button in the top-right corner (next to the **+ New skill** button).
+1. Choose **Upload skill folder** from the options.
+1. Select an entire skill folder (e.g., `skills/git-diff-summarizer/`).
+1. Click the **Upload** button.
+1. Once the upload completes, click the **Create skill** button on the top-left corner to add the skill.
+
+## Installation Instructions - CLI Agents
+
+**Copy** CSkills' `skills` folder into the following paths:
+
+- **Antigravity (Google)**
+    - `~/.gemini/config/skills/` (global)
+    - `<workspace-root>/.agents/skills/` (workspace)
+- **Claude Code (Anthropic)**
+    - `~/.claude/skills/` (global)
+    - `<workspace-root>/.claude/skills/` (workspace)
+- **Codex (OpenAI)**
+    - `~/.agents/skills/` (global)
+    - `<workspace-root>/.agents/skills/` (workspace)
+- **OpenCode**
+    - `~/.config/opencode/skills/` (global)
+    - `<workspace-root>/.opencode/skills/` (workspace)
+- **Vibe (Mistral AI)**
+    - `~/.vibe/skills/` (global)
+    - `<workspace-root>/.vibe/skills/` (workspace)
+
+## Supported Platforms Reference
 
 CSkills is supported in the following products:
 
@@ -67,85 +138,6 @@ CSkills is supported in the following products:
     - Docs (Skills): https://docs.mistral.ai/getting-started/quickstarts/vibe-work/create-first-skill
 - **OpenCode**: https://opencode.ai/
 - And more... https://agentskills.io/clients
-
-### Installation Instructions - Plugin
-
-#### Prerequisite: Download Plugin
-
-You need to download the repository as a `.zip` file from either method below.
-
-- Clicking the **Download ZIP** button on GitHub's green **<> Code** button.
-- Clicking the **Download .zip** button on CSkills' project page (https://papadanku.github.io/CSkills/)
-
-#### ChatGPT (OpenAI)
-
-1. **Install the Plugin in ChatGPT Desktop App**:
-    1. Open the ChatGPT desktop app.
-    1. Click on the plugin icon on the top-left corner.
-    1. Click the **Add** button on the top-right corner.
-    1. On the **Add** menu, select the **Upload plugin archive** option.
-    1. Drag and drop the downloaded `.zip` file into the upload box.
-    1. Click the **Install plugin** button.
-1. **Enable the Plugin**:
-    1. Once installed, the plugin will appear in your list of available plugins.
-    2. Enable the plugin to make the skills available for use in ChatGPT.
-
-#### Claude (Anthropic)
-
-1. **Install the Plugin in Claude Desktop App**:
-    1. Open the Claude desktop app.
-    1. Click on the **Plugins** icon on the top-left corner.
-    1. Click the **Add** button in the top-right corner.
-    1. Choose the **Upload plugin** option.
-    1. Drag the `.zip` file you created from the `/plugin` folder into the **Plugin file** box.
-    1. Click the **Upload** button.
-    1. Wait for the installation to complete.
-1. **Enable the Plugin**:
-    1. Once installed, the plugin will appear in your list of available plugins.
-    1. Enable the plugin to make the skills available for use in Claude.
-
-### Installation Instructions - Skills
-
-#### Gemini (Google)
-
-1. Open the Gemini desktop app.
-1. Click the settings gear icon in the bottom-left corner.
-1. In the settings menu, select **Skills**.
-1. Click the **Create** button in the top-right corner.
-1. Choose **Upload** from the options.
-1. Drag and drop the entire skill folder (e.g., `skills/youtube-creator/`) into the upload box.
-1. Once the upload completes, click **Create** to add the skill.
-
-#### Vibe (Mistral AI)
-
-1. Open the Vibe desktop app.
-1. Click the **Context** icon in the top-left corner.
-1. In the Context menu, select **Skills**.
-1. Click the **Import** button in the top-right corner (next to the **+ New skill** button).
-1. Choose **Upload skill folder** from the options.
-1. Select an entire skill folder (e.g., `skills/git-diff-summarizer/`).
-1. Click the **Upload** button.
-1. Once the upload completes, click the **Create skill** button on the top-left corner to add the skill.
-
-### Installation Instructions - CLI Agents
-
-**Copy** CSkills' `skills` folder into the following paths:
-
-- **Antigravity (Google)**
-    - `~/.gemini/config/skills/` (global)
-    - `<workspace-root>/.agents/skills/` (workspace)
-- **Claude Code (Anthropic)**
-    - `~/.claude/skills/` (global)
-    - `<workspace-root>/.claude/skills/` (workspace)
-- **Codex (OpenAI)**
-    - `~/.agents/skills/` (global)
-    - `<workspace-root>/.agents/skills/` (workspace)
-- **OpenCode**
-    - `~/.config/opencode/skills/` (global)
-    - `<workspace-root>/.opencode/skills/` (workspace)
-- **Vibe (Mistral AI)**
-    - `~/.vibe/skills/` (global)
-    - `<workspace-root>/.vibe/skills/` (workspace)
 
 # AI Diligence Statement
 
