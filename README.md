@@ -27,15 +27,15 @@ CSkills is a repository of specialized skills designed to extend the capabilitie
 
 The **Skills** directory contains expert instructions and automation tools for diverse technical domains:
 
-- **git-diff-summarizer**: Summarizes staged changes concisely using the Conventional Commits format or objective plain English.
-- **prbf2-brand-manager**: Assistant for managing branding assets and configurations in Project Reality: BF2.
-- **prbf2-cs-coder**: Assistant for finding bugs, generating, and optimizing CS-Script (.csx) build scripts in Project Reality BF2.
-- **prbf2-python-coder**: Assistant for debugging, generating, and optimizing Python 2.7.18 game logic for Project Reality: BF2.
-- **prbf2-shader-coder**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
-- **prbf2-web-coder**: Expert assistant for web development tasks in Project Reality: BF2.
-- **reshadefx-coder**: Expert ReShadeFX (HLSL) assistant for finding bugs, generating shader code, and suggesting optimized revisions.
-- **sphinx-rst-writer**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
-- **youtube-creator**: Facilitates the creation and management of YouTube video projects, including scripts and assets.
+- **git-summarize-diff**: Summarizes staged changes concisely using the Conventional Commits format or objective plain English.
+- **prbf2-manage-brand**: Assistant for managing branding assets and configurations in Project Reality: BF2.
+- **prbf2-code-csharp**: Assistant for finding bugs, generating, and optimizing CS-Script (.csx) build scripts in Project Reality BF2.
+- **prbf2-code-python**: Assistant for debugging, generating, and optimizing Python 2.7.18 game logic for Project Reality: BF2.
+- **prbf2-code-shaders**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
+- **prbf2-code-web**: Expert assistant for web development tasks in Project Reality: BF2.
+- **reshade-code-fx**: Expert ReShadeFX (HLSL) assistant for finding bugs, generating shader code, and suggesting optimized revisions.
+- **sphinx-code-rst**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
+- **youtube-create-project**: Facilitates the creation and management of YouTube video projects, including scripts and assets.
 
 ## Installation Instructions - Plugin
 
@@ -82,7 +82,7 @@ You need to download the repository as a `.zip` file from either method below.
 1. In the settings menu, select **Skills**.
 1. Click the **Create** button in the top-right corner.
 1. Choose **Upload** from the options.
-1. Drag and drop the entire skill folder (e.g., `skills/youtube-creator/`) into the upload box.
+1. Drag and drop the entire skill folder (e.g., `skills/youtube-create-project/`) into the upload box.
 1. Once the upload completes, click **Create** to add the skill.
 
 ### Vibe (Mistral AI)
@@ -92,7 +92,7 @@ You need to download the repository as a `.zip` file from either method below.
 1. In the Context menu, select **Skills**.
 1. Click the **Import** button in the top-right corner (next to the **+ New skill** button).
 1. Choose **Upload skill folder** from the options.
-1. Select an entire skill folder (e.g., `skills/git-diff-summarizer/`).
+1. Select an entire skill folder (e.g., `skills/git-summarize-diff/`).
 1. Click the **Upload** button.
 1. Once the upload completes, click the **Create skill** button on the top-left corner to add the skill.
 

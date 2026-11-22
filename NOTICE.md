@@ -8,9 +8,9 @@ This project (**RealitySkills**, licensed under the BSD 3-Clause License) includ
 - **Source:** [Google Style Guides](https://google.github.io/styleguide/) — specifically the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
 - **Author / Copyright Holder:** Google LLC
 - **Included Files:**
-    - `skills/prbf2-web-coder/references/general-guide.md`
-    - `skills/prbf2-web-coder/references/html-guide.md`
-    - `skills/prbf2-web-coder/references/css-guide.md`
+    - `skills/prbf2-code-web/references/general-guide.md`
+    - `skills/prbf2-code-web/references/html-guide.md`
+    - `skills/prbf2-code-web/references/css-guide.md`
 
 ### Licensing
 
@@ -24,7 +24,7 @@ Per Google's Style Guides repository:
 In accordance with CC-BY 3.0 and Apache 2.0 requirements to indicate changes made to the original work, the following modifications were made to the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html):
 
 1. **Format Conversion:** Converted the original HTML document into Markdown format.
-2. **Modular Splitting:** Split the single unified HTML/CSS guide into three separate topic-focused reference files for use by the `prbf2-web-coder` skill:
+2. **Modular Splitting:** Split the single unified HTML/CSS guide into three separate topic-focused reference files for use by the `prbf2-code-web` skill:
     - `references/general-guide.md` — Contains the *Background*, *General* (style, formatting, and meta rules), and *Parting Words* sections.
     - `references/html-guide.md` — Contains the *HTML* (HTML style and formatting rules) section.
     - `references/css-guide.md` — Contains the *CSS* (CSS style, formatting, and meta rules) section.

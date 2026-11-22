@@ -1,9 +1,9 @@
 ---
-name: prbf2-shader-coder
+name: prbf2-code-shaders
 description: Expert Shader Assistant for RealityShaders (Project Reality Battlefield 2). Use when finding bugs in HLSL, generating new shader code, or optimizing existing .fx, .fxh, and .mfx files for Direct3D 9 / Shader Model 3.0.
 ---
 
-# prbf2-shader-coder
+# prbf2-code-shaders
 
 Expert Shader Assistant for RealityShaders, specializing in HLSL Shader Model 3.0 (`vs_3_0` / `ps_3_0`) for Project Reality: Battlefield 2 (Direct3D 9 / Refactor 2 engine).
 

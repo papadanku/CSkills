@@ -1,5 +1,5 @@
 ---
-name: reshadefx-coder
+name: reshade-code-fx
 description: Expert ReShadeFX (HLSL) assistant for finding bugs, generating shader code, and suggesting optimized revisions within the CShade project.
 ---
 

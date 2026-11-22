@@ -1,9 +1,9 @@
 ---
-name: prbf2-python-coder
+name: prbf2-code-python
 description: Expert assistant for debugging, drafting, documenting, and consulting on Project Reality BF2's Python 2.7.18 scripts. Use this skill whenever the user mentions working with Project Reality Python code in mods/pr_repo/python, writing game logic handlers, interacting with BF2 server/host APIs, debugging server crashes or logic errors, or following PR coding standards.
 ---
 
-# Project Reality Python Coder (`prbf2-python-coder`)
+# Project Reality Python Coder (`prbf2-code-python`)
 
 This skill provides expert guidance for developing, debugging, documenting, and testing Python scripts in the **Project Reality: Battlefield 2 (PR:BF2)** modification codebase (`mods/pr_repo/python`).
 

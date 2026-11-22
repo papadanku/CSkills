@@ -1,5 +1,5 @@
 ---
-name: prbf2-web-coder
+name: prbf2-code-web
 description: Build clean, dependency-conservative HTML, CSS, and vanilla JavaScript web applications and developer tools for Project Reality (PR:BF2) development, styled with Project Reality brand guidelines and compliant with Google's HTML/CSS style guide. Use when the user asks to build a PR:BF2 web tool, calculator, `.con`/`.desc` generator, map/kit viewer, server utility, or dashboard in HTML/CSS/JS.
 ---
 

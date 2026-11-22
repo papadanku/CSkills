@@ -1,9 +1,9 @@
 ---
-name: prbf2-cs-coder
+name: prbf2-code-csharp
 description: Expert assistant for CS-Script (.csx) in Project Reality BF2 build scripts. Use when debugging, drafting, documenting, consulting, refactoring, or writing C# scripts for build automation, asset validation, map generation, and data processing in the Project Reality workspace.
 ---
 
-# CS-Script Expert Assistant (`prbf2-cs-coder`)
+# CS-Script Expert Assistant (`prbf2-code-csharp`)
 
 This skill provides comprehensive, expert-level assistance for developing, debugging, drafting, documenting, and consulting on Project Reality BF2's CS-Script (`.csx`) build and automation scripts. It combines the rigorous patterns of the Project Reality build repository with Microsoft's official C# coding conventions and identifier naming rules.
 

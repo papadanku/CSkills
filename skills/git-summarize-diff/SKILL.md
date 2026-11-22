@@ -1,5 +1,5 @@
 ---
-name: git-diff-summarizer
+name: git-summarize-diff
 description: Summarizes staged git changes concisely using the Conventional Commits format or objective plain English. Use this skill whenever the user asks to summarize staged changes, prepare a commit message, describe a git diff, or review staged modifications before committing.
 ---
 

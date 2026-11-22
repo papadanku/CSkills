@@ -1,5 +1,5 @@
 ---
-name: youtube-creator
+name: youtube-create-project
 description: Skill for creating and managing YouTube video projects. Use this skill to duplicate a YouTube video template, initiate a new video project, and edit the script within the template.
 metadata:
   content-source: https://github.com/sphinx-themes/sphinx-themes.org
@@ -15,6 +15,7 @@ This skill provides functionality for managing YouTube video projects, including
 Upload detail templates are stored in the `youtube-creator/assets/youtube-template/upload-details/` directory. These templates provide pre-defined video details and descriptions for different types of YouTube videos.
 
 Available templates:
+
 - `upload-generic.md`
 - `upload-project-reality-devblogs.md`
 - `upload-project-reality-gameplay.md`
@@ -28,6 +29,7 @@ Available templates:
 To create a new YouTube video project based on the standard template, use the `create_project.cjs` script. This will duplicate the `youtube-template` from the skill's assets to a new directory and copy a specified upload detail template into the new project as `upload.md`. If no upload template is specified, `upload-generic.md` will be used by default.
 
 **Command:**
+
 ```bash
 node .agents\skills\youtube-creator\scripts\create_project.cjs <NewProjectName> [upload-template-name.md]
 ```
