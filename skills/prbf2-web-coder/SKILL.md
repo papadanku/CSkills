@@ -1,17 +1,16 @@
 ---
 name: prbf2-web-coder
-description: Generate minimal, zero-dependency modern HTML, CSS, and vanilla JavaScript web applications and developer tools for Project Reality (PR:BF2) development, styled with Project Reality brand guidelines and compliant with Google's HTML/CSS style guide. Use when the user asks to build a PR:BF2 web tool, calculator, `.con`/`.desc` generator, map/kit viewer, server utility, or dashboard in HTML/CSS/JS.
-license: CC-BY-3.0, Apache-2.0
+description: Build clean, dependency-conservative HTML, CSS, and vanilla JavaScript web applications and developer tools for Project Reality (PR:BF2) development, styled with Project Reality brand guidelines and compliant with Google's HTML/CSS style guide. Use when the user asks to build a PR:BF2 web tool, calculator, `.con`/`.desc` generator, map/kit viewer, server utility, or dashboard in HTML/CSS/JS.
 ---
 
 # PR:BF2 Web Coder
 
-Build minimal, zero-dependency modern HTML5 web applications and utilities to aid Project Reality (PR:BF2) development, adhering strictly to Project Reality's visual identity and Google's HTML/CSS style guide.
+Build clean, dependency-conservative modern HTML and CSS (with vanilla JavaScript when interactivity is needed) web applications and utilities to aid Project Reality (PR:BF2) development, adhering strictly to Project Reality's visual identity and Google's HTML/CSS style guide.
 
 ## When to Use
 
 - Building web-based developer tools for Project Reality (such as `.con` or `.desc` generators, ticket/layer calculators, vehicle/kit reference tools, localization editors, or RCon/server dashboards).
-- Creating lightweight, single-file or minimal-file HTML5 interfaces that require zero external frameworks or runtime dependencies.
+- Creating lightweight HTML5 and CSS3 interfaces—whether static/markup-and-style-focused or script-driven—while keeping external dependencies minimal and conservative.
 
 ## Reference Files
 
@@ -24,11 +23,12 @@ Read these bundled reference files before writing code:
 
 ## Core Principles
 
-### 1. Minimalism and Zero External Dependencies
+### 1. HTML, CSS, and Conservative Dependencies
 
-- **No External Libraries:** Do not import React, Vue, Tailwind, Bootstrap, jQuery, or third-party icon/JS CDNs. Use native modern HTML5 (`<dialog>`, `<details>`, `<datalist>`, `<template>`), modern CSS (CSS custom properties, Grid, Flexbox, `:has()`), and vanilla ES6+ JavaScript (`fetch`, `URLSearchParams`, `Intl`, `DOMParser`).
-- **Font Handling:** Keep the app functional offline with zero external dependencies by defining clean system sans-serif and monospace stacks for body/code, and optionally referencing `Bebas Neue` / `League Gothic` via `https:` only if web font loading is appropriate, with graceful local fallbacks.
-- **Minimal Code Footprint:** Write only the markup, styles, and scripts strictly needed for the tool. Avoid boilerplate wrappers, redundant div nesting, or dead CSS rules.
+- **Default to Native HTML & CSS:** Use semantic HTML5 (`<dialog>`, `<details>`, `<datalist>`, `<template>`, native form controls) and modern CSS (custom properties, Grid, Flexbox, `:has()`, responsive layout) first. Add vanilla ES6+ JavaScript only when dynamic behavior or interactivity adds value.
+- **Be Conservative on Dependencies:** Prefer zero external runtime dependencies. Avoid heavy UI frameworks, CSS bloat, or unvetted third-party CDNs by default. If an external resource (such as a font stylesheet or small utility library) is used, keep it minimal, purposeful, and well-scoped rather than pulling in large frameworks.
+- **Font Handling:** Keep core layout and readability resilient offline by defining clean system sans-serif and monospace stacks for body/code, and optionally referencing `Bebas Neue` / `League Gothic` via `https:` when web font loading is desired, with graceful local fallbacks.
+- **Minimal Code Footprint:** Write only the markup, styles, and scripts needed for the tool. Avoid boilerplate wrappers, redundant div nesting, or unused CSS rules.
 
 ### 2. Google HTML/CSS Style Guide Compliance
 
@@ -55,8 +55,8 @@ Apply `references/project-reality-branding-spec.md`:
 1. **Clarify Tool Scope:** Identify the exact PR:BF2 development task (inputs, outputs, file formats like `.con`, `.desc`, `.ai`, `.py`, or localization files) and keep the UI focused on that single workflow.
 2. **Design Semantic HTML:** Draft minimal, valid HTML5 using semantic landmarks (`<header>`, `<main>`, `<section>`, `<footer>`), native form controls, and accessible labels.
 3. **Apply Branded CSS:** Define CSS custom properties (`:root`) for Project Reality tokens in lowercase hex, using Grid/Flexbox for layout and high-contrast controls.
-4. **Implement Vanilla JS:** Write modular, minimal ES6+ event listeners (`addEventListener`) and pure helper functions. Sanitize or escape any user/feed text via `textContent` rather than raw `innerHTML`.
-5. **Audit Against Guides:** Verify zero external dependencies, Google HTML/CSS style compliance (2-space indent, lowercase, no `!important`, no `#id` CSS selectors, no inline handlers), and Project Reality color/font accuracy before delivering.
+4. **Implement Vanilla JS (When Needed):** Write modular, minimal ES6+ event listeners (`addEventListener`) and pure helper functions when interactivity is re ired. Sanitize or escape any user/feed text via `textContent` rather than raw `innerHTML`.
+5. **Audit Against Guides:** Verify conservative dependency choices, Google HTML/CSS style compliance (2-space indent, lowercase, no `!important`, no `#id` CSS selectors, no inline handlers), and Project Reality color/font accuracy before delivering.
 
 ## Gotchas
 
