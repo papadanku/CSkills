@@ -55,7 +55,7 @@ Apply `references/project-reality-branding-spec.md`:
 1. **Clarify Tool Scope:** Identify the exact PR:BF2 development task (inputs, outputs, file formats like `.con`, `.desc`, `.ai`, `.py`, or localization files) and keep the UI focused on that single workflow.
 2. **Design Semantic HTML:** Draft minimal, valid HTML5 using semantic landmarks (`<header>`, `<main>`, `<section>`, `<footer>`), native form controls, and accessible labels.
 3. **Apply Branded CSS:** Define CSS custom properties (`:root`) for Project Reality tokens in lowercase hex, using Grid/Flexbox for layout and high-contrast controls.
-4. **Implement Vanilla JS (When Needed):** Write modular, minimal ES6+ event listeners (`addEventListener`) and pure helper functions when interactivity is re ired. Sanitize or escape any user/feed text via `textContent` rather than raw `innerHTML`.
+4. **Implement Vanilla JS (When Needed):** Write modular, minimal ES6+ event listeners (`addEventListener`) and pure helper functions when interactivity is required. Sanitize or escape any user/feed text via `textContent` rather than raw `innerHTML`.
 5. **Audit Against Guides:** Verify conservative dependency choices, Google HTML/CSS style compliance (2-space indent, lowercase, no `!important`, no `#id` CSS selectors, no inline handlers), and Project Reality color/font accuracy before delivering.
 
 ## Gotchas
