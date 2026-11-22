@@ -1,7 +1,7 @@
 
 # Third-Party Notices and Attributions
 
-This project (**RealitySkills**, licensed under the GNU General Public License v3.0) includes third-party documentation and code samples from **Google's Style Guides**. These third-party materials remain subject to their original licenses as detailed below.
+This project (**RealitySkills**, licensed under the BSD 3-Clause License) includes third-party documentation and code samples from **Google's Style Guides**. These third-party materials remain subject to their original licenses as detailed below.
 
 ## Google HTML/CSS Style Guide
 
@@ -30,7 +30,7 @@ In accordance with CC-BY 3.0 and Apache 2.0 requirements to indicate changes mad
     - `references/css-guide.md` — Contains the *CSS* (CSS style, formatting, and meta rules) section.
 3. **No Substantive Rule Alterations:** The underlying style rules, formatting guidelines, and embedded code examples were preserved from the original guide without altering their technical intent.
 
-### License Compatibility Notice (GPLv3)
+### License Compatibility Notice (BSD 3-Clause)
 
-- **Code Samples (Apache 2.0):** The Apache License 2.0 is compatible with GPLv3. The included code samples retain their Apache 2.0 licensing terms.
-- **Documentation Text (CC-BY 3.0):** The prose excerpts in the three reference files listed above remain licensed under CC-BY 3.0 and are distributed alongside the GPLv3-licensed skill files (`SKILL.md` and `references/project-reality-branding-spec.md`) with attribution and change notices preserved here.
+- **Code Samples (Apache 2.0):** Both Apache 2.0 and the BSD 3-Clause License are permissive open-source licenses. The included code samples remain licensed under Apache 2.0 and may be distributed alongside your BSD 3-Clause project provided copyright/license notices and the modification summary above are retained.
+- **Documentation Text (CC-BY 3.0):** Because CC-BY 3.0 is an attribution-only license without a ShareAlike clause, it imposes no copyleft restrictions on your BSD 3-Clause project. The prose excerpts in the three reference files listed above remain licensed under CC-BY 3.0 and are distributed alongside the BSD 3-Clause-licensed skill files (`SKILL.md` and `references/project-reality-branding-spec.md`) with attribution and change notices preserved here.
