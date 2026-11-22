@@ -14,9 +14,9 @@ When triggered, follow these steps:
 1.  **Analyze the context**: Identify if the task is bug finding, code generation, or optimization.
 2.  **Reference the conventions**: Read [conventions.md](references/conventions.md) to ensure all code follows the strict naming standards.
 3.  **Perform the task**:
-    - **Find Bugs**: Consult [bug_patterns.md](references/bug_patterns.md) for common issues.
+    - **Find Bugs**: Consult [bug-patterns.md](references/bug-patterns.md) for common issues.
     - **Generate Code**: Use Shader Model 3.0 features and established conventions.
-    - **Suggest Optimizations**: Apply techniques from [optimization_guide.md](references/optimization_guide.md).
+    - **Suggest Optimizations**: Apply techniques from [optimization-guide.md](references/optimization-guide.md).
 4.  **Verify**: Ensure the resulting code is compatible with the existing `RealityGraphics.fxh` and other shared libraries.
 
 ## Guidelines
@@ -29,5 +29,5 @@ When triggered, follow these steps:
 ## References
 
 - [Coding Conventions](references/conventions.md)
-- [Bug Patterns](references/bug_patterns.md)
-- [Optimization Guide](references/optimization_guide.md)
+- [Bug Patterns](references/bug-patterns.md)
+- [Optimization Guide](references/optimization-guide.md)
