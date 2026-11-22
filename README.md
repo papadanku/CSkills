@@ -31,7 +31,7 @@ The **Skills** directory contains expert instructions and automation tools for d
 - **prbf2-code-csharp**: Assistant for finding bugs, generating, and optimizing CS-Script (.csx) build scripts in Project Reality BF2.
 - **prbf2-code-python**: Assistant for debugging, generating, and optimizing Python 2.7.18 game logic for Project Reality: BF2.
 - **prbf2-code-shaders**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
-- **prbf2-code-web**: Expert assistant for web development tasks in Project Reality: BF2.
+- **prbf2-code-webapp**: Expert assistant for web development tasks in Project Reality: BF2.
 - **prbf2-draft-announcement**: Assistant for drafting release announcements, update highlights, and community news posts for Project Reality: BF2.
 - **prbf2-draft-changelog**: Assistant for compiling structured, versioned release and hotfix changelogs for Project Reality: BF2.
 - **prbf2-draft-update**: Assistant for drafting technical Developer Blogs and behind-the-scenes development updates for Project Reality: BF2.
