@@ -28,11 +28,14 @@ CSkills is a repository of specialized skills designed to extend the capabilitie
 The **Skills** directory contains expert instructions and automation tools for diverse technical domains:
 
 - **git-summarize-diff**: Summarizes staged changes concisely using the Conventional Commits format or objective plain English.
-- **prbf2-manage-brand**: Assistant for managing branding assets and configurations in Project Reality: BF2.
 - **prbf2-code-csharp**: Assistant for finding bugs, generating, and optimizing CS-Script (.csx) build scripts in Project Reality BF2.
 - **prbf2-code-python**: Assistant for debugging, generating, and optimizing Python 2.7.18 game logic for Project Reality: BF2.
 - **prbf2-code-shaders**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
 - **prbf2-code-web**: Expert assistant for web development tasks in Project Reality: BF2.
+- **prbf2-draft-announcement**: Assistant for drafting release announcements, update highlights, and community news posts for Project Reality: BF2.
+- **prbf2-draft-changelog**: Assistant for compiling structured, versioned release and hotfix changelogs for Project Reality: BF2.
+- **prbf2-draft-update**: Assistant for drafting technical Developer Blogs and behind-the-scenes development updates for Project Reality: BF2.
+- **prbf2-manage-brand**: Assistant for managing branding assets and configurations in Project Reality: BF2.
 - **reshade-code-fx**: Expert ReShadeFX (HLSL) assistant for finding bugs, generating shader code, and suggesting optimized revisions.
 - **sphinx-code-rst**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
 - **youtube-create-project**: Facilitates the creation and management of YouTube video projects, including scripts and assets.
