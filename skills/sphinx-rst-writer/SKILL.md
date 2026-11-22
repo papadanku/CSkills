@@ -1,5 +1,5 @@
 ---
-name: restructuredtext-writer
+name: sphinx-rst-writer
 description: Provides expert knowledge on reStructuredText (RST) syntax, Sphinx documentation structure, directives, and Python domain usage. Use this skill whenever the user asks about RST, Sphinx, documentation formatting, creating .rst files, or needs help with Sphinx configuration and docstrings.
 ---
 

@@ -34,7 +34,7 @@ The **Skills** directory contains expert instructions and automation tools for d
 - **prbf2-shader-coder**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
 - **prbf2-web-coder**: Expert assistant for web development tasks in Project Reality: BF2.
 - **reshadefx-coder**: Expert ReShadeFX (HLSL) assistant for finding bugs, generating shader code, and suggesting optimized revisions.
-- **restructuredtext-writer**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
+- **sphinx-rst-writer**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
 - **youtube-creator**: Facilitates the creation and management of YouTube video projects, including scripts and assets.
 
 ## Installation Instructions - Plugin
