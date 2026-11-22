@@ -35,9 +35,11 @@ CSkills aims to provide a **free, open-source framework** to help create **strea
 
 The **Skills** directory contains expert instructions and automation tools for diverse technical domains:
 
+- **prbf2-branding-manager**: Assistant for managing branding assets and configurations in Project Reality: BF2.
 - **prbf2-cs-coder**: Assistant for finding bugs, generating, and optimizing CS-Script (.csx) build scripts in Project Reality BF2.
 - **prbf2-python-coder**: Assistant for debugging, generating, and optimizing Python 2.7.18 game logic for Project Reality: BF2.
 - **prbf2-shader-coder**: Expert HLSL assistant for finding bugs, generating, and optimizing shaders for RealityShaders in Project Reality: BF2.
+- **prbf2-web-coder**: Expert assistant for web development tasks in Project Reality: BF2.
 - **reshadefx-coder**: Expert ReShadeFX (HLSL) assistant for finding bugs, generating shader code, and suggesting optimized revisions.
 - **restructuredtext-writer**: Multi-tool for reStructuredText (RST) and Sphinx documentation management and generation.
 - **youtube-creator**: Facilitates the creation and management of YouTube video projects, including scripts and assets.
