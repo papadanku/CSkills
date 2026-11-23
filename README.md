@@ -60,7 +60,7 @@ You need to download the repository as a `.zip` file from either method below.
     1. Click the **Install plugin** button.
 1. **Enable the Plugin**:
     1. Once installed, the plugin will appear in your list of available plugins.
-    2. Enable the plugin to make the skills available for use in ChatGPT.
+    1. Enable the plugin to make the skills available for use in ChatGPT.
 
 ### Claude (Anthropic)
 
@@ -85,7 +85,7 @@ You need to download the repository as a `.zip` file from either method below.
 1. In the settings menu, select **Skills**.
 1. Click the **Create** button in the top-right corner.
 1. Choose **Upload** from the options.
-1. Drag and drop the entire skill folder (e.g., `skills/youtube-create-project/`) into the upload box.
+1. Drag and drop the entire skill folder (e.g., `skills/git-summarize-diff/`) into the upload box.
 1. Once the upload completes, click **Create** to add the skill.
 
 ### Vibe (Mistral AI)
