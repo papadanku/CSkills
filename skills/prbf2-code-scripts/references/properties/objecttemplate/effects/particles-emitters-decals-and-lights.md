@@ -1,0 +1,233 @@
+
+# ObjectTemplate Effects: Particles, Emitters, Decals & Lights
+
+- `objectTemplate.affectLightmappedObjects <bool>`
+    - Returns: `bool`
+- `objectTemplate.AgeScaleFactorFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.airResistanceGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.alignEffectTransformation <bool>`
+    - Returns: `bool`
+- `objectTemplate.allowInsideDynamicLights <bool>`
+    - Returns: `bool`
+- `objectTemplate.alphaIntensityFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.alphaOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.animatedUVTranslationSize <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animationRandomizedStartFrame <bool>`
+    - Returns: `bool`
+- `objectTemplate.averageTimeBetweenTests <float>`
+    - Returns: `float`
+- `objectTemplate.blendMode <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.castsDynamicShadow <bool>`
+    - Returns: `bool`
+    - Vehicles, Weapons, and Soldiers
+    - Enables the rendering of shadows.
+- `objectTemplate.castsStaticShadow <bool>`
+    - Returns: `bool`
+- `objectTemplate.color <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.color <Vec3ColorFloat>`
+    - Returns: `Vec3ColorFloat`
+- `objectTemplate.color1 <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.color2 <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.colorBlendGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.decalTextureName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.destroyWhenEmptyStorage <bool>`
+    - Returns: `bool`
+- `objectTemplate.directionalScale <float>`
+    - Returns: `float`
+- `objectTemplate.effectChangeWaterHeight <float>`
+    - Returns: `float`
+- `objectTemplate.effectOnSpawn <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.emitDelay <float>`
+    - Returns: `float`
+- `objectTemplate.emitDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.emitFrequency <float>`
+    - Returns: `float`
+- `objectTemplate.emitFrequencyScaleFactorLowerBound <float>`
+    - Returns: `float`
+- `objectTemplate.emitPrio <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.emitRadius <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.emitRangeX <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.emitRangeY <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.emitRangeZ <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.emitScaleFactorFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitterType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.emitTime <float>`
+    - Returns: `float`
+- `objectTemplate.fadeInFactor <float>`
+    - Returns: `float`
+- `objectTemplate.fadeOutFactor <float>`
+    - Returns: `float`
+- `objectTemplate.globalEffectLevel <float>`
+    - Returns: `float`
+- `objectTemplate.hasAltEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasOnTimeEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.HDRIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.healStorageSize <float>`
+    - Returns: `float`
+- `objectTemplate.insideStaticSunAmbientColor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.insideStaticSunColor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.intensity <float>`
+    - Returns: `float`
+- `objectTemplate.intensity <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.intensityOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.inventorySize <U32>`
+    - Returns: `U32`
+- `objectTemplate.isUnderwaterEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.LightAffectionFactor <float>`
+    - Returns: `float`
+- `objectTemplate.lightMapIntensityOffset <float>`
+    - Returns: `float`
+- `objectTemplate.lightType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.linkedEffectContainer <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.numNetworkedEffects <int>`
+    - Returns: `int`
+- `objectTemplate.objectShadows <bool>`
+    - Returns: `bool`
+- `objectTemplate.ParticleMaxSize <float>`
+    - Returns: `float`
+    - Used in Vehicle `.con` and `.con` files
+    - Defines what materials the vehicle should use, which references the materialdefine file.
+    - Use BfMeshViewer to find out what numbers belong to what sides.
+- `objectTemplate.particleType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.projectorApplyMask <bool>`
+    - Returns: `bool`
+- `objectTemplate.projectorAspect <float>`
+    - Returns: `float`
+- `objectTemplate.projectorFar <float>`
+    - Returns: `float`
+- `objectTemplate.projectorNear <float>`
+    - Returns: `float`
+- `objectTemplate.projectorTexture <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.randomColorIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.randomDirectionAngle <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.randomIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.randomizeGeomPart <bool>`
+    - Returns: `bool`
+- `objectTemplate.randomRadialDirection <float>`
+    - Returns: `float`
+- `objectTemplate.randomSize <float>`
+    - Returns: `float`
+- `objectTemplate.randomTimeToLive <float>`
+    - Returns: `float`
+- `objectTemplate.ropeScaleFactor <float>`
+    - Returns: `float`
+- `objectTemplate.scale <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.selfLights <bool>`
+    - Returns: `bool`
+- `objectTemplate.selfShadowIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.selfShadows <bool>`
+    - Returns: `bool`
+- `objectTemplate.setNumWindows <int>`
+    - Returns: `void`
+- `objectTemplate.shadowIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.sharedStorageSize <float>`
+    - Returns: `float`
+- `objectTemplate.size <float>`
+    - Returns: `float`
+- `objectTemplate.size <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.sizeGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.sizeModifier <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.sizeModifierX <float>`
+    - Returns: `float`
+- `objectTemplate.sizeModifierY <float>`
+    - Returns: `float`
+- `objectTemplate.sizeModifierZ <float>`
+    - Returns: `float`
+- `objectTemplate.sizeOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.soundIntensityFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.speccolor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.startAgeFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.startOnEffects <int>`
+    - Returns: `int`
+- `objectTemplate.stopOnEffects <int>`
+    - Returns: `int`
+- `objectTemplate.supportsEmitter <bool>`
+    - Returns: `bool`
+- `objectTemplate.transparencyGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.uavVehicleFlightHeight <float>`
+    - Returns: `float`
+- `objectTemplate.windAffectionFactor <float>`
+    - Returns: `float`
+- `objectTemplate.windAgingFactor <float>`
+    - Returns: `float`
+- `objectTemplate.windBlowTime <float>`
+    - Returns: `float`
+- `objectTemplate.windDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.windFalloff <float>`
+    - Returns: `float`
+- `objectTemplate.windIsDynamic <bool>`
+    - Returns: `bool`
+- `objectTemplate.windowSizeVector <Vec3>`
+    - Returns: `Vec3`
+    - Used in Projectiles, Vehicles, Effect
+- `objectTemplate.windRadialFalloff <float>`
+    - Returns: `float`
+- `objectTemplate.windType <std::string>`
+    - Returns: `std::string`

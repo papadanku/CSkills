@@ -1,0 +1,194 @@
+
+# ObjectTemplate World: Sound, Triggers, Spawners, ControlPoints & Destructibles
+
+- `objectTemplate.abilityInVehicleRadius <float>`
+    - Returns: `float`
+- `objectTemplate.areaValueTeam1 <U32>`
+    - Returns: `U32`
+- `objectTemplate.areaValueTeam2 <U32>`
+    - Returns: `U32`
+- `objectTemplate.boundingRadiusModifierWhenOccupied <float>`
+    - Returns: `float`
+- `objectTemplate.coneOuterVolume <float>`
+    - Returns: `float`
+- `objectTemplate.controlPointId <int>`
+    - Returns: `int`
+- `objectTemplate.ControlPointId <U32>`
+    - Returns: `U32`
+- `objectTemplate.controlPointName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.delay <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.delayBeforeCycle <float>`
+    - Returns: `float`
+- `objectTemplate.delayBeforeEnd <float>`
+    - Returns: `float`
+- `objectTemplate.delayBeforeStart <float>`
+    - Returns: `float`
+- `objectTemplate.delayToUse <float>`
+    - Returns: `float`
+- `objectTemplate.disableIfEnemyInsideRadius <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableSpawnPointsOnEnter <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableWhenEmptyVehicleDelay <float>`
+    - Returns: `float`
+- `objectTemplate.disableWhenWreck <bool>`
+    - Returns: `bool`
+- `objectTemplate.gasCloudRadiusTime <float>`
+    - Returns: `float`
+- `objectTemplate.groundContactVolume <float>`
+    - Returns: `float`
+- `objectTemplate.halfVolumeDistance <float>`
+    - Returns: `float`
+- `objectTemplate.hoistFlag <bool>`
+    - Returns: `bool`
+- `objectTemplate.is3dSound <bool>`
+    - Returns: `bool`
+    - If the `.wav` file is Mono, setting it to 1 will tell the engine to play it on both channels. If applied to a `.wav` that is Stereo, it will play on the entire map. Same with `.wav` files though it's usually experimentation.
+- `objectTemplate.isDestructable <bool>`
+    - Returns: `bool`
+    - Check only if object is a destroyable static object.
+- `objectTemplate.isLooping <bool>`
+    - Returns: `bool`
+- `objectTemplate.isUnstrategicControlPoint <bool>`
+    - Returns: `bool`
+- `objectTemplate.loopCount <int>`
+    - Returns: `int`
+- `objectTemplate.looping <bool>`
+    - Returns: `bool`
+- `objectTemplate.lowSamples <int>`
+    - Returns: `int`
+- `objectTemplate.maxGasCloudRadius <float>`
+    - Returns: `float`
+- `objectTemplate.maxNrOfObjectSpawned <U32>`
+    - Returns: `U32`
+- `objectTemplate.MaxRopeLength <float>`
+    - Returns: `float`
+    - Fastropes confirmed ?!?!?!?!
+- `objectTemplate.maxSpawnDelay <float>`
+    - Returns: `float`
+- `objectTemplate.maxTriggerDistance <float>`
+    - Returns: `float`
+- `objectTemplate.MaxZiplineLength <float>`
+    - Returns: `float`
+- `objectTemplate.mediumSamples <int>`
+    - Returns: `int`
+- `objectTemplate.minGasCloudRadius <float>`
+    - Returns: `float`
+- `objectTemplate.minimumTimeBetweenTriggering <float>`
+    - Returns: `float`
+    - `AmbientObjects.con` (Map)
+    - The time when the trigger will repeat again after entering the trigger radius.
+    - Happens after the effect plays. In seconds.
+    - Depends also on `ObjectTemplate.chance`
+- `objectTemplate.minSpawnDelay <float>`
+    - Returns: `float`
+- `objectTemplate.noPassengerTimeToLive <int>`
+    - Returns: `int`
+- `objectTemplate.nrOfObjectToSpawn <int>`
+    - Returns: `int`
+- `objectTemplate.nrOfRespawns <int>`
+    - Returns: `int`
+- `objectTemplate.onlyTakeableByTeam <U32>`
+    - Returns: `U32`
+- `objectTemplate.pcoFlags <int>`
+    - Returns: `int`
+- `objectTemplate.radius <float>`
+    - Returns: `float`
+- `objectTemplate.radiusOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ragdollLandedDelay <float>`
+    - Returns: `float`
+- `objectTemplate.respawnDelay <float>`
+    - Returns: `float`
+    - In the `.con` and `.con`
+- `objectTemplate.setAIEnterOnSpawn <bool>`
+    - Returns: `void`
+- `objectTemplate.setAllowSpawnCloseToVehicle <bool>`
+    - Returns: `void`
+- `objectTemplate.setEnterOnSpawn <bool>`
+    - Returns: `void`
+- `objectTemplate.setHealth <int float float>`
+    - Returns: `void`
+- `objectTemplate.setMinSpawnHeight <float>`
+    - Returns: `void`
+- `objectTemplate.setScatterSpawnPositions <bool>`
+    - Returns: `void`
+- `objectTemplate.setSpawnAsParaTroper <bool>`
+    - Returns: `void`
+- `objectTemplate.setSpawnDelay <float>`
+    - Returns: `void`
+- `objectTemplate.setSpawnPositionOffset <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.setSpawnPreventionDelay <float>`
+    - Returns: `void`
+- `objectTemplate.signalTriggerId <int>`
+    - Returns: `int`
+- `objectTemplate.soundFilename <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.soundFilter <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.soundRadius <float>`
+    - Returns: `float`
+- `objectTemplate.spawnDelay <float>`
+    - Returns: `void`
+- `objectTemplate.spawnDelayAtStart <bool>`
+    - Returns: `bool`
+- `objectTemplate.spawnOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.startDelay <float>`
+    - Returns: `float`
+- `objectTemplate.startTeam <int>`
+    - Returns: `int`
+- `objectTemplate.supplyGroupId <int>`
+    - Returns: `int`
+- `objectTemplate.supplyGroupNeeded <int int bool>`
+    - Returns: `void`
+- `objectTemplate.supplyValueNeededTeam1 <int>`
+    - Returns: `int`
+- `objectTemplate.supplyValueNeededTeam2 <int>`
+    - Returns: `int`
+- `objectTemplate.supplyValueTeam1 <int>`
+    - Returns: `int`
+- `objectTemplate.supplyValueTeam2 <int>`
+    - Returns: `int`
+- `objectTemplate.team <int>`
+    - Returns: `int`
+- `objectTemplate.team <U32>`
+    - Returns: `U32`
+- `objectTemplate.team <int>`
+    - Returns: `void`
+- `objectTemplate.teamChange <bool>`
+    - Returns: `bool`
+- `objectTemplate.teamFromClosestCP <bool>`
+    - Returns: `bool`
+- `objectTemplate.teamOnVehicle <bool>`
+    - Returns: `bool`
+- `objectTemplate.timeToLive <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.timeToLive <float>`
+    - Returns: `float`
+- `objectTemplate.timeToLiveAfterDeath <float>`
+    - Returns: `float`
+- `objectTemplate.triggerForEachActivatingPlayer <bool>`
+    - Returns: `bool`
+- `objectTemplate.triggerId <int>`
+    - Returns: `int`
+- `objectTemplate.triggerRadius <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleRadius <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleSampleResolution <float>`
+    - Returns: `float`
+- `objectTemplate.unableToChangeTeam <bool>`
+    - Returns: `bool`
+- `objectTemplate.useButtonRadius <float>`
+    - Returns: `float`
+- `objectTemplate.volume <float>`
+    - Returns: `float`
+    - The loudness of the sound.
+- `objectTemplate.volumeEnvelope <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.volumeGroup <int>`
+    - Returns: `int`

@@ -1,0 +1,56 @@
+
+# PR:BF2 Template Components (`ObjectTemplate.createComponent`)
+
+All 44 component blocks recognized by the BF2/PR UDL and `ObjectTemplate.createComponent` (`rem ---BeginComp:<Name>---` / `rem ---EndComp---`):
+
+- **Core / Vehicle / Tactical**:
+    - `Armor`
+    - `StrategicObject`
+    - `Ik`
+    - `Ability`
+    - `Radio`
+    - `WindAffector`
+    - `PostProcess`
+- **HUD**:
+    - `WeaponHud`
+    - `VehicleHud`
+    - `AbilityHud`
+    - `HelpHud`
+    - `WarningHud`
+- **Fire & Ammo**:
+    - `SingleFireComp`
+    - `MultiFireComp`
+    - `ThrownFireComp`
+    - `ExplosivesFireComp`
+    - `SpawnObjectFireComp`
+    - `DefaultAmmoComp`
+    - `ReplenishingAmmoComp`
+- **Recoil & Deviation**:
+    - `WeaponBasedRecoilComp`
+    - `SoldierBasedRecoilComp`
+    - `SimpleDeviationComp`
+    - `TargetDeviationComp`
+    - `SoldierDeviationComp`
+- **Sound, Animation & Camera/Zoom**:
+    - `DefaultSoundComp`
+    - `DefaultProjSoundComp`
+    - `DefaultAnimationComp`
+    - `ThrownAnimationComp`
+    - `DefaultZoomComp`
+    - `ToggleCameraComp`
+- **Targeting & Guidance**:
+    - `MultiFireArmTargetComp`
+    - `LPTargetComp`
+    - `SimpleTargetComp`
+    - `FixedTargetComp`
+    - `SeekClosestTargetComp`
+    - `DefaultFollowComp`
+    - `PreDestinedFollowComp`
+- **Collision, Detonation & Penetration**:
+    - `DefaultCollisionComp`
+    - `StickyCollisionComp`
+    - `ResurrectCollisionComp`
+    - `DefaultDetonationComp`
+    - `ReplenishDetonationComp`
+    - `DefaultPenetrateComp`
+    - `DefaultRicochetComp`

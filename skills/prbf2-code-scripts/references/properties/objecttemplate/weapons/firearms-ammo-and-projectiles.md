@@ -1,0 +1,148 @@
+
+# ObjectTemplate Weapons: Firearms, Ammo, Projectiles & Damage
+
+- `objectTemplate.3dMapIcon <int>`
+    - Returns: `int`
+    - Used in GenericFirearms (Mine etc) .tweak
+    - The image number sequence referenced in `Objects.dds`.
+    - Use the vBF2 file and count the images. 9 is the mine icon.
+    - Using this system, you could have custom 3D Mine Icons, as long as they are the same size as the original.
+- `objectTemplate.addAmmoType <int int float>`
+    - Returns: `void`
+- `objectTemplate.addKitVehicleMod <std::string int>`
+    - Returns: `void`
+- `objectTemplate.addTargetObjectTypeToWatch <int>`
+    - Returns: `void`
+- `objectTemplate.addToProjectileList <bool>`
+    - Returns: `bool`
+- `objectTemplate.addTriggerableTarget <std::string>`
+    - Returns: `void`
+- `objectTemplate.ammoStorageSize <float>`
+    - Returns: `float`
+- `objectTemplate.armingDelay <float>`
+    - Returns: `float`
+    - Weapons `.tweak`
+    - Delay in seconds until the collision event is active.
+    - Used in the tripflares, which has a 15 second delay before passing through it will trigger the collision.
+    - Also could just be the seconds before the grenade explodes though not sure
+- `objectTemplate.canFireGuiIndex <int>`
+    - Returns: `int`
+- `objectTemplate.cannotFireGuiIndex <int>`
+    - Returns: `int`
+- `objectTemplate.cannotFireTimer <float>`
+    - Returns: `float`
+- `objectTemplate.clockwise <bool>`
+    - Returns: `bool`
+- `objectTemplate.crewKitIndex <int>`
+    - Returns: `int`
+    - `kits.con` (example: `gb82_pilot.con`)
+    - Defines what Geom to use for the kit.
+    - Looks up the Geom1 etc in the `.skinnedmesh`, which is located in the Meshes folder. For example, arg82/Meshes/arg82_kits1.skinnedmeshes.
+    - Open with BfMeshViewer to know what each number looks like.
+- `objectTemplate.crosshairFireTime <float>`
+    - Returns: `float`
+- `objectTemplate.damage <float>`
+    - Returns: `float`
+- `objectTemplate.damagedAmbientSoundLimit <float>`
+    - Returns: `float`
+- `objectTemplate.damageForBeingOutSideWorld <float>`
+    - Returns: `float`
+- `objectTemplate.damageOwner <bool>`
+    - Returns: `bool`
+- `objectTemplate.damageWhenLost <float>`
+    - Returns: `float`
+- `objectTemplate.defaultWeaponIndex <int>`
+    - Returns: `int`
+- `objectTemplate.detonateAfterProjectileStopped <bool>`
+    - Returns: `bool`
+- `objectTemplate.distToMinDamage <float>`
+    - Returns: `float`
+- `objectTemplate.distToStartLoseDamage <float>`
+    - Returns: `float`
+- `objectTemplate.forceSustainedFire <bool>`
+    - Returns: `bool`
+- `objectTemplate.gasCloudDamage <float>`
+    - Returns: `float`
+- `objectTemplate.getHeatBarType`
+    - Returns: `int`
+- `objectTemplate.hasOverDamage <bool>`
+    - Returns: `bool`
+- `objectTemplate.heatAddWhenFire <float>`
+    - Returns: `float`
+- `objectTemplate.heatIncrement <float>`
+    - Returns: `float`
+- `objectTemplate.inheritHeatFromPrimary <bool>`
+    - Returns: `bool`
+- `objectTemplate.insideDamageFrequency <float>`
+    - Returns: `float`
+- `objectTemplate.insideStaticSunDamageColor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.inverseHeatBar <bool>`
+    - Returns: `bool`
+- `objectTemplate.itemIndex <int>`
+    - Returns: `int`
+    - What number in the keyboard is mapped to what weapon/tool.
+    - Max is 9, not sure about 0.
+    - Also positions the weapon icon square.
+- `objectTemplate.keepProjectiles <float>`
+    - Returns: `float Weapons`
+    - Time to keep the projectile in the world in seconds after you or the weapon dies
+- `objectTemplate.killHeatSeekingMissile <bool>`
+    - Returns: `bool`
+- `objectTemplate.kitTeam <int>`
+    - Returns: `int`
+- `objectTemplate.kitType <hfe::KitType>`
+    - Returns: `hfe::KitType`
+- `objectTemplate.maxTracerScaler <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - How long the tracer effect can be depending on projectile speed.
+    - Reference: http://www.battlefieldsingleplayer.com/forum/index.php?showtopic-8592&mode-threaded&pid-84936
+- `objectTemplate.minDamage <float>`
+    - Returns: `float`
+- `objectTemplate.minTracerScaler <float>`
+    - Returns: `float`
+- `objectTemplate.minTrailVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.overheatPenalty <float>`
+    - Returns: `float`
+- `objectTemplate.randomAgeFactor <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.setHasTarget <bool>`
+    - Returns: `void`
+- `objectTemplate.setHeatBarType <heatBarType>`
+    - Returns: `void`
+- `objectTemplate.targetType <TargetType>`
+    - Returns: `TargetType`
+- `objectTemplate.textureOffsetVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.toggleWeapon <bool>`
+    - Returns: `bool`
+- `objectTemplate.tracerConvergeDistance <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - At what distance the tracers (which start from the gunbarrel) and the projectile which start from the camera converges.
+    - Only relevant if `FireInCameraDof` is checked.
+- `objectTemplate.tracerInterval <int>`
+    - Returns: `int`
+    - Used in Projectiles (Weapons)
+    - Set one for tracer on every shot, 2 for every other, and so on.
+- `objectTemplate.tracerScaler <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - How long the tracer effect will be as default.
+- `objectTemplate.tracerSizeModifier <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - How fat the tracer will be.
+- `objectTemplate.unlockIndex <int>`
+    - Returns: `int`
+- `objectTemplate.unlockLevel <int>`
+    - Returns: `int`
+- `objectTemplate.velocity <float>`
+    - Returns: `float`
+    - Used in `GenericFirearms` (Weapons, Projectiles)
+    - The speed of the projectile measured in Rate of Fire (ROF)
+    - Lower ROF are affected by gravity/bullet drop while higher ones fire with lower bullet drop
+- `objectTemplate.weaponType <int>`
+    - Returns: `int`

@@ -1,0 +1,139 @@
+
+# ObjectTemplate Physics: Collision, Mass, Drag, Gravity & Materials
+
+- `objectTemplate.abilityInVehicleMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.addToCollisionGroup <U32>`
+    - Returns: `void`
+- `objectTemplate.addWorkOnMaterial <int>`
+    - Returns: `void`
+- `objectTemplate.anchor <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.anchorOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.attachClimberRadius <float>`
+    - Returns: `float`
+- `objectTemplate.attachToEventObject <bool>`
+    - Returns: `bool`
+- `objectTemplate.cameraSwaySpringDamping <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwaySpringStrength <float>`
+    - Returns: `float`
+- `objectTemplate.centerOfCollisionOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.centerOfMassOffset <Vec3>`
+    - Returns: `Vec3`
+    - To offset the center of mass using 0/0/0 - `X/Y/Z.` Setting it to X/0.5/Z will make a Logistics Truck survive a direct ram to a Van while setting to 0 makes the truck crash. Tested while holding shift.
+- `objectTemplate.climbersAttachForce <float>`
+    - Returns: `float`
+- `objectTemplate.collisionEffectName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.collisionEnable <bool>`
+    - Returns: `bool`
+- `objectTemplate.collisionGroups <U32>`
+    - Returns: `U32`
+- `objectTemplate.collisionMesh <std::string>`
+    - Returns: `void`
+- `objectTemplate.collisionMesh <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.collisionPart <int>`
+    - Returns: `int`
+- `objectTemplate.collisionSpeedAlongNormal <float>`
+    - Returns: `float`
+- `objectTemplate.collisionSpeedAlongPlane <float>`
+    - Returns: `float`
+- `objectTemplate.collisionStartRadius <float>`
+    - Returns: `float`
+- `objectTemplate.drag <float>`
+    - Returns: `float`
+    - How much the drag from the body of a vehicle affects its speed.
+    - Without it, a vehicle will have an infinite top speed.
+- `objectTemplate.drag <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.dragModifier <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.dragModifier <float>`
+    - Returns: `float`
+- `objectTemplate.dragOffset <Vec3>`
+    - Returns: `Vec3`
+    - To offset the drag using 0/0/0 - `X/Y/Z`
+- `objectTemplate.dragOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.elasticity <float>`
+    - Returns: `float`
+- `objectTemplate.fixAxisSpring <bool>`
+    - Returns: `bool`
+- `objectTemplate.floaterMod <float>`
+    - Returns: `float`
+- `objectTemplate.gravity <float>`
+    - Returns: `float`
+    - Sets the gravity for the map. Can use minus values as well
+- `objectTemplate.gravityGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.gravityModifier <float>`
+    - Returns: `float`
+    - Sets the gravity for the vehicle.
+    - Can use minus values as well which makes the projectile go upwards
+- `objectTemplate.gravityModifier <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.gravityModifierOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.handleCollisionSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.hasCollisionPhysics <bool>`
+    - Returns: `bool`
+    - Check for all objects that has a collision mesh.
+    - Allows it to be hit by both bullets, players, and vehicles
+- `objectTemplate.hasMobilePhysics <bool>`
+    - Returns: `bool`
+    - Check for objects and parts that can move.
+- `objectTemplate.hasPointPhysics <bool>`
+    - Returns: `void`
+- `objectTemplate.hasResponsePhysics <bool>`
+    - Returns: `void`
+- `objectTemplate.hasRotationalPointPhysics <bool>`
+    - Returns: `void`
+- `objectTemplate.inertiaModifier <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.isCounterForce <bool>`
+    - Returns: `bool`
+- `objectTemplate.linkAttachMovement <float>`
+    - Returns: `float`
+- `objectTemplate.linkAttachTime <float>`
+    - Returns: `float`
+- `objectTemplate.mapMaterial <uint std::string uint>`
+    - Returns: `void`
+- `objectTemplate.mass <float>`
+    - Returns: `float`
+    - Used in Vehicles, Deployables, etc.
+    - Mass is the weight of the vehicle in KG and also taking into account the GravityModifier value
+- `objectTemplate.material <int>`
+    - Returns: `int`
+- `objectTemplate.noPhysics <bool>`
+    - Returns: `bool`
+- `objectTemplate.physicsFrequency <int>`
+    - Returns: `int`
+- `objectTemplate.physicsType <PhysicsType>`
+    - Returns: `PhysicsType`
+    - Vehicles
+    - `None` for no collision
+    - `Point` for projectile (Ignores mesh)
+    - `Mesh` if object has collision mesh
+- `objectTemplate.pivotOffset <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.PivotPosition <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.setCollisionMesh <std::string>`
+    - Returns: `void`
+- `objectTemplate.setSkeletonCollisionBone <std::string int Vec3>`
+    - Returns: `void`
+- `objectTemplate.sinkingSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.speedFromPhysics <bool>`
+    - Returns: `bool`
+- `objectTemplate.tolerance <float>`
+    - Returns: `float`
+- `objectTemplate.treeCollisionDiameter <float>`
+    - Returns: `float`
+- `objectTemplate.usedOnTransparentMaterials <bool>`
+    - Returns: `bool`

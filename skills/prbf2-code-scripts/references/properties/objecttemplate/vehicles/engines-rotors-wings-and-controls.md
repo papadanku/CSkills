@@ -1,0 +1,357 @@
+
+# ObjectTemplate Vehicles: Engines, Rotors, Wings & Controls
+
+- `objectTemplate.acceleration <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.acceleration <float>`
+    - Returns: `float`
+- `objectTemplate.addEmitterSpeed <bool>`
+    - Returns: `bool`
+- `objectTemplate.AgeScaleFactorFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alignRotationToSpeed <bool>`
+    - Returns: `bool`
+- `objectTemplate.alphaIntensityFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animatedUVRotation <int>`
+    - Returns: `int`
+- `objectTemplate.animatedUVRotationIndex <int>`
+    - Returns: `int`
+- `objectTemplate.animatedUVRotationRadius <float>`
+    - Returns: `float`
+- `objectTemplate.animatedUVRotationReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.animatedUVRotationScale <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animatedUVTranslationSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.attackSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.automaticPitchStabilization <bool>`
+    - Returns: `bool`
+- `objectTemplate.automaticYawStabilization <bool>`
+    - Returns: `bool`
+- `objectTemplate.blockInputOnRotBundle <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.blurryVisionHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.cameraShakeMaxSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.cameraShakeStartSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.capMaxSpeed <bool>`
+    - Returns: `bool`
+- `objectTemplate.climbingSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.continousRotationSpeed <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.damageSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.dampenSprintRotationalForceInAirMod <float>`
+    - Returns: `float`
+- `objectTemplate.deAcceleration <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.debugForceGearUp <bool>`
+    - Returns: `bool`
+- `objectTemplate.decreaseAngleToZeroSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.detonateAfterProjectileStoppedMinSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.differential <float>`
+    - Returns: `float`
+- `objectTemplate.disableInputWhileDucking <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitDirectionZFromSpeedDof <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitScaleFactorFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.emitSpeedGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.emitSpeedScaleFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitterSpeedScale <float>`
+    - Returns: `float`
+- `objectTemplate.engineInfluence <float>`
+    - Returns: `float`
+- `objectTemplate.engineName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.engineType <int>`
+    - Returns: `int`
+    - What kind of vehicle the engine is for.
+    - Car, tank, plane, ship, or helicopter.
+- `objectTemplate.exitSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.flapLift <float>`
+    - Returns: `float`
+- `objectTemplate.gearChangeTime <float>`
+    - Returns: `float`
+- `objectTemplate.gearDown <float>`
+    - Returns: `float`
+- `objectTemplate.gearDownDelay <float>`
+    - Returns: `float`
+- `objectTemplate.gearDownHeight <float>`
+    - Returns: `float`
+- `objectTemplate.gearDownSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.gearUp <float>`
+    - Returns: `float`
+- `objectTemplate.gearUpDelay <float>`
+    - Returns: `float`
+- `objectTemplate.gearUpHeight <float>`
+    - Returns: `float`
+- `objectTemplate.gearUpSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.getRotation <int>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.healSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.holdObject <bool>`
+    - Returns: `bool`
+- `objectTemplate.horizontalSpeedMagnifier <float>`
+    - Returns: `float`
+- `objectTemplate.input <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.inputToPitch <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.inputToRoll <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.inputToYaw <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.insideDamageThreshold <float>`
+    - Returns: `float`
+- `objectTemplate.intensityAtSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.invertGear <bool>`
+    - Returns: `bool`
+- `objectTemplate.lesserYawAtSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.maxResetSpeed <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.maxRotation <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.maxSpeed <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.maxSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.minRotation <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.movementSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.noEffectAtPerpSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.noPropellerEffectAtSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.numberOfGears <int>`
+    - Returns: `int`
+- `objectTemplate.pitch <float>`
+    - Returns: `float`
+- `objectTemplate.pitchEnvelope <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.pitchOffset <float>`
+    - Returns: `float`
+- `objectTemplate.positionalSpeedInDof <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.positionalSpeedInRight <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.positionalSpeedInUp <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.pureRotational <bool>`
+    - Returns: `bool`
+- `objectTemplate.randomRotation <float>`
+    - Returns: `float`
+- `objectTemplate.randomRotation <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.randomRotationSpeed <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.randomRotationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.randomSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.refillAmmoSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.regulatePitch <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulatePitchInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.regulateRoll <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulateRollInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.regulateVerticalPosInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.regulateYaw <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulateYawInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+    - In the effects `.tweak` when creating an effect
+    - Allows an effect template to be used with custom settings.
+- `objectTemplate.regWhenMinInput <float>`
+    - Returns: `float`
+- `objectTemplate.rememberExcessInput <bool>`
+    - Returns: `bool`
+- `objectTemplate.remoteEngineInput <int>`
+    - Returns: `int`
+- `objectTemplate.restoreRotationOnExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.restoreSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.rotation <float>`
+    - Returns: `float`
+- `objectTemplate.rotationalForce <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.rotationalSpeedInDof <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.rotationalSpeedInRight <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.rotationalSpeedInUp <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.rotationAxle <int>`
+    - Returns: `int`
+- `objectTemplate.rotationGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.rotationSpeed <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.rotationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.rotationSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.rotationSpeedModBlur <float>`
+    - Returns: `float`
+- `objectTemplate.seatLeftRotationLimit <float>`
+    - Returns: `float`
+- `objectTemplate.seatRightRotationLimit <float>`
+    - Returns: `float`
+- `objectTemplate.seatRotation <Vec3>`
+    - Returns: `Vec3`
+    - In Vehicles `.tweak`
+    - Allows the PCO to be rotated.
+    - Uses X/Y/Z.
+    - Relevant to Seat X Y Z Arrow.
+    - See BF2Editor Vehicle for more info.
+    - For example -10/0/0 wil rotate the player backwards.
+- `objectTemplate.setGearRatios <float float float>`
+    - Returns: `void`
+- `objectTemplate.setSpawnRotation <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.snapToZeroOnNoInput <bool>`
+    - Returns: `bool`
+- `objectTemplate.soldierExitRotation <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.soundIntensityFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.specialToggleWeaponInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.speed <float>`
+    - Returns: `float`
+- `objectTemplate.speedFromParticle <float>`
+    - Returns: `float`
+- `objectTemplate.spinWhenNoEngineInAir <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear1Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear2Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear3Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear4Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear5Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.startAgeFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startRotation <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.torque <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnAcceleration <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnHighAmplitude <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnHighOffset <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnLowAmplitude <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnLowOffset <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.turnVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.useDeAcceleration <bool>`
+    - Returns: `bool`
+- `objectTemplate.windSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.windSpeedAgeDistance <float>`
+    - Returns: `float`
+- `objectTemplate.wingLift <float>`
+    - Returns: `float`
+    - Planes and Helis
+    - How much speed will affect object lifting on control surface.
+- `objectTemplate.wingToRegulatorRatio <float>`
+    - Returns: `float`
+- `objectTemplate.yawSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.zRotation <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.zRotationSnap <float>`
+    - Returns: `float`

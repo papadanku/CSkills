@@ -1,0 +1,213 @@
+
+# ObjectTemplate General Properties (M-Z)
+
+- `objectTemplate.maskOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.maskType <hfe::MaskObjectType>`
+    - Returns: `hfe::MaskObjectType`
+- `objectTemplate.maxAngleOfAttack <float>`
+    - Returns: `float`
+- `objectTemplate.maxCorner <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.maxDistance <float>`
+    - Returns: `float`
+- `objectTemplate.maxDistanceUnderWaterSurface <float>`
+    - Returns: `float`
+- `objectTemplate.maxVertRegAngle <float>`
+    - Returns: `float`
+- `objectTemplate.minCorner <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.minDistance <float>`
+    - Returns: `float`
+- `objectTemplate.minDistanceUnderWaterSurface <float>`
+    - Returns: `float`
+- `objectTemplate.minimapNameOffset <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.minNrToTakeControl <U32>`
+    - Returns: `U32`
+- `objectTemplate.minTimeBetweenActivation <float>`
+    - Returns: `float`
+- `objectTemplate.minYNormal <float>`
+    - Returns: `float`
+- `objectTemplate.movementType <int>`
+    - Returns: `int`
+- `objectTemplate.moveToWaterSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.name`
+    - Returns: `std::string`
+- `objectTemplate.nameTagOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.neverDrawAs1p <bool>`
+    - Returns: `bool`
+    - Vehicle, Weapons, Effects
+    - Makes the effect not draw in front of you when in 1p mode.
+    - Link: http://www.realitymod.com/forum/f388-pr-bf2-community-modding/113277-1p-animations-pcos-3.html
+- `objectTemplate.nosePos <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.notCycledIfOccupied <bool>`
+    - Returns: `bool`
+- `objectTemplate.noVertRegAngle <float>`
+    - Returns: `float`
+- `objectTemplate.NumberOfLinks <int>`
+    - Returns: `int`
+- `objectTemplate.numPlanes <int>`
+    - Returns: `int`
+- `objectTemplate.onlyWhenOccupied <bool>`
+    - Returns: `bool`
+- `objectTemplate.pan <float>`
+    - Returns: `float`
+- `objectTemplate.pcoId <int>`
+    - Returns: `int`
+- `objectTemplate.playAtEventPosition <bool>`
+    - Returns: `bool`
+- `objectTemplate.playAtPlayerPosition <bool>`
+    - Returns: `bool`
+- `objectTemplate.portalPassingPosition <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.position <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.positionOffset <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.preCacheObject <bool>`
+    - Returns: `bool`
+- `objectTemplate.preWarmTime <float>`
+    - Returns: `float`
+- `ObjectTemplate.printScript <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `objectTemplate.projectOnHeightmap <bool>`
+    - Returns: `bool`
+- `objectTemplate.propRotAxis <int>`
+    - Returns: `int`
+- `objectTemplate.QualityLevel <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.radialDirection <float>`
+    - Returns: `float`
+- `objectTemplate.rcType <RemoteControlledObjectType>`
+    - Returns: `RemoteControlledObjectType`
+- `objectTemplate.readBinary <std::string>`
+    - Returns: `void`
+- `objectTemplate.regulateToLift <float>`
+    - Returns: `float`
+- `objectTemplate.regulateVerticalPos <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.replaceItem <std::string>`
+    - Returns: `void`
+    - In the `.con` and `.con`
+- `objectTemplate.reverbLevel <float>`
+    - Returns: `float`
+- `objectTemplate.rotateAsAnimatedUV <bool>`
+    - Returns: `bool`
+- `objectTemplate.rotateAsAnimatedUVObject <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.rotateAsAnimatedUVReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.rotateUV <bool>`
+    - Returns: `bool`
+- `objectTemplate.setAnimationFrameHeightRelative <float>`
+    - Returns: `void`
+- `objectTemplate.setAnimationFrameWidthRelative <float>`
+    - Returns: `void`
+- `objectTemplate.setAxisFixation <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.setOnlyForAI <bool>`
+    - Returns: `void`
+- `objectTemplate.setOnlyForHuman <bool>`
+    - Returns: `void`
+- `objectTemplate.setToolTipType <dice::hfe::world::ToolTipType>`
+    - Returns: `void`
+- `objectTemplate.setVehicleType <dice::hfe::world::VehicleType>`
+    - Returns: `void`
+- `objectTemplate.shakeFactor <float>`
+    - Returns: `float`
+- `objectTemplate.showInFirstPerson <bool>`
+    - Returns: `bool`
+- `objectTemplate.showInThirdPerson <bool>`
+    - Returns: `bool`
+- `objectTemplate.showOnMinimap <bool>`
+    - Returns: `bool`
+- `objectTemplate.skeleton <std::string>`
+    - Returns: `void`
+- `objectTemplate.skeleton1P <std::string>`
+    - Returns: `void`
+- `objectTemplate.skeleton3P <std::string>`
+    - Returns: `void`
+- `objectTemplate.softness <float>`
+    - Returns: `float`
+- `objectTemplate.startAtCreation <bool>`
+    - Returns: `bool`
+- `objectTemplate.startAutoRotateOnEnter <bool>`
+    - Returns: `bool`
+- `objectTemplate.startDistance <float>`
+    - Returns: `float`
+- `objectTemplate.startProbability <float>`
+    - Returns: `float`
+- `objectTemplate.stopType <int>`
+    - Returns: `int`
+- `objectTemplate.strength <float>`
+    - Returns: `float`
+- `objectTemplate.supportsGlow <bool>`
+    - Returns: `bool`
+- `objectTemplate.supportsPerPixel <bool>`
+    - Returns: `bool`
+- `objectTemplate.supportsPerVertex <bool>`
+    - Returns: `bool`
+- `objectTemplate.textureName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.textureTileFactor <float>`
+    - Returns: `float`
+- `objectTemplate.throwStrength <float>`
+    - Returns: `float`
+- `objectTemplate.throwStrength2 <float>`
+    - Returns: `float`
+- `objectTemplate.Timeout <float>`
+    - Returns: `float`
+- `objectTemplate.timeToGetControl <float>`
+    - Returns: `float`
+- `objectTemplate.timeToLoseControl <float>`
+    - Returns: `float`
+- `objectTemplate.timeToRemoveTK <float>`
+    - Returns: `float`
+- `objectTemplate.toggleMouseLook <bool>`
+    - Returns: `bool`
+- `objectTemplate.Transparency <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `ObjectTemplate.type <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `objectTemplate.type <int>`
+    - Returns: `int`
+- `ObjectTemplate.update <world::IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `ObjectTemplate.updateAll`
+    - Returns: `void`
+- `objectTemplate.upDropBoost <float>`
+    - Returns: `float`
+- `objectTemplate.upThrowBoost <float>`
+    - Returns: `float`
+- `objectTemplate.upThrowBoost2 <float>`
+    - Returns: `float`
+- `objectTemplate.useAbsoluteDirection <bool>`
+    - Returns: `bool`
+- `objectTemplate.usedByAi <bool>`
+    - Returns: `bool`
+- `objectTemplate.usedOnTransparentSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.useGeomPart <int>`
+    - Returns: `int`
+- `objectTemplate.vehicleCategory <dice::hfe::world::VehicleCategory>`
+    - Returns: `dice::hfe::world::VehicleCategory`
+- `objectTemplate.visibleOn3dMap <bool>`
+    - Returns: `bool`
+- `objectTemplate.waterHeight <float>`
+    - Returns: `float`
+- `objectTemplate.waterSurfaceOffset <float>`
+    - Returns: `float`
+- `objectTemplate.widnBlowTime <float>`
+    - Returns: `float`
+- `objectTemplate.workOnVehicles <bool>`
+    - Returns: `bool`
+    - Supply Objects
+    - Allows the vehicle to receive HP/Ammo depending on the type of supply set
+- `objectTemplate.writeBinary <std::string>`
+    - Returns: `void`
+- `objectTemplate.writeZ <bool>`
+    - Returns: `bool`

@@ -1,0 +1,287 @@
+
+# ObjectTemplate General Properties (A-L)
+
+- `objectTemplate.abilityInVehicleStrength <float>`
+    - Returns: `float`
+- `objectTemplate.abilityRestoreRate <float>`
+    - Returns: `float`
+- `objectTemplate.accumulate <bool>`
+    - Returns: `bool`
+- `objectTemplate.addChild <bool>`
+    - Returns: `bool`
+- `objectTemplate.addLinePoint <Vec2>`
+    - Returns: `void`
+- `objectTemplate.addPcoPosId <int>`
+    - Returns: `void`
+- `objectTemplate.addVehicleType <std::string int float>`
+    - Returns: `void`
+- `objectTemplate.addVehicleType <VehicleCategory>`
+    - Returns: `void`
+- `objectTemplate.affectingType <int>`
+    - Returns: `int`
+- `objectTemplate.airFlowAffect <float>`
+    - Returns: `float`
+- `objectTemplate.airFriction <float>`
+    - Returns: `float`
+- `objectTemplate.airResistance <float>`
+    - Returns: `float`
+- `objectTemplate.allowDucking <bool>`
+    - Returns: `bool`
+- `objectTemplate.allowInsideStaticSun <bool>`
+    - Returns: `bool`
+- `objectTemplate.animatedUVTranslation <bool>`
+    - Returns: `bool`
+- `objectTemplate.animatedUVTranslationIndex <int>`
+    - Returns: `int`
+- `objectTemplate.animatedUVTranslationMax <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animatedUVTranslationReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationEnable <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationFrameCount <int>`
+    - Returns: `int`
+- `objectTemplate.animationFrameCountX <int>`
+    - Returns: `int`
+- `objectTemplate.animationFrameHeight <int>`
+    - Returns: `int`
+- `objectTemplate.animationFrameWidth <int>`
+    - Returns: `int`
+- `objectTemplate.animationPlayOnce <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationSystem1P <std::string>`
+    - Returns: `void`
+- `objectTemplate.animationSystem3P <std::string>`
+    - Returns: `void`
+- `objectTemplate.artPos <bool>`
+    - Returns: `bool`
+- `objectTemplate.attenuationRange1 <float>`
+    - Returns: `float`
+    - Used in `.tweak` Effect Files for Lightsource Templates
+    - How wide you want the lightsource effect to be, used with `ObjectTemplate.isDynamic 1`.
+    - Range1 - X, which is the horizontal range.
+    - Max is 100, more than that will trigger an error message
+- `objectTemplate.attenuationRange2 <float>`
+    - Returns: `float`
+    - Used in `.tweak` Effect Files for Lightsource Templates
+    - The height at which the lightsource will begin to drop.
+    - Range2 - Y, which is the vertical range.
+    - Max is 100, like above.
+    - To know the difference, set one to 50 and one to 100 and count the number of seconds the lightsource effect will last and compare.
+- `objectTemplate.audioReset`
+    - Returns: `void`
+- `objectTemplate.automaticReset <bool>`
+    - Returns: `bool`
+- `objectTemplate.autoUseAbility <int>`
+    - Returns: `int`
+- `objectTemplate.awakeTime <float>`
+    - Returns: `float`
+- `objectTemplate.blurryVisionTime <float>`
+    - Returns: `float`
+- `objectTemplate.boneName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.bounceDamping <float>`
+    - Returns: `float`
+- `objectTemplate.bounceLength <float>`
+    - Returns: `float`
+- `objectTemplate.bounceSensitivity <float>`
+    - Returns: `float`
+- `objectTemplate.bounceStrength <float>`
+    - Returns: `float`
+- `objectTemplate.canPickup <bool>`
+    - Returns: `bool`
+    - Weapons
+    - Allows explosives to be picked up using the wrench/repair object
+    - Example: `at_mine`
+- `objectTemplate.canReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.chance <float>`
+    - Returns: `float`
+    - `AmbientObjects.con`
+    - Chance that the triggerable effect may play when the player steps inside the radius.
+    - :1: always play
+    - :0: never play
+- `objectTemplate.chaseAngle <float>`
+    - Returns: `float`
+- `objectTemplate.chaseDistance <float>`
+    - Returns: `float`
+- `objectTemplate.chaseOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.clientHitDetection <bool>`
+    - Returns: `bool`
+- `objectTemplate.coneAngle1 <float>`
+    - Returns: `float`
+- `objectTemplate.coneAngle2 <float>`
+    - Returns: `float`
+- `objectTemplate.coneDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.coneInnerAngle <float>`
+    - Returns: `float`
+- `objectTemplate.coneOuterAngle <float>`
+    - Returns: `float`
+- `objectTemplate.constantForce <float>`
+    - Returns: `float`
+- `objectTemplate.constantRpm <bool>`
+    - Returns: `bool`
+- `objectTemplate.controlsCategory <dice::hfe::world::VehicleCategory>`
+    - Returns: `dice::hfe::world::VehicleCategory`
+- `objectTemplate.coolDownPerSec <float>`
+    - Returns: `float`
+- `objectTemplate.coolingFactor <float>`
+    - Returns: `float`
+- `objectTemplate.copyLinksCount <int>`
+    - Returns: `int`
+- `ObjectTemplate.create <std::string std::string>`
+    - Returns: `IObjectTemplate\*`
+- `objectTemplate.createdInEditor <bool>`
+    - Returns: `bool`
+- `objectTemplate.createNotInGrid <bool>`
+    - Returns: `bool`
+- `objectTemplate.createVisibleInEditor <bool>`
+    - Returns: `bool`
+- `objectTemplate.cycles <int>`
+    - Returns: `int`
+- `objectTemplate.dampHorizontalVel <float>`
+    - Returns: `float`
+- `objectTemplate.dampHorizontalVelFactor <float>`
+    - Returns: `float`
+- `objectTemplate.damping <float>`
+    - Returns: `float`
+- `objectTemplate.debugAutoRotate <bool>`
+    - Returns: `bool`
+- `objectTemplate.decreaseAngleToZero <bool>`
+    - Returns: `bool`
+- `objectTemplate.decreaseAngleToZeroVerticalVel <float>`
+    - Returns: `float`
+- `objectTemplate.defaultAngleOfAttack <float>`
+    - Returns: `float`
+- `objectTemplate.degradeDropStrength <float>`
+    - Returns: `float`
+- `objectTemplate.degradeThrowStrength <float>`
+    - Returns: `float`
+- `objectTemplate.degradeThrowStrength2 <float>`
+    - Returns: `float`
+- `ObjectTemplate.delete <world::IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `objectTemplate.deployAnimationTime <float>`
+    - Returns: `float`
+- `objectTemplate.direction <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.disableWhenEmptyVehicle <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableWhenLosingControl <bool>`
+    - Returns: `bool`
+- `objectTemplate.distance <float>`
+    - Returns: `float`
+- `objectTemplate.distanceCannotEnter <float>`
+    - Returns: `float`
+- `objectTemplate.drawOrder <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.dropHeadwear <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.dropStrength <float>`
+    - Returns: `float`
+- `objectTemplate.enabled <bool>`
+    - Returns: `bool`
+- `objectTemplate.enemyTicketLossWhenCaptured <int>`
+    - Returns: `int`
+- `objectTemplate.events <int>`
+    - Returns: `int`
+- `objectTemplate.flicker <float>`
+    - Returns: `float`
+- `objectTemplate.floatMaxLift <float>`
+    - Returns: `float`
+- `objectTemplate.floatMinLift <float>`
+    - Returns: `float`
+- `objectTemplate.followStiffness <float>`
+    - Returns: `float`
+- `objectTemplate.force <float>`
+    - Returns: `float`
+- `objectTemplate.forceToWaterSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.gasCloudType <geom::GasCloudType>`
+    - Returns: `geom::GasCloudType`
+- `objectTemplate.getPosition <int>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.grip <PhysicsGripFlags>`
+    - Returns: `PhysicsGripFlags`
+    - Set only for wheels.
+    - Roll grip for wheels that are not powered.
+    - Engine grip for wheels that are powered.
+    - Engine dummy grip for wheel you want to make looking like they are powered, but actually aren't.
+- `objectTemplate.group <U32>`
+    - Returns: `U32`
+- `objectTemplate.HasGreyCapturingState <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasPartner <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasRelativeOffset <bool>`
+    - Returns: `bool`
+- `objectTemplate.height <float>`
+    - Returns: `float`
+- `objectTemplate.heightOffset <float>`
+    - Returns: `float`
+- `objectTemplate.hideFirstPerson <bool>`
+    - Returns: `bool`
+- `objectTemplate.hoistMinMax <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.horizontalDampAngle <float>`
+    - Returns: `float`
+- `objectTemplate.horizontalDampAngleFactor <float>`
+    - Returns: `float`
+- `objectTemplate.hullHeight <float>`
+    - Returns: `float`
+- `ObjectTemplate.info <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `objectTemplate.initiallyWalkable <bool>`
+    - Returns: `bool`
+- `objectTemplate.insideStaticSunDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.isDynamic <bool>`
+    - Returns: `bool`
+- `objectTemplate.isHemisphere <bool>`
+    - Returns: `bool`
+- `objectTemplate.isLocalSystem <bool>`
+    - Returns: `bool`
+    - Makes the effect follow the projectile and allows it to arch.
+    - Used for the M67 *Zippo* Tank Flamethrower Effect.
+    - Without it, the flame effect just shoots straight but not following the projectile
+- `objectTemplate.isNightVision <bool>`
+    - Returns: `bool`
+- `objectTemplate.isOpenVehicle <bool>`
+    - Returns: `bool`
+    - Allows the ragdoll to slide off when killed from a vehicle position. Used in Technicals. If this is option. the passenger animation must have a die animation specified otherwise the ragdolls will float in the air.
+- `objectTemplate.isOvergrowth <bool>`
+    - Returns: `bool`
+- `objectTemplate.isPortalPassing <bool>`
+    - Returns: `bool`
+- `objectTemplate.isSelectable <bool>`
+    - Returns: `bool`
+- `objectTemplate.isSleeping <bool>`
+    - Returns: `bool`
+- `objectTemplate.isStatic <bool>`
+    - Returns: `bool`
+- `objectTemplate.isStaticSystem <bool>`
+    - Returns: `bool`
+- `objectTemplate.itemType <int>`
+    - Returns: `int`
+- `objectTemplate.liftRegulated <bool>`
+    - Returns: `bool`
+- `ObjectTemplate.list <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.listenerObstruction <float>`
+    - Returns: `float`
+    - Vehicles `.tweak`
+    - How muffled is the sound.
+    - Lower value is least muffled.
+- `ObjectTemplate.loadAll`
+    - Returns: `bool`
+- `objectTemplate.localPredictOnClient <bool>`
+    - Returns: `bool`
+    - Used with Grenades and if there's any effect projectiles.
+    - Seems like it tells the server to predict what's going to happen.
+    - Maybe used with the Networkable Setting
+- `objectTemplate.loseControlWhenEnemyClose <bool>`
+    - Returns: `bool`
+- `objectTemplate.loseControlWhenNotClose <bool>`
+    - Returns: `bool`
