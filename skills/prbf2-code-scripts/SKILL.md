@@ -56,7 +56,7 @@ The `references/` directory is organized into focused topic folders so you can s
         - `references/properties/objecttemplate/components/vehicles-and-core.md`: `ObjectTemplate` component sub-properties for `ability.*`, `abilityHud.*`, `animation.*`, `antenna.*`, `armor.*`, `audio.*`, `collision.*`, `geometry.*`, `newCar2.*`, `postProcess.*`, `radio.*`, `sound.*`, `strategicObject.*`, `vehicleHud.*`.
         - `references/properties/objecttemplate/core/template-lifecycle-and-hierarchy.md`: Lifecycle, hierarchy, geometry, LODs, and networkables.
         - `references/properties/objecttemplate/effects/particles-emitters-decals-and-lights.md`: Particles, emitters, decals, lights, and shadows.
-        - `references/properties/objecttemplate/misc/general-a-to-l.md` & `misc/general-m-to-z.md`: Remaining general `ObjectTemplate.*` properties (A-L and M-Z).
+        - `references/properties/objecttemplate/misc/general-a-to-l.md` & `references/properties/objecttemplate/misc/general-m-to-z.md`: Remaining general `ObjectTemplate.*` properties (A-L and M-Z).
         - `references/properties/objecttemplate/physics/collision-physics-and-materials.md`: Collision, physics, mass, drag, gravity, and materials.
         - `references/properties/objecttemplate/vehicles/engines-rotors-wings-and-controls.md`: Engines, rotors, wings, wheels, gears, and controls.
         - `references/properties/objecttemplate/vehicles/cameras-seats-and-entry.md`: Cameras, FOV, seats, entry points, and soldier movement.
