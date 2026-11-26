@@ -5,11 +5,15 @@ Grounded in PR:BF2 `.con` grammar conventions, console object specifications, an
 
 ## 1. File Roles and Interaction
 
-| Extension | Primary Role | Typical Contents |
-| :--- | :--- | :--- |
-| `.con` | Definition, initialization, and execution entry point | `GeometryTemplate.create` (`StaticMesh` or `BundledMesh`), `CollisionManager.createTemplate`, `NetworkableInfo.createNewInfo`, `ObjectTemplate.create`, `ObjectTemplate.saveInSeparateFile 1`, `include *.tweak`, `run *.inc`, `hudBuilder.*`, `Material.*`, `heightmap.*` |
-| `.tweak` | Property tuning and component configuration on an existing template | `ObjectTemplate.activeSafe <Type> <Name>`, `GeometryTemplate.*` LOD/lightmap settings, `rem ---BeginComp:...---` / `ObjectTemplate.createComponent` / `rem ---EndComp---`, `ObjectTemplate.addTemplate`, `ObjectTemplate.aiTemplate`, HUD nodes (`hudBuilder.*`) |
-| `.inc` | Reusable script fragments included/run by `.con` or `.tweak` | `animationSystem.*` / `animationManager.*` / `animationBundle.*` / `animationTrigger.*` (`animationsystem*.inc`), shared sub-template or kit/vehicle fragments |
+- **`.con`**
+    - **Primary Role**: Definition, initialization, and execution entry point
+    - **Typical Contents**: `GeometryTemplate.create` (`StaticMesh` or `BundledMesh`), `CollisionManager.createTemplate`, `NetworkableInfo.createNewInfo`, `ObjectTemplate.create`, `ObjectTemplate.saveInSeparateFile 1`, `include *.tweak`, `run *.inc`, `hudBuilder.*`, `Material.*`, `heightmap.*`
+- **`.tweak`**
+    - **Primary Role**: Property tuning and component configuration on an existing template
+    - **Typical Contents**: `ObjectTemplate.activeSafe <Type> <Name>`, `GeometryTemplate.*` LOD/lightmap settings, `rem ---BeginComp:...---` / `ObjectTemplate.createComponent` / `rem ---EndComp---`, `ObjectTemplate.addTemplate`, `ObjectTemplate.aiTemplate`, HUD nodes (`hudBuilder.*`)
+- **`.inc`**
+    - **Primary Role**: Reusable script fragments included/run by `.con` or `.tweak`
+    - **Typical Contents**: `animationSystem.*` / `animationManager.*` / `animationBundle.*` / `animationTrigger.*` (`animationsystem*.inc`), shared sub-template or kit/vehicle fragments
 
 ### Standard `.con` -> `.tweak` -> `.inc` Lifecycle
 
@@ -36,11 +40,18 @@ Grounded in PR:BF2 `.con` grammar conventions, console object specifications, an
 
 ## 3. `include` vs `run` vs `return`
 
-| Directive | Scope Behavior | Arguments | When to Use |
-| :--- | :--- | :--- | :--- |
-| `include <path>` | Shares caller's variable scope (`v_*`, `c_*` visible) | None | Loading `.tweak` files (`include <object>.tweak`) or fragments that read/set caller variables |
-| `run <path> [arg1 ...]` | Creates an **isolated** scope; caller `v_*` variables are NOT visible | Accessible as `v_arg1`, `v_arg2`, ... | Running parameterized `.inc` or `.con` scripts (`run Terrain.con v_arg2`, `run animationsystem1p.inc`) |
-| `return` | Exits the current script file and returns control to caller | None | Early exit inside `if` blocks in `run`/`include` scripts |
+- **`include <path>`**
+    - **Scope Behavior**: Shares caller's variable scope (`v_*`, `c_*` visible)
+    - **Arguments**: None
+    - **When to Use**: Loading `.tweak` files (`include <object>.tweak`) or fragments that read/set caller variables
+- **`run <path> [arg1 ...]`**
+    - **Scope Behavior**: Creates an **isolated** scope; caller `v_*` variables are NOT visible
+    - **Arguments**: Accessible as `v_arg1`, `v_arg2`, ...
+    - **When to Use**: Running parameterized `.inc` or `.con` scripts (`run Terrain.con v_arg2`, `run animationsystem1p.inc`)
+- **`return`**
+    - **Scope Behavior**: Exits the current script file and returns control to caller
+    - **Arguments**: None
+    - **When to Use**: Early exit inside `if` blocks in `run`/`include` scripts
 
 ## 4. `CRD_*` Continuous Random Distribution
 

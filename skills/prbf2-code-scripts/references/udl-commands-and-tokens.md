@@ -5,163 +5,159 @@ Catalog of BF2/PR:BF2 UDL keywords, console command namespaces, template compone
 
 ## 1. Syntax & Flow Control Tokens (`.con`, `.tweak`, `.inc`, `.ai`)
 
-| Category | Tokens | Notes |
-| :--- | :--- | :--- |
-| Line Comment | `rem` | Single-line comment; everything after `rem` is ignored. |
-| Block Comment | `beginRem` ... `endRem` | Multi-line comment; only supported when executed by engine (not interactive console). |
-| Atlas Comment | `#` | Used in `.tac` / `.tai` atlas files. |
-| Variable Prefixes | `var v_name`, `const c_name` | Mutable (`v_`) and immutable (`c_`) Hungarian-style prefixes. |
-| Return Capture | `-> v_result` | Captures command return value into a variable. |
-| Conditionals / Loops | `if`, `elseIf`, `else`, `endIf`, `while`, `endWhile` | Standard control flow blocks. |
-| Comparison Operators | `==`, `!=`, `<`, `<=`, `>`, `>=`, `EQUAL`, `equals`, `notEquals` | Used in `if` / `while` expressions. |
-| Logical Operators | `AND`, `OR`, `NOT` | Boolean combinators in expressions. |
-| Path / CRD Separators | `/`, `\` | `/` used in `CRD_*` and script paths; `\` often used in HUD/icon paths. |
-| Distribution Prefix | `CRD_NONE`, `CRD_UNIFORM`, `CRD_EXPONENTIAL`, `CRD_NORMAL` | 4-part Continuous Random Distribution: `CRD_TYPE/num1/num2/symmetry`. |
-| Execution Flow | `include`, `run`, `return` | `include` shares caller scope; `run` isolates scope and passes `v_arg1..N`. |
+- **Line Comment**: `rem` - Single-line comment; everything after `rem` is ignored.
+- **Block Comment**: `beginRem` ... `endRem` - Multi-line comment; only supported when executed by engine (not interactive console).
+- **Atlas Comment**: `#` - Used in `.tac` / `.tai` atlas files.
+- **Variable Prefixes**: `var v_name`, `const c_name` - Mutable (`v_`) and immutable (`c_`) Hungarian-style prefixes.
+- **Return Capture**: `-> v_result` - Captures command return value into a variable.
+- **Conditionals / Loops**: `if`, `elseIf`, `else`, `endIf`, `while`, `endWhile` - Standard control flow blocks.
+- **Comparison Operators**: `==`, `!=`, `<`, `<=`, `>`, `>=`, `EQUAL`, `equals`, `notEquals` - Used in `if` / `while` expressions.
+- **Logical Operators**: `AND`, `OR`, `NOT` - Boolean combinators in expressions.
+- **Path / CRD Separators**: `/`, `\` - `/` used in `CRD_*` and script paths; `\` often used in HUD/icon paths.
+- **Distribution Prefix**: `CRD_NONE`, `CRD_UNIFORM`, `CRD_EXPONENTIAL`, `CRD_NORMAL` - 4-part Continuous Random Distribution: `CRD_TYPE/num1/num2/symmetry`.
+- **Execution Flow**: `include`, `run`, `return` - `include` shares caller scope; `run` isolates scope and passes `v_arg1..N`.
 
 ## 2. Command Namespaces (`.con`, `.tweak`, `.inc`)
 
 All 139 namespace prefixes from `Battlefield 2 (Dark).xml`, cross-referenced with documented command counts in `RealityDocs`.
 
-| Namespace / Keyword | Documented Commands | Representative Commands & Argument Types |
-| :--- | :---: | :--- |
-| `rhooks.` | 0 | *(engine/internal command namespace)* |
-| `admin.` | 0 | *(engine/internal command namespace)* |
-| `ai.` | 77 | `ai.createheightmap `, `ai.readheightmapfromfile `, `ai.init ` |
-| `aiPathfinding.` | 36 | `aipathfinding.createmap `, `aipathfinding.activemap `, `aipathfinding.tracemap ` |
-| `aiSettings.` | 60 | `aisettings.setmaxnbots `, `aisettings.setmaxnautocontrollers `, `aisettings.maxbotsincludehumans ` |
-| `aiStrategy.` | 43 | `aistrategy.createstrategy `, `aistrategy.setactivestrategy `, `aistrategy.getactivestrategyname ` |
-| `aiStrategicArea.` | 63 | `aistrategicarea.create `, `aistrategicarea.setflankposition `, `aistrategicarea.createfromcontrolpoint ` |
-| `AIStrategicArea.` | 63 | `aistrategicarea.create `, `aistrategicarea.setflankposition `, `aistrategicarea.createfromcontrolpoint ` |
-| `aiTemplate.` | 10 | `aitemplate.create `, `aitemplate.active `, `aitemplate.types ` |
-| `aiTemplatePlugIn.` | 65 | `aitemplateplugin.create `, `aitemplateplugin.active `, `aitemplateplugin.vehiclenumber ` |
-| `animationBundle.` | 21 | `animationBundle.abruptPlayback <bool>`, `animationBundle.addAnimation <std::string>`, `animationBundle.addEvent <std::string>` |
-| `animationManager.` | 7 | `animationManager.fadeInTime <float>`, `animationManager.ignoreMotherOrientation <int>`, `animationManager.length <float>` |
-| `animationSystem.` | 32 | `animationSystem.activestd::string `, `animationSystem.activeAnimation <std::string>`, `animationSystem.activeBundle <std::string>` |
-| `animationTrigger.` | 13 | `animationTrigger.addBundle <std::string>`, `animationTrigger.addChild <std::string>`, `animationTrigger.clearValueHolder ` |
-| `animationValueHolder.` | 7 | `animationValueHolder.getFilename `, `animationValueHolder.max <float>`, `animationValueHolder.min <float>` |
-| `AudioSettings.` | 15 | `audioSettings.alwaysAllowSystemOpenAL <bool>`, `audioSettings.effectsVolume <float>`, `audioSettings.enableEAX <bool>` |
-| `bf2Engine.` | 1 | `bf2Engine.playMovie <std::string int>` |
-| `BitStream.` | 0 | *(engine/internal command namespace)* |
-| `buffermanager.` | 0 | *(engine/internal command namespace)* |
-| `chat.` | 2 | `chat.sayAll <std::string>`, `chat.sayTeam <std::string>` |
-| `CollisionCheck.` | 1 | `CollisionCheck.checkStaticCollisionMeshes <int>` |
-| `collisionLog.` | 0 | *(engine/internal command namespace)* |
-| `CollisionManager.` | 23 | `collisionManager.buildDebugCollisionMeshes `, `collisionManager.create <std::string>`, `collisionManager.createTemplate <std::string>` |
-| `CombatArea.` | 12 | `combatArea.active <std::string>`, `combatArea.addAreaPoint <Vec2>`, `combatArea.create <std::string>` |
-| `CombatAreaManager.` | 5 | `combatAreaManager.addVehicleDamage <world::VehicleCategory float>`, `combatAreaManager.addVehicleTimer <world::VehicleCategory float>`, `combatAreaManager.damage <float>` |
-| `commander.` | 15 | `commander.accept <bool>`, `commander.artillery `, `commander.commanderApply ` |
-| `commanderInterface.` | 2 | `commanderInterface.selectOrder <std::string>`, `commanderInterface.setstd::stringMap <std::string std::string std::string>` |
-| `commanderMenu.` | 6 | `commanderMenu.deselect `, `commanderMenu.doubleClick `, `commanderMenu.rightClick ` |
-| `config.` | 0 | *(engine/internal command namespace)* |
-| `console.` | 24 | `Console.allowMultipleFileLoad <bool>`, `Console.bindKeyToConsoleScript <int std::string>`, `Console.echo <bool>` |
-| `ControlMap.` | 21 | `controlMap.addAxisToAxisMapping <int InputDeviceFlags InputDeviceAxes>`, `controlMap.addAxisToTriggerMapping <int int InputDeviceFlags>`, `controlMap.addButtonAndKeyToAxisMapping <int InputDeviceFlags InputDeviceButtons>` |
-| `debug.` | 0 | *(engine/internal command namespace)* |
-| `debugCounterManager.` | 0 | *(engine/internal command namespace)* |
-| `decalManager.` | 8 | `decalManager.decalGeomClipAngle <float>`, `decalManager.decalNormalOffset <float>`, `decalManager.drawStats <bool>` |
-| `demo.` | 7 | `demo.recordDemo <std::string>`, `demo.restartDemo `, `demo.shutdownDemo ` |
-| `Editor.` | 46 | `Editor.createNewLayer <std::string>`, `Editor.deleteAllLayers `, `Editor.deleteAllObjects ` |
-| `envmapManager.` | 4 | `envmapManager.generateEnvMaps `, `envmapManager.loadEMIFile <std::string>`, `envmapManager.perPixelEnvironmentMappingEnabled <bool>` |
-| `fileChangeManager.` | 0 | *(engine/internal command namespace)* |
-| `fileManager.` | 6 | `fileManager.addPath <std::string>`, `fileManager.copyFile <std::string std::string>`, `fileManager.deleteFile <std::string>` |
-| `game.` | 8 | `game.allowToggleFullscreen <bool>`, `game.lockFps <int>`, `game.radioMessage <TargetChannel std::string>` |
-| `gameLogic.` | 62 | `gameLogic.AddInvalidDropVehicleObject <std::string bool>`, `gameLogic.becomeSquadLeader <bool>`, `gameLogic.createObject <std::string>` |
-| `GameLogic.` | 62 | `gameLogic.AddInvalidDropVehicleObject <std::string bool>`, `gameLogic.becomeSquadLeader <bool>`, `gameLogic.createObject <std::string>` |
-| `gameServerSettings.` | 50 | `gameServerSettings.setAdminScript <std::string>`, `gameServerSettings.setAllowNATNegotation <bool>`, `gameServerSettings.setAutoBalanceTeam <bool>` |
-| `GeneralSettings.` | 30 | `generalSettings.addFavouriteServer <std::string int std::string>`, `generalSettings.addServerHistory <std::string int std::string>`, `generalSettings.setAllowPunkBuster <bool>` |
-| `GeometryTemplate.` | 43 | `geometryTemplate.active <IGeometryTemplate*>`, `geometryTemplate.color <Vec3>`, `geometryTemplate.compressVertexData <bool>` |
-| `GlobalSettings.` | 2 | `globalSettings.setDefaultUser <std::string>`, `globalSettings.setNamePrefix <std::string>` |
-| `heightmap.` | 7 | `heightmap.loadHeightData <std::string>`, `heightmap.loadMaterialData <std::string>`, `heightmap.setBitResolution <int>` |
-| `heightmapcluster.` | 10 | `heightmapcluster.addHeightmap <std::string int int>`, `heightmapcluster.compileWaterMeshesIntoHeightmap `, `heightmapcluster.create <std::string>` |
-| `hemiMapManager.` | 3 | `hemiMapManager.hemiLerpBias <float>`, `hemiMapManager.makeHemiMap <unsigned long std::string Vec3>`, `hemiMapManager.setBaseHemiMap <std::string Vec3 float>` |
-| `hudBuilder.` | 118 | `hudBuilder.addNodeAlphaShowEffect `, `hudBuilder.addNodeBlendEffect <int int>`, `hudBuilder.addNodeMoveShowEffect <float int>` |
-| `hudItems.` | 3 | `hudItems.setBool <std::string bool>`, `hudItems.setFloat <std::string float>`, `hudItems.setstd::string <std::string std::string>` |
-| `hudManager.` | 30 | `hudManager.addFavouriteServer <bool>`, `hudManager.addTextureAtlas <std::string>`, `hudManager.enableSayAllChatBox <bool>` |
-| `ingameHelp.` | 1 | `ingameHelp.showIngameHelp <std::string float>` |
-| `InputDevices.` | 2 | `InputDevices.setAxisScale <InputDeviceFlags InputDeviceAxes float>`, `InputDevices.setInvertAxis <InputDeviceFlags InputDeviceAxes bool>` |
-| `itemSelection.` | 1 | `itemSelection.setReverseItems <bool>` |
-| `LevelSettings.` | 0 | *(engine/internal command namespace)* |
-| `levelsList.` | 2 | `levelsList.setVoteMapShow <int>`, `levelsList.singleClick <int>` |
-| `lightManager.` | 43 | `lightManager.ambientColor <Vec3>`, `lightManager.defaultEffectLightAffectionFactor <float>`, `lightManager.dynamicPointColor <Vec3>` |
-| `Lightmanager.` | 43 | `lightManager.ambientColor <Vec3>`, `lightManager.defaultEffectLightAffectionFactor <float>`, `lightManager.dynamicPointColor <Vec3>` |
-| `lightmapGeneration.` | 0 | *(engine/internal command namespace)* |
-| `LightmapSettings.` | 0 | *(engine/internal command namespace)* |
-| `LightSettings.` | 0 | *(engine/internal command namespace)* |
-| `localplayer.` | 2 | `localPlayer.commanderSelectDelay <float>`, `localPlayer.firstCommanderSelectDelay <float>` |
-| `localProfile.` | 9 | `localProfile.addDemoBookmark <std::string std::string std::string>`, `localProfile.save `, `localProfile.setEmail <std::string>` |
-| `mapList.` | 10 | `maplist.append <std::string std::string int>`, `maplist.clear `, `maplist.configFile <std::string>` |
-| `MapList.` | 10 | `maplist.append <std::string std::string int>`, `maplist.clear `, `maplist.configFile <std::string>` |
-| `Material.` | 16 | `material.active <unsigned int>`, `material.damageLoss <float>`, `material.elasticity <float>` |
-| `materialManager.` | 7 | `materialManager.attMaterial <unsigned int>`, `materialManager.createCell <unsigned int unsigned int>`, `materialManager.damageMod <float>` |
-| `memory.` | 0 | *(engine/internal command namespace)* |
-| `minimap.` | 12 | `minimap.setCommanderOffset <Vec2>`, `minimap.setCurrOrderList <int>`, `minimap.setDestinationBlend <int>` |
-| `nametags.` | 16 | `nametags.createBar <NametagItemIDs int int>`, `nametags.createIcon <NametagItemIDs>`, `nametags.deathFadeOutTime <float>` |
-| `network.` | 1 | `network.globalPredictionMode <PredictionMode>` |
-| `networkableInfo.` | 6 | `networkableInfo.createNewInfo <std::string>`, `networkableInfo.deleteInfo <std::string>`, `networkableInfo.setBasePriority <float>` |
-| `Object.` | 68 | `object.absolutePosition <Vec3>`, `object.absolutePositionSecondary <Vec3>`, `object.absoluteTransformation <Mat4>` |
-| `object.` | 68 | `object.absolutePosition <Vec3>`, `object.absolutePositionSecondary <Vec3>`, `object.absoluteTransformation <Mat4>` |
-| `objectDrawer.` | 6 | `objectDrawer.collectPlanesDistance <float>`, `objectDrawer.drawDebugPlanes <bool>`, `objectDrawer.faceForwardThreshold <float>` |
-| `objectManager.` | 1 | `objectManager.drawStats <int>` |
-| `ObjectSpawnerDef.` | 0 | *(engine/internal command namespace)* |
-| `objectTemplate.` | 1241 | `objectTemplate.3dMapIcon <int>`, `objectTemplate.ability.hasAmmoAbility <bool>`, `objectTemplate.ability.hasHealingAbility <bool>` |
-| `ObjectTemplate.` | 1241 | `objectTemplate.3dMapIcon <int>`, `objectTemplate.ability.hasAmmoAbility <bool>`, `objectTemplate.ability.hasHealingAbility <bool>` |
-| `Overgrowth.` | 26 | `overgrowth.addMaterial <std::string uint>`, `overgrowth.addType <std::string>`, `overgrowth.closeDistFade <float>` |
-| `OvergrowthType.` | 7 | `overgrowthType.density <float>`, `overgrowthType.geometry <std::string>`, `overgrowthType.minRadiusToOthers <float>` |
-| `Particles.` | 2 | `Particles.enableOldParticles <bool>`, `Particles.enableParticles <bool>` |
-| `particleSystemManager.` | 11 | `particleSystemManager.affectedByWind <bool>`, `particleSystemManager.drawBoundingBoxEnable <bool>`, `particleSystemManager.drawStats <bool>` |
-| `physics.` | 4 | `physics.airDensityZeroAtHeight <float>`, `physics.gravity <float>`, `physics.listProperties ` |
-| `player.` | 17 | `Player.active <IPlayer*>`, `Player.create <std::string std::string>`, `player.isAi <bool>` |
-| `portal.` | 2 | `portal.debugLevel <int>`, `portal.showStats <bool>` |
-| `profile.` | 17 | `profile.activateCharacterProfile <std::string>`, `profile.activatePlayerProfile <std::string>`, `profile.activeCharacterProfile <std::string>` |
-| `profiler.` | 0 | *(engine/internal command namespace)* |
-| `pythonHost.` | 2 | `pythonHost.reinitialize `, `pythonHost.sendCommand <std::string std::string std::string>` |
-| `radio.` | 7 | `radio.answer <bool>`, `radio.callForAmmo `, `radio.callForMedic ` |
-| `radioInterface.` | 2 | `radioInterface.selectOrder <std::string>`, `radioInterface.setstd::stringMap <std::string std::string std::string>` |
-| `radioVehicleInterface.` | 2 | `radioVehicleInterface.selectOrder <std::string>`, `radioVehicleInterface.setstd::stringMap <std::string std::string std::string>` |
-| `ragDoll.` | 20 | `ragDoll.active <bool>`, `ragDoll.addAngularConstraint <int int int>`, `ragDoll.addBone <int int>` |
-| `rainManager.` | 0 | *(engine/internal command namespace)* |
-| `raStats.` | 0 | *(engine/internal command namespace)* |
-| `Renderer.` | 109 | `renderer.allowA2M <bool>`, `renderer.allowOnDemandPostProcessing <bool>`, `renderer.ambientIlluminationRange <Vec4>` |
-| `renderer.` | 109 | `renderer.allowA2M <bool>`, `renderer.allowOnDemandPostProcessing <bool>`, `renderer.ambientIlluminationRange <Vec4>` |
-| `reservedSlots.` | 7 | `reservedSlots.addNick <std::string>`, `reservedSlots.clear `, `reservedSlots.configFile <std::string>` |
-| `resourceManager.` | 0 | *(engine/internal command namespace)* |
-| `RoadTemplate.` | 0 | *(engine/internal command namespace)* |
-| `RoadTemplateTexture.` | 0 | *(engine/internal command namespace)* |
-| `scoreboard.` | 2 | `scoreboard.setToggleShow <int>`, `scoreboard.singleClick <int>` |
-| `scoreManager.` | 22 | `scoreManager.ammo <int>`, `scoreManager.ammoScoreLimit <float>`, `scoreManager.assistKill <int>` |
-| `SettingsManager.` | 10 | `SettingsManager.boolGet <std::string>`, `SettingsManager.boolSet <std::string bool>`, `SettingsManager.floatGet <std::string>` |
-| `shadermanager.` | 11 | `shadermanager.byPassDiceStates <bool>`, `shadermanager.compileDebugTerrain <bool>`, `shadermanager.compilePartialPrecisionTypes <bool>` |
-| `shadowManager.` | 41 | `shadowManager.allowAlphaShadows <bool>`, `shadowManager.alphaShadowThreshold <float>`, `shadowManager.dropShadowClipHeightOffset <float>` |
-| `skinnedMeshRenderer.` | 1 | `skinnedMeshRenderer.shaderQuality <ShaderQuality>` |
-| `skyDome.` | 21 | `skyDome.cloudLerpFactors <Vec2>`, `skyDome.cloudTemplate <std::string>`, `skyDome.cloudTexture <std::string>` |
-| `Skydome.` | 21 | `skyDome.cloudLerpFactors <Vec2>`, `skyDome.cloudTemplate <std::string>`, `skyDome.cloudTexture <std::string>` |
-| `Sound.` | 26 | `sound.addMenuSound <std::string std::string float>`, `sound.addSound <std::string>`, `sound.addTrigger <std::string>` |
-| `sound.` | 26 | `sound.addMenuSound <std::string std::string float>`, `sound.addSound <std::string>`, `sound.addTrigger <std::string>` |
-| `spawnManager.` | 6 | `spawnManager.commitSuicide `, `spawnManager.listSpawnGroups `, `spawnManager.selectNextUnlock <int>` |
-| `squad.` | 1 | `squad.leaveSquad ` |
-| `squadInterface.` | 2 | `squadInterface.selectOrder <std::string>`, `squadInterface.setstd::stringMap <std::string std::string std::string>` |
-| `squadLeader.` | 3 | `squadLeader.sendOrder <int bool>`, `squadLeader.sendRequest <int bool>`, `squadLeader.sendRequestForOrder ` |
-| `squadLeaderInterface.` | 2 | `squadLeaderInterface.selectOrder <std::string>`, `squadLeaderInterface.setstd::stringMap <std::string std::string std::string>` |
-| `squadManager.` | 7 | `squadManager.changeSquadName <std::string bool>`, `squadManager.joinSquad <int>`, `squadManager.leaveSquad <int>` |
-| `squadMenu.` | 10 | `squadMenu.applyInviteList `, `squadMenu.createSquad `, `squadMenu.doubleClickInvite ` |
-| `staticMeshRenderer.` | 12 | `staticMeshRenderer.allowAnisoFiltering <bool>`, `staticMeshRenderer.convertLightmapName <std::string>`, `staticMeshRenderer.enableLightIndexes <bool>` |
-| `sv.` | 72 | `sv.adminScript <std::string>`, `sv.allowExternalViews <bool>`, `sv.allowFreeCam <bool>` |
-| `swiffHost.` | 10 | `swiffHost.addAward <int int int>`, `swiffHost.addCredit <std::string int>`, `swiffHost.addGameMode <std::string std::string>` |
-| `terrain.` | 23 | `terrain.ambientColor <Vec3>`, `terrain.create <std::string>`, `terrain.forceRenderStyle <int>` |
-| `terrainCuller.` | 12 | `terrainCuller.baseCellSize <int>`, `terrainCuller.checkInside <bool>`, `terrainCuller.cullerType <int>` |
-| `texturemanager.` | 1 | `texturemanager.customTextureSuffix <std::string>` |
-| `triggerManager.` | 0 | *(engine/internal command namespace)* |
-| `Undergrowth.` | 10 | `undergrowth.dynamicShadowsEnable <bool>`, `undergrowth.enabled <bool>`, `undergrowth.load <std::string>` |
-| `undergrowthEditable.` | 0 | *(engine/internal command namespace)* |
-| `UndergrowthEditable.` | 0 | *(engine/internal command namespace)* |
-| `undergrowthEditableMaterial.` | 0 | *(engine/internal command namespace)* |
-| `undergrowthEditableType.` | 0 | *(engine/internal command namespace)* |
-| `Vars.` | 1 | `Vars.set <std::string std::string>` |
-| `vars.` | 1 | `Vars.set <std::string std::string>` |
-| `VideoSettings.` | 12 | `videoSettings.setAntialiasing <std::string>`, `videoSettings.setDynamicLightingQuality <int>`, `videoSettings.setDynamicShadowsQuality <int>` |
-| `voip.` | 0 | *(engine/internal command namespace)* |
-| `weatherManager.` | 20 | `weatherManager.doubleStrikeMaxDelay <float>`, `weatherManager.doubleStrikeMinDelay <float>`, `weatherManager.doubleStrikeProbability <float>` |
-| `windManager.` | 2 | `windManager.globalWindDirection <Vec3>`, `windManager.globalWindSpeed <float>` |
+- **`rhooks.`** (0 documented): *(engine/internal command namespace)*
+- **`admin.`** (0 documented): *(engine/internal command namespace)*
+- **`ai.`** (77 documented): `ai.createheightmap `, `ai.readheightmapfromfile `, `ai.init `
+- **`aiPathfinding.`** (36 documented): `aipathfinding.createmap `, `aipathfinding.activemap `, `aipathfinding.tracemap `
+- **`aiSettings.`** (60 documented): `aisettings.setmaxnbots `, `aisettings.setmaxnautocontrollers `, `aisettings.maxbotsincludehumans `
+- **`aiStrategy.`** (43 documented): `aistrategy.createstrategy `, `aistrategy.setactivestrategy `, `aistrategy.getactivestrategyname `
+- **`aiStrategicArea.`** (63 documented): `aistrategicarea.create `, `aistrategicarea.setflankposition `, `aistrategicarea.createfromcontrolpoint `
+- **`AIStrategicArea.`** (63 documented): `aistrategicarea.create `, `aistrategicarea.setflankposition `, `aistrategicarea.createfromcontrolpoint `
+- **`aiTemplate.`** (10 documented): `aitemplate.create `, `aitemplate.active `, `aitemplate.types `
+- **`aiTemplatePlugIn.`** (65 documented): `aitemplateplugin.create `, `aitemplateplugin.active `, `aitemplateplugin.vehiclenumber `
+- **`animationBundle.`** (21 documented): `animationBundle.abruptPlayback <bool>`, `animationBundle.addAnimation <std::string>`, `animationBundle.addEvent <std::string>`
+- **`animationManager.`** (7 documented): `animationManager.fadeInTime <float>`, `animationManager.ignoreMotherOrientation <int>`, `animationManager.length <float>`
+- **`animationSystem.`** (32 documented): `animationSystem.activestd::string `, `animationSystem.activeAnimation <std::string>`, `animationSystem.activeBundle <std::string>`
+- **`animationTrigger.`** (13 documented): `animationTrigger.addBundle <std::string>`, `animationTrigger.addChild <std::string>`, `animationTrigger.clearValueHolder `
+- **`animationValueHolder.`** (7 documented): `animationValueHolder.getFilename `, `animationValueHolder.max <float>`, `animationValueHolder.min <float>`
+- **`AudioSettings.`** (15 documented): `audioSettings.alwaysAllowSystemOpenAL <bool>`, `audioSettings.effectsVolume <float>`, `audioSettings.enableEAX <bool>`
+- **`bf2Engine.`** (1 documented): `bf2Engine.playMovie <std::string int>`
+- **`BitStream.`** (0 documented): *(engine/internal command namespace)*
+- **`buffermanager.`** (0 documented): *(engine/internal command namespace)*
+- **`chat.`** (2 documented): `chat.sayAll <std::string>`, `chat.sayTeam <std::string>`
+- **`CollisionCheck.`** (1 documented): `CollisionCheck.checkStaticCollisionMeshes <int>`
+- **`collisionLog.`** (0 documented): *(engine/internal command namespace)*
+- **`CollisionManager.`** (23 documented): `collisionManager.buildDebugCollisionMeshes `, `collisionManager.create <std::string>`, `collisionManager.createTemplate <std::string>`
+- **`CombatArea.`** (12 documented): `combatArea.active <std::string>`, `combatArea.addAreaPoint <Vec2>`, `combatArea.create <std::string>`
+- **`CombatAreaManager.`** (5 documented): `combatAreaManager.addVehicleDamage <world::VehicleCategory float>`, `combatAreaManager.addVehicleTimer <world::VehicleCategory float>`, `combatAreaManager.damage <float>`
+- **`commander.`** (15 documented): `commander.accept <bool>`, `commander.artillery `, `commander.commanderApply `
+- **`commanderInterface.`** (2 documented): `commanderInterface.selectOrder <std::string>`, `commanderInterface.setstd::stringMap <std::string std::string std::string>`
+- **`commanderMenu.`** (6 documented): `commanderMenu.deselect `, `commanderMenu.doubleClick `, `commanderMenu.rightClick `
+- **`config.`** (0 documented): *(engine/internal command namespace)*
+- **`console.`** (24 documented): `Console.allowMultipleFileLoad <bool>`, `Console.bindKeyToConsoleScript <int std::string>`, `Console.echo <bool>`
+- **`ControlMap.`** (21 documented): `controlMap.addAxisToAxisMapping <int InputDeviceFlags InputDeviceAxes>`, `controlMap.addAxisToTriggerMapping <int int InputDeviceFlags>`, `controlMap.addButtonAndKeyToAxisMapping <int InputDeviceFlags InputDeviceButtons>`
+- **`debug.`** (0 documented): *(engine/internal command namespace)*
+- **`debugCounterManager.`** (0 documented): *(engine/internal command namespace)*
+- **`decalManager.`** (8 documented): `decalManager.decalGeomClipAngle <float>`, `decalManager.decalNormalOffset <float>`, `decalManager.drawStats <bool>`
+- **`demo.`** (7 documented): `demo.recordDemo <std::string>`, `demo.restartDemo `, `demo.shutdownDemo `
+- **`Editor.`** (46 documented): `Editor.createNewLayer <std::string>`, `Editor.deleteAllLayers `, `Editor.deleteAllObjects `
+- **`envmapManager.`** (4 documented): `envmapManager.generateEnvMaps `, `envmapManager.loadEMIFile <std::string>`, `envmapManager.perPixelEnvironmentMappingEnabled <bool>`
+- **`fileChangeManager.`** (0 documented): *(engine/internal command namespace)*
+- **`fileManager.`** (6 documented): `fileManager.addPath <std::string>`, `fileManager.copyFile <std::string std::string>`, `fileManager.deleteFile <std::string>`
+- **`game.`** (8 documented): `game.allowToggleFullscreen <bool>`, `game.lockFps <int>`, `game.radioMessage <TargetChannel std::string>`
+- **`gameLogic.`** (62 documented): `gameLogic.AddInvalidDropVehicleObject <std::string bool>`, `gameLogic.becomeSquadLeader <bool>`, `gameLogic.createObject <std::string>`
+- **`GameLogic.`** (62 documented): `gameLogic.AddInvalidDropVehicleObject <std::string bool>`, `gameLogic.becomeSquadLeader <bool>`, `gameLogic.createObject <std::string>`
+- **`gameServerSettings.`** (50 documented): `gameServerSettings.setAdminScript <std::string>`, `gameServerSettings.setAllowNATNegotation <bool>`, `gameServerSettings.setAutoBalanceTeam <bool>`
+- **`GeneralSettings.`** (30 documented): `generalSettings.addFavouriteServer <std::string int std::string>`, `generalSettings.addServerHistory <std::string int std::string>`, `generalSettings.setAllowPunkBuster <bool>`
+- **`GeometryTemplate.`** (43 documented): `geometryTemplate.active <IGeometryTemplate*>`, `geometryTemplate.color <Vec3>`, `geometryTemplate.compressVertexData <bool>`
+- **`GlobalSettings.`** (2 documented): `globalSettings.setDefaultUser <std::string>`, `globalSettings.setNamePrefix <std::string>`
+- **`heightmap.`** (7 documented): `heightmap.loadHeightData <std::string>`, `heightmap.loadMaterialData <std::string>`, `heightmap.setBitResolution <int>`
+- **`heightmapcluster.`** (10 documented): `heightmapcluster.addHeightmap <std::string int int>`, `heightmapcluster.compileWaterMeshesIntoHeightmap `, `heightmapcluster.create <std::string>`
+- **`hemiMapManager.`** (3 documented): `hemiMapManager.hemiLerpBias <float>`, `hemiMapManager.makeHemiMap <unsigned long std::string Vec3>`, `hemiMapManager.setBaseHemiMap <std::string Vec3 float>`
+- **`hudBuilder.`** (118 documented): `hudBuilder.addNodeAlphaShowEffect `, `hudBuilder.addNodeBlendEffect <int int>`, `hudBuilder.addNodeMoveShowEffect <float int>`
+- **`hudItems.`** (3 documented): `hudItems.setBool <std::string bool>`, `hudItems.setFloat <std::string float>`, `hudItems.setstd::string <std::string std::string>`
+- **`hudManager.`** (30 documented): `hudManager.addFavouriteServer <bool>`, `hudManager.addTextureAtlas <std::string>`, `hudManager.enableSayAllChatBox <bool>`
+- **`ingameHelp.`** (1 documented): `ingameHelp.showIngameHelp <std::string float>`
+- **`InputDevices.`** (2 documented): `InputDevices.setAxisScale <InputDeviceFlags InputDeviceAxes float>`, `InputDevices.setInvertAxis <InputDeviceFlags InputDeviceAxes bool>`
+- **`itemSelection.`** (1 documented): `itemSelection.setReverseItems <bool>`
+- **`LevelSettings.`** (0 documented): *(engine/internal command namespace)*
+- **`levelsList.`** (2 documented): `levelsList.setVoteMapShow <int>`, `levelsList.singleClick <int>`
+- **`lightManager.`** (43 documented): `lightManager.ambientColor <Vec3>`, `lightManager.defaultEffectLightAffectionFactor <float>`, `lightManager.dynamicPointColor <Vec3>`
+- **`Lightmanager.`** (43 documented): `lightManager.ambientColor <Vec3>`, `lightManager.defaultEffectLightAffectionFactor <float>`, `lightManager.dynamicPointColor <Vec3>`
+- **`lightmapGeneration.`** (0 documented): *(engine/internal command namespace)*
+- **`LightmapSettings.`** (0 documented): *(engine/internal command namespace)*
+- **`LightSettings.`** (0 documented): *(engine/internal command namespace)*
+- **`localplayer.`** (2 documented): `localPlayer.commanderSelectDelay <float>`, `localPlayer.firstCommanderSelectDelay <float>`
+- **`localProfile.`** (9 documented): `localProfile.addDemoBookmark <std::string std::string std::string>`, `localProfile.save `, `localProfile.setEmail <std::string>`
+- **`mapList.`** (10 documented): `maplist.append <std::string std::string int>`, `maplist.clear `, `maplist.configFile <std::string>`
+- **`MapList.`** (10 documented): `maplist.append <std::string std::string int>`, `maplist.clear `, `maplist.configFile <std::string>`
+- **`Material.`** (16 documented): `material.active <unsigned int>`, `material.damageLoss <float>`, `material.elasticity <float>`
+- **`materialManager.`** (7 documented): `materialManager.attMaterial <unsigned int>`, `materialManager.createCell <unsigned int unsigned int>`, `materialManager.damageMod <float>`
+- **`memory.`** (0 documented): *(engine/internal command namespace)*
+- **`minimap.`** (12 documented): `minimap.setCommanderOffset <Vec2>`, `minimap.setCurrOrderList <int>`, `minimap.setDestinationBlend <int>`
+- **`nametags.`** (16 documented): `nametags.createBar <NametagItemIDs int int>`, `nametags.createIcon <NametagItemIDs>`, `nametags.deathFadeOutTime <float>`
+- **`network.`** (1 documented): `network.globalPredictionMode <PredictionMode>`
+- **`networkableInfo.`** (6 documented): `networkableInfo.createNewInfo <std::string>`, `networkableInfo.deleteInfo <std::string>`, `networkableInfo.setBasePriority <float>`
+- **`Object.`** (68 documented): `object.absolutePosition <Vec3>`, `object.absolutePositionSecondary <Vec3>`, `object.absoluteTransformation <Mat4>`
+- **`object.`** (68 documented): `object.absolutePosition <Vec3>`, `object.absolutePositionSecondary <Vec3>`, `object.absoluteTransformation <Mat4>`
+- **`objectDrawer.`** (6 documented): `objectDrawer.collectPlanesDistance <float>`, `objectDrawer.drawDebugPlanes <bool>`, `objectDrawer.faceForwardThreshold <float>`
+- **`objectManager.`** (1 documented): `objectManager.drawStats <int>`
+- **`ObjectSpawnerDef.`** (0 documented): *(engine/internal command namespace)*
+- **`objectTemplate.`** (1241 documented): `objectTemplate.3dMapIcon <int>`, `objectTemplate.ability.hasAmmoAbility <bool>`, `objectTemplate.ability.hasHealingAbility <bool>`
+- **`ObjectTemplate.`** (1241 documented): `objectTemplate.3dMapIcon <int>`, `objectTemplate.ability.hasAmmoAbility <bool>`, `objectTemplate.ability.hasHealingAbility <bool>`
+- **`Overgrowth.`** (26 documented): `overgrowth.addMaterial <std::string uint>`, `overgrowth.addType <std::string>`, `overgrowth.closeDistFade <float>`
+- **`OvergrowthType.`** (7 documented): `overgrowthType.density <float>`, `overgrowthType.geometry <std::string>`, `overgrowthType.minRadiusToOthers <float>`
+- **`Particles.`** (2 documented): `Particles.enableOldParticles <bool>`, `Particles.enableParticles <bool>`
+- **`particleSystemManager.`** (11 documented): `particleSystemManager.affectedByWind <bool>`, `particleSystemManager.drawBoundingBoxEnable <bool>`, `particleSystemManager.drawStats <bool>`
+- **`physics.`** (4 documented): `physics.airDensityZeroAtHeight <float>`, `physics.gravity <float>`, `physics.listProperties `
+- **`player.`** (17 documented): `Player.active <IPlayer*>`, `Player.create <std::string std::string>`, `player.isAi <bool>`
+- **`portal.`** (2 documented): `portal.debugLevel <int>`, `portal.showStats <bool>`
+- **`profile.`** (17 documented): `profile.activateCharacterProfile <std::string>`, `profile.activatePlayerProfile <std::string>`, `profile.activeCharacterProfile <std::string>`
+- **`profiler.`** (0 documented): *(engine/internal command namespace)*
+- **`pythonHost.`** (2 documented): `pythonHost.reinitialize `, `pythonHost.sendCommand <std::string std::string std::string>`
+- **`radio.`** (7 documented): `radio.answer <bool>`, `radio.callForAmmo `, `radio.callForMedic `
+- **`radioInterface.`** (2 documented): `radioInterface.selectOrder <std::string>`, `radioInterface.setstd::stringMap <std::string std::string std::string>`
+- **`radioVehicleInterface.`** (2 documented): `radioVehicleInterface.selectOrder <std::string>`, `radioVehicleInterface.setstd::stringMap <std::string std::string std::string>`
+- **`ragDoll.`** (20 documented): `ragDoll.active <bool>`, `ragDoll.addAngularConstraint <int int int>`, `ragDoll.addBone <int int>`
+- **`rainManager.`** (0 documented): *(engine/internal command namespace)*
+- **`raStats.`** (0 documented): *(engine/internal command namespace)*
+- **`Renderer.`** (109 documented): `renderer.allowA2M <bool>`, `renderer.allowOnDemandPostProcessing <bool>`, `renderer.ambientIlluminationRange <Vec4>`
+- **`renderer.`** (109 documented): `renderer.allowA2M <bool>`, `renderer.allowOnDemandPostProcessing <bool>`, `renderer.ambientIlluminationRange <Vec4>`
+- **`reservedSlots.`** (7 documented): `reservedSlots.addNick <std::string>`, `reservedSlots.clear `, `reservedSlots.configFile <std::string>`
+- **`resourceManager.`** (0 documented): *(engine/internal command namespace)*
+- **`RoadTemplate.`** (0 documented): *(engine/internal command namespace)*
+- **`RoadTemplateTexture.`** (0 documented): *(engine/internal command namespace)*
+- **`scoreboard.`** (2 documented): `scoreboard.setToggleShow <int>`, `scoreboard.singleClick <int>`
+- **`scoreManager.`** (22 documented): `scoreManager.ammo <int>`, `scoreManager.ammoScoreLimit <float>`, `scoreManager.assistKill <int>`
+- **`SettingsManager.`** (10 documented): `SettingsManager.boolGet <std::string>`, `SettingsManager.boolSet <std::string bool>`, `SettingsManager.floatGet <std::string>`
+- **`shadermanager.`** (11 documented): `shadermanager.byPassDiceStates <bool>`, `shadermanager.compileDebugTerrain <bool>`, `shadermanager.compilePartialPrecisionTypes <bool>`
+- **`shadowManager.`** (41 documented): `shadowManager.allowAlphaShadows <bool>`, `shadowManager.alphaShadowThreshold <float>`, `shadowManager.dropShadowClipHeightOffset <float>`
+- **`skinnedMeshRenderer.`** (1 documented): `skinnedMeshRenderer.shaderQuality <ShaderQuality>`
+- **`skyDome.`** (21 documented): `skyDome.cloudLerpFactors <Vec2>`, `skyDome.cloudTemplate <std::string>`, `skyDome.cloudTexture <std::string>`
+- **`Skydome.`** (21 documented): `skyDome.cloudLerpFactors <Vec2>`, `skyDome.cloudTemplate <std::string>`, `skyDome.cloudTexture <std::string>`
+- **`Sound.`** (26 documented): `sound.addMenuSound <std::string std::string float>`, `sound.addSound <std::string>`, `sound.addTrigger <std::string>`
+- **`sound.`** (26 documented): `sound.addMenuSound <std::string std::string float>`, `sound.addSound <std::string>`, `sound.addTrigger <std::string>`
+- **`spawnManager.`** (6 documented): `spawnManager.commitSuicide `, `spawnManager.listSpawnGroups `, `spawnManager.selectNextUnlock <int>`
+- **`squad.`** (1 documented): `squad.leaveSquad `
+- **`squadInterface.`** (2 documented): `squadInterface.selectOrder <std::string>`, `squadInterface.setstd::stringMap <std::string std::string std::string>`
+- **`squadLeader.`** (3 documented): `squadLeader.sendOrder <int bool>`, `squadLeader.sendRequest <int bool>`, `squadLeader.sendRequestForOrder `
+- **`squadLeaderInterface.`** (2 documented): `squadLeaderInterface.selectOrder <std::string>`, `squadLeaderInterface.setstd::stringMap <std::string std::string std::string>`
+- **`squadManager.`** (7 documented): `squadManager.changeSquadName <std::string bool>`, `squadManager.joinSquad <int>`, `squadManager.leaveSquad <int>`
+- **`squadMenu.`** (10 documented): `squadMenu.applyInviteList `, `squadMenu.createSquad `, `squadMenu.doubleClickInvite `
+- **`staticMeshRenderer.`** (12 documented): `staticMeshRenderer.allowAnisoFiltering <bool>`, `staticMeshRenderer.convertLightmapName <std::string>`, `staticMeshRenderer.enableLightIndexes <bool>`
+- **`sv.`** (72 documented): `sv.adminScript <std::string>`, `sv.allowExternalViews <bool>`, `sv.allowFreeCam <bool>`
+- **`swiffHost.`** (10 documented): `swiffHost.addAward <int int int>`, `swiffHost.addCredit <std::string int>`, `swiffHost.addGameMode <std::string std::string>`
+- **`terrain.`** (23 documented): `terrain.ambientColor <Vec3>`, `terrain.create <std::string>`, `terrain.forceRenderStyle <int>`
+- **`terrainCuller.`** (12 documented): `terrainCuller.baseCellSize <int>`, `terrainCuller.checkInside <bool>`, `terrainCuller.cullerType <int>`
+- **`texturemanager.`** (1 documented): `texturemanager.customTextureSuffix <std::string>`
+- **`triggerManager.`** (0 documented): *(engine/internal command namespace)*
+- **`Undergrowth.`** (10 documented): `undergrowth.dynamicShadowsEnable <bool>`, `undergrowth.enabled <bool>`, `undergrowth.load <std::string>`
+- **`undergrowthEditable.`** (0 documented): *(engine/internal command namespace)*
+- **`UndergrowthEditable.`** (0 documented): *(engine/internal command namespace)*
+- **`undergrowthEditableMaterial.`** (0 documented): *(engine/internal command namespace)*
+- **`undergrowthEditableType.`** (0 documented): *(engine/internal command namespace)*
+- **`Vars.`** (1 documented): `Vars.set <std::string std::string>`
+- **`vars.`** (1 documented): `Vars.set <std::string std::string>`
+- **`VideoSettings.`** (12 documented): `videoSettings.setAntialiasing <std::string>`, `videoSettings.setDynamicLightingQuality <int>`, `videoSettings.setDynamicShadowsQuality <int>`
+- **`voip.`** (0 documented): *(engine/internal command namespace)*
+- **`weatherManager.`** (20 documented): `weatherManager.doubleStrikeMaxDelay <float>`, `weatherManager.doubleStrikeMinDelay <float>`, `weatherManager.doubleStrikeProbability <float>`
+- **`windManager.`** (2 documented): `windManager.globalWindDirection <Vec3>`, `windManager.globalWindSpeed <float>`
 
 ## 3. Template Components (`rem ---BeginComp:<Name>---` / `ObjectTemplate.createComponent`)
 
