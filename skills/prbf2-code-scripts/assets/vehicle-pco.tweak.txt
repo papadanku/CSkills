@@ -1,0 +1,39 @@
+rem ============================================================================
+rem PR:BF2 .tweak Template: Vehicle PCO, Sub-Templates, HUD, and Networkables
+rem Role: Configures VehicleHud, Armor, NetworkableInfo, Camera, and Turret.
+rem ============================================================================
+
+ObjectTemplate.activeSafe PlayerControlObject pr_vehicle_example
+ObjectTemplate.setNetworkableInfo BasicInfo
+ObjectTemplate.aiTemplate pr_apc_example_ai
+
+rem ---BeginComp:VehicleHud ---
+ObjectTemplate.createComponent VehicleHud
+ObjectTemplate.vehicleHud.hudName "Example Vehicle"
+ObjectTemplate.vehicleHud.guiIndex 45100
+ObjectTemplate.vehicleHud.hasTurretIcon 1
+rem ---EndComp ---
+
+rem ---BeginComp:Armor ---
+ObjectTemplate.createComponent Armor
+ObjectTemplate.armor.maxHitPoints 1000
+ObjectTemplate.armor.hitPoints 1000
+ObjectTemplate.armor.defaultMaterial 30
+rem ---EndComp ---
+
+ObjectTemplate.addTemplate pr_vehicle_example_DriverCam
+ObjectTemplate.setPosition 0/0.9/0.5
+
+ObjectTemplate.create Camera pr_vehicle_example_DriverCam
+ObjectTemplate.worldFOV 1.1
+ObjectTemplate.insideFOV 1.1
+ObjectTemplate.cameraShakeStartSpeed 15
+
+rem --- Switch active context to Turret sub-template ---
+ObjectTemplate.activeSafe RotationalBundle pr_vehicle_example_Turret
+ObjectTemplate.setNetworkableInfo BasicInfo
+ObjectTemplate.setMinRotation 0/-15/0
+ObjectTemplate.setMaxRotation 0/45/0
+ObjectTemplate.setMaxSpeed 45/30/0
+ObjectTemplate.setInputToYaw PIMouseLookX
+ObjectTemplate.setInputToPitch PIMouseLookY

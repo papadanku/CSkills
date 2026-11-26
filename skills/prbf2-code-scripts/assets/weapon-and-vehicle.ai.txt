@@ -1,0 +1,51 @@
+rem ============================================================================
+rem PR:BF2 .ai Template: Weapon & Vehicle AI Definitions
+rem Role: Defines weaponTemplate (for GenericFireArm) and aiTemplate/PlugIns
+rem       (for PlayerControlObject / vehicles / units).
+rem ============================================================================
+
+rem --- Part 1: Weapon AI (typically in ai/Weapons.ai or *_weapons.ai) ---
+weaponTemplate.create pr_rifle_example_ai
+weaponTemplate.indirect 0
+weaponTemplate.minRange 0.0
+weaponTemplate.maxRange 150.0
+weaponTemplate.weaponActivate PINone
+weaponTemplate.weaponFire PIFire
+weaponTemplate.setStrength Infantry     80.0
+weaponTemplate.setStrength LightArmour  5.0
+weaponTemplate.setStrength HeavyArmour  0.0
+weaponTemplate.setStrength NavalArmour  0.0
+weaponTemplate.setStrength Helicopter   5.0
+weaponTemplate.setStrength AirPlane     0.0
+weaponTemplate.allowedDeviation 1.5
+weaponTemplate.setSoundSphereRadius 200.0
+weaponTemplate.setFiresThroughTransparent 1
+
+rem --- Part 2: Vehicle / Unit AI (typically in ai/Objects.ai) ---
+aiTemplatePlugIn.create Unit pr_apc_example_Unit
+aiTemplatePlugIn.equipmentTypeName Armament
+aiTemplatePlugIn.setStrategicStrength 0 1.0
+aiTemplatePlugIn.setStrategicStrength 1 1.0
+aiTemplatePlugIn.setBattleStrength Infantry     4.0
+aiTemplatePlugIn.setBattleStrength LightArmour  3.0
+aiTemplatePlugIn.setBattleStrength HeavyArmour  0.5
+aiTemplatePlugIn.setStrType VTApc
+aiTemplatePlugIn.setHasExposedSoldier 0
+
+aiTemplatePlugIn.create ControlInfo pr_apc_example_Ctrl
+aiTemplatePlugIn.driveThrottleControl PIThrottle
+aiTemplatePlugIn.driveTurnControl PIYaw
+aiTemplatePlugIn.aimHorizontalControl PIMouseLookX
+aiTemplatePlugIn.aimVerticalControl PIMouseLookY
+
+aiTemplate.create pr_apc_example_ai
+aiTemplate.addType ITUnit
+aiTemplate.addType ITGround
+aiTemplate.addType ITMobile
+aiTemplate.addType ITHasWreck
+aiTemplate.degeneration 5.0
+aiTemplate.allowedTimeDiff 2.0
+aiTemplate.basicTemp 5.0
+aiTemplate.commonKnowledge 1
+aiTemplate.addPlugIn pr_apc_example_Unit
+aiTemplate.addPlugIn pr_apc_example_Ctrl

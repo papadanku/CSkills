@@ -1,0 +1,37 @@
+rem ============================================================================
+rem PR:BF2 .con Template: Static Building & Destructible Object
+rem Role: Defines StaticMesh/BundledMesh geometry, collision, and loads .tweak.
+rem       Paths are relative to the mod's virtual archives (objects_server.zip /
+rem       objects_common_server.zip).
+rem ============================================================================
+
+rem --- Variant A: Standard Static Building (SimpleObject + StaticMesh) ---
+GeometryTemplate.create StaticMesh pr_building_example
+CollisionManager.createTemplate pr_building_example
+
+ObjectTemplate.create SimpleObject pr_building_example
+ObjectTemplate.saveInSeparateFile 1
+ObjectTemplate.creator modder
+ObjectTemplate.collisionMesh pr_building_example
+ObjectTemplate.mapMaterial 0 concrete 0
+ObjectTemplate.hasCollisionPhysics 1
+ObjectTemplate.physicsType 3
+ObjectTemplate.geometry pr_building_example
+
+include pr_building_example.tweak
+
+rem --- Variant B: Destructible Prop / Deployable (PlayerControlObject) ---
+GeometryTemplate.create BundledMesh pr_destructible_example
+CollisionManager.createTemplate pr_destructible_example
+
+ObjectTemplate.create PlayerControlObject pr_destructible_example
+ObjectTemplate.saveInSeparateFile 1
+ObjectTemplate.creator modder
+ObjectTemplate.collisionMesh pr_destructible_example
+ObjectTemplate.mapMaterial 0 Wood 0
+ObjectTemplate.mapMaterial 1 Metal 0
+ObjectTemplate.hasCollisionPhysics 1
+ObjectTemplate.physicsType 3
+ObjectTemplate.geometry pr_destructible_example
+
+include pr_destructible_example.tweak
