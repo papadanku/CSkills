@@ -25,14 +25,14 @@ Grounded in PR:BF2 `.con` grammar conventions, console object specifications, an
 - **Block comment**: `beginRem` ... `endRem` (multi-line; works when parsed by the engine from files, **not** in the interactive in-game console).
 - **Statement**: `Namespace.method arg1 "arg with spaces"`. Quote any string argument containing spaces.
 - **Variables**:
-  - Mutable: `var v_name = value`
-  - Constant: `const c_name = value`
-  - Return capture: `fileManager.fileExists movies/menu.bik -> v_tst`
+    - Mutable: `var v_name = value`
+    - Constant: `const c_name = value`
+    - Return capture: `fileManager.fileExists movies/menu.bik -> v_tst`
 - **Conditionals & Loops**:
-  - `if <expr>` / `elseIf <expr>` / `else` / `endIf`
-  - `while <expr>` / `endWhile`
-  - Expressions: `<var> <op> <value>` where `<op>` is `==`, `!=`, `<`, `<=`, `>`, `>=`, `equals`, `notEquals`, combined with `AND`, `OR`, `NOT`.
-  - **Editor vs Runtime Branching**: Level scripts (`init.con`, `terrain.con`) commonly use `if v_arg1 == BF2Editor` to load editable terrain/overgrowth in the editor and compiled `.raw`/collision data at runtime.
+    - `if <expr>` / `elseIf <expr>` / `else` / `endIf`
+    - `while <expr>` / `endWhile`
+    - Expressions: `<var> <op> <value>` where `<op>` is `==`, `!=`, `<`, `<=`, `>`, `>=`, `equals`, `notEquals`, combined with `AND`, `OR`, `NOT`.
+    - **Editor vs Runtime Branching**: Level scripts (`init.con`, `terrain.con`) commonly use `if v_arg1 == BF2Editor` to load editable terrain/overgrowth in the editor and compiled `.raw`/collision data at runtime.
 
 ## 3. `include` vs `run` vs `return`
 
@@ -59,12 +59,12 @@ Syntax: `CRD_TYPE/Number1/Number2/Symmetry`
 - **`ObjectTemplate.active <Name>`**: Activates an existing template (less safe than `activeSafe` when type-checking matters).
 - **Component Blocks**:
 
-  ```text
-  rem ---BeginComp:Armor ---
-  ObjectTemplate.createComponent Armor
-  ObjectTemplate.armor.maxHitPoints 1600
-  ...
-  rem ---EndComp ---
-  ```
+    ```text
+    rem ---BeginComp:Armor ---
+    ObjectTemplate.createComponent Armor
+    ObjectTemplate.armor.maxHitPoints 1600
+    ...
+    rem ---EndComp ---
+    ```
 
-  Always keep `ObjectTemplate.createComponent <CompName>` inside the matching `BeginComp`/`EndComp` markers so Bf2Editor and UDL folding stay valid.
+    Always keep `ObjectTemplate.createComponent <CompName>` inside the matching `BeginComp`/`EndComp` markers so Bf2Editor and UDL folding stay valid.

@@ -49,6 +49,7 @@ Defines how bots perceive, drive, aim, and evaluate a vehicle or soldier (`aiTem
 ### Non-Working Conditionals in BF2/PR:BF2
 
 Legacy BF1942 SAI conditionals that **do not work** in BF2 `AIDLL.dll`:
+
 - **Debugger error (missing from `AIDLL.dll`)**: `AverageStrategicStrength`, `AttackStrategicStrength`, `DefenceStrategicStrength`, `Security`.
 - **Always evaluate to `0`**: `Air`, `Bomber`, `Fighter`, `Naval`, `HeavyNaval`, `LCVP`, `AntiAir`, `Infantry`/`Infantery`, `AntiTank`, `HeavyAttack`, `Carrier`, `FastAttack`, `Artillery`.
 - **Important**: `v_arg3 < 13` is invalid in SAI condition indices (`0..12` map to `Carrier`..`FastAttack`).

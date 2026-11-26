@@ -1,3 +1,4 @@
+
 # ReShadeFX (HLSL) Coding Conventions
 
 These conventions are used across the CShade project for consistency and readability.

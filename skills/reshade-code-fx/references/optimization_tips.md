@@ -1,3 +1,4 @@
+
 # ReShadeFX Optimization Tips
 
 Guidance for writing high-performance shaders in the CShade project.

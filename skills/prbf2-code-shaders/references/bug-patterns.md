@@ -10,22 +10,22 @@ Common bugs and engine-specific pitfalls in Project Reality: BF2 Direct3D 9 / Sh
 ## 2. BF2 Vertex Unpacking & Bone Skinning
 
 - **Unpacked vs Packed Vertex Streams**: BF2 compresses `BundledMesh` and `StaticMesh` vertices (`PositionPacked`, `NormalPacked8`, `TangentSpacePacked8`, `TBasePacked2D`).
-	- Position: `Input.Pos * PosUnpack` (or `float4(Input.Pos.xyz, 1.0) * PosUnpack` in `RaShaderSTM` where `Input.Pos.w` stores binormal flip).
-	- Normal/Tangent: `Input.Normal * NormalUnpack.x + NormalUnpack.y` and `Input.Tan * NormalUnpack.x + NormalUnpack.y`.
-	- UV: `Input.TexDiffuse * TexUnpack`.
-	- Short-encoded streams (`Undergrowth.fx`): `DECODE_SHORT(x)` (`x / 32767.0`).
+    - Position: `Input.Pos * PosUnpack` (or `float4(Input.Pos.xyz, 1.0) * PosUnpack` in `RaShaderSTM` where `Input.Pos.w` stores binormal flip).
+    - Normal/Tangent: `Input.Normal * NormalUnpack.x + NormalUnpack.y` and `Input.Tan * NormalUnpack.x + NormalUnpack.y`.
+    - UV: `Input.TexDiffuse * TexUnpack`.
+    - Short-encoded streams (`Undergrowth.fx`): `DECODE_SHORT(x)` (`x / 32767.0`).
 - **Bone Index Decoding**: Never index `GeomBones` or `MatBones` directly with raw `float4 Input.BlendIndices`. Always decode via `int4 IndexVector = D3DCOLORtoUBYTE4(Input.BlendIndices);`.
 - **Binormal Flipping**:
-	- `RaShaderBM` / `RaShaderSM`: `1.0 + IndexVector[2] * -2.0`
-	- `RaShaderSTM`: `1.0 + Input.Pos.w * -2.0`
-	- Pass this flip into `RVertex_GetTangentBasis(ObjectTangent, ObjectNormal, Flip)` so tangent-space normal maps do not invert on mirrored UVs.
+    - `RaShaderBM` / `RaShaderSM`: `1.0 + IndexVector[2] * -2.0`
+    - `RaShaderSTM`: `1.0 + Input.Pos.w * -2.0`
+    - Pass this flip into `RVertex_GetTangentBasis(ObjectTangent, ObjectNormal, Flip)` so tangent-space normal maps do not invert on mirrored UVs.
 
 ## 3. Color Space (sRGB vs Linear) & Tonemapping
 
 - **Double or Missing Conversion**: `RDirectXTK_SRGBToLinearEst()` and `RDirectXTK_TonemapAndLinearToSRGBEst()` are gated by `#if defined(PR_LINEARLIGHTING)` and `#if defined(PR_TONEMAPPING)`.
-	- Convert **color/albedo/emissive/envmap** textures with `RDirectXTK_SRGBToLinearEst(...)`.
-	- **Do NOT** run `SRGBToLinearEst` on normal maps, height maps, roughness/gloss masks, or lightmaps unless specifically intended.
-	- Always call `RDirectXTK_TonemapAndLinearToSRGBEst(Output.Color)` once at the end of the pixel shader (after fog) before returning.
+    - Convert **color/albedo/emissive/envmap** textures with `RDirectXTK_SRGBToLinearEst(...)`.
+    - **Do NOT** run `SRGBToLinearEst` on normal maps, height maps, roughness/gloss masks, or lightmaps unless specifically intended.
+    - Always call `RDirectXTK_TonemapAndLinearToSRGBEst(Output.Color)` once at the end of the pixel shader (after fog) before returning.
 
 ## 4. Thermal Imaging (TIS) Invariants
 
@@ -41,7 +41,7 @@ Common bugs and engine-specific pitfalls in Project Reality: BF2 Direct3D 9 / Sh
 - **Mismatched VS2PS Semantics & `POSITION` Read**: `POSITION` output in `VS2PS` is write-only for the rasterizer and cannot be read in PS. Pass world/clip position in `TEXCOORDn` (e.g., `float4 Pos : TEXCOORD0;`).
 - **Interpolator & Texture Coordinate Limits**: Exceeding SM3.0's 10 `TEXCOORD` interpolator limit or conflicting `TEXCOORDn` indices across `#if` permutations causes compilation failures.
 - **Shadow Projection & NVIDIA/Sampler Quirks**:
-	- Use `Ra_GetMeshShadowProjection()` (which handles `#if NVIDIA` homogeneous depth `(zL * wT) / wL` vs `zL`).
-	- Watch for `_CUSTOMSHADOWSAMPLER_` conflicts when `SampleShadowMap` collides with `TEXLAYERn` sampler registers (e.g., `s3` in `Undergrowth.fx`).
+    - Use `Ra_GetMeshShadowProjection()` (which handles `#if NVIDIA` homogeneous depth `(zL * wT) / wL` vs `zL`).
+    - Watch for `_CUSTOMSHADOWSAMPLER_` conflicts when `SampleShadowMap` collides with `TEXLAYERn` sampler registers (e.g., `s3` in `Undergrowth.fx`).
 - **Illegal `.mfx` Permutation Combos**: In `RaShaderBM`, `_HASGIMAP_` and `_HASENVMAP_` are mutually exclusive; `_POINTLIGHT_` must disable `_HASGIMAP_`, `_HASENVMAP_`, `_USEHEMIMAP_`, and `_HASSHADOW_`.
 - **Alpha Test Reference Mismatch**: Under `PR_ALPHA2MASK` or `PR_HASHED_ALPHA`, `PR_ALPHA_REF` is `1` (otherwise `127`). Using `RPixel_SetHashedAlphaTest` or `RPixel_RescaleAlpha` requires matching alpha scaling (e.g., `Undergrowth.fx` multiplies alpha by `2.0` to compensate).
