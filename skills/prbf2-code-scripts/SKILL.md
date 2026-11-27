@@ -126,6 +126,18 @@ The `references/` directory is organized into focused topic folders so you can s
 - `assets/hud-and-material.con.txt` - `hudBuilder.*`, `Sound`, and `materialManager.*` templates.
 - `assets/weapon-template.con.txt`, `assets/weapon-template.tweak.txt`, `assets/animationsystem1p.inc.txt`, `assets/weapon-and-vehicle.ai.txt` - Weapon, 1P animation, and AI templates.
 
+## Bundled Scripts
+
+Run these self-contained Python 3 utilities (each supports `--help` and `--json` where applicable):
+
+- `scripts/audit_scripts.py` - Pre-commit linter and static auditor for `.con`, `.tweak`, `.inc`, and `.ai` files.
+- `scripts/trace_templates.py` - Traces `ObjectTemplate` hierarchy, components, and `include`/`run` execution chains.
+- `scripts/convert_nondest.py` - Converts destroyable `.con`/`.tweak` objects into `_nondest` `SimpleObject` variants.
+- `scripts/convert_coop_bf2.py` - Generates `_bf2` one-man co-op vehicle `.con`/`.tweak` variants.
+- `scripts/scaffold_template.py` - Scaffolds new `.con`/`.tweak`/`.inc`/`.ai` files from `assets/`.
+- `scripts/parse_pr_log.py` - Parses PR Debugger logs (`mods/pr/logs/`) and maps errors to CTD hints.
+- `scripts/lookup_property.py` - Searches `references/properties/` for command signatures, return types, and notes.
+
 ## Gotchas
 
 - `beginRem ... endRem` works in files loaded by the engine, not in the interactive console.
