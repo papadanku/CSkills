@@ -1,0 +1,192 @@
+# Console: Animation System
+
+## AnimationBundle
+
+- `animationBundle.abruptPlayback <bool>`
+    - Returns: `bool`
+- `animationBundle.addAnimation <std::string>`
+    - Returns: `void`
+- `animationBundle.addEvent <std::string>`
+    - Returns: `void`
+- `animationBundle.fadeInTime <float>`
+    - Returns: `float`
+    - Used in: AnimationSystem1p and 3p `.inc` files
+    - Fade-in: Animation Start. Allows a smooth transition between animations.
+    - The lower it is, the quicker it is.
+    - A high value makes the transition slower and longer.
+    - Fade in 0.01.
+    - Example: Idle/Walking to Sprinting
+- `animationBundle.fadeOutTime <float>`
+    - Returns: `float`
+    - Used in: AnimationSystem1p and 3p `.inc` files
+    - Fade out: Animation End.
+    - Same as above, Fadeout `0.1`.
+    - Fadeout `0.4` would make it take `0.4` seconds to finish an animation
+    - Example: From Sprinting to Walk/Idle
+- `animationBundle.getAnimationLength <std::string>`
+    - Returns: `float`
+- `animationBundle.getAnimationStartTime <std::string>`
+    - Returns: `float`
+- `animationBundle.getEventStartTime <std::string>`
+    - Returns: `float`
+- `animationBundle.isLooping <bool>`
+    - Returns: `bool`
+- `animationBundle.jumpToLastAnimationAtStop <bool>`
+    - Returns: `bool`
+- `animationBundle.length <float>`
+    - Returns: `float`
+- `animationBundle.listAnimations`
+    - Returns: `std::string`
+- `animationBundle.listEvents`
+    - Returns: `std::string`
+- `animationBundle.playBackward <bool>`
+    - Returns: `bool`
+- `animationBundle.playForever <bool>`
+    - Returns: `bool`
+- `animationBundle.removeAnimation <std::string>`
+    - Returns: `void`
+- `animationBundle.removeEvent <std::string>`
+    - Returns: `void`
+- `animationBundle.setAnimationLength <std::string float>`
+    - Returns: `void`
+- `animationBundle.setAnimationStartTime <std::string float>`
+    - Returns: `void`
+- `animationBundle.setEventStartTime <std::string float>`
+    - Returns: `void`
+- `animationBundle.useSpeedAsTime <bool>`
+    - Returns: `bool`
+
+## AnimationManager
+
+- `animationManager.fadeInTime <float>`
+    - Returns: `float`
+- `animationManager.ignoreMotherOrientation <int>`
+    - Returns: `int`
+- `animationManager.length <float>`
+    - Returns: `float`
+    - Description: The length of the animation. Must match up with `ObjectTemplate.ammo.reloadTime` to sync.
+    - Used in: "AnimationSystem1p, AnimationSystem3p.inc"
+    - Lower value: Animation will be sped up.
+    - Higher value: Animation will be slowed down.
+- `animationManager.looping <bool>`
+    - Returns: `bool`
+    - Used in: "AnimationSystem1p, AnimationSystem3p.inc"
+- `animationManager.noiceAmplitude <float>`
+    - Returns: `float`
+- `animationManager.noiceFreq <int>`
+    - Returns: `int`
+- `animationManager.originalLength`
+    - Returns: `float`
+
+## AnimationSystem
+
+- `animationSystem.activestd::string`
+    - Returns: `std::string`
+- `animationSystem.activeAnimation <std::string>`
+    - Returns: `std::string`
+- `animationSystem.activeBundle <std::string>`
+    - Returns: `std::string`
+- `animationSystem.activeTrigger <std::string>`
+    - Returns: `std::string`
+- `animationSystem.activeValueHolder <std::string>`
+    - Returns: `std::string`
+- `animationSystem.cameraSpring.amplitude <Vec3>`
+    - Returns: `Vec3`
+- `animationSystem.cameraSpring.fire <Vec3>`
+    - Returns: `Vec3`
+- `animationSystem.cameraSpring.hit <Vec3>`
+    - Returns: `Vec3`
+- `animationSystem.cameraSpring.look <Vec2>`
+    - Returns: `Vec2`
+- `animationSystem.cameraSpring.move <Vec3>`
+    - Returns: `Vec3`
+- `animationSystem.cameraSpring.stiffness <Vec3>`
+    - Returns: `Vec3`
+- `animationSystem.cameraSpring.use <bool>`
+    - Returns: `bool`
+- `animationSystem.cameraSpring.zoomDamping <Vec3>`
+    - Returns: `Vec3`
+- `animationSystem.create <std::string>`
+    - Returns: `void`
+- `animationSystem.createAnimation <std::string>`
+    - Returns: `anim.BoneAnimation\*`
+- `animationSystem.createBundle <std::string>`
+    - Returns: `anim.Bundle\*`
+- `animationSystem.createTrigger <std::string std::string>`
+    - Returns: `anim.Trigger\*`
+- `animationSystem.createValueHolder <std::string>`
+    - Returns: `void`
+- `animationSystem.deleteActiveBundle`
+    - Returns: `void`
+- `animationSystem.deleteActiveTrigger`
+    - Returns: `void`
+- `animationSystem.hide`
+    - Returns: `void`
+- `animationSystem.list`
+    - Returns: `std::string`
+- `animationSystem.listAnimations`
+    - Returns: `std::string`
+- `animationSystem.listBundles`
+    - Returns: `std::string`
+- `animationSystem.listTriggers`
+    - Returns: `std::string`
+- `AnimationSystem.listTriggerTypes`
+    - Returns: `std::string`
+- `animationSystem.listValueHolders`
+    - Returns: `std::string`
+- `animationSystem.playbackModifier <float>`
+    - Returns: `float`
+- `animationSystem.reloadScript`
+    - Returns: `void`
+- `animationSystem.save <std::string>`
+    - Returns: `void`
+- `animationSystem.saveActive`
+    - Returns: `void`
+- `animationSystem.saveValueHolders`
+    - Returns: `void`
+
+## animationTrigger
+
+- `animationTrigger.addBundle <std::string>`
+    - Returns: `void`
+- `animationTrigger.addChild <std::string>`
+    - Returns: `void`
+- `animationTrigger.clearValueHolder`
+    - Returns: `void`
+- `animationTrigger.fadeInTime <float>`
+    - Returns: `float`
+- `animationTrigger.getTypeName`
+    - Returns: `std::string`
+- `animationTrigger.idleTime <Vec2>`
+    - Returns: `Vec2`
+- `animationTrigger.listBundles`
+    - Returns: `std::string`
+- `animationTrigger.message <int>`
+    - Returns: `int`
+- `animationTrigger.removeBundle <std::string>`
+    - Returns: `void`
+- `animationTrigger.removeChild <std::string>`
+    - Returns: `void`
+- `animationTrigger.triggerOnAcceleration <bool>`
+    - Returns: `bool`
+- `animationTrigger.useDirection <bool>`
+    - Returns: `bool`
+- `animationTrigger.valueHolder <std::string>`
+    - Returns: `std::string`
+
+## animationValueHolder
+
+- `animationValueHolder.getFilename`
+    - Returns: `std::string`
+- `animationValueHolder.max <float>`
+    - Returns: `float`
+- `animationValueHolder.min <float>`
+    - Returns: `float`
+- `animationValueHolder.normal <float>`
+    - Returns: `float`
+- `animationValueHolder.passOnMessage <unsigned int>`
+    - Returns: `unsigned int`
+- `animationValueHolder.stopOnMessage <unsigned int>`
+    - Returns: `unsigned int`
+- `animationValueHolder.values <float float float>`
+    - Returns: `void`

@@ -1,0 +1,223 @@
+# Console Graphics: Lighting, Shadows, Shaders, and Environment Maps
+
+## Light Manager
+
+- `lightManager.ambientColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.defaultEffectLightAffectionFactor <float>`
+    - Returns: `float`
+- `lightManager.dynamicPointColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.dynamicPointColorHigh <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.dynamicPointColorLow <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.dynamicPointScale <float>`
+    - Returns: `float`
+- `lightManager.effectShadowColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.effectSunColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.enableStencilCullerReset <bool>`
+    - Returns: `bool`
+- `lightManager.enableSun <bool>`
+    - Returns: `bool`
+- `lightManager.groundHemi <std::string>`
+    - Returns: `std::string`
+- `lightManager.hemiLerpBias <float>`
+    - Returns: `float`
+- `lightManager.init`
+    - Returns: `void`
+- `lightManager.lightCullDistance <float>`
+    - Returns: `float`
+    - Used in `sky.con`
+    - Raises the default limit of the culling of lightsources from a distance.
+    - Example: `lightManager.lightCullDistance 2000` which extends the rendering of the lightsource.
+- `lightManager.lightMapAmbientAlphaCutoffRange <Vec2>`
+    - Returns: `Vec2`
+- `lightManager.maxLightsPerBundledMesh <int>`
+    - Returns: `int`
+- `lightManager.maxLightsPerSkinnedMesh <int>`
+    - Returns: `int`
+- `lightManager.maxLightsPerStaticMesh <int>`
+    - Returns: `int`
+- `lightManager.maxLightsPerTerrainPatch <int>`
+    - Returns: `int`
+- `lightManager.maxLodForMaterialBatching <int>`
+    - Returns: `int`
+- `lightManager.singlePointColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.singlePointColorHigh <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.singlePointColorLow <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.skinnedMeshShaderLodDistance <float>`
+    - Returns: `float`
+- `lightManager.skyColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.skyColorHigh <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.skyColorLow <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.staticLightBlendingTime <double>`
+    - Returns: `double`
+- `lightManager.staticSkyColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.staticSkyColorHigh <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.staticSkyColorLow <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.staticSpecularColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.staticSunColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunColorHigh <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunColorLow <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunDirection <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunSpecColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunSpecColorHigh <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.sunSpecColorLow <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.treeAmbientColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.treeSkyColor <Vec3>`
+    - Returns: `Vec3`
+- `lightManager.treeSunColor <Vec3>`
+    - Returns: `Vec3`
+
+## Shadow Manager
+
+- `shadowManager.allowAlphaShadows <bool>`
+    - Returns: `bool`
+- `shadowManager.alphaShadowThreshold <float>`
+    - Returns: `float`
+- `shadowManager.dropShadowClipHeightOffset <float>`
+    - Returns: `float`
+- `shadowManager.dynamic1pShadowsEnabled <bool>`
+    - Returns: `bool`
+- `shadowManager.dynamicShadowsEnabled <bool>`
+    - Returns: `bool`
+- `shadowManager.dynamicStaticMeshShadowsEnabled <bool>`
+    - Returns: `bool`
+- `shadowManager.lightmapIntensityBias <float>`
+    - Returns: `float`
+- `shadowManager.occludedSkyNightIntensity <float>`
+    - Returns: `float`
+- `shadowManager.shadow80Line <float>`
+    - Returns: `float`
+- `shadowManager.shadowFromBundledMeshLod <int>`
+    - Returns: `int`
+- `shadowManager.shadowFromSkinnedMeshLod <int>`
+    - Returns: `int`
+- `shadowManager.shadowFromStaticMeshLod <int>`
+    - Returns: `int`
+- `shadowManager.shadowFromTerrainLod <int>`
+    - Returns: `int`
+- `shadowManager.shadowIntensityBias <float>`
+    - Returns: `float`
+- `shadowManager.shadowMapBitDepth <int>`
+    - Returns: `int`
+- `shadowManager.shadowMapDepthBias <float>`
+    - Returns: `float`
+- `shadowManager.shadowMapDepthDistance <float>`
+    - Returns: `float`
+- `shadowManager.shadowMapIncludeStaticMeshes <bool>`
+    - Returns: `bool`
+- `shadowManager.shadowMapObjectSize <int>`
+    - Returns: `int`
+- `shadowManager.shadowMapSize <int>`
+    - Returns: `int`
+- `shadowManager.shadowMapSlopeBias <float>`
+    - Returns: `float`
+- `shadowManager.shadowMergeDynamicShadowFrustums <bool>`
+    - Returns: `bool`
+- `shadowManager.shadowOccluderOversizeFactor <float>`
+    - Returns: `float`
+- `shadowManager.shadowOverrideQuality <int>`
+    - Returns: `int`
+- `shadowManager.shadowPSMFovY <float>`
+    - Returns: `float`
+- `shadowManager.shadowPSMUseSlideback <bool>`
+    - Returns: `bool`
+- `shadowManager.shadowPSMUseUnitCubeClipping <bool>`
+    - Returns: `bool`
+- `shadowManager.shadowPSMZFarOffset <float>`
+    - Returns: `float`
+- `shadowManager.shadowPSMZMinInfinityZ <float>`
+    - Returns: `float`
+- `shadowManager.shadowPSMZNearOffset <float>`
+    - Returns: `float`
+- `shadowManager.shadowShowFrustums <bool>`
+    - Returns: `bool`
+- `shadowManager.shadowSunExtrusionLength <float>`
+    - Returns: `float`
+- `shadowManager.shadowSunHeightOverFade <Vec2>`
+    - Returns: `Vec2`
+- `shadowManager.shadowSunScalePower <float>`
+    - Returns: `float`
+- `shadowManager.shadowTestBelowRayLenght <float>`
+    - Returns: `float`
+- `shadowManager.shadowTSMFocus <float>`
+    - Returns: `float`
+- `shadowManager.shadowUpdateFactor <float>`
+    - Returns: `float`
+- `shadowManager.shadowUpdatesEnabled <bool>`
+    - Returns: `bool`
+- `shadowManager.shadowUseSweepTest <bool>`
+    - Returns: `bool`
+- `shadowManager.useLSSMOptimizations <bool>`
+    - Returns: `bool`
+- `shadowManager.usePSMOptimizations <bool>`
+    - Returns: `bool`
+
+## Shader Manager
+
+- `shadermanager.byPassDiceStates <bool>`
+    - Returns: `bool`
+- `shadermanager.compileDebugTerrain <bool>`
+    - Returns: `bool`
+- `shadermanager.compilePartialPrecisionTypes <bool>`
+    - Returns: `bool`
+- `shadermanager.compileSkipOptimizations <bool>`
+    - Returns: `bool`
+- `shadermanager.compileUsePartialPrecision <bool>`
+    - Returns: `bool`
+- `shadermanager.compileUsePreShaders <bool>`
+    - Returns: `bool`
+- `shadermanager.compileUsePS2A <bool>`
+    - Returns: `bool`
+- `shadermanager.compileWithDebug <bool>`
+    - Returns: `bool`
+- `shadermanager.listEffects`
+    - Returns: `void`
+- `shadermanager.reloadAllEffects`
+    - Returns: `void`
+- `shadermanager.reloadEffect <std::string>`
+    - Returns: `void`
+
+## Envmap Manager
+
+- `envmapManager.generateEnvMaps`
+    - Returns: `void`
+- `envmapManager.loadEMIFile <std::string>`
+    - Returns: `void`
+- `envmapManager.perPixelEnvironmentMappingEnabled <bool>`
+    - Returns: `bool`
+- `envmapManager.save`
+    - Returns: `void`
+
+## Hemimap
+
+- `hemiMapManager.hemiLerpBias <float>`
+    - Returns: `float`
+- `hemiMapManager.makeHemiMap <unsigned long std::string Vec3>`
+    - Returns: `bool`
+- `hemiMapManager.setBaseHemiMap <std::string Vec3 float>`
+    - Returns: `bool`

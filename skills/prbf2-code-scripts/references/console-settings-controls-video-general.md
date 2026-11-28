@@ -1,0 +1,166 @@
+# Console Settings: Controls, Video, General, and Manager
+
+## Control Map
+
+- `controlMap.addAxisToAxisMapping <int InputDeviceFlags InputDeviceAxes>`
+    - Returns: `void`
+- `controlMap.addAxisToTriggerMapping <int int InputDeviceFlags>`
+    - Returns: `void`
+- `controlMap.addButtonAndKeyToAxisMapping <int InputDeviceFlags InputDeviceButtons>`
+    - Returns: `void`
+- `controlMap.addButtonsToAxisMapping <int InputDeviceFlags InputDeviceButtons>`
+    - Returns: `void`
+- `controlMap.addButtonToTriggerMapping <int InputDeviceFlags InputDeviceButtons>`
+    - Returns: `void`
+- `controlMap.addKeyAndButtonToAxisMapping <int InputDeviceFlags InputDeviceKeys>`
+    - Returns: `void`
+- `controlMap.addKeysToAxisMapping <int InputDeviceFlags InputDeviceKeys>`
+    - Returns: `void`
+- `controlMap.AddKeyToTriggerMapping <int InputDeviceFlags InputDeviceKeys>`
+    - Returns: `void`
+- `controlMap.create <std::string>`
+    - Returns: `void`
+- `controlMap.deleteControlMap <std::string>`
+    - Returns: `void`
+- `controlMap.dump`
+    - Returns: `void`
+- `controlMap.InvertMouse <bool>`
+    - Returns: `bool`
+- `controlMap.keyboardSensitivity <float>`
+    - Returns: `float`
+- `controlMap.mouseSensitivity <float>`
+    - Returns: `float`
+- `controlMap.setActive <std::string>`
+    - Returns: `void`
+- `controlMap.setAxisScale <io::InputDeviceAxes float>`
+    - Returns: `void`
+- `controlMap.setButtonFallTime <float>`
+    - Returns: `void`
+- `controlMap.setButtonRiseTime <float>`
+    - Returns: `void`
+- `controlMap.setDoubleTapTime <float>`
+    - Returns: `void`
+- `controlMap.setPitchFactor <float>`
+    - Returns: `void`
+- `controlMap.setYawFactor <float>`
+    - Returns: `void`
+
+## General Settings
+
+- `generalSettings.addFavouriteServer <std::string int std::string>`
+    - Returns: `void`
+- `generalSettings.addServerHistory <std::string int std::string>`
+    - Returns: `void`
+- `generalSettings.setAllowPunkBuster <bool>`
+    - Returns: `void`
+- `generalSettings.setAutoReady <bool>`
+    - Returns: `void`
+- `generalSettings.setAutoReload <bool>`
+    - Returns: `void`
+- `generalSettings.setBFTVSaveDirectory <std::string>`
+    - Returns: `void`
+- `generalSettings.setBotSkill <float>`
+    - Returns: `void`
+- `generalSettings.setBuddytagColor <int int int>`
+    - Returns: `void`
+- `generalSettings.setConfirmQuit <bool>`
+    - Returns: `void`
+- `generalSettings.setConnectionType <int>`
+    - Returns: `void`
+- `generalSettings.setCrosshairColor <int int int>`
+    - Returns: `void`
+- `generalSettings.setHUDTransparency <float>`
+    - Returns: `void`
+- `generalSettings.setItemSelectionReverseItems <bool>`
+    - Returns: `void`
+- `generalSettings.setLCDDisplayModes <bool>`
+    - Returns: `void`
+- `generalSettings.setMapIconAlphaTransparency <float>`
+    - Returns: `void`
+- `generalSettings.setMaxBots <int>`
+    - Returns: `void`
+- `generalSettings.setMaxBotsIncludeHumans <bool>`
+    - Returns: `void`
+- `generalSettings.setMinimapRotate <bool>`
+    - Returns: `void`
+- `generalSettings.setMinimapTransparency <float>`
+    - Returns: `void`
+- `generalSettings.setNumRoundsPlayed <int>`
+    - Returns: `void`
+- `generalSettings.setOutOfVoting <bool>`
+    - Returns: `void`
+- `generalSettings.setPlayedVOHelp <std::string>`
+    - Returns: `void`
+- `generalSettings.setServerFilter <std::string>`
+    - Returns: `void`
+- `generalSettings.setSortKey <std::string>`
+    - Returns: `void`
+- `generalSettings.setSortOrder <int>`
+    - Returns: `void`
+- `generalSettings.setSquadtagColor <int int int>`
+    - Returns: `void`
+- `generalSettings.setToggleFilters <int>`
+    - Returns: `void`
+- `generalSettings.setUseAdvancedServerBrowser <bool>`
+    - Returns: `void`
+- `generalSettings.setUseBots <bool>`
+    - Returns: `void`
+- `generalSettings.setViewIntroMovie <bool>`
+    - Returns: `void`
+
+## Global Settings
+
+- `globalSettings.setDefaultUser <std::string>`
+    - Returns: `void`
+- `globalSettings.setNamePrefix <std::string>`
+    - Returns: `void`
+
+## Settings Manager
+
+- `SettingsManager.boolGet <std::string>`
+    - Returns: `bool`
+- `SettingsManager.boolSet <std::string bool>`
+    - Returns: `bool`
+- `SettingsManager.floatGet <std::string>`
+    - Returns: `float`
+- `SettingsManager.floatSet <std::string float>`
+    - Returns: `bool`
+- `SettingsManager.intGet <std::string>`
+    - Returns: `int`
+- `SettingsManager.intSet <std::string int>`
+    - Returns: `bool`
+- `SettingsManager.std::stringGet <std::string>`
+    - Returns: `std::string`
+- `SettingsManager.std::stringSet <std::string std::string>`
+    - Returns: `bool`
+- `SettingsManager.U32Get <std::string>`
+    - Returns: `U32`
+- `SettingsManager.U32Set <std::string U32>`
+    - Returns: `bool`
+
+## Video Settings
+
+- `videoSettings.setAntialiasing <std::string>`
+    - Returns: `void`
+- `videoSettings.setDynamicLightingQuality <int>`
+    - Returns: `void`
+- `videoSettings.setDynamicShadowsQuality <int>`
+    - Returns: `void`
+- `videoSettings.setEffectsQuality <int>`
+    - Returns: `void`
+- `videoSettings.setGeometryQuality <int>`
+    - Returns: `void`
+- `videoSettings.setLightingQuality <int>`
+    - Returns: `void`
+- `videoSettings.setResolution <std::string>`
+    - Returns: `void`
+- `videoSettings.setTerrainQuality <int>`
+    - Returns: `void`
+- `videoSettings.setTextureFilteringQuality <int>`
+    - Returns: `void`
+- `videoSettings.setTextureQuality <int>`
+    - Returns: `void`
+- `videoSettings.setVideoOptionScheme <int>`
+    - Returns: `void`
+- `videoSettings.setViewDistanceScale <float>`
+    - Returns: `void`

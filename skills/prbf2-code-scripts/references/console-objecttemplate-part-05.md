@@ -1,0 +1,261 @@
+# Console ObjectTemplate (engineType to healSpeed)
+
+- `objectTemplate.engineType <int>`
+    - Returns: `int`
+    - What kind of vehicle the engine is for.
+    - Car, tank, plane, ship, or helicopter.
+- `objectTemplate.entryRadius <float>`
+    - Returns: `float`
+- `objectTemplate.events <int>`
+    - Returns: `int`
+- `objectTemplate.exitSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.fadeInFactor <float>`
+    - Returns: `float`
+- `objectTemplate.fadeOutFactor <float>`
+    - Returns: `float`
+- `objectTemplate.fire.addBarrelName <std::string>`
+    - Returns: `void`
+- `objectTemplate.fire.addFireRate <int>`
+    - Returns: `void`
+    - Used in Weapons and Vehicle `.tweak`
+    - Defines the fire mode selector. You can add three lines max of each one.
+    - 0: `Single`
+    - 1: `Burst`
+    - 2: `Auto`
+- `objectTemplate.fire.addTimeEvent <WeaponTrigger WeaponAction float>`
+    - Returns: `void`
+- `objectTemplate.fire.altFireInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+
+    Which PlayerInput map to use for the right-click function. Usually `PIAlt`
+
+- `objectTemplate.fire.batchSize <int>`
+    - Returns: `int`
+- `objectTemplate.fire.burstSize <int>`
+    - Returns: `int`
+- `objectTemplate.fire.busyUntilButtonRelease <bool>`
+    - Returns: `bool`
+- `objectTemplate.fire.detonatorObject <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.fire.dropLod <int>`
+    - Returns: `int`
+- `objectTemplate.fire.dropWeaponAfterFiringDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.dropWeaponAfterReloadDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.fireInCameraDof <bool>`
+    - Returns: `bool`
+- `objectTemplate.fire.fireInCameraDofLocked <bool>`
+    - Returns: `bool`
+- `objectTemplate.fire.fireInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.fire.fireLaunchDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.fireLaunchDelaySoft <float>`
+    - Returns: `float`
+- `objectTemplate.fire.fireStartDelay <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.fire.hideLod <int>`
+    - Returns: `int`
+- `objectTemplate.fire.hideWeaponAfterFiringDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.hideWeaponAfterReloadDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.ignoreFireButton <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.fire.isBarrel <std::string>`
+    - Returns: `bool`
+- `objectTemplate.fire.maxProjectilesInWorld <int>`
+    - Returns: `int`
+    - The max amount of projectiles in the weapon that can be set before the engine cleans up each one.
+    - If the limit is 10, deploying one any further will delete an existing projectile.
+    - Used for explosives, mines, and maybe bullets.
+- `objectTemplate.fire.onlyFireWhenProne <bool>`
+    - Returns: `bool`
+
+    Restricts the weapon to fire only when prone.
+
+    Though when firing during prone, a player can then stand and run to deploy an explosive for example. FH2 uses these for the machine gunner kits
+
+- `objectTemplate.fire.projectileStartPosition <Vec3>`
+    - Returns: `Vec3`
+
+    Position in X/Y/Z from the crosshair or PCO from where the projectile will launch.
+
+- `objectTemplate.fire.projectileStartRotation <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.fire.pullbackTime <float>`
+    - Returns: `float`
+- `objectTemplate.fire.radioMessageDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.randomRotationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.fire.removeBarrelName <std::string>`
+    - Returns: `void`
+- `objectTemplate.fire.roundsPerMinute <int>`
+    - Returns: `int`
+    - Used in GenericFirearms (Weapons, Projectiles)
+    - The rate of fire, measured in Rounds Per Minute (RPM).
+    - Must be dividable by 1800.
+    - Check: http://researchmaniacs.com/Math/Divisible-By/What-is-1800-divisible-by.html
+- `objectTemplate.fire.showWeaponAfterReloadDelay <float>`
+    - Returns: `float`
+- `objectTemplate.fire.timeToReachMaxStrengthSlow <float>`
+    - Returns: `float`
+- `objectTemplate.fire.toggleWeaponTime <float>`
+    - Returns: `float`
+- `objectTemplate.fire.triggerChargesTime <float>`
+    - Returns: `float`
+- `objectTemplate.fire.useDummyProjectiles <bool>`
+    - Returns: `bool`
+- `objectTemplate.fixAxisSpring <bool>`
+    - Returns: `bool`
+- `objectTemplate.flagTemplateTeam0 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.flagTemplateTeam1 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.flagTemplateTeam2 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.flapLift <float>`
+    - Returns: `float`
+- `objectTemplate.flicker <float>`
+    - Returns: `float`
+- `objectTemplate.floaterMod <float>`
+    - Returns: `float`
+- `objectTemplate.floatMaxLift <float>`
+    - Returns: `float`
+- `objectTemplate.floatMinLift <float>`
+    - Returns: `float`
+- `objectTemplate.follow.changePitch <float>`
+    - Returns: `float`
+- `objectTemplate.follow.changeYaw <float>`
+    - Returns: `float`
+- `objectTemplate.follow.maxPitch <float>`
+    - Returns: `float`
+- `objectTemplate.follow.maxYaw <float>`
+    - Returns: `float`
+- `objectTemplate.follow.minDist <float>`
+    - Returns: `float`
+- `objectTemplate.followStiffness <float>`
+    - Returns: `float`
+- `objectTemplate.force <float>`
+    - Returns: `float`
+- `objectTemplate.forceSustainedFire <bool>`
+    - Returns: `bool`
+- `objectTemplate.forceToWaterSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.ForSoldierOnly <bool>`
+    - Returns: `bool`
+- `objectTemplate.fov <float>`
+    - Returns: `float`
+- `objectTemplate.gasCloudDamage <float>`
+    - Returns: `float`
+- `objectTemplate.gasCloudRadiusTime <float>`
+    - Returns: `float`
+- `objectTemplate.gasCloudType <geom::GasCloudType>`
+    - Returns: `geom::GasCloudType`
+- `objectTemplate.gasMaskSprintFactor <float>`
+    - Returns: `float`
+- `objectTemplate.gearChangeTime <float>`
+    - Returns: `float`
+- `objectTemplate.gearDown <float>`
+    - Returns: `float`
+- `objectTemplate.gearDownDelay <float>`
+    - Returns: `float`
+- `objectTemplate.gearDownHeight <float>`
+    - Returns: `float`
+- `objectTemplate.gearDownSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.gearUp <float>`
+    - Returns: `float`
+- `objectTemplate.gearUpDelay <float>`
+    - Returns: `float`
+- `objectTemplate.gearUpHeight <float>`
+    - Returns: `float`
+- `objectTemplate.gearUpSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.geometry <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.geometry.dropGeom <int>`
+    - Returns: `int`
+- `objectTemplate.geometry.kit <int>`
+    - Returns: `int`
+- `objectTemplate.geometry1P <std::string>`
+    - Returns: `void`
+- `objectTemplate.geometry3P <std::string>`
+    - Returns: `void`
+- `objectTemplate.geometryPart <int>`
+    - Returns: `int`
+- `objectTemplate.getHeatBarType`
+    - Returns: `int`
+- `objectTemplate.getPosition <int>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.getRotation <int>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.getTemplate <int>`
+    - Returns: `std::string`
+- `objectTemplate.globalEffectLevel <float>`
+    - Returns: `float`
+- `objectTemplate.gravity <float>`
+    - Returns: `float`
+
+    Sets the gravity for the map. Can use minus values as well
+
+- `objectTemplate.gravityGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.gravityModifier <float>`
+    - Returns: `float`
+    - Sets the gravity for the vehicle.
+    - Can use minus values as well which makes the projectile go upwards
+- `objectTemplate.gravityModifier <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.gravityModifierOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.grip <PhysicsGripFlags>`
+    - Returns: `PhysicsGripFlags`
+    - Set only for wheels.
+    - Roll grip for wheels that are not powered.
+    - Engine grip for wheels that are powered.
+    - Engine dummy grip for wheel you want to make looking like they are powered, but actually aren't.
+- `objectTemplate.groundContactVolume <float>`
+    - Returns: `float`
+- `objectTemplate.group <U32>`
+    - Returns: `U32`
+- `objectTemplate.halfVolumeDistance <float>`
+    - Returns: `float`
+- `objectTemplate.handleCollisionSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.hasAltEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasCollisionPhysics <bool>`
+    - Returns: `bool`
+    - Check for all objects that has a collision mesh.
+    - Allows it to be hit by both bullets, players, and vehicles
+- `objectTemplate.HasGreyCapturingState <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasMobilePhysics <bool>`
+    - Returns: `bool`
+
+    Check for objects and parts that can move.
+
+- `objectTemplate.hasOnTimeEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasOverDamage <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasPartner <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasPointPhysics <bool>`
+    - Returns: `void`
+- `objectTemplate.hasRelativeOffset <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasResponsePhysics <bool>`
+    - Returns: `void`
+- `objectTemplate.hasRestrictedExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.hasRotationalPointPhysics <bool>`
+    - Returns: `void`
+- `objectTemplate.HDRIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.healSpeed <float>`
+    - Returns: `float`

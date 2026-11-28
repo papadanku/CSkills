@@ -1,0 +1,262 @@
+# Console ObjectTemplate (animationSystem3P to cockpitSubGeom)
+
+- `objectTemplate.animationSystem3P <std::string>`
+    - Returns: `void`
+- `objectTemplate.antenna.accelerationFactor <float>`
+    - Returns: `float`
+- `objectTemplate.antenna.damping <float>`
+    - Returns: `float`
+- `objectTemplate.antenna.maxSwayAngle <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.antenna.skeleton <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.antenna.speedFactor <float>`
+    - Returns: `float`
+- `objectTemplate.antenna.stiffness <float>`
+    - Returns: `float`
+- `objectTemplate.areaValueTeam1 <U32>`
+    - Returns: `U32`
+- `objectTemplate.areaValueTeam2 <U32>`
+    - Returns: `U32`
+- `objectTemplate.armingDelay <float>`
+    - Returns: `float`
+    - Weapons `.tweak`
+    - Delay in seconds until the collision event is active.
+    - Used in the tripflares, which has a 15 second delay before passing through it will trigger the collision.
+    - Also could just be the seconds before the grenade explodes though not sure
+- `objectTemplate.armor.addArmorEffect <int std::string Vec3>`
+    - Returns: `void`
+- `objectTemplate.armor.addArmorEffectSpectacular <int std::string Vec3>`
+    - Returns: `void`
+- `objectTemplate.armor.addWreckArmorEffect <int std::string Vec3>`
+    - Returns: `void`
+- `objectTemplate.armor.alignLastEffectToHitDirection <bool>`
+    - Returns: `bool`
+- `objectTemplate.armor.angleMod <float>`
+    - Returns: `float`
+- `objectTemplate.armor.attackDamage <float>`
+    - Returns: `float`
+- `objectTemplate.armor.canBeDestroyed <bool>`
+    - Returns: `bool`
+- `objectTemplate.armor.canBeRepairedWhenWreck <bool>`
+    - Returns: `bool`
+    - Vehicles .tweak, Weapons `.tweak`
+    - Used in the AA Ship Boats.
+    - Basically, when it's a wreck, it can be repaired back to life.
+- `objectTemplate.armor.criticalDamage <float>`
+    - Returns: `float`
+- `objectTemplate.armor.deepWaterDamageDelay <float>`
+    - Returns: `float`
+- `objectTemplate.armor.deepWaterLevel <float>`
+    - Returns: `float`
+- `objectTemplate.armor.defaultMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.armor.destroyOnSpectacularDeath <bool>`
+    - Returns: `bool`
+- `objectTemplate.armor.explosionDamage <float>`
+    - Returns: `float`
+- `objectTemplate.armor.explosionForce <float>`
+    - Returns: `float`
+- `objectTemplate.armor.explosionForceMax <float>`
+    - Returns: `float`
+- `objectTemplate.armor.explosionForceMod <float>`
+    - Returns: `float`
+- `objectTemplate.armor.explosionMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.armor.explosionRadius <float>`
+    - Returns: `float`
+- `objectTemplate.armor.hideChildrenOnSpectacularDeath <bool>`
+    - Returns: `bool`
+- `objectTemplate.armor.hitPoints <float>`
+    - Returns: `float`
+    - Vehicles `.tweak`
+    - The health of the vehicle.
+    - 0 - Dead.
+- `objectTemplate.armor.hpLostWhileCriticalDamage <float>`
+    - Returns: `float`
+- `objectTemplate.armor.hpLostWhileInDeepWater <float>`
+    - Returns: `float`
+- `objectTemplate.armor.hpLostWhileInWater <float>`
+    - Returns: `float`
+- `objectTemplate.armor.hpLostWhileUpSideDown <float>`
+    - Returns: `float`
+- `objectTemplate.armor.maxHitPoints <float>`
+    - Returns: `float`
+- `objectTemplate.armor.showDamageAsDirt <float>`
+    - Returns: `float`
+- `objectTemplate.armor.speedMod <float>`
+    - Returns: `float`
+- `objectTemplate.armor.timeToStayAfterDestroyed <float>`
+    - Returns: `float`
+    - Vehicles `.tweak`
+    - Interesting code. If set to PR's Jets and Helis, when they explode from wreck, the non-flaming wreck model stays though it shows in the minimap as an occupied vehicle.
+- `objectTemplate.armor.timeToStayAsWreck <float>`
+    - Returns: `float`
+- `objectTemplate.armor.useMMOnDeath <bool>`
+    - Returns: `bool`
+    - Use the Material Manager on Death. Not too sure about this one
+- `objectTemplate.armor.waterDamageDelay <float>`
+    - Returns: `float`
+- `objectTemplate.armor.waterLevel <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckDelay <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckExplosionDamage <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckExplosionForce <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckExplosionForceMax <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckExplosionForceMod <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckExplosionMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.armor.wreckExplosionRadius <float>`
+    - Returns: `float`
+- `objectTemplate.armor.wreckHitPoints <float>`
+    - Returns: `float`
+- `objectTemplate.artPos <bool>`
+    - Returns: `bool`
+- `objectTemplate.attachClimberRadius <float>`
+    - Returns: `float`
+- `objectTemplate.attachToEventObject <bool>`
+    - Returns: `bool`
+- `objectTemplate.attackSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.attenuationRange1 <float>`
+    - Returns: `float`
+    - Used in `.tweak` Effect Files for Lightsource Templates
+    - How wide you want the lightsource effect to be, used with `ObjectTemplate.isDynamic 1`.
+    - Range1 - X, which is the horizontal range.
+    - Max is 100, more than that will trigger an error message
+- `objectTemplate.attenuationRange2 <float>`
+    - Returns: `float`
+    - Used in `.tweak` Effect Files for Lightsource Templates
+    - The height at which the lightsource will begin to drop.
+    - Range2 - Y, which is the vertical range.
+    - Max is 100, like above.
+
+    To know the difference, set one to 50 and one to 100 and count the number of seconds the lightsource effect will last and compare.
+
+- `objectTemplate.audio.newStyleAudio <bool>`
+    - Returns: `bool`
+- `objectTemplate.audio.transformationRelativeRoot <bool>`
+    - Returns: `bool`
+- `objectTemplate.audioReset`
+    - Returns: `void`
+- `objectTemplate.automaticPitchStabilization <bool>`
+    - Returns: `bool`
+- `objectTemplate.automaticReset <bool>`
+    - Returns: `bool`
+- `objectTemplate.automaticYawStabilization <bool>`
+    - Returns: `bool`
+- `objectTemplate.autoUseAbility <int>`
+    - Returns: `int`
+- `objectTemplate.averageTimeBetweenTests <float>`
+    - Returns: `float`
+- `objectTemplate.awakeTime <float>`
+    - Returns: `float`
+- `objectTemplate.blendMode <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.blockInputOnRotBundle <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.blurryVisionHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.blurryVisionTime <float>`
+    - Returns: `float`
+- `objectTemplate.boneName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.bounceDamping <float>`
+    - Returns: `float`
+- `objectTemplate.bounceLength <float>`
+    - Returns: `float`
+- `objectTemplate.bounceSensitivity <float>`
+    - Returns: `float`
+- `objectTemplate.bounceStrength <float>`
+    - Returns: `float`
+- `objectTemplate.boundingRadiusModifierWhenOccupied <float>`
+    - Returns: `float`
+- `objectTemplate.cameraId <int>`
+    - Returns: `int`
+- `objectTemplate.cameraShakeMaxSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.cameraShakeSensitivity <float>`
+    - Returns: `float`
+- `objectTemplate.cameraShakeStartSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwayDofMax <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwayDofMin <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwayRightMax <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwayRightMin <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwayRodLength <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwaySensitivity <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwaySpringDamping <float>`
+    - Returns: `float`
+- `objectTemplate.cameraSwaySpringStrength <float>`
+    - Returns: `float`
+- `objectTemplate.canFireGuiIndex <int>`
+    - Returns: `int`
+- `objectTemplate.cannotFireGuiIndex <int>`
+    - Returns: `int`
+- `objectTemplate.cannotFireTimer <float>`
+    - Returns: `float`
+- `objectTemplate.canPickup <bool>`
+    - Returns: `bool`
+    - Weapons
+    - Allows explosives to be picked up using the wrench/repair object
+    - Example: `at_mine`
+- `objectTemplate.canReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.capMaxSpeed <bool>`
+    - Returns: `bool`
+- `objectTemplate.castsDynamicShadow <bool>`
+    - Returns: `bool`
+    - Vehicles, Weapons, and Soldiers
+    - Enables the rendering of shadows.
+- `objectTemplate.castsStaticShadow <bool>`
+    - Returns: `bool`
+- `objectTemplate.centerOfCollisionOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.centerOfMassOffset <Vec3>`
+    - Returns: `Vec3`
+
+    To offset the center of mass using 0/0/0 - `X/Y/Z.` Setting it to X/0.5/Z will make a Logistics Truck survive a direct ram to a Van while setting to 0 makes the truck crash. Tested while holding shift.
+
+- `objectTemplate.chance <float>`
+    - Returns: `float`
+    - `AmbientObjects.con`
+    - Chance that the triggerable effect may play when the player steps inside the radius.
+    - 1: `always play`
+    - 0: `never play`
+- `objectTemplate.changeLodAt <float>`
+    - Returns: `float`
+- `objectTemplate.chaseAngle <float>`
+    - Returns: `float`
+- `objectTemplate.chaseDistance <float>`
+    - Returns: `float`
+- `objectTemplate.chaseOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.clearTemplateList`
+    - Returns: `void`
+- `objectTemplate.clientHitDetection <bool>`
+    - Returns: `bool`
+- `objectTemplate.climbableAngle <float>`
+    - Returns: `float`
+- `objectTemplate.climbersAttachForce <float>`
+    - Returns: `float`
+- `objectTemplate.climbingSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.clockwise <bool>`
+    - Returns: `bool`
+- `objectTemplate.cockpitLod <int>`
+    - Returns: `int`
+- `objectTemplate.cockpitLod <U32>`
+    - Returns: `U32`
+- `objectTemplate.cockpitSubGeom <int>`
+    - Returns: `int`

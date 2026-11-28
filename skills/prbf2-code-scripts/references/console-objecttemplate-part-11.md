@@ -1,0 +1,154 @@
+# Console ObjectTemplate (weaponHud.disableOnSprint to zRotationSnap)
+
+- `objectTemplate.weaponHud.disableOnSprint <bool>`
+    - Returns: `bool`
+    - Used in Weapons and Vehicle `.tweak`
+- `objectTemplate.weaponHud.displaySelectOnActivation <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.enableMouse <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.enablePostProcessingOnGuiIndex <int>`
+    - Returns: `int`
+    - Used in Weapons and Vehicle `.tweak`
+    - Makes the GuiIndex have a black and white effect
+    - Use with all `objectTemplate.postProcess.tv` code to adjust the TV effect
+- `objectTemplate.weaponHud.firstLockSound <std::string>`
+    - Returns: `std::string`
+
+    The first lock sound that plays when there is a lock in progress on the jet
+
+- `objectTemplate.weaponHud.getShowOnCamMode <int>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.guiIndex <int>`
+    - Returns: `int`
+    - Used in Weapons and Vehicle `.tweak`
+    - Defines the Weapon General User Inferface Index to use like the repair bar
+    - Gui Index is located in the `.con`\ s of `menu\\HUD\\HudSetup\\Vehicles`
+- `objectTemplate.weaponHud.hasFireRate <bool>`
+    - Returns: `bool`
+
+    Used in Weapons and Vehicle `.tweak`
+
+- `objectTemplate.weaponHud.hasMag <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.hasRangeFinder <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.hudName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.maxVisualDeviation <int>`
+    - Returns: `int`
+- `objectTemplate.weaponHud.minVisualDeviation <int>`
+    - Returns: `int`
+- `objectTemplate.weaponHud.overheatSound <std::string>`
+    - Returns: `std::string`
+    - Used in Weapons and Vehicle `.tweak`
+    - For the overheat sound. Adding it makes the engine reference the `std::string` defined with `MenuSound.con`.
+    - Usually it's `S_Weapon_Handheld_Overheat`
+    - `S_Vehicle_Handheld_Overheat` but can be anything and custom ones can be used if needed
+- `objectTemplate.weaponHud.secondLockSound <std::string>`
+    - Returns: `std::string`
+    - Used in Weapons and Vehicle `.tweak`
+    - The second lock sound that plays when the lock has been set
+- `objectTemplate.weaponHud.selectIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.showAmmo <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.ShowClips <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.showInfo <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.showOnCamMode <int>`
+    - Returns: `int`
+- `objectTemplate.weaponHud.specialAbilityIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.switchGuiOnCamera <bool>`
+    - Returns: `bool`
+- `objectTemplate.weaponHud.weaponIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponType <int>`
+    - Returns: `int`
+- `objectTemplate.widnBlowTime <float>`
+    - Returns: `float`
+- `objectTemplate.windAffectionFactor <float>`
+    - Returns: `float`
+- `objectTemplate.windAgingFactor <float>`
+    - Returns: `float`
+- `objectTemplate.windBlowTime <float>`
+    - Returns: `float`
+- `objectTemplate.windDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.windFalloff <float>`
+    - Returns: `float`
+- `objectTemplate.windIsDynamic <bool>`
+    - Returns: `bool`
+- `objectTemplate.windowSizeVector <Vec3>`
+    - Returns: `Vec3`
+
+    Used in Projectiles, Vehicles, Effect
+
+- `objectTemplate.windRadialFalloff <float>`
+    - Returns: `float`
+- `objectTemplate.windSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.windSpeedAgeDistance <float>`
+    - Returns: `float`
+- `objectTemplate.windType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.wingLift <float>`
+    - Returns: `float`
+    - Planes and Helis
+    - How much speed will affect object lifting on control surface.
+- `objectTemplate.wingToRegulatorRatio <float>`
+    - Returns: `float`
+- `objectTemplate.workOnSoldiers <bool>`
+    - Returns: `bool`
+    - Supply Objects
+    - Allows the soldier to receive HP/Ammo depending on the type of supply set
+- `objectTemplate.workOnVehicles <bool>`
+    - Returns: `bool`
+    - Supply Objects
+    - Allows the vehicle to receive HP/Ammo depending on the type of supply set
+- `objectTemplate.worldFOV <float>`
+    - Returns: `float`
+- `objectTemplate.writeBinary <std::string>`
+    - Returns: `void`
+- `objectTemplate.writeZ <bool>`
+    - Returns: `bool`
+- `objectTemplate.yawSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.ziplineSoldierHeight <float>`
+    - Returns: `float`
+- `objectTemplate.zoom.addZoomFactor <float>`
+    - Returns: `void`
+- `objectTemplate.zoom.allowUntoggledFire <bool>`
+    - Returns: `bool`
+- `objectTemplate.zoom.changeCameraId <int>`
+    - Returns: `int`
+- `objectTemplate.zoom.changeCameraViewMode <CameraViewMode>`
+    - Returns: `CameraViewMode`
+- `objectTemplate.zoom.changeFovDelay <float>`
+    - Returns: `float`
+- `objectTemplate.zoom.disableMuzzleWhenZoomed <bool>`
+    - Returns: `bool`
+- `objectTemplate.zoom.mouseSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.zoom.onlyZoomWhenProne <bool>`
+    - Returns: `bool`
+- `objectTemplate.zoom.startCameraId <int>`
+    - Returns: `int`
+- `objectTemplate.zoom.startCameraViewMode <CameraViewMode>`
+    - Returns: `CameraViewMode`
+- `objectTemplate.zoom.useProjectileCamera <bool>`
+    - Returns: `bool`
+- `objectTemplate.zoom.zoomDelay <float>`
+    - Returns: `float`
+- `objectTemplate.zoom.zoomInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.zoom.zoomLod <int>`
+    - Returns: `int`
+- `objectTemplate.zoom.zoomOutAfterFire <bool>`
+    - Returns: `bool`
+- `objectTemplate.zRotation <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.zRotationSnap <float>`
+    - Returns: `float`

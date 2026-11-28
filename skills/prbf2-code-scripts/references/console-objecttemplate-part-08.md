@@ -1,0 +1,261 @@
+# Console ObjectTemplate (radialDirection to setSkeletonCollisionBone)
+
+- `objectTemplate.radialDirection <float>`
+    - Returns: `float`
+- `objectTemplate.radio.destroyedMessage <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.radio.failMessage <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.radio.repairedMessage <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.radio.spottedMessage <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.radio.useMessage <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.radius <float>`
+    - Returns: `float`
+- `objectTemplate.radiusOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ragdollLandedDelay <float>`
+    - Returns: `float`
+- `objectTemplate.randomAgeFactor <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.randomColorIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.randomDirectionAngle <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.randomIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.randomizeGeomPart <bool>`
+    - Returns: `bool`
+- `objectTemplate.randomRadialDirection <float>`
+    - Returns: `float`
+- `objectTemplate.randomRotation <float>`
+    - Returns: `float`
+- `objectTemplate.randomRotation <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.randomRotationSpeed <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.randomRotationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.randomSize <float>`
+    - Returns: `float`
+- `objectTemplate.randomSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.randomTimeToLive <float>`
+    - Returns: `float`
+- `objectTemplate.rcType <RemoteControlledObjectType>`
+    - Returns: `RemoteControlledObjectType`
+- `objectTemplate.readBinary <std::string>`
+    - Returns: `void`
+- `objectTemplate.recoil.cameraRecoilSize <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.cameraRecoilSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.goBackOnRecoil <bool>`
+    - Returns: `bool`
+- `objectTemplate.recoil.hasRecoilForce <bool>`
+    - Returns: `bool`
+- `objectTemplate.recoil.recoilForce <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.recoilForceLeftRight <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.recoil.recoilForceUp <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.recoil.recoilGraphExponent <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.recoilGraphFrameCount <int>`
+    - Returns: `int`
+- `objectTemplate.recoil.recoilGraphTotalMovement <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.recoilSize <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.recoilSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.recoilSpeedGB <float>`
+    - Returns: `float`
+- `objectTemplate.recoil.zoomModifier <float>`
+    - Returns: `float`
+- `objectTemplate.refillAmmoSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.regulatePitch <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulatePitchInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.regulateRoll <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulateRollInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.regulateToLift <float>`
+    - Returns: `float`
+- `objectTemplate.regulateVerticalPos <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulateVerticalPosInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.regulateYaw <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.regulateYawInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+    - In the effects `.tweak` when creating an effect
+    - Allows an effect template to be used with custom settings.
+- `objectTemplate.regWhenMinInput <float>`
+    - Returns: `float`
+- `objectTemplate.relativePositionInDof <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.relativePositionInRight <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.relativePositionInUp <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.relativePositionOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.rememberExcessInput <bool>`
+    - Returns: `bool`
+- `objectTemplate.remoteEngineInput <int>`
+    - Returns: `int`
+- `objectTemplate.removeTemplate <int>`
+    - Returns: `void`
+- `objectTemplate.replaceItem <std::string>`
+    - Returns: `void`
+
+    In the `.con` and `.con`
+
+- `objectTemplate.respawnDelay <float>`
+    - Returns: `float`
+
+    In the `.con` and `.con`
+
+- `objectTemplate.restoreRotationOnExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.restoreSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.reverbLevel <float>`
+    - Returns: `float`
+- `objectTemplate.ropeScaleFactor <float>`
+    - Returns: `float`
+- `objectTemplate.rotateAsAnimatedUV <bool>`
+    - Returns: `bool`
+- `objectTemplate.rotateAsAnimatedUVObject <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.rotateAsAnimatedUVReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.rotateUV <bool>`
+    - Returns: `bool`
+- `objectTemplate.rotation <float>`
+    - Returns: `float`
+- `objectTemplate.rotationalForce <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.rotationalSpeedInDof <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.rotationalSpeedInRight <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.rotationalSpeedInUp <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.rotationAxle <int>`
+    - Returns: `int`
+- `objectTemplate.rotationGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.rotationSpeed <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.rotationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.rotationSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.rotationSpeedModBlur <float>`
+    - Returns: `float`
+- `ObjectTemplate.save <world::IObjectTemplate_ptrproxy>`
+    - Returns: `bool`
+- `ObjectTemplate.saveAll`
+    - Returns: `bool`
+- `objectTemplate.saveInSeparateFile <bool>`
+    - Returns: `bool`
+- `objectTemplate.scale <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.seatAnimationSystem <std::string>`
+    - Returns: `std::string`
+    - In Vehicles `.tweak`
+    - Defines the location of the `.inc` animation file for the seat.
+    - Example: `Passenger.inc`
+- `objectTemplate.seatInformation <std::string Vec3 Vec3>`
+    - Returns: `void`
+- `objectTemplate.seatLeftRotationLimit <float>`
+    - Returns: `float`
+- `objectTemplate.seatParent <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.seatPosition <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.seatRightRotationLimit <float>`
+    - Returns: `float`
+- `objectTemplate.seatRotation <Vec3>`
+    - Returns: `Vec3`
+    - In Vehicles `.tweak`
+    - Allows the PCO to be rotated.
+    - Uses X/Y/Z.
+    - Relevant to Seat X Y Z Arrow.
+    - See BF2Editor Vehicle for more info.
+    - For example -10/0/0 wil rotate the player backwards.
+- `objectTemplate.secondaryProjectileTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.seek.directionBonus <float>`
+    - Returns: `float`
+- `objectTemplate.seek.maxAngleLock <float>`
+    - Returns: `float`
+- `objectTemplate.seek.maxDistLock <float>`
+    - Returns: `float`
+- `objectTemplate.seek.reLockTime <float>`
+    - Returns: `float`
+- `objectTemplate.seek.targetType <TargetType>`
+    - Returns: `TargetType`
+- `objectTemplate.seek.trackingDelay <float>`
+    - Returns: `float`
+- `objectTemplate.selfLights <bool>`
+    - Returns: `bool`
+- `objectTemplate.selfShadowIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.selfShadows <bool>`
+    - Returns: `bool`
+- `objectTemplate.setActiveTemplate <int>`
+    - Returns: `void`
+- `objectTemplate.setAIEnterOnSpawn <bool>`
+    - Returns: `void`
+- `objectTemplate.setAllowSpawnCloseToVehicle <bool>`
+    - Returns: `void`
+- `objectTemplate.setAnimationFrameHeightRelative <float>`
+    - Returns: `void`
+- `objectTemplate.setAnimationFrameWidthRelative <float>`
+    - Returns: `void`
+- `objectTemplate.setAxisFixation <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.setCollisionMesh <std::string>`
+    - Returns: `void`
+- `objectTemplate.setEnterOnSpawn <bool>`
+    - Returns: `void`
+- `objectTemplate.setExplodePartAtDestroy <bool>`
+    - Returns: `void`
+- `objectTemplate.setGearRatios <float float float>`
+    - Returns: `void`
+- `objectTemplate.setHasTarget <bool>`
+    - Returns: `void`
+- `objectTemplate.setHealth <int float float>`
+    - Returns: `void`
+- `objectTemplate.setHeatBarType <heatBarType>`
+    - Returns: `void`
+- `objectTemplate.setMinSpawnHeight <float>`
+    - Returns: `void`
+- `objectTemplate.setNumWindows <int>`
+    - Returns: `void`
+- `objectTemplate.setObjectTemplate <int std::string>`
+    - Returns: `void`
+- `objectTemplate.setOnlyForAI <bool>`
+    - Returns: `void`
+- `objectTemplate.setOnlyForHuman <bool>`
+    - Returns: `void`
+- `objectTemplate.setPosition <Math::Vec3 int>`
+    - Returns: `void`
+- `objectTemplate.setPositionalFixation <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.setRotation <Math::Vec3 int>`
+    - Returns: `void`
+- `objectTemplate.setScatterSpawnPositions <bool>`
+    - Returns: `void`
+- `objectTemplate.setSkeletonCollisionBone <std::string int Vec3>`
+    - Returns: `void`

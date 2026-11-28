@@ -1,0 +1,262 @@
+# Console ObjectTemplate (cockpitSubGeom to detonation.flashbangAdditiveGlowMaxHoldTime)
+
+- `objectTemplate.cockpitSubGeom <U32>`
+    - Returns: `U32`
+- `objectTemplate.collision.bouncing <bool>`
+    - Returns: `bool`
+- `objectTemplate.collision.hasCollisionEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.collision.maxStickAngle <float>`
+    - Returns: `float`
+- `objectTemplate.collision.replenishingStrength <float>`
+    - Returns: `float`
+- `objectTemplate.collision.replenishingType <ReplenishingType>`
+    - Returns: `ReplenishingType`
+- `objectTemplate.collision.restoreHP <float>`
+    - Returns: `float`
+- `objectTemplate.collision.resurrectDamage <float>`
+    - Returns: `float`
+- `objectTemplate.collision.stickToStaticObjects <bool>`
+    - Returns: `bool`
+- `objectTemplate.collision.stickToTerrain <bool>`
+    - Returns: `bool`
+- `objectTemplate.collision.stickToVehicles <bool>`
+    - Returns: `bool`
+- `objectTemplate.collisionEffectName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.collisionEnable <bool>`
+    - Returns: `bool`
+- `objectTemplate.collisionGroups <U32>`
+    - Returns: `U32`
+- `objectTemplate.collisionMesh <std::string>`
+    - Returns: `void`
+- `objectTemplate.collisionMesh <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.collisionPart <int>`
+    - Returns: `int`
+- `objectTemplate.collisionSpeedAlongNormal <float>`
+    - Returns: `float`
+- `objectTemplate.collisionSpeedAlongPlane <float>`
+    - Returns: `float`
+- `objectTemplate.collisionStartRadius <float>`
+    - Returns: `float`
+- `objectTemplate.color <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.color <Vec3ColorFloat>`
+    - Returns: `Vec3ColorFloat`
+- `objectTemplate.color1 <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.color2 <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.colorBlendGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.coneAngle1 <float>`
+    - Returns: `float`
+- `objectTemplate.coneAngle2 <float>`
+    - Returns: `float`
+- `objectTemplate.coneDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.coneInnerAngle <float>`
+    - Returns: `float`
+- `objectTemplate.coneOuterAngle <float>`
+    - Returns: `float`
+- `objectTemplate.coneOuterVolume <float>`
+    - Returns: `float`
+- `objectTemplate.constantForce <float>`
+    - Returns: `float`
+- `objectTemplate.constantRpm <bool>`
+    - Returns: `bool`
+- `objectTemplate.continousRotationSpeed <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.controlPointId <int>`
+    - Returns: `int`
+- `objectTemplate.ControlPointId <U32>`
+    - Returns: `U32`
+- `objectTemplate.controlPointName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.controlsCategory <dice::hfe::world::VehicleCategory>`
+    - Returns: `dice::hfe::world::VehicleCategory`
+- `objectTemplate.coolDownPerSec <float>`
+    - Returns: `float`
+- `objectTemplate.coolingFactor <float>`
+    - Returns: `float`
+- `objectTemplate.copyLinksCount <int>`
+    - Returns: `int`
+- `ObjectTemplate.create <std::string std::string>`
+    - Returns: `IObjectTemplate\*`
+- `objectTemplate.createComponent <std::string>`
+    - Returns: `void`
+- `objectTemplate.createdInEditor <bool>`
+    - Returns: `bool`
+- `objectTemplate.createInvisible <bool>`
+    - Returns: `bool`
+    - Creates the object as invisible.
+    - Collisions and Functions still work.
+    - Tested on the `at_mine`
+- `objectTemplate.createNotInGrid <bool>`
+    - Returns: `bool`
+- `objectTemplate.createVisibleInEditor <bool>`
+    - Returns: `bool`
+- `objectTemplate.crewKitIndex <int>`
+    - Returns: `int`
+    - `kits.con` (example: `gb82_pilot.con`)
+    - Defines what Geom to use for the kit.
+    - Looks up the Geom1 etc in the `.skinnedmesh`, which is located in the Meshes folder. For example, arg82/Meshes/arg82_kits1.skinnedmeshes.
+    - Open with BfMeshViewer to know what each number looks like.
+- `objectTemplate.crosshairFireTime <float>`
+    - Returns: `float`
+- `objectTemplate.cullRadiusScale <float>`
+    - Returns: `float`
+
+    Used in Weapons, Vehicle, Statics etc.
+
+- `objectTemplate.CVMChase <bool>`
+    - Returns: `bool`
+    - Vehicle `.tweak` files
+    - Used to set at what distance the object is culled from display.
+    - Each number represents a distance of 25m.
+    - For example: `ObjectTemplate.cullRadiusScale 6` - VD of 150m
+- `objectTemplate.CVMExternTrace <bool>`
+    - Returns: `bool`
+
+    Vehicle `.tweak` files
+
+- `objectTemplate.CVMFlyBy <bool>`
+    - Returns: `bool`
+
+    Vehicle `.tweak` files
+
+- `objectTemplate.CVMFrontChase <bool>`
+    - Returns: `bool`
+
+    Vehicle `.tweak` files
+
+- `objectTemplate.CVMInside <bool>`
+    - Returns: `bool`
+
+    Vehicle `.tweak` files
+
+- `objectTemplate.CVMNose <bool>`
+    - Returns: `bool`
+
+    Vehicle `.tweak` files
+
+- `objectTemplate.CVMTrace <bool>`
+    - Returns: `bool`
+
+    Vehicles `.tweak` files
+
+- `objectTemplate.cycles <int>`
+    - Returns: `int`
+- `objectTemplate.damage <float>`
+    - Returns: `float`
+- `objectTemplate.damagedAmbientSoundLimit <float>`
+    - Returns: `float`
+- `objectTemplate.damageForBeingOutSideWorld <float>`
+    - Returns: `float`
+- `objectTemplate.damageMandownSoldiers <bool>`
+    - Returns: `bool`
+- `objectTemplate.damageOwner <bool>`
+    - Returns: `bool`
+- `objectTemplate.damageSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.damageWhenLost <float>`
+    - Returns: `float`
+- `objectTemplate.dampenSprintRotationalForceInAirMod <float>`
+    - Returns: `float`
+- `objectTemplate.dampHorizontalVel <float>`
+    - Returns: `float`
+- `objectTemplate.dampHorizontalVelFactor <float>`
+    - Returns: `float`
+- `objectTemplate.damping <float>`
+    - Returns: `float`
+- `objectTemplate.deAcceleration <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.debugAutoRotate <bool>`
+    - Returns: `bool`
+- `objectTemplate.debugForceGearUp <bool>`
+    - Returns: `bool`
+- `objectTemplate.decalTextureName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.decreaseAngleToZero <bool>`
+    - Returns: `bool`
+- `objectTemplate.decreaseAngleToZeroSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.decreaseAngleToZeroVerticalVel <float>`
+    - Returns: `float`
+- `objectTemplate.defaultAngleOfAttack <float>`
+    - Returns: `float`
+- `objectTemplate.defaultWeaponIndex <int>`
+    - Returns: `int`
+- `objectTemplate.degradeDropStrength <float>`
+    - Returns: `float`
+- `objectTemplate.degradeThrowStrength <float>`
+    - Returns: `float`
+- `objectTemplate.degradeThrowStrength2 <float>`
+    - Returns: `float`
+- `objectTemplate.delay <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.delayBeforeCycle <float>`
+    - Returns: `float`
+- `objectTemplate.delayBeforeEnd <float>`
+    - Returns: `float`
+- `objectTemplate.delayBeforeStart <float>`
+    - Returns: `float`
+- `objectTemplate.delayToUse <float>`
+    - Returns: `float`
+- `ObjectTemplate.delete <world::IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `objectTemplate.deleteComponent <std::string>`
+    - Returns: `void`
+- `objectTemplate.deployAnimationTime <float>`
+    - Returns: `float`
+- `objectTemplate.destroyableWindowsTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.destroyOnExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.destroyWhenEmptyStorage <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonateAfterProjectileStopped <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonateAfterProjectileStoppedMinSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.allowFriendlyFireDetonation <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.detectionRadius <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.detonateDistanceToTarget <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.detonateOnWaterCollision <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.effectRotation <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.detonation.endEffectTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.detonation.explosionConeAngle <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionDamage <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionForce <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionInnerConeRadius <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionLineOfSightMinimumDamage <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.detonation.explosionRadius <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionSoldierLineOfSight <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionSoldierLineOfSightHealRate <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionSoldierLineOfSightTimer <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.explosionYMod <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangAdditiveGlowMaxAlpha <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangAdditiveGlowMaxHealTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangAdditiveGlowMaxHoldTime <float>`
+    - Returns: `float`

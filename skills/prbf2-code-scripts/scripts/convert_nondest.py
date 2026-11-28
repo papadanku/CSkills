@@ -1,29 +1,44 @@
 #!/usr/bin/env python3
-"""Convert a destroyable PR:BF2 object (.con/.tweak) into a non-destroyable (_nondest) variant."""
+"""Convert a destroyable PR:BF2 object into a _nondest SimpleObject variant."""
 
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 import re
 import sys
-from pathlib import Path
 
-CREATE_DEST_RE = re.compile(
-    r"^(objecttemplate\.create\s+)DestroyableObject(\s+)(\S+)", re.IGNORECASE
-)
-ACTIVESAFE_DEST_RE = re.compile(
-    r"^(objecttemplate\.activesafe\s+)DestroyableObject(\s+)(\S+)", re.IGNORECASE
-)
-CREATE_ANY_RE = re.compile(
-    r"^(objecttemplate\.create\s+\S+\s+)(\S+)", re.IGNORECASE
-)
-ACTIVESAFE_ANY_RE = re.compile(
-    r"^(objecttemplate\.activesafe\s+\S+\s+)(\S+)", re.IGNORECASE
-)
-BEGIN_COMP_RE = re.compile(r"^rem\s+---BeginComp:(\S+)\s*---", re.IGNORECASE)
-END_COMP_RE = re.compile(r"^rem\s+---EndComp\s*---", re.IGNORECASE)
 
-STRIP_PREFIXES = (
+CREATE_DESTROYABLE_PATTERN = re.compile(
+    r"^(objecttemplate\.create\s+)DestroyableObject(\s+)(\S+)",
+    re.IGNORECASE,
+)
+ACTIVESAFE_DESTROYABLE_PATTERN = re.compile(
+    r"^(objecttemplate\.activesafe\s+)DestroyableObject(\s+)(\S+)",
+    re.IGNORECASE,
+)
+CREATE_ANY_TEMPLATE_PATTERN = re.compile(
+    r"^(objecttemplate\.create\s+\S+\s+)(\S+)",
+    re.IGNORECASE,
+)
+ACTIVESAFE_ANY_TEMPLATE_PATTERN = re.compile(
+    r"^(objecttemplate\.activesafe\s+\S+\s+)(\S+)",
+    re.IGNORECASE,
+)
+BEGIN_COMPONENT_PATTERN = re.compile(
+    r"^rem\s+---BeginComp:(\S+)\s*---",
+    re.IGNORECASE,
+)
+END_COMPONENT_PATTERN = re.compile(
+    r"^rem\s+---EndComp\s*---",
+    re.IGNORECASE,
+)
+PRIMARY_CREATE_PATTERN = re.compile(
+    r"^\s*objecttemplate\.create\s+\S+\s+(\S+)",
+    re.IGNORECASE,
+)
+
+STRIP_TWEAK_PREFIXES = (
     "objecttemplate.isdestructable",
     "objecttemplate.setnetworkableinfo",
 )
@@ -36,95 +51,140 @@ KEEP_ORIGINAL_NAME_PREFIXES = (
     "objecttemplate.setcollisionmesh",
 )
 
+REMOVED_DESTRUCTION_COMPONENTS = {"armor", "strategicobject"}
 
-def convert_con_text(text: str, orig_name: str, new_name: str) -> str:
-    """Transform a .con file for _nondest."""
-    out_lines: list[str] = []
-    for line in text.splitlines():
-        stripped = line.strip()
-        lower = stripped.lower()
 
-        if any(lower.startswith(p) for p in KEEP_ORIGINAL_NAME_PREFIXES):
-            out_lines.append(line)
+def starts_with_any_prefix(
+    lowercase_line: str,
+    prefixes: tuple[str, ...],
+) -> bool:
+    """Return True if lowercase_line begins with any prefix in prefixes."""
+    for prefix in prefixes:
+        if lowercase_line.startswith(prefix):
+            return True
+    return False
+
+
+def convert_con_text(
+    con_text: str,
+    original_name: str,
+    new_name: str,
+) -> str:
+    """Transform a .con file into a _nondest SimpleObject variant."""
+    output_lines: list[str] = []
+
+    for line in con_text.splitlines():
+        stripped_line = line.strip()
+        lowercase_line = stripped_line.lower()
+
+        if starts_with_any_prefix(lowercase_line, KEEP_ORIGINAL_NAME_PREFIXES):
+            output_lines.append(line)
             continue
 
-        if m := CREATE_DEST_RE.match(stripped):
-            out_lines.append(f"{m.group(1)}SimpleObject{m.group(2)}{new_name}")
+        create_destroyable_match = CREATE_DESTROYABLE_PATTERN.match(
+            stripped_line
+        )
+        if create_destroyable_match is not None:
+            prefix = create_destroyable_match.group(1)
+            whitespace = create_destroyable_match.group(2)
+            output_lines.append(f"{prefix}SimpleObject{whitespace}{new_name}")
             continue
 
-        if m := CREATE_ANY_RE.match(stripped):
-            out_lines.append(f"{m.group(1)}{new_name}")
+        create_any_match = CREATE_ANY_TEMPLATE_PATTERN.match(stripped_line)
+        if create_any_match is not None:
+            output_lines.append(f"{create_any_match.group(1)}{new_name}")
             continue
 
-        updated = re.sub(
-            rf"(include\s+){re.escape(orig_name)}\.tweak\b",
+        updated_line = re.sub(
+            rf"(include\s+){re.escape(original_name)}\.tweak\b",
             rf"\1{new_name}.tweak",
             line,
             flags=re.IGNORECASE,
         )
-        out_lines.append(updated)
+        output_lines.append(updated_line)
 
-    return "\n".join(out_lines) + "\n"
+    return "\n".join(output_lines) + "\n"
 
 
-def convert_tweak_text(text: str, new_name: str) -> str:
-    """Transform a .tweak file for _nondest by stripping Armor/StrategicObject and destructible flags."""
-    out_lines: list[str] = []
-    skip_comp = False
+def convert_tweak_text(tweak_text: str, new_name: str) -> str:
+    """Transform a .tweak file by stripping destruction components."""
+    output_lines: list[str] = []
+    skip_component_block = False
 
-    for line in text.splitlines():
-        stripped = line.strip()
-        lower = stripped.lower()
+    for line in tweak_text.splitlines():
+        stripped_line = line.strip()
+        lowercase_line = stripped_line.lower()
 
-        if m := BEGIN_COMP_RE.match(stripped):
-            comp = m.group(1).lower()
-            if comp in {"armor", "strategicobject"}:
-                skip_comp = True
+        begin_comp_match = BEGIN_COMPONENT_PATTERN.match(stripped_line)
+        if begin_comp_match is not None:
+            component_name = begin_comp_match.group(1).lower()
+            if component_name in REMOVED_DESTRUCTION_COMPONENTS:
+                skip_component_block = True
                 continue
 
-        if skip_comp:
-            if END_COMP_RE.match(stripped):
-                skip_comp = False
+        if skip_component_block:
+            if END_COMPONENT_PATTERN.match(stripped_line) is not None:
+                skip_component_block = False
             continue
 
-        if any(lower.startswith(p) for p in STRIP_PREFIXES):
+        if starts_with_any_prefix(lowercase_line, STRIP_TWEAK_PREFIXES):
             continue
 
-        if any(lower.startswith(p) for p in KEEP_ORIGINAL_NAME_PREFIXES):
-            out_lines.append(line)
+        if starts_with_any_prefix(lowercase_line, KEEP_ORIGINAL_NAME_PREFIXES):
+            output_lines.append(line)
             continue
 
-        if m := ACTIVESAFE_DEST_RE.match(stripped):
-            out_lines.append(f"{m.group(1)}SimpleObject{m.group(2)}{new_name}")
+        activesafe_destroyable_match = ACTIVESAFE_DESTROYABLE_PATTERN.match(
+            stripped_line
+        )
+        if activesafe_destroyable_match is not None:
+            prefix = activesafe_destroyable_match.group(1)
+            whitespace = activesafe_destroyable_match.group(2)
+            output_lines.append(f"{prefix}SimpleObject{whitespace}{new_name}")
             continue
 
-        if m := ACTIVESAFE_ANY_RE.match(stripped):
-            out_lines.append(f"{m.group(1)}{new_name}")
+        activesafe_any_match = ACTIVESAFE_ANY_TEMPLATE_PATTERN.match(
+            stripped_line
+        )
+        if activesafe_any_match is not None:
+            output_lines.append(f"{activesafe_any_match.group(1)}{new_name}")
             continue
 
-        out_lines.append(line)
+        output_lines.append(line)
 
-    return "\n".join(out_lines) + "\n"
+    return "\n".join(output_lines) + "\n"
 
 
-def detect_template_name(con_text: str, fallback: str) -> str:
-    """Extract primary ObjectTemplate name from .con text."""
+def detect_template_name(con_text: str, fallback_name: str) -> str:
+    """Extract the primary ObjectTemplate name from .con text."""
     for line in con_text.splitlines():
-        if m := re.match(r"^\s*objecttemplate\.create\s+\S+\s+(\S+)", line, re.IGNORECASE):
-            return m.group(1)
-    return fallback
+        create_match = PRIMARY_CREATE_PATTERN.match(line)
+        if create_match is not None:
+            return create_match.group(1)
+    return fallback_name
 
 
-def main() -> int:
+def parse_arguments() -> argparse.Namespace:
+    """Parse CLI arguments for the _nondest converter."""
     parser = argparse.ArgumentParser(
-        description="Convert destroyable .con/.tweak scripts into _nondest SimpleObject variants."
+        description=(
+            "Convert destroyable .con/.tweak scripts into _nondest "
+            "SimpleObject variants."
+        )
     )
-    parser.add_argument("con_file", type=Path, help="Input .con file.")
+    parser.add_argument(
+        "con_file",
+        type=Path,
+        help="Input .con file.",
+    )
     parser.add_argument(
         "--tweak",
         type=Path,
         default=None,
-        help="Optional .tweak file (defaults to sibling <stem>.tweak if present).",
+        help=(
+            "Optional .tweak file (defaults to sibling <stem>.tweak "
+            "if present)."
+        ),
     )
     parser.add_argument(
         "--out-dir",
@@ -133,47 +193,68 @@ def main() -> int:
         help="Output directory (defaults to input .con directory).",
     )
     parser.add_argument(
-        "--dry-run", action="store_true", help="Print converted output without writing files."
+        "--dry-run",
+        action="store_true",
+        help="Print converted output without writing files.",
     )
-    args = parser.parse_args()
+    return parser.parse_args()
 
-    if not args.con_file.is_file():
-        print(f"File not found: {args.con_file}", file=sys.stderr)
+
+def main() -> int:
+    """Entry point for converting destroyable objects to _nondest."""
+    arguments = parse_arguments()
+
+    if not arguments.con_file.is_file():
+        print(f"File not found: {arguments.con_file}", file=sys.stderr)
         return 2
 
-    con_text = args.con_file.read_text(encoding="utf-8", errors="replace")
-    orig_name = detect_template_name(con_text, args.con_file.stem)
-    new_name = f"{orig_name}_nondest"
+    con_text = arguments.con_file.read_text(
+        encoding="utf-8",
+        errors="replace",
+    )
+    original_name = detect_template_name(con_text, arguments.con_file.stem)
+    new_name = f"{original_name}_nondest"
 
-    tweak_path = args.tweak or args.con_file.with_suffix(".tweak")
-    has_tweak = tweak_path.is_file()
+    if arguments.tweak is not None:
+        tweak_path = arguments.tweak
+    else:
+        tweak_path = arguments.con_file.with_suffix(".tweak")
 
-    new_con_text = convert_con_text(con_text, orig_name, new_name)
-    new_tweak_text = (
-        convert_tweak_text(
-            tweak_path.read_text(encoding="utf-8", errors="replace"), new_name
-        )
-        if has_tweak
-        else None
+    new_con_text = convert_con_text(
+        con_text=con_text,
+        original_name=original_name,
+        new_name=new_name,
     )
 
-    out_dir = args.out_dir or args.con_file.parent
-    out_con = out_dir / f"{new_name}.con"
-    out_tweak = out_dir / f"{new_name}.tweak"
+    new_tweak_text: str | None = None
+    if tweak_path.is_file():
+        original_tweak_text = tweak_path.read_text(
+            encoding="utf-8",
+            errors="replace",
+        )
+        new_tweak_text = convert_tweak_text(original_tweak_text, new_name)
 
-    if args.dry_run:
-        print(f"=== {out_con} ===\n{new_con_text}")
+    if arguments.out_dir is not None:
+        output_directory = arguments.out_dir
+    else:
+        output_directory = arguments.con_file.parent
+
+    output_con_path = output_directory / f"{new_name}.con"
+    output_tweak_path = output_directory / f"{new_name}.tweak"
+
+    if arguments.dry_run:
+        print(f"=== {output_con_path} ===\n{new_con_text}")
         if new_tweak_text is not None:
-            print(f"=== {out_tweak} ===\n{new_tweak_text}")
+            print(f"=== {output_tweak_path} ===\n{new_tweak_text}")
         return 0
 
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_con.write_text(new_con_text, encoding="utf-8")
-    print(f"Wrote {out_con}")
+    output_directory.mkdir(parents=True, exist_ok=True)
+    output_con_path.write_text(new_con_text, encoding="utf-8")
+    print(f"Wrote {output_con_path}")
 
     if new_tweak_text is not None:
-        out_tweak.write_text(new_tweak_text, encoding="utf-8")
-        print(f"Wrote {out_tweak}")
+        output_tweak_path.write_text(new_tweak_text, encoding="utf-8")
+        print(f"Wrote {output_tweak_path}")
 
     return 0
 

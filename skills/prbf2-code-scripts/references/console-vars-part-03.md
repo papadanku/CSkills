@@ -1,0 +1,236 @@
+# Console Vars.set (phy-gas to ragdoll_legForwardAngle)
+
+- `phy-gas`
+    - Default: `1.000000`
+- `phy-gravity-compensation-size`
+    - Default: `0.500000`
+- `phy-gravity-contact-mod`
+    - Default: `0.100000`
+- `phy-hand-break-adjust`
+    - Default: `0.050000`
+- `phy-hand-break-release`
+    - Default: `10`
+- `phy-hand-break-rpm`
+    - Default: `0.100000`
+- `phy-i-mod`
+    - Default: `1.500000`
+- `phy-imp-mod`
+    - Default: `1.000000`
+- `phy-imp-wakeup`
+    - Default: `1.000000`
+- `phy-impulse-limit`
+    - Default: `0.050000`
+- `phy-latencyComp-debug`
+    - Default: `-1.000000`
+- `phy-latencyComp-default`
+    - Default: `0.050000`
+- `phy-latencyComp-max`
+    - Default: `0.300000`
+- `phy-latencyComp-maxRenderAheadTime`
+    - Default: `0.033333`
+- `phy-latencyComp-pingFactor`
+    - Default: `0.500000`
+- `phy-latencyComp-useClientWindow`
+    - Default: `1`
+- `phy-latencyComp-useInput`
+    - Default: `1`
+- `phy-latencyComp-useRenderAhead`
+    - Default: `0`
+- `phy-lin-acc`
+    - Default: `1.600000`
+- `phy-lin-mod`
+    - Default: `0.500000`
+- `phy-lin-vel`
+    - Default: `0.500000`
+- `phy-list-physics-nodes`
+    - Default: `0`
+- `phy-list-response-physics`
+    - Default: `0`
+- `phy-max-imp`
+    - Default: `1000.000000`
+- `phy-max-speed`
+    - Default: `1500.000000`
+- `phy-new-collision-meshes`
+    - Default: `0`
+- `phy-print`
+    - Default: `-1`
+- `phy-proj-collision-count`
+    - Default: `3`
+- `phy-proj-collision-depth`
+    - Default: `0.050000`
+- `phy-proj-precision`
+    - Default: `0.001000`
+- `phy-proj-spring-on-up-axis`
+    - Default: `1`
+- `phy-sep-fifty-fifty`
+    - Default: `10.000000`
+- `phy-soldier-acceleration`
+    - Default: `0.120000`
+- `phy-soldier-air-movement-factor`
+    - Default: `0`
+- `phy-soldier-crawl-speed`
+    - Default: `0.800000`
+- `phy-soldier-crouch-speed`
+    - Default: `2.000000`
+- `phy-soldier-crush-minposspeedsqr`
+    - Default: `12.000000`
+- `phy-soldier-crush-minrotspeedsqr`
+    - Default: `0.010000`
+- `phy-soldier-crush-minvehicleposspeedsqr`
+    - Default: `2.000000`
+- `phy-soldier-deceleration`
+    - Default: `0.350000`
+- `phy-soldier-elasticity`
+    - Default: `0.000000`
+- `phy-soldier-feet-contact-normal`
+    - Default: `0.500000`
+- `phy-soldier-feet-level`
+    - Default: `-0.040000`
+- `phy-soldier-friction`
+    - Default: `1.000000`
+- `phy-soldier-imp-feet`
+    - Default: `1.000000`
+- `phy-soldier-inair-speed`
+    - Default: `2.000000`
+- `phy-soldier-jump-factor`
+    - Default: `0.800000`
+- `phy-soldier-jump-length-factor`
+    - Default: `0.980000`
+- `phy-soldier-look-factor-x`
+    - Default: `5.000000`
+- `phy-soldier-look-factor-y`
+    - Default: `5.000000`
+- `phy-soldier-resistance`
+    - Default: `0.020000`
+- `phy-soldier-run-speed`
+    - Default: `3.900000`
+- `phy-soldier-skydive-speed`
+    - Default: `15.000000`
+- `phy-soldier-skydiveat-speed`
+    - Default: `-10.000000`
+- `phy-soldier-speed-factor`
+    - Default: `0.850000`
+- `phy-soldier-sprint-dissipation-time`
+    - Default: `10.000000`
+- `phy-soldier-sprint-limit`
+    - Default: `0.500000`
+- `phy-soldier-sprint-recover-time`
+    - Default: `120.000000`
+- `phy-soldier-sprint-speed`
+    - Default: `7.000000`
+- `phy-soldier-start-float`
+    - Default: `0.990000`
+- `phy-soldier-stop-float`
+    - Default: `0.900000`
+- `phy-soldier-swim-speed`
+    - Default: `2.100000`
+- `phy-soldier-swimcrawl-speed`
+    - Default: `3.645000`
+- `phy-soldier-take-fall-damage`
+    - Default: `1`
+- `phy-soldier-walk-speed`
+    - Default: `1.500000`
+- `phy-spring-client-debug`
+    - Default: `0`
+- `phy-spring-server-debug`
+    - Default: `1`
+- `phy-tank-engine-inertia`
+    - Default: `0.070000`
+- `phy-turn`
+    - Default: `0.100000`
+- `phy-wing-water-mod`
+    - Default: `10.000000`
+- `phy-wreck`
+    - Default: `1`
+- `pose-crawl-crouch`
+    - Default: `0.500000`
+- `pose-crawl-run`
+    - Default: `0.500000`
+- `pose-crawl-sprint`
+    - Default: `0.500000`
+- `pose-crawl-swim`
+    - Default: `0.500000`
+- `pose-crawl-swimCrawl`
+    - Default: `0.500000`
+- `pose-crawl-walk`
+    - Default: `0.500000`
+- `pose-crouch-crawl`
+    - Default: `0.500000`
+- `pose-crouch-run`
+    - Default: `0.250000`
+- `pose-crouch-sprint`
+    - Default: `0.250000`
+- `pose-crouch-swim`
+    - Default: `0.500000`
+- `pose-crouch-swimCrawl`
+    - Default: `0.500000`
+- `pose-crouch-walk`
+    - Default: `0.250000`
+- `pose-run-crawl`
+    - Default: `0.500000`
+- `pose-run-crouch`
+    - Default: `0.250000`
+- `pose-run-sprint`
+    - Default: `0.250000`
+- `pose-run-swim`
+    - Default: `0.500000`
+- `pose-run-swimCrawl`
+    - Default: `0.500000`
+- `pose-run-walk`
+    - Default: `0.250000`
+- `pose-sprint-crawl`
+    - Default: `0.500000`
+- `pose-sprint-crouch`
+    - Default: `0.250000`
+- `pose-sprint-run`
+    - Default: `0.250000`
+- `pose-sprint-swim`
+    - Default: `0.500000`
+- `pose-sprint-swimCrawl`
+    - Default: `0.500000`
+- `pose-sprint-walk`
+    - Default: `0.250000`
+- `pose-walk-crawl`
+    - Default: `0.500000`
+- `pose-walk-crouch`
+    - Default: `0.250000`
+- `pose-walk-run`
+    - Default: `0.250000`
+- `pose-walk-sprint`
+    - Default: `0.250000`
+- `pose-walk-swim`
+    - Default: `0.500000`
+- `pose-walk-swimCrawl`
+    - Default: `0.500000`
+- `prone-delay-after-jump`
+    - Default: `1.200000`
+- `prone-delay-from-stand`
+    - Default: `1.200000`
+- `ragdoll-max-inherit-speed`
+    - Default: `5.000000`
+- `ragdoll_bodyBoneSize`
+    - Default: `0.120000`
+- `ragdoll_boneSize`
+    - Default: `0.100000`
+- `ragdoll_clientMaxUpdateTime`
+    - Default: `0.002000`
+- `ragdoll_collMid`
+    - Default: `0.999900`
+- `ragdoll_completeCollRadius`
+    - Default: `1.500000`
+- `ragdoll_dT`
+    - Default: `0.011111`
+- `ragdoll_enableForce`
+    - Default: `0`
+- `ragdoll_expRotateForce`
+    - Default: `13.000000`
+- `ragdoll_gravityOverTime`
+    - Default: `0.500000`
+- `ragdoll_iterations`
+    - Default: `2`
+- `ragdoll_kneeBoneSize`
+    - Default: `0.050000`
+- `ragdoll_legBackAngle`
+    - Default: `-0.100000`
+- `ragdoll_legForwardAngle`
+    - Default: `10.000000`

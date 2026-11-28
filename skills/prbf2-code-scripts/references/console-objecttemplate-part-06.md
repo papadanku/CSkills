@@ -1,0 +1,262 @@
+# Console ObjectTemplate (healStorageSize to maxNrOfObjectSpawned)
+
+- `objectTemplate.healStorageSize <float>`
+    - Returns: `float`
+- `objectTemplate.heatAddWhenFire <float>`
+    - Returns: `float`
+- `objectTemplate.heatIncrement <float>`
+    - Returns: `float`
+- `objectTemplate.height <float>`
+    - Returns: `float`
+- `objectTemplate.heightOffset <float>`
+    - Returns: `float`
+- `objectTemplate.helpHud.altHelpSoundKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.altHelpstd::stringKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.closeToDistance <int>`
+    - Returns: `int`
+- `objectTemplate.helpHud.closeToHelpSoundKeyEnemy <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.closeToHelpSoundKeyFriendly <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.closeToHelpSoundKeyNeutral <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.closeToHelpstd::stringKeyEnemy <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.closeToHelpstd::stringKeyFriendly <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.closeToHelpstd::stringKeyNeutral <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.helpSoundKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.helpstd::stringKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.lowAmmoHelpSoundKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.lowAmmoHelpstd::stringKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.lowArmorHelpSoundKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.helpHud.lowArmorHelpstd::stringKey <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.hideFirstPerson <bool>`
+    - Returns: `bool`
+- `objectTemplate.hoistFlag <bool>`
+    - Returns: `bool`
+- `objectTemplate.hoistMinMax <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.holdObject <bool>`
+    - Returns: `bool`
+- `objectTemplate.horizontalDampAngle <float>`
+    - Returns: `float`
+- `objectTemplate.horizontalDampAngleFactor <float>`
+    - Returns: `float`
+- `objectTemplate.horizontalSpeedMagnifier <float>`
+    - Returns: `float`
+- `objectTemplate.hullHeight <float>`
+    - Returns: `float`
+- `objectTemplate.ik.poleVectorLeft <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ik.poleVectorRight <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ik.positionLeft <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ik.positionRight <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ik.rotationLeft <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ik.rotationRight <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.inertiaModifier <Vec3>`
+    - Returns: `Vec3`
+- `ObjectTemplate.info <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `objectTemplate.inheritHeatFromPrimary <bool>`
+    - Returns: `bool`
+- `objectTemplate.initiallyWalkable <bool>`
+    - Returns: `bool`
+- `objectTemplate.input <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.inputToPitch <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.inputToRoll <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.inputToYaw <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.insideDamageFrequency <float>`
+    - Returns: `float`
+- `objectTemplate.insideDamageThreshold <float>`
+    - Returns: `float`
+- `objectTemplate.insideFOV <float>`
+    - Returns: `float`
+- `objectTemplate.insideStaticSunAmbientColor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.insideStaticSunColor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.insideStaticSunDamageColor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.insideStaticSunDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.intensity <float>`
+    - Returns: `float`
+- `objectTemplate.intensity <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.intensityAtSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.intensityOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.inventorySize <U32>`
+    - Returns: `U32`
+- `objectTemplate.inverseHeatBar <bool>`
+    - Returns: `bool`
+- `objectTemplate.invertGear <bool>`
+    - Returns: `bool`
+- `objectTemplate.invisible <bool>`
+    - Returns: `bool`
+- `objectTemplate.is3dSound <bool>`
+    - Returns: `bool`
+
+    If the `.wav` file is Mono, setting it to 1 will tell the engine to play it on both channels. If applied to a `.wav` that is Stereo, it will play on the entire map. Same with `.wav` files though it's usually experimentation.
+
+- `objectTemplate.isCounterForce <bool>`
+    - Returns: `bool`
+- `objectTemplate.isDestructable <bool>`
+    - Returns: `bool`
+
+    Check only if object is a destroyable static object.
+
+- `objectTemplate.isDynamic <bool>`
+    - Returns: `bool`
+- `objectTemplate.isGasMask <bool>`
+    - Returns: `bool`
+- `objectTemplate.isHemisphere <bool>`
+    - Returns: `bool`
+- `objectTemplate.isLocalSystem <bool>`
+    - Returns: `bool`
+    - Makes the effect follow the projectile and allows it to arch.
+    - Used for the M67 *Zippo* Tank Flamethrower Effect.
+    - Without it, the flame effect just shoots straight but not following the projectile
+- `objectTemplate.isLooping <bool>`
+    - Returns: `bool`
+- `objectTemplate.isNightVision <bool>`
+    - Returns: `bool`
+- `objectTemplate.isNotSaveable <bool>`
+    - Returns: `bool`
+- `objectTemplate.isOpenVehicle <bool>`
+    - Returns: `bool`
+
+    Allows the ragdoll to slide off when killed from a vehicle position. Used in Technicals. If this is option. the passenger animation must have a die animation specified otherwise the ragdolls will float in the air.
+
+- `objectTemplate.isOvergrowth <bool>`
+    - Returns: `bool`
+- `objectTemplate.isPortalPassing <bool>`
+    - Returns: `bool`
+- `objectTemplate.isSelectable <bool>`
+    - Returns: `bool`
+- `objectTemplate.isSleeping <bool>`
+    - Returns: `bool`
+- `objectTemplate.isStatic <bool>`
+    - Returns: `bool`
+- `objectTemplate.isStaticSystem <bool>`
+    - Returns: `bool`
+- `objectTemplate.isUnderwaterEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.isUnstrategicControlPoint <bool>`
+    - Returns: `bool`
+- `objectTemplate.itemIndex <int>`
+    - Returns: `int`
+    - What number in the keyboard is mapped to what weapon/tool.
+    - Max is 9, not sure about 0.
+    - Also positions the weapon icon square.
+- `objectTemplate.itemType <int>`
+    - Returns: `int`
+- `objectTemplate.keepProjectiles <float>`
+    - Returns: `float Weapons`
+    - Time to keep the projectile in the world in seconds after you or the weapon dies
+- `objectTemplate.killHeatSeekingMissile <bool>`
+    - Returns: `bool`
+- `objectTemplate.kitTeam <int>`
+    - Returns: `int`
+- `objectTemplate.kitType <hfe::KitType>`
+    - Returns: `hfe::KitType`
+- `objectTemplate.lesserYawAtSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.liftRegulated <bool>`
+    - Returns: `bool`
+- `objectTemplate.LightAffectionFactor <float>`
+    - Returns: `float`
+- `objectTemplate.lightMapIntensityOffset <float>`
+    - Returns: `float`
+- `objectTemplate.lightType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.linkAttachMovement <float>`
+    - Returns: `float`
+- `objectTemplate.linkAttachTime <float>`
+    - Returns: `float`
+- `objectTemplate.linkedEffectContainer <std::string>`
+    - Returns: `std::string`
+- `ObjectTemplate.list <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.listenerObstruction <float>`
+    - Returns: `float`
+    - Vehicles `.tweak`
+    - How muffled is the sound.
+    - Lower value is least muffled.
+- `ObjectTemplate.listTemplateClasses`
+    - Returns: `std::string`
+- `objectTemplate.listTemplates`
+    - Returns: `std::string`
+- `ObjectTemplate.loadAll`
+    - Returns: `bool`
+- `objectTemplate.localPredictOnClient <bool>`
+    - Returns: `bool`
+    - Used with Grenades and if there's any effect projectiles.
+    - Seems like it tells the server to predict what's going to happen.
+    - Maybe used with the Networkable Setting
+- `objectTemplate.lodDistance <float>`
+    - Returns: `float`
+- `objectTemplate.LodDistance <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.loopCount <int>`
+    - Returns: `int`
+- `objectTemplate.looping <bool>`
+    - Returns: `bool`
+- `objectTemplate.loseControlWhenEnemyClose <bool>`
+    - Returns: `bool`
+- `objectTemplate.loseControlWhenNotClose <bool>`
+    - Returns: `bool`
+- `objectTemplate.lowSamples <int>`
+    - Returns: `int`
+- `objectTemplate.maintainCameraOnEnter <bool>`
+    - Returns: `bool`
+- `objectTemplate.maintainCameraOnExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.manDownCameraOffsetInDof <float>`
+    - Returns: `float`
+- `objectTemplate.manDownCameraOffsetInUp <float>`
+    - Returns: `float`
+- `objectTemplate.mapMaterial <uint std::string uint>`
+    - Returns: `void`
+- `objectTemplate.maskOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.maskType <hfe::MaskObjectType>`
+    - Returns: `hfe::MaskObjectType`
+- `objectTemplate.mass <float>`
+    - Returns: `float`
+    - Used in Vehicles, Deployables, etc.
+    - Mass is the weight of the vehicle in KG and also taking into account the GravityModifier value
+- `objectTemplate.material <int>`
+    - Returns: `int`
+- `objectTemplate.maxAngleOfAttack <float>`
+    - Returns: `float`
+- `objectTemplate.maxCorner <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.maxDistance <float>`
+    - Returns: `float`
+- `objectTemplate.maxDistanceUnderWaterSurface <float>`
+    - Returns: `float`
+- `objectTemplate.maxGasCloudRadius <float>`
+    - Returns: `float`
+- `objectTemplate.maxNrOfObjectSpawned <U32>`
+    - Returns: `U32`

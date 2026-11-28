@@ -1,0 +1,226 @@
+# Console Haptic Settings (Part 2: hapticSettings.setPhysicsSEASmoothTimeZLow to hapticSettings.setTurnSensitivitySOLDIER)
+
+- `hapticSettings.setPhysicsSEASmoothTimeZLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeZMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEATransitionValueHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEATransitionValueMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScale <float float float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleXHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleXLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleXMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleYHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleYLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleYMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleZHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleZLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERScaleZMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeXHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeXLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeXMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeYHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeYLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeYMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeZHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeZLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERSmoothTimeZMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERTransitionValueHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSOLDIERTransitionValueMed <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleCARBINE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleDEFIB <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleDROP <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleKNIFE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleLAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleLMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScalePISTOL <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleRIFLE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleRIFLELAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleSHOTGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleSMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleSNIPER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleTHROWN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_AIRGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_ARMORCANNON <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_COAXIALGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_HELIGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_HMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_LMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPitchScaleV_MISSILE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleCARBINE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleDEFIB <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleDROP <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleKNIFE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleLAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleLMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScalePISTOL <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleRIFLE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleRIFLELAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleSHOTGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleSMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleSNIPER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleTHROWN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_AIRGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_ARMORCANNON <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_COAXIALGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_HELIGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_HMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_LMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchScaleV_MISSILE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeCARBINE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeDEFIB <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeDROP <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeKNIFE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeLAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeLMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimePISTOL <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeRIFLE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeRIFLELAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeSHOTGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeSMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeSNIPER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeTHROWN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_AIRGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_ARMORCANNON <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_COAXIALGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_HELIGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_HMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_LMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilPunchTimeV_MISSILE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleCARBINE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleDEFIB <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleDROP <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleKNIFE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleLAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleLMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScalePISTOL <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleRIFLE <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleRIFLELAUNCHER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleSHOTGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleSMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleSNIPER <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleTHROWN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_AIRGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_ARMORCANNON <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_COAXIALGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_HELIGUN <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_HMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_LMG <float>`
+    - Returns: `void`
+- `hapticSettings.setRecoilYawScaleV_MISSILE <float>`
+    - Returns: `void`
+- `hapticSettings.setSpeedShakeScale <float>`
+    - Returns: `void`
+- `hapticSettings.setTurnSensitivity <float float float>`
+    - Returns: `void`
+- `hapticSettings.setTurnSensitivityAIR <float float float>`
+    - Returns: `void`
+- `hapticSettings.setTurnSensitivityHELI <float float float>`
+    - Returns: `void`
+- `hapticSettings.setTurnSensitivityLAND <float float float>`
+    - Returns: `void`
+- `hapticSettings.setTurnSensitivitySEA <float float float>`
+    - Returns: `void`
+- `hapticSettings.setTurnSensitivitySOLDIER <float float float>`
+    - Returns: `void`

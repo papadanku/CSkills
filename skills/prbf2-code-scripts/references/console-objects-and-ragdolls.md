@@ -1,0 +1,226 @@
+# Console Objects: Object, Networkables, and Ragdolls
+
+## Object
+
+### objectManager
+
+- `objectManager.drawStats <int>`
+    - Returns: `int`
+
+### objectDrawer
+
+- `objectDrawer.collectPlanesDistance <float>`
+    - Returns: `float`
+- `objectDrawer.drawDebugPlanes <bool>`
+    - Returns: `bool`
+- `objectDrawer.faceForwardThreshold <float>`
+    - Returns: `float`
+- `objectDrawer.showCullStats <bool>`
+    - Returns: `bool`
+- `objectDrawer.useExactTest <bool>`
+    - Returns: `bool`
+- `objectDrawer.useOcclusion <bool>`
+    - Returns: `bool`
+
+### object
+
+- `object.absolutePosition <Vec3>`
+    - Returns: `Vec3`
+- `object.absolutePositionSecondary <Vec3>`
+    - Returns: `Vec3`
+- `object.absoluteTransformation <Mat4>`
+    - Returns: `Mat4`
+- `Object.active <world::IObject_ptrproxy>`
+    - Returns: `world::IObject_ptrproxy`
+- `object.addAbsolutePoint`
+    - Returns: `void`
+- `object.attenuationRange1 <float>`
+    - Returns: `float`
+- `object.attenuationRange2 <float>`
+    - Returns: `float`
+- `object.color <Vec3>`
+    - Returns: `Vec3`
+- `object.coneAngle1 <float>`
+    - Returns: `float`
+- `object.coneAngle2 <float>`
+    - Returns: `float`
+- `Object.create <world::IObjectTemplate_ptrproxy Vec3 Vec3>`
+    - Returns: `world::IObject_ptrproxy`
+- `Object.delete <world::IObject_ptrproxy>`
+    - Returns: `void`
+- `Object.deleteAll`
+    - Returns: `std::string`
+- `object.direction <Vec3>`
+    - Returns: `Vec3`
+- `object.disableChildren <bool>`
+    - Returns: `bool`
+- `Object.forceStart <world::IObject_ptrproxy>`
+    - Returns: `void`
+- `Object.forceStop <world::IObject_ptrproxy>`
+    - Returns: `void`
+- `object.fov <float>`
+    - Returns: `float`
+- `object.geometry.color <Vec4>`
+    - Returns: `Vec4`
+- `object.geometry.GenerateLightmapForThisInstance <bool>`
+    - Returns: `bool`
+- `object.geometry.loadMesh <std::string>`
+    - Returns: `void`
+- `object.geometry.subGeometry <int>`
+    - Returns: `int`
+- `object.geometry.subGeometryCount`
+    - Returns: `int`
+- `object.geometry.technique <std::string>`
+    - Returns: `std::string`
+- `object.geometry.template`
+    - Returns: `IGeometryTemplate\*`
+- `object.getControlPointId`
+    - Returns: `int`
+- `Object.getGroundPos <Vec3>`
+    - Returns: `Vec3`
+- `object.getLightSourceMask`
+    - Returns: `int`
+- `object.getVisibleTeam`
+    - Returns: `int`
+- `object.group <int>`
+    - Returns: `int`
+- `object.hasCollision <bool>`
+    - Returns: `bool`
+- `object.hasUpdate <bool>`
+    - Returns: `bool`
+- `object.HDRIntensity <float>`
+    - Returns: `float`
+- `Object.info <world::IObject_ptrproxy>`
+    - Returns: `std::string`
+- `object.initGrid <Vec2 Vec2 int>`
+    - Returns: `void`
+- `object.isInGrid <bool>`
+    - Returns: `bool`
+- `object.isOvergrowth <bool>`
+    - Returns: `bool`
+- `object.isSaveable <bool>`
+    - Returns: `bool`
+- `object.isVisible <bool>`
+    - Returns: `bool`
+- `object.layer <int>`
+    - Returns: `int`
+- `Object.list`
+    - Returns: `std::string`
+- `Object.listObjectsOfTemplate <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `Object.loadAll <std::string>`
+    - Returns: `bool`
+- `object.name <std::string>`
+    - Returns: `std::string`
+- `object.notInAI <bool>`
+    - Returns: `bool`
+- `Object.printScript <world::IObject_ptrproxy>`
+    - Returns: `std::string`
+- `object.rotation <Vec3>`
+    - Returns: `Vec3`
+- `object.rotationSecondary <Vec3>`
+    - Returns: `Vec3`
+- `Object.saveAll <std::string>`
+    - Returns: `bool`
+- `object.scale <Vec3>`
+    - Returns: `Vec3`
+- `object.setActive <bool>`
+    - Returns: `void`
+- `object.setAsSkyLight`
+    - Returns: `void`
+- `object.setControlPointId <int>`
+    - Returns: `void`
+- `object.setIsDisabledRecursive <bool>`
+    - Returns: `void`
+- `object.setIsInTweakModeRecursive <bool>`
+    - Returns: `void`
+- `object.setIsSaveableRecursive <bool>`
+    - Returns: `void`
+- `object.setIsVisibleRecursive <bool>`
+    - Returns: `void`
+- `object.setLightSourceMask <int>`
+    - Returns: `void`
+- `Object.setObjectToGround <world::IObject_ptrproxy>`
+    - Returns: `Vec3`
+- `object.setTeam <int>`
+    - Returns: `void`
+- `object.setVisibleTeam <int>`
+    - Returns: `void`
+- `object.spawnOffset <Vec3>`
+    - Returns: `Vec3`
+- `Object.start <world::IObject_ptrproxy>`
+    - Returns: `void`
+- `Object.stop <world::IObject_ptrproxy>`
+    - Returns: `void`
+- `object.team <int>`
+    - Returns: `int`
+- `object.template`
+    - Returns: `const IObjectTemplate\*`
+- `object.togglePause`
+    - Returns: `void`
+
+## Networkables
+
+- `networkableInfo.createNewInfo <std::string>`
+    - Returns: `void`
+    - Used in objects `Networkables.con`
+    - Creates a custom `NetworkableInfo`
+    - Use with `NetworkableInfo.setPredictionMode` etc
+- `networkableInfo.deleteInfo <std::string>`
+    - Returns: `void`
+- `networkableInfo.setBasePriority <float>`
+    - Returns: `void`
+- `networkableInfo.setForceNetworkableId <bool>`
+    - Returns: `void`
+- `networkableInfo.setIsUnique <bool>`
+    - Returns: `void`
+- `networkableInfo.setPredictionMode <PredictionMode>`
+    - Returns: `void`
+
+    `NetworkableInfo.setPredictionMode`
+
+- `network.globalPredictionMode <PredictionMode>`
+    - Returns: `PredictionMode`
+
+## Ragdoll
+
+- `ragDoll.active <bool>`
+    - Returns: `void`
+- `ragDoll.addAngularConstraint <int int int>`
+    - Returns: `void`
+- `ragDoll.addBone <int int>`
+    - Returns: `void`
+- `ragDoll.addCapsuleCollision <int int>`
+    - Returns: `void`
+- `ragDoll.addConstraint <int int>`
+    - Returns: `void`
+- `ragDoll.addDihedralAngleConstraint <int int int>`
+    - Returns: `void`
+- `ragDoll.addDistanceLessThanConstraint <int int float>`
+    - Returns: `void`
+- `ragDoll.addForce <int Vec3>`
+    - Returns: `void`
+- `ragDoll.addJointConstraint <int int>`
+    - Returns: `void`
+- `ragDoll.addParticle <int float>`
+    - Returns: `void`
+- `ragDoll.drawConstraints <bool>`
+    - Returns: `void`
+- `ragDoll.gravity <float>`
+    - Returns: `void`
+- `ragDoll.linkMode <int int>`
+    - Returns: `void`
+- `ragDoll.lockBone <int int>`
+    - Returns: `void`
+- `ragDoll.removeConstraint <int int>`
+    - Returns: `void`
+- `ragDoll.reset`
+    - Returns: `void`
+- `ragDoll.save`
+    - Returns: `void`
+- `ragDoll.setParticleCollisionCriteria <float float>`
+    - Returns: `void`
+- `ragDoll.skeleton <std::string>`
+    - Returns: `void`
+- `ragDoll.toSkeleton <int int int>`
+    - Returns: `void`

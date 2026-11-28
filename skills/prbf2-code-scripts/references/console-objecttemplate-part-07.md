@@ -1,0 +1,262 @@
+# Console ObjectTemplate (maxResetSpeed to QualityLevel)
+
+- `objectTemplate.maxResetSpeed <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.MaxRopeLength <float>`
+    - Returns: `float`
+
+    Fastropes confirmed ?!?!?!?!
+
+- `objectTemplate.maxRotation <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.maxSpawnDelay <float>`
+    - Returns: `float`
+- `objectTemplate.maxSpeed <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.maxSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.maxTracerScaler <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - How long the tracer effect can be depending on projectile speed.
+    - Reference: http://www.battlefieldsingleplayer.com/forum/index.php?showtopic-8592&mode-threaded&pid-84936
+- `objectTemplate.maxTriggerDistance <float>`
+    - Returns: `float`
+- `objectTemplate.maxVertRegAngle <float>`
+    - Returns: `float`
+- `objectTemplate.MaxZiplineLength <float>`
+    - Returns: `float`
+- `objectTemplate.mediumSamples <int>`
+    - Returns: `int`
+- `objectTemplate.minCorner <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.minDamage <float>`
+    - Returns: `float`
+- `objectTemplate.minDistance <float>`
+    - Returns: `float`
+- `objectTemplate.minDistanceUnderWaterSurface <float>`
+    - Returns: `float`
+- `objectTemplate.minGasCloudRadius <float>`
+    - Returns: `float`
+- `objectTemplate.minimapNameOffset <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.minimumTimeBetweenTriggering <float>`
+    - Returns: `float`
+    - `AmbientObjects.con` (Map)
+    - The time when the trigger will repeat again after entering the trigger radius.
+    - Happens after the effect plays. In seconds.
+    - Depends also on `ObjectTemplate.chance`
+- `objectTemplate.minNrToTakeControl <U32>`
+    - Returns: `U32`
+- `objectTemplate.minRotation <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.minSpawnDelay <float>`
+    - Returns: `float`
+- `objectTemplate.minTimeBetweenActivation <float>`
+    - Returns: `float`
+- `objectTemplate.minTracerScaler <float>`
+    - Returns: `float`
+- `objectTemplate.minTrailVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.minYNormal <float>`
+    - Returns: `float`
+- `objectTemplate.movementSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.movementType <int>`
+    - Returns: `int`
+- `objectTemplate.moveToWaterSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.name`
+    - Returns: `std::string`
+- `objectTemplate.nameTagOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.nearCullingEnable <bool>`
+    - Returns: `bool`
+- `objectTemplate.networkableInfo <std::string>`
+    - Returns: `std::string`
+    - `Networkables.con`
+    - Needs to be set for objects that won't work online without them.
+    - Depends on the way it's set and if it crashes immediately, is laggy, or crashes unexpectantly
+- `objectTemplate.neverDrawAs1p <bool>`
+    - Returns: `bool`
+    - Vehicle, Weapons, Effects
+    - Makes the effect not draw in front of you when in 1p mode.
+    - Link: http://www.realitymod.com/forum/f388-pr-bf2-community-modding/113277-1p-animations-pcos-3.html
+- `objectTemplate.newCar2.brakeTorque <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.engineBrakeTorque <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.engineFeedbackMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.frictionMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.frictionTorque <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.maxRpm <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.minRpm <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.slopeTorqueMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.useClutchedTorque <bool>`
+    - Returns: `bool`
+- `objectTemplate.newCar2.wheelInertia <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLatDriveFrictionMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLatFrictionMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLatMinDynamicFriction <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLatPeakAt <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLatScale <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLongDriveFrictionMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLongFrictionMod <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLongMinDynamicFriction <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLongPeakAt <float>`
+    - Returns: `float`
+- `objectTemplate.newCar2.wheelLongScale <float>`
+    - Returns: `float`
+- `objectTemplate.noEffectAtPerpSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.noPassengerTimeToLive <int>`
+    - Returns: `int`
+- `objectTemplate.noPhysics <bool>`
+    - Returns: `bool`
+- `objectTemplate.noPropellerEffectAtSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.nosePos <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.notCycledIfOccupied <bool>`
+    - Returns: `bool`
+- `objectTemplate.noVertRegAngle <float>`
+    - Returns: `float`
+- `objectTemplate.nrOfObjectToSpawn <int>`
+    - Returns: `int`
+- `objectTemplate.nrOfRespawns <int>`
+    - Returns: `int`
+- `objectTemplate.numberOfGears <int>`
+    - Returns: `int`
+- `objectTemplate.NumberOfLinks <int>`
+    - Returns: `int`
+- `objectTemplate.numNetworkedEffects <int>`
+    - Returns: `int`
+- `objectTemplate.numPlanes <int>`
+    - Returns: `int`
+- `objectTemplate.objectShadows <bool>`
+    - Returns: `bool`
+- `objectTemplate.objectTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.onlyTakeableByTeam <U32>`
+    - Returns: `U32`
+- `objectTemplate.onlyWhenOccupied <bool>`
+    - Returns: `bool`
+- `objectTemplate.otherCollisionLod <int>`
+    - Returns: `int`
+- `objectTemplate.overheatPenalty <float>`
+    - Returns: `float`
+- `objectTemplate.pan <float>`
+    - Returns: `float`
+- `objectTemplate.ParticleMaxSize <float>`
+    - Returns: `float`
+    - Used in Vehicle `.con` and `.con` files
+    - Defines what materials the vehicle should use, which references the materialdefine file.
+    - Use BfMeshViewer to find out what numbers belong to what sides.
+- `objectTemplate.particleSystemTemplate <std::string>`
+    - Returns: `std::string`
+
+    Same as above
+
+- `objectTemplate.particleType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.pcoFlags <int>`
+    - Returns: `int`
+- `objectTemplate.pcoId <int>`
+    - Returns: `int`
+- `objectTemplate.penetrate.allowLiquidPenetration <bool>`
+    - Returns: `bool`
+- `objectTemplate.penetrate.allowSolidPenetration <bool>`
+    - Returns: `bool`
+- `objectTemplate.penetrate.neverPenetrate <bool>`
+    - Returns: `bool`
+- `objectTemplate.physicsFrequency <int>`
+    - Returns: `int`
+- `objectTemplate.physicsType <PhysicsType>`
+    - Returns: `PhysicsType`
+    - Vehicles
+    - `None` for no collision
+    - `Point` for projectile (Ignores mesh)
+    - `Mesh` if object has collision mesh
+- `objectTemplate.pitch <float>`
+    - Returns: `float`
+- `objectTemplate.pitchEnvelope <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.pitchOffset <float>`
+    - Returns: `float`
+- `objectTemplate.pivotOffset <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.PivotPosition <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.playAtEventPosition <bool>`
+    - Returns: `bool`
+- `objectTemplate.playAtPlayerPosition <bool>`
+    - Returns: `bool`
+- `objectTemplate.portalPassingPosition <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.poseCameraPosition <int Vec3>`
+    - Returns: `void`
+- `objectTemplate.position <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.positionalSpeedInDof <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.positionalSpeedInRight <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.positionalSpeedInUp <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.positionOffset <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.postProcess.tvDistortionFreq <float>`
+    - Returns: `float`
+- `objectTemplate.postProcess.tvDistortionRoll <float>`
+    - Returns: `float`
+- `objectTemplate.postProcess.tvDistortionScale <float>`
+    - Returns: `float`
+- `objectTemplate.postProcess.tvInterference <float>`
+    - Returns: `float`
+- `objectTemplate.preCacheObject <bool>`
+    - Returns: `bool`
+- `objectTemplate.preWarmTime <float>`
+    - Returns: `float`
+- `ObjectTemplate.printScript <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `objectTemplate.projectileTemplate <std::string>`
+    - Returns: `std::string`
+    - Used in Weapons and Vehicle `.tweak`
+    - GenericFirearm
+    - Defines the projectile that the `GenericFirearm` should use.
+    - Looks for the `GenericProjectile` that is defined in all `.tweak` files.
+- `objectTemplate.projectOnHeightmap <bool>`
+    - Returns: `bool`
+- `objectTemplate.projectorApplyMask <bool>`
+    - Returns: `bool`
+- `objectTemplate.projectorAspect <float>`
+    - Returns: `float`
+- `objectTemplate.projectorFar <float>`
+    - Returns: `float`
+- `objectTemplate.projectorFov <float>`
+    - Returns: `float`
+- `objectTemplate.projectorNear <float>`
+    - Returns: `float`
+- `objectTemplate.projectorTexture <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.propRotAxis <int>`
+    - Returns: `int`
+- `objectTemplate.pureRotational <bool>`
+    - Returns: `bool`
+- `objectTemplate.QualityLevel <std::string>`
+    - Returns: `std::string`

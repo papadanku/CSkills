@@ -1,0 +1,242 @@
+# Console Menu: HUD Builder
+
+## hudBuilder
+
+- `hudBuilder.addNodeAlphaShowEffect`
+    - Returns: `bool`
+- `hudBuilder.addNodeBlendEffect <int int>`
+    - Returns: `bool`
+- `hudBuilder.addNodeMoveShowEffect <float int>`
+    - Returns: `bool`
+- `hudBuilder.addNodeVariableMoveShowEffect <std::string std::string>`
+    - Returns: `bool`
+- `hudBuilder.addObjectMarkerNodeLockTextNode <std::string>`
+    - Returns: `bool`
+- `hudBuilder.addTransformListNode <std::string>`
+    - Returns: `bool`
+- `hudBuilder.createBarNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createButtonNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createCompassNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createEditNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createHoverNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createListNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createMapNode <std::string std::string>`
+    - Returns: `bool`
+- `hudBuilder.createMiniMapNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createObjectMarkerNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createObjectSelectionNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createOccupiedNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createPictureNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createSliderNode`
+
+    Creates a slider node using two strings and a float, returning a boolean indicating success.
+
+- `hudBuilder.createSplitNode <std::string std::string>`
+    - Returns: `bool`
+- `hudBuilder.createTextNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createTileNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createTransformListNode <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.createTransformNode <std::string std::string int>`
+    - Returns: `int`
+- `hudBuilder.deleteNode`
+    - Returns: `bool`
+- `hudBuilder.newLayer`
+    - Returns: `bool`
+- `hudBuilder.searchNodes <std::string std::string>`
+    - Returns: `meme::Node\*`
+- `hudBuilder.setActiveObject <std::string std::string>`
+    - Returns: `bool`
+- `hudBuilder.setBarNodeBorder <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setBarNodeSnap <int>`
+    - Returns: `bool`
+- `hudBuilder.setBarNodeSnapDir <bool>`
+    - Returns: `bool`
+- `hudBuilder.setBarNodeTexture <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setBarNodeValueVariable <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setBarNodeVariableTexture <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeAltConCmd <std::string int>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeConCmd <std::string int>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeDebug <bool>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeFunction <std::string int>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeMouseArea <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeMouseOverColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setButtonNodeTexture <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setCommanderPos <Vec2>`
+    - Returns: `bool`
+- `hudBuilder.setCommanderSize <Vec2>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeBorder <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeOffset <int>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeSnapOffset <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeSnapTexture <bool std::string>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeTexture <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeTextureSize <int int>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeValueVariable <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setCompassNodeVariableTexture <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setCPFont <std::string>`
+    - Returns: `void`
+- `hudBuilder.setCPFontColor <float float float>`
+    - Returns: `void`
+- `hudBuilder.setEditNodeColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setEditNodeData <int>`
+    - Returns: `bool`
+- `hudBuilder.setEditNodeFont <std::string bool>`
+    - Returns: `bool`
+- `hudBuilder.setEditNodeMaxLength <int>`
+    - Returns: `bool`
+- `hudBuilder.setEditNodestd::string <int>`
+    - Returns: `bool`
+- `hudBuilder.setHoverInMiddlePos <int int>`
+    - Returns: `bool`
+- `hudBuilder.setHoverMaxValue <float>`
+    - Returns: `bool`
+- `hudBuilder.setHoverWidthLength <float float>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeBackgroundColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeBorder <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeBorderColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeConCmd <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeData <int>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeFont <std::string int>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeOutline <bool>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeRowSpacing <int>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeScrollbar <int int>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeScrollbarBackgroundColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeScrollbarColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setListNodeSelectColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setMaxiPos <Vec2>`
+    - Returns: `bool`
+- `hudBuilder.setMaxiSize <Vec2>`
+    - Returns: `bool`
+- `hudBuilder.setMiniPos <Vec2>`
+    - Returns: `bool`
+- `hudBuilder.setMiniSize <Vec2>`
+    - Returns: `bool`
+- `hudBuilder.setModifyer <float>`
+    - Returns: `void`
+- `hudBuilder.setNodeAlphaVariable <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setNodeColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setNodeInTime <float>`
+    - Returns: `bool`
+- `hudBuilder.setNodeLogicShowVariable <std::string std::string int>`
+    - Returns: `bool`
+- `hudBuilder.setNodeOffset <int int>`
+    - Returns: `bool`
+- `hudBuilder.setNodeOutTime <float>`
+    - Returns: `bool`
+- `hudBuilder.setNodePos <int int>`
+    - Returns: `bool`
+- `hudBuilder.setNodePosVariable <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setNodeRGBVariables <std::string std::string std::string>`
+    - Returns: `bool`
+- `hudBuilder.setNodeShowVariable <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setNodeSize <int int>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeLockOnType <int>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeLockText <bool std::string>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeLockTextOffset <int int>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeObjects <int>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeTexture <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeTextureSize <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setObjectMarkerNodeWeapon <int>`
+    - Returns: `bool`
+- `hudBuilder.setObjectSelectionNodePointerSize <int int>`
+    - Returns: `bool`
+- `hudBuilder.setOccupiedNodeData <int>`
+    - Returns: `bool`
+- `hudBuilder.setOccupiedNodePosVariable <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeAlphaMask <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeBorder <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeBorderColor <float float float>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeCenterPoint <int int>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeRotateVariable <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeRotation <int>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeTexture <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setPictureNodeVariableTexture <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setSliderNodeChild <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setSliderNodeData <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setTextNodeOutLine <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setTextNodeOutLineOffset <float float>`
+    - Returns: `bool`
+- `hudBuilder.setTextNodestd::string <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setTextNodestd::stringVariable <std::string>`
+    - Returns: `bool`
+- `hudBuilder.setTextNodeStyle <std::string int>`
+    - Returns: `bool`
+- `hudBuilder.setTileNodeOptions <int int int>`
+    - Returns: `bool`
+- `hudBuilder.setTranformListNodeOffset <int int>`
+    - Returns: `bool`
+- `hudBuilder.setTranformListNodePosVariable <int std::string>`
+    - Returns: `bool`
+- `hudBuilder.setZoomIcons <bool>`
+    - Returns: `bool`

@@ -1,0 +1,202 @@
+# Console Vars.set (ragdoll_legForwardFactor to zipline-soldier-height)
+
+- `ragdoll_legForwardFactor`
+    - Default: `0.000000`
+- `ragdoll_legPointForwardAngle`
+    - Default: `0.500000`
+- `ragdoll_legPointForwardFactor`
+    - Default: `0.010000`
+- `ragdoll_net_boneEnable`
+    - Default: `15`
+- `ragdoll_net_debug`
+    - Default: `0`
+- `ragdoll_net_interpolate`
+    - Default: `0.100000`
+- `ragdoll_sleep`
+    - Default: `5.000000`
+- `ragdoll_sleepDelta`
+    - Default: `0.020000`
+- `ragdoll_slowMotion`
+    - Default: `1.000000`
+- `ragdoll_useAngularConstraints`
+    - Default: `1`
+- `ragdoll_useCapsuleCollision`
+    - Default: `1`
+- `ragdoll_useConstraints`
+    - Default: `1`
+- `ragdoll_useLandCollision`
+    - Default: `1`
+- `ragdoll_useObjectCollision`
+    - Default: `1`
+- `rd_dieForce`
+    - Default: `0.0`
+- `rd_dieInVehicleForce`
+    - Default: `100.000000`
+- `rd_expForceMod`
+    - Default: `1.000000`
+- `rd_hitForce`
+    - Default: `0.000000`
+- `rd_hitUp`
+    - Default: `0.000000`
+- `replenish-checkaim-freq`
+    - Default: `1.000000`
+- `replenish-checkaim-maint-freq`
+    - Default: `0.500000`
+- `replenish-ignoreteam`
+    - Default: `0`
+- `rot-use-old`
+    - Default: `1`
+- `rotationalbundle-max-speed-mod`
+    - Default: `30.000000`
+- `rotationalbundle-sound-smooth-time`
+    - Default: `0.150000`
+- `rpm-k`
+    - Default: `10.000000`
+- `rpm-wheel`
+    - Default: `0.060000`
+
+    No effect
+
+- `server-sleep-overhead-time`
+    - Default: `0.005000`
+- `shoot-mag`
+    - Default: `10.000000`
+
+    No effect
+
+- `show-damage-ndicator-for-all`
+    - Default: `1`
+- `show-engine`
+    - Default: `0`
+
+    No effect
+
+- `soldier-drop-max`
+    - Default: `1.500000`
+- `soldier-drop-min`
+    - Default: `0.500000`
+- `soldier-drown-damage`
+    - Default: `8.000000`
+- `soldier-footstep-effect-cull-distance`
+    - Default: `20.000000`
+- `soldier-footstep-offset-dof-prone`
+    - Default: `0.000000`
+- `soldier-footstep-offset-dof-stand`
+    - Default: `0.130000`
+- `soldier-footstep-offset-y`
+    - Default: `-0.990000`
+- `soldier-fov1p`
+    - Default: `0.820000`
+
+    No effect
+
+- `soldier-impact-speed-limit`
+    - Default: `10.000000`
+- `soldier-impact-speed-limit-2`
+    - Default: `3.000000`
+- `soldier-lookDown`
+    - Default: `70.000000`
+
+    No effect
+
+- `soldier-lookMaxAngle`
+    - Default: `40.000000/85.000000/0.000000`
+- `soldier-lookSideRestore`
+    - Default: `4.000000`
+- `soldier-lookUp`
+    - Default: `-70.000000`
+- `soldier-mandown-rotspeed`
+    - Default: `0.100000`
+- `soldier-mandown-speed`
+    - Default: `5.000000`
+- `soldier-prone-inwater-limit`
+    - Default: `1.100000`
+
+    The number referenced is the angle.
+
+    - `0.0`: Allows you to prone into water. Can shoot walls when it's in water, but not walls from the surface.
+    - `2.0`: Prevents you from proning near water in which you automatically go to the standing position
+- `soldier-proneLookDown`
+    - Default: `5.000000`
+- `soldier-proneLookUp`
+    - Default: `-30.000000`
+- `soldier-revive-disableinputtime`
+    - Default: `2.100000`
+- `soldier-terrain-speed-limit`
+    - Default: `9.100000`
+- `soldier-timeToEnableWeapon`
+    - Default: `1.250000`
+- `soldier_lookIdleAngle`
+    - Default: `15.000000`
+- `soldier_lookIdleTime`
+    - Default: `2.500000`
+- `soldier_lookSmooth`
+    - Default: `10.000000`
+- `soldier_throwGun`
+    - Default: `0.025000`
+- `soldier_throwGunForward`
+    - Default: `1.000000`
+- `soldier_throwHelmet`
+    - Default: `0.025000`
+- `soldier_throwKitPartsDelay`
+    - Default: `0.300000`
+- `sound-listener-radius`
+    - Default: `0.200000`
+- `sound-obstruction-disable`
+    - Default: `0`
+- `sound-obstruction-max`
+    - Default: `0.800000`
+- `sound-obstruction-max-reuse-frames`
+    - Default: `15`
+- `sound-obstruction-opt0`
+    - Default: `1`
+- `sound-obstruction-opt1`
+    - Default: `1`
+- `sound-obstruction-radius`
+    - Default: `2.000000`
+- `sound-obstruction-reuse-frames`
+    - Default: `0`
+- `sound-tinnitus-range`
+    - Default: `0.600000`
+- `spawnpoint-scatter-maxdist`
+    - Default: `9.000000`
+- `spawnpoint-scatter-mindist`
+    - Default: `3.000000`
+- `spawnpoint-scatter-testlod`
+    - Default: `2`
+- `spawnpoint-terrain-offset`
+    - Default: `1.010000`
+- `sprint-recharge-delay-after-jump`
+    - Default: `2.000000`
+- `stand-delay-from-prone`
+    - Default: `1.500000`
+- `stick-default-distance`
+    - Default: `0.050000`
+- `tank-square`
+    - Default: `1`
+- `targetYOffset`
+    - Default: `0.000000`
+- `use-loading-profiler`
+    - Default: `0`
+- `weapon-detonationDebug`
+    - Default: `0`
+- `weapon-detonationTriggerFreq`
+    - Default: `0.250000`
+- `wh-torque-mult`
+    - Default: `0.500000`
+- `wh-torque-offs`
+    - Default: `1.000000`
+- `wh-use-slip-ratio`
+    - Default: `0`
+- `wheel-inertia`
+    - Default: `0.100000`
+- `wheel-mod`
+    - Default: `1.000000`
+- `wp-delay-pingfactor`
+    - Default: `2`
+- `wp-delay-reloadfactor`
+    - Default: `1`
+- `wp-delay-ticks`
+    - Default: `15`
+- `zipline-soldier-height`
+    - Default: `1.490000`

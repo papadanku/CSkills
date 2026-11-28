@@ -1,0 +1,226 @@
+# Console Haptic Settings (Part 1: hapticSettings.addWeaponClassMap to hapticSettings.setPhysicsSEASmoothTimeZHigh)
+
+- `hapticSettings.addWeaponClassMap <std::string int>`
+    - Returns: `void`
+- `hapticSettings.load`
+    - Returns: `bool`
+- `hapticSettings.setAimSensitivity <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityAIR <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityHELI <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLAND <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLength <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLengthAIR <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLengthHELI <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLengthLAND <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLengthSEA <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivityLengthSOLDIER <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivitySEA <float float float>`
+    - Returns: `void`
+- `hapticSettings.setAimSensitivitySOLDIER <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxLength <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxLengthAIR <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxLengthHELI <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxLengthLAND <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxLengthSEA <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxLengthSOLDIER <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxStiffness <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxStiffnessAIR <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxStiffnessHELI <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxStiffnessLAND <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxStiffnessSEA <float float float>`
+    - Returns: `void`
+- `hapticSettings.setControlBoxStiffnessSOLDIER <float float float>`
+    - Returns: `void`
+- `hapticSettings.setDamageScale <float>`
+    - Returns: `void`
+- `hapticSettings.setExplosionShakeScale <float>`
+    - Returns: `void`
+- `hapticSettings.setForceCapX <float>`
+    - Returns: `void`
+- `hapticSettings.setForceCapY <float>`
+    - Returns: `void`
+- `hapticSettings.setForceCapZ <float>`
+    - Returns: `void`
+- `hapticSettings.setGeneralShakeScale <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScale <float float float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleXHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleXLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleXMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleYHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleYLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleYMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleZHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleZLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRScaleZMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeXHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeXLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeXMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeYHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeYLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeYMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeZHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeZLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRSmoothTimeZMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRTransitionValueHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsAIRTransitionValueMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScale <float float float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleXHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleXLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleXMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleYHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleYLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleYMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleZHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleZLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELIScaleZMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeXHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeXLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeXMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeYHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeYLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeYMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeZHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeZLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELISmoothTimeZMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELITransitionValueHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsHELITransitionValueMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScale <float float float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleXHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleXLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleXMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleYHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleYLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleYMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleZHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleZLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDScaleZMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeXHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeXLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeXMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeYHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeYLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeYMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeZHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeZLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDSmoothTimeZMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDTransitionValueHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsLANDTransitionValueMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScale <float float float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleXHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleXLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleXMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleYHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleYLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleYMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleZHigh <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleZLow <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEAScaleZMed <float>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeXHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeXLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeXMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeYHigh <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeYLow <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeYMed <int>`
+    - Returns: `void`
+- `hapticSettings.setPhysicsSEASmoothTimeZHigh <int>`
+    - Returns: `void`

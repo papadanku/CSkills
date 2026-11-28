@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Pre-commit linter and static auditor for PR:BF2 scripts (.con, .tweak, .inc, .ai)."""
+"""Pre-commit linter and static auditor for PR:BF2 scripts."""
 
 from __future__ import annotations
 
 import argparse
+from dataclasses import asdict, dataclass
 import json
+from pathlib import Path
 import re
 import sys
-from dataclasses import asdict, dataclass
-from pathlib import Path
+
 
 SCRIPT_EXTENSIONS = {".con", ".tweak", ".inc", ".ai"}
 
@@ -21,14 +22,14 @@ NETWORKED_CLASSES = {
     "destroyableobject",
 }
 
-LEGACY_SAI_BROKEN = {
+LEGACY_SAI_BROKEN_CONDITIONALS = {
     "averagestrategicstrength",
     "attackstrategicstrength",
     "defencestrategicstrength",
     "security",
 }
 
-LEGACY_SAI_ALWAYS_ZERO = {
+LEGACY_SAI_ALWAYS_ZERO_CONDITIONALS = {
     "air",
     "bomber",
     "fighter",
@@ -45,49 +46,90 @@ LEGACY_SAI_ALWAYS_ZERO = {
     "artillery",
 }
 
-BEGIN_COMP_RE = re.compile(r"^rem\s+---BeginComp:(\S+)\s*---", re.IGNORECASE)
-END_COMP_RE = re.compile(r"^rem\s+---EndComp\s*---", re.IGNORECASE)
-CREATE_COMP_RE = re.compile(
-    r"^objecttemplate\.createcomponent\s+(\S+)", re.IGNORECASE
+NON_DUPLICATE_OBJECTTEMPLATE_PREFIXES = (
+    "objecttemplate.create",
+    "objecttemplate.activesafe",
+    "objecttemplate.active ",
+    "objecttemplate.addtemplate",
+    "objecttemplate.createcomponent",
+    "objecttemplate.mapmaterial",
+    "objecttemplate.armor.addarmoreffect",
+    "objecttemplate.fire.addfirerate",
+    "objecttemplate.fire.addtimeevent",
+    "objecttemplate.zoom.addzoomfactor",
 )
-CREATE_RE = re.compile(
-    r"^objecttemplate\.create\s+(\S+)\s+(\S+)", re.IGNORECASE
+
+BEGIN_COMPONENT_PATTERN = re.compile(
+    r"^rem\s+---BeginComp:(\S+)\s*---",
+    re.IGNORECASE,
 )
-ACTIVE_SAFE_RE = re.compile(
-    r"^objecttemplate\.activesafe\s+(\S+)\s+(\S+)", re.IGNORECASE
+END_COMPONENT_PATTERN = re.compile(
+    r"^rem\s+---EndComp\s*---",
+    re.IGNORECASE,
 )
-ACTIVE_RE = re.compile(r"^objecttemplate\.active\s+(\S+)", re.IGNORECASE)
-ADD_TEMPLATE_RE = re.compile(
-    r"^objecttemplate\.addtemplate\s+(\S+)", re.IGNORECASE
+CREATE_COMPONENT_PATTERN = re.compile(
+    r"^objecttemplate\.createcomponent\s+(\S+)",
+    re.IGNORECASE,
 )
-NETWORKABLE_RE = re.compile(
-    r"^objecttemplate\.setnetworkableinfo\s+(\S+)", re.IGNORECASE
+CREATE_TEMPLATE_PATTERN = re.compile(
+    r"^objecttemplate\.create\s+(\S+)\s+(\S+)",
+    re.IGNORECASE,
 )
-GUI_INDEX_RE = re.compile(
+ACTIVE_SAFE_PATTERN = re.compile(
+    r"^objecttemplate\.activesafe\s+(\S+)\s+(\S+)",
+    re.IGNORECASE,
+)
+ACTIVE_TEMPLATE_PATTERN = re.compile(
+    r"^objecttemplate\.active\s+(\S+)",
+    re.IGNORECASE,
+)
+ADD_TEMPLATE_PATTERN = re.compile(
+    r"^objecttemplate\.addtemplate\s+(\S+)",
+    re.IGNORECASE,
+)
+NETWORKABLE_PATTERN = re.compile(
+    r"^objecttemplate\.setnetworkableinfo\s+(\S+)",
+    re.IGNORECASE,
+)
+GUI_INDEX_PATTERN = re.compile(
     r"^objecttemplate\.(?:vehiclehud|weaponhud)\.guiindex\s+(-?\d+)",
     re.IGNORECASE,
 )
-HUD_SHOW_GUI_RE = re.compile(
+HUD_SHOW_GUI_PATTERN = re.compile(
     r"^hudbuilder\.setnodelogicshowvariable\s+\S+\s+guiindex\s+(-?\d+)",
     re.IGNORECASE,
 )
-CRD_EXP_RE = re.compile(r"CRD_EXPONENTIAL/([^/\s]+)/([^/\s]+)/([^/\s]+)", re.IGNORECASE)
-RPM_RE = re.compile(r"^objecttemplate\.fire\.roundsperminute\s+(\d+)", re.IGNORECASE)
-MAG_SIZE_RE = re.compile(r"^objecttemplate\.ammo\.magsize\s+(-?\d+)", re.IGNORECASE)
-ATTEN_RE = re.compile(
+CRD_EXPONENTIAL_PATTERN = re.compile(
+    r"CRD_EXPONENTIAL/([^/\s]+)/([^/\s]+)/([^/\s]+)",
+    re.IGNORECASE,
+)
+ROUNDS_PER_MINUTE_PATTERN = re.compile(
+    r"^objecttemplate\.fire\.roundsperminute\s+(\d+)",
+    re.IGNORECASE,
+)
+MAGAZINE_SIZE_PATTERN = re.compile(
+    r"^objecttemplate\.ammo\.magsize\s+(-?\d+)",
+    re.IGNORECASE,
+)
+ATTENUATION_RANGE_PATTERN = re.compile(
     r"^objecttemplate\.attenuationrange[12]\s+([0-9]+(?:\.[0-9]+)?)",
     re.IGNORECASE,
 )
-INCLUDE_RE = re.compile(r"^include\s+(.+)$", re.IGNORECASE)
-ASSET_PATH_RE = re.compile(
-    r"""(?:soundfilename|weaponicon|setpicturenodetexture|animationsystem1p|animationsystem3p|addanimation)\s+"?([^\s"]+)"?""",
+INCLUDE_DIRECTIVE_PATTERN = re.compile(
+    r"^include\s+(.+)$",
+    re.IGNORECASE,
+)
+ASSET_PATH_PATTERN = re.compile(
+    r"(?:soundfilename|weaponicon|setpicturenodetexture|"
+    r"animationsystem1p|animationsystem3p|addanimation)"
+    r'\s+"?([^\s"]+)"?',
     re.IGNORECASE,
 )
 
 
 @dataclass
-class Issue:
-    """Represents a single lint/audit finding."""
+class AuditIssue:
+    """Represents a single lint or audit finding."""
 
     severity: str
     file: str
@@ -96,457 +138,669 @@ class Issue:
     message: str
 
 
-def collect_files(inputs: list[Path]) -> list[Path]:
+@dataclass
+class ComponentBlockState:
+    """Tracks an open BeginComp/EndComp folding block."""
+
+    component_name: str
+    start_line: int
+    saw_create_component: bool
+
+
+@dataclass
+class NetworkableTrackingEntry:
+    """Tracks whether a networked template has setNetworkableInfo."""
+
+    template_class: str
+    file_path: str
+    line_number: int
+    has_networkable_info: bool
+
+
+def collect_script_files(input_paths: list[Path]) -> list[Path]:
     """Expand input files and directories into sorted script paths."""
-    files: list[Path] = []
-    for item in inputs:
-        if item.is_file():
-            files.append(item)
-        elif item.is_dir():
-            for path in sorted(item.rglob("*")):
-                if path.is_file() and path.suffix.lower() in SCRIPT_EXTENSIONS:
-                    files.append(path)
-    return files
+    collected_files: list[Path] = []
+    for input_path in input_paths:
+        if input_path.is_file():
+            collected_files.append(input_path)
+        elif input_path.is_dir():
+            for candidate_path in sorted(input_path.rglob("*")):
+                if (
+                    candidate_path.is_file()
+                    and candidate_path.suffix.lower() in SCRIPT_EXTENSIONS
+                ):
+                    collected_files.append(candidate_path)
+    return collected_files
 
 
-def strip_inline_rem(line: str) -> str:
-    """Return trimmed line."""
-    return line.strip()
+def detect_script_extension(file_path: Path) -> str:
+    """Determine the effective script extension, supporting *.con.txt."""
+    extension = file_path.suffix.lower()
+    if extension == ".txt" and "." in file_path.stem:
+        inner_extension = file_path.stem.rsplit(".", 1)[-1].lower()
+        return f".{inner_extension}"
+    return extension
+
+
+def is_non_duplicate_property(lowercase_line: str) -> bool:
+    """Return True if the ObjectTemplate line may legitimately repeat."""
+    for allowed_prefix in NON_DUPLICATE_OBJECTTEMPLATE_PREFIXES:
+        if lowercase_line.startswith(allowed_prefix):
+            return True
+    return False
 
 
 def audit_file(
-    path: Path,
+    script_path: Path,
     defined_templates: dict[str, tuple[str, str, int]],
     referenced_templates: list[tuple[str, str, int]],
     hud_gui_indices: set[int],
     template_gui_indices: list[tuple[int, str, int]],
     mod_root: Path | None,
-) -> list[Issue]:
-    """Audit a single PR:BF2 script file."""
-    issues: list[Issue] = []
-    file_str = str(path)
-    ext = path.suffix.lower()
-    if ext == ".txt" and "." in path.stem:
-        ext = "." + path.stem.rsplit(".", 1)[-1].lower()
+) -> list[AuditIssue]:
+    """Audit a single PR:BF2 script file for syntax and logic issues."""
+    issues: list[AuditIssue] = []
+    file_path_str = str(script_path)
+    extension = detect_script_extension(script_path)
 
     try:
-        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
-    except OSError as exc:
-        return [Issue("ERROR", file_str, 0, "IO_ERROR", f"Cannot read file: {exc}")]
+        file_lines = script_path.read_text(
+            encoding="utf-8",
+            errors="replace",
+        ).splitlines()
+    except OSError as os_error:
+        return [
+            AuditIssue(
+                severity="ERROR",
+                file=file_path_str,
+                line=0,
+                code="IO_ERROR",
+                message=f"Cannot read file: {os_error}",
+            )
+        ]
 
-    in_block_rem = False
-    block_rem_start = 0
-    if_stack: list[int] = []
-    while_stack: list[int] = []
-    comp_stack: list[tuple[str, int, bool]] = []
+    in_block_comment = False
+    block_comment_start_line = 0
+    if_line_stack: list[int] = []
+    while_line_stack: list[int] = []
+    component_stack: list[ComponentBlockState] = []
 
-    saw_first_code = False
-    active_template: str | None = None
-    active_class: str | None = None
-    seen_props_in_block: set[str] = set()
-    block_has_networkable: dict[str, tuple[str, str, int, bool]] = {}
+    saw_first_code_line = False
+    active_template_name: str | None = None
+    seen_properties_in_block: set[str] = set()
+    networkable_blocks: dict[str, NetworkableTrackingEntry] = {}
 
-    for lineno, raw_line in enumerate(lines, start=1):
-        stripped = strip_inline_rem(raw_line)
-        if not stripped:
+    for line_number, raw_line in enumerate(file_lines, start=1):
+        stripped_line = raw_line.strip()
+        if not stripped_line:
             continue
 
-        lower = stripped.lower()
+        lowercase_line = stripped_line.lower()
 
-        if lower == "beginrem":
-            if in_block_rem:
+        if lowercase_line == "beginrem":
+            if in_block_comment:
                 issues.append(
-                    Issue(
-                        "WARNING",
-                        file_str,
-                        lineno,
-                        "NESTED_BEGINREM",
-                        "Nested beginRem inside an active beginRem block.",
+                    AuditIssue(
+                        severity="WARNING",
+                        file=file_path_str,
+                        line=line_number,
+                        code="NESTED_BEGINREM",
+                        message=(
+                            "Nested beginRem inside an active beginRem block."
+                        ),
                     )
                 )
             else:
-                in_block_rem = True
-                block_rem_start = lineno
+                in_block_comment = True
+                block_comment_start_line = line_number
             continue
 
-        if lower == "endrem":
-            if not in_block_rem:
+        if lowercase_line == "endrem":
+            if not in_block_comment:
                 issues.append(
-                    Issue(
-                        "ERROR",
-                        file_str,
-                        lineno,
-                        "UNMATCHED_ENDREM",
-                        "endRem without matching beginRem.",
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="UNMATCHED_ENDREM",
+                        message="endRem without matching beginRem.",
                     )
                 )
             else:
-                in_block_rem = False
+                in_block_comment = False
             continue
 
-        if in_block_rem:
+        if in_block_comment:
             continue
 
-        # Component folding markers (these start with rem)
-        if m := BEGIN_COMP_RE.match(stripped):
-            comp_stack.append((m.group(1), lineno, False))
+        begin_comp_match = BEGIN_COMPONENT_PATTERN.match(stripped_line)
+        if begin_comp_match is not None:
+            component_stack.append(
+                ComponentBlockState(
+                    component_name=begin_comp_match.group(1),
+                    start_line=line_number,
+                    saw_create_component=False,
+                )
+            )
             continue
 
-        if END_COMP_RE.match(stripped):
-            if not comp_stack:
+        if END_COMPONENT_PATTERN.match(stripped_line) is not None:
+            if not component_stack:
                 issues.append(
-                    Issue(
-                        "ERROR",
-                        file_str,
-                        lineno,
-                        "UNMATCHED_ENDCOMP",
-                        "rem ---EndComp --- without matching BeginComp.",
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="UNMATCHED_ENDCOMP",
+                        message=(
+                            "rem ---EndComp --- without matching BeginComp."
+                        ),
                     )
                 )
             else:
-                comp_name, start_line, saw_create = comp_stack.pop()
-                if not saw_create:
+                closed_block = component_stack.pop()
+                if not closed_block.saw_create_component:
                     issues.append(
-                        Issue(
-                            "WARNING",
-                            file_str,
-                            start_line,
-                            "EMPTY_COMP_BLOCK",
-                            f"BeginComp:{comp_name} has no ObjectTemplate.createComponent {comp_name}.",
+                        AuditIssue(
+                            severity="WARNING",
+                            file=file_path_str,
+                            line=closed_block.start_line,
+                            code="EMPTY_COMP_BLOCK",
+                            message=(
+                                f"BeginComp:{closed_block.component_name} "
+                                "has no ObjectTemplate.createComponent "
+                                f"{closed_block.component_name}."
+                            ),
                         )
                     )
             continue
 
-        if lower.startswith("rem ") or lower == "rem" or stripped.startswith("#"):
+        if (
+            lowercase_line.startswith("rem ")
+            or lowercase_line == "rem"
+            or stripped_line.startswith("#")
+        ):
             continue
 
-        if not saw_first_code:
-            saw_first_code = True
-            if ext == ".tweak" and not ACTIVE_SAFE_RE.match(stripped):
-                if not lower.startswith("geometrytemplate."):
+        if not saw_first_code_line:
+            saw_first_code_line = True
+            if (
+                extension == ".tweak"
+                and ACTIVE_SAFE_PATTERN.match(stripped_line) is None
+                and not lowercase_line.startswith("geometrytemplate.")
+            ):
+                issues.append(
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="TWEAK_MISSING_ACTIVESAFE",
+                        message=(
+                            ".tweak file should begin with "
+                            "ObjectTemplate.activeSafe <Class> <Name>."
+                        ),
+                    )
+                )
+
+        if lowercase_line.startswith("if "):
+            if_line_stack.append(line_number)
+        elif lowercase_line == "endif":
+            if not if_line_stack:
+                issues.append(
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="UNMATCHED_ENDIF",
+                        message="endIf without matching if.",
+                    )
+                )
+            else:
+                if_line_stack.pop()
+        elif lowercase_line.startswith("while "):
+            while_line_stack.append(line_number)
+        elif lowercase_line == "endwhile":
+            if not while_line_stack:
+                issues.append(
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="UNMATCHED_ENDWHILE",
+                        message="endWhile without matching while.",
+                    )
+                )
+            else:
+                while_line_stack.pop()
+
+        include_match = INCLUDE_DIRECTIVE_PATTERN.match(stripped_line)
+        if include_match is not None:
+            include_arguments = include_match.group(1).strip().split()
+            if len(include_arguments) > 1:
+                issues.append(
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="INCLUDE_WITH_ARGS",
+                        message=(
+                            "`include` accepts no arguments; use "
+                            "`run <path> [args]` to pass v_arg1..N."
+                        ),
+                    )
+                )
+
+        create_match = CREATE_TEMPLATE_PATTERN.match(stripped_line)
+        active_safe_match = ACTIVE_SAFE_PATTERN.match(stripped_line)
+        active_match = ACTIVE_TEMPLATE_PATTERN.match(stripped_line)
+        add_template_match = ADD_TEMPLATE_PATTERN.match(stripped_line)
+
+        if create_match is not None:
+            template_class = create_match.group(1)
+            template_name = create_match.group(2)
+            active_template_name = template_name
+            seen_properties_in_block.clear()
+            defined_templates[template_name.lower()] = (
+                template_class,
+                file_path_str,
+                line_number,
+            )
+            if template_class.lower() in NETWORKED_CLASSES:
+                networkable_blocks.setdefault(
+                    template_name.lower(),
+                    NetworkableTrackingEntry(
+                        template_class=template_class,
+                        file_path=file_path_str,
+                        line_number=line_number,
+                        has_networkable_info=False,
+                    ),
+                )
+        elif active_safe_match is not None:
+            template_class = active_safe_match.group(1)
+            template_name = active_safe_match.group(2)
+            active_template_name = template_name
+            seen_properties_in_block.clear()
+            if template_class.lower() in NETWORKED_CLASSES:
+                networkable_blocks.setdefault(
+                    template_name.lower(),
+                    NetworkableTrackingEntry(
+                        template_class=template_class,
+                        file_path=file_path_str,
+                        line_number=line_number,
+                        has_networkable_info=False,
+                    ),
+                )
+        elif active_match is not None:
+            active_template_name = active_match.group(1)
+            seen_properties_in_block.clear()
+        elif add_template_match is not None:
+            referenced_templates.append(
+                (add_template_match.group(1), file_path_str, line_number)
+            )
+
+        if NETWORKABLE_PATTERN.match(stripped_line) is not None:
+            if active_template_name is not None:
+                template_key = active_template_name.lower()
+                if template_key in networkable_blocks:
+                    networkable_blocks[template_key].has_networkable_info = (
+                        True
+                    )
+
+        create_comp_match = CREATE_COMPONENT_PATTERN.match(stripped_line)
+        if create_comp_match is not None:
+            component_name = create_comp_match.group(1)
+            if not component_stack:
+                issues.append(
+                    AuditIssue(
+                        severity="WARNING",
+                        file=file_path_str,
+                        line=line_number,
+                        code="UNWRAPPED_COMPONENT",
+                        message=(
+                            f"ObjectTemplate.createComponent {component_name} "
+                            "is not wrapped in BeginComp/EndComp."
+                        ),
+                    )
+                )
+            else:
+                current_block = component_stack[-1]
+                if (
+                    current_block.component_name.lower()
+                    != component_name.lower()
+                ):
                     issues.append(
-                        Issue(
-                            "ERROR",
-                            file_str,
-                            lineno,
-                            "TWEAK_MISSING_ACTIVESAFE",
-                            ".tweak file should begin with ObjectTemplate.activeSafe <Class> <Name>.",
-                        )
-                    )
-
-        # Control flow balance
-        if lower.startswith("if "):
-            if_stack.append(lineno)
-        elif lower == "endif":
-            if not if_stack:
-                issues.append(
-                    Issue("ERROR", file_str, lineno, "UNMATCHED_ENDIF", "endIf without matching if.")
-                )
-            else:
-                if_stack.pop()
-        elif lower.startswith("while "):
-            while_stack.append(lineno)
-        elif lower == "endwhile":
-            if not while_stack:
-                issues.append(
-                    Issue(
-                        "ERROR",
-                        file_str,
-                        lineno,
-                        "UNMATCHED_ENDWHILE",
-                        "endWhile without matching while.",
-                    )
-                )
-            else:
-                while_stack.pop()
-
-        # Include vs run
-        if m := INCLUDE_RE.match(stripped):
-            inc_args = m.group(1).strip().split()
-            if len(inc_args) > 1:
-                issues.append(
-                    Issue(
-                        "ERROR",
-                        file_str,
-                        lineno,
-                        "INCLUDE_WITH_ARGS",
-                        "`include` accepts no arguments; use `run <path> [args]` to pass v_arg1..N.",
-                    )
-                )
-
-        # Template context tracking
-        if m := CREATE_RE.match(stripped):
-            cls, name = m.group(1), m.group(2)
-            active_class = cls.lower()
-            active_template = name
-            seen_props_in_block.clear()
-            defined_templates[name.lower()] = (cls, file_str, lineno)
-            if active_class in NETWORKED_CLASSES:
-                block_has_networkable.setdefault(
-                    name.lower(), (cls, file_str, lineno, False)
-                )
-        elif m := ACTIVE_SAFE_RE.match(stripped):
-            cls, name = m.group(1), m.group(2)
-            active_class = cls.lower()
-            active_template = name
-            seen_props_in_block.clear()
-            if active_class in NETWORKED_CLASSES:
-                block_has_networkable.setdefault(
-                    name.lower(), (cls, file_str, lineno, False)
-                )
-        elif m := ACTIVE_RE.match(stripped):
-            active_template = m.group(1)
-            active_class = None
-            seen_props_in_block.clear()
-        elif m := ADD_TEMPLATE_RE.match(stripped):
-            referenced_templates.append((m.group(1), file_str, lineno))
-
-        if m := NETWORKABLE_RE.match(stripped):
-            if active_template:
-                key = active_template.lower()
-                if key in block_has_networkable:
-                    cls, fpath, lno, _ = block_has_networkable[key]
-                    block_has_networkable[key] = (cls, fpath, lno, True)
-
-        # Component creation matching
-        if m := CREATE_COMP_RE.match(stripped):
-            comp_name = m.group(1)
-            if not comp_stack:
-                issues.append(
-                    Issue(
-                        "WARNING",
-                        file_str,
-                        lineno,
-                        "UNWRAPPED_COMPONENT",
-                        f"ObjectTemplate.createComponent {comp_name} is not wrapped in BeginComp/EndComp.",
-                    )
-                )
-            else:
-                top_name, top_line, _ = comp_stack[-1]
-                if top_name.lower() != comp_name.lower():
-                    issues.append(
-                        Issue(
-                            "ERROR",
-                            file_str,
-                            lineno,
-                            "COMP_MISMATCH",
-                            f"createComponent {comp_name} does not match BeginComp:{top_name} (line {top_line}).",
+                        AuditIssue(
+                            severity="ERROR",
+                            file=file_path_str,
+                            line=line_number,
+                            code="COMP_MISMATCH",
+                            message=(
+                                f"createComponent {component_name} does not "
+                                f"match BeginComp:"
+                                f"{current_block.component_name}"
+                                f" (line {current_block.start_line})."
+                            ),
                         )
                     )
                 else:
-                    comp_stack[-1] = (top_name, top_line, True)
+                    current_block.saw_create_component = True
 
-        # Duplicate ObjectTemplate property lines in same active block
-        if lower.startswith("objecttemplate.") and not any(
-            lower.startswith(prefix)
-            for prefix in (
-                "objecttemplate.create",
-                "objecttemplate.activesafe",
-                "objecttemplate.active ",
-                "objecttemplate.addtemplate",
-                "objecttemplate.createcomponent",
-                "objecttemplate.mapmaterial",
-                "objecttemplate.armor.addarmoreffect",
-                "objecttemplate.fire.addfirerate",
-                "objecttemplate.fire.addtimeevent",
-                "objecttemplate.zoom.addzoomfactor",
-            )
-        ):
-            prop_key = lower.split()[0]
-            if prop_key in seen_props_in_block:
+        if lowercase_line.startswith(
+            "objecttemplate."
+        ) and not is_non_duplicate_property(lowercase_line):
+            property_key = lowercase_line.split()[0]
+            if property_key in seen_properties_in_block:
+                display_template = active_template_name or "<unknown>"
                 issues.append(
-                    Issue(
-                        "WARNING",
-                        file_str,
-                        lineno,
-                        "DUPLICATE_PROPERTY",
-                        f"Duplicate property `{prop_key}` in active block `{active_template or '<unknown>'}`.",
+                    AuditIssue(
+                        severity="WARNING",
+                        file=file_path_str,
+                        line=line_number,
+                        code="DUPLICATE_PROPERTY",
+                        message=(
+                            f"Duplicate property `{property_key}` in active "
+                            f"block `{display_template}`."
+                        ),
                     )
                 )
             else:
-                seen_props_in_block.add(prop_key)
+                seen_properties_in_block.add(property_key)
 
-        # CRD_EXPONENTIAL zero-mean trap
-        for crd_match in CRD_EXP_RE.finditer(stripped):
+        for crd_match in CRD_EXPONENTIAL_PATTERN.finditer(stripped_line):
             try:
-                if float(crd_match.group(1)) == 0.0:
-                    issues.append(
-                        Issue(
-                            "ERROR",
-                            file_str,
-                            lineno,
-                            "CRD_EXP_ZERO_MEAN",
-                            f"{crd_match.group(0)} always returns 0 because Number1 (mean) is 0 and Number2 is ignored.",
-                        )
-                    )
+                mean_value = float(crd_match.group(1))
             except ValueError:
-                pass
-
-        # RPM divisibility by 1800
-        if m := RPM_RE.match(stripped):
-            rpm = int(m.group(1))
-            if rpm <= 0 or 1800 % rpm != 0:
+                continue
+            if mean_value == 0.0:
                 issues.append(
-                    Issue(
-                        "WARNING",
-                        file_str,
-                        lineno,
-                        "RPM_NOT_DIVISOR_OF_1800",
-                        f"roundsPerMinute {rpm} does not divide evenly into 1800.",
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="CRD_EXP_ZERO_MEAN",
+                        message=(
+                            f"{crd_match.group(0)} always returns 0 because "
+                            "Number1 (mean) is 0 and Number2 is ignored."
+                        ),
                     )
                 )
 
-        # MagSize bounds
-        if m := MAG_SIZE_RE.match(stripped):
-            mag = int(m.group(1))
-            if mag != -1 and (mag < 0 or mag > 1023):
+        rpm_match = ROUNDS_PER_MINUTE_PATTERN.match(stripped_line)
+        if rpm_match is not None:
+            rounds_per_minute = int(rpm_match.group(1))
+            if rounds_per_minute <= 0 or 1800 % rounds_per_minute != 0:
                 issues.append(
-                    Issue(
-                        "ERROR",
-                        file_str,
-                        lineno,
-                        "MAGSIZE_OUT_OF_RANGE",
-                        f"magSize {mag} exceeds BF2 engine limit (max 1023, or -1 for infinite).",
+                    AuditIssue(
+                        severity="WARNING",
+                        file=file_path_str,
+                        line=line_number,
+                        code="RPM_NOT_DIVISOR_OF_1800",
+                        message=(
+                            f"roundsPerMinute {rounds_per_minute} does not "
+                            "divide evenly into 1800."
+                        ),
                     )
                 )
 
-        # Lightsource attenuationRange bounds
-        if m := ATTEN_RE.match(stripped):
-            val = float(m.group(1))
-            if val > 100.0:
+        mag_match = MAGAZINE_SIZE_PATTERN.match(stripped_line)
+        if mag_match is not None:
+            magazine_size = int(mag_match.group(1))
+            if magazine_size != -1 and (
+                magazine_size < 0 or magazine_size > 1023
+            ):
                 issues.append(
-                    Issue(
-                        "WARNING",
-                        file_str,
-                        lineno,
-                        "ATTENUATION_OVER_100",
-                        f"attenuationRange value {val} exceeds 100 and may trigger engine errors.",
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="MAGSIZE_OUT_OF_RANGE",
+                        message=(
+                            f"magSize {magazine_size} exceeds BF2 engine "
+                            "limit (max 1023, or -1 for infinite)."
+                        ),
                     )
                 )
 
-        # GuiIndex tracking
-        if m := GUI_INDEX_RE.match(stripped):
-            template_gui_indices.append((int(m.group(1)), file_str, lineno))
-        if m := HUD_SHOW_GUI_RE.match(stripped):
-            hud_gui_indices.add(int(m.group(1)))
+        attenuation_match = ATTENUATION_RANGE_PATTERN.match(stripped_line)
+        if attenuation_match is not None:
+            attenuation_value = float(attenuation_match.group(1))
+            if attenuation_value > 100.0:
+                issues.append(
+                    AuditIssue(
+                        severity="WARNING",
+                        file=file_path_str,
+                        line=line_number,
+                        code="ATTENUATION_OVER_100",
+                        message=(
+                            f"attenuationRange value {attenuation_value} "
+                            "exceeds 100 and may trigger engine errors."
+                        ),
+                    )
+                )
 
-        # Legacy BF1942 SAI checks in .ai files
-        if ext == ".ai":
-            tokens = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", stripped)
-            for tok in tokens:
-                tl = tok.lower()
-                if tl in LEGACY_SAI_BROKEN:
+        gui_index_match = GUI_INDEX_PATTERN.match(stripped_line)
+        if gui_index_match is not None:
+            template_gui_indices.append(
+                (int(gui_index_match.group(1)), file_path_str, line_number)
+            )
+
+        hud_show_match = HUD_SHOW_GUI_PATTERN.match(stripped_line)
+        if hud_show_match is not None:
+            hud_gui_indices.add(int(hud_show_match.group(1)))
+
+        if extension == ".ai":
+            tokens = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", stripped_line)
+            for token in tokens:
+                lowercase_token = token.lower()
+                if lowercase_token in LEGACY_SAI_BROKEN_CONDITIONALS:
                     issues.append(
-                        Issue(
-                            "ERROR",
-                            file_str,
-                            lineno,
-                            "LEGACY_SAI_BROKEN",
-                            f"Legacy BF1942 SAI conditional `{tok}` is missing from BF2 AIDLL.dll.",
+                        AuditIssue(
+                            severity="ERROR",
+                            file=file_path_str,
+                            line=line_number,
+                            code="LEGACY_SAI_BROKEN",
+                            message=(
+                                f"Legacy BF1942 SAI conditional `{token}` is "
+                                "missing from BF2 AIDLL.dll."
+                            ),
                         )
                     )
-                elif tl in LEGACY_SAI_ALWAYS_ZERO and "aistrategy." in lower:
+                elif (
+                    lowercase_token in LEGACY_SAI_ALWAYS_ZERO_CONDITIONALS
+                    and "aistrategy." in lowercase_line
+                ):
                     issues.append(
-                        Issue(
-                            "WARNING",
-                            file_str,
-                            lineno,
-                            "LEGACY_SAI_ZERO",
-                            f"Legacy SAI conditional `{tok}` always evaluates to 0 in BF2 AIDLL.dll.",
+                        AuditIssue(
+                            severity="WARNING",
+                            file=file_path_str,
+                            line=line_number,
+                            code="LEGACY_SAI_ZERO",
+                            message=(
+                                f"Legacy SAI conditional `{token}` always "
+                                "evaluates to 0 in BF2 AIDLL.dll."
+                            ),
                         )
                     )
-            if "v_arg3" in lower and "< 13" in lower:
+
+            if "v_arg3" in lowercase_line and "< 13" in lowercase_line:
                 issues.append(
-                    Issue(
-                        "ERROR",
-                        file_str,
-                        lineno,
-                        "INVALID_V_ARG3_SAI",
-                        "`v_arg3 < 13` is invalid in BF2 AIDLL.dll Strategic AI conditions.",
+                    AuditIssue(
+                        severity="ERROR",
+                        file=file_path_str,
+                        line=line_number,
+                        code="INVALID_V_ARG3_SAI",
+                        message=(
+                            "`v_arg3 < 13` is invalid in BF2 AIDLL.dll "
+                            "Strategic AI conditions."
+                        ),
                     )
                 )
 
-        # Optional mod-root asset path verification
         if mod_root is not None:
-            if m := ASSET_PATH_RE.search(stripped):
-                rel_asset = m.group(1).replace("\\", "/")
-                if "/" in rel_asset and not (mod_root / rel_asset).exists():
+            asset_match = ASSET_PATH_PATTERN.search(stripped_line)
+            if asset_match is not None:
+                relative_asset = asset_match.group(1).replace("\\", "/")
+                if (
+                    "/" in relative_asset
+                    and not (mod_root / relative_asset).exists()
+                ):
                     issues.append(
-                        Issue(
-                            "WARNING",
-                            file_str,
-                            lineno,
-                            "MISSING_ASSET_PATH",
-                            f"Asset `{rel_asset}` not found under {mod_root}.",
+                        AuditIssue(
+                            severity="WARNING",
+                            file=file_path_str,
+                            line=line_number,
+                            code="MISSING_ASSET_PATH",
+                            message=(
+                                f"Asset `{relative_asset}` not found under "
+                                f"{mod_root}."
+                            ),
                         )
                     )
 
-    if in_block_rem:
+    if in_block_comment:
         issues.append(
-            Issue(
-                "ERROR",
-                file_str,
-                block_rem_start,
-                "UNCLOSED_BEGINREM",
-                "beginRem block not closed with endRem.",
-            )
-        )
-    for line_num in if_stack:
-        issues.append(
-            Issue("ERROR", file_str, line_num, "UNCLOSED_IF", "`if` block not closed with `endIf`.")
-        )
-    for line_num in while_stack:
-        issues.append(
-            Issue(
-                "ERROR",
-                file_str,
-                line_num,
-                "UNCLOSED_WHILE",
-                "`while` block not closed with `endWhile`.",
-            )
-        )
-    for comp_name, line_num, _ in comp_stack:
-        issues.append(
-            Issue(
-                "ERROR",
-                file_str,
-                line_num,
-                "UNCLOSED_COMP",
-                f"BeginComp:{comp_name} not closed with rem ---EndComp ---.",
+            AuditIssue(
+                severity="ERROR",
+                file=file_path_str,
+                line=block_comment_start_line,
+                code="UNCLOSED_BEGINREM",
+                message="beginRem block not closed with endRem.",
             )
         )
 
-    for key, (cls, fpath, lno, has_net) in block_has_networkable.items():
-        if not has_net and ext == ".tweak":
-            issues.append(
-                Issue(
-                    "WARNING",
-                    fpath,
-                    lno,
-                    "MISSING_NETWORKABLE",
-                    f"Networked class `{cls}` (`{key}`) has no `setNetworkableInfo` in this .tweak.",
-                )
+    for unclosed_if_line in if_line_stack:
+        issues.append(
+            AuditIssue(
+                severity="ERROR",
+                file=file_path_str,
+                line=unclosed_if_line,
+                code="UNCLOSED_IF",
+                message="`if` block not closed with `endIf`.",
             )
+        )
+
+    for unclosed_while_line in while_line_stack:
+        issues.append(
+            AuditIssue(
+                severity="ERROR",
+                file=file_path_str,
+                line=unclosed_while_line,
+                code="UNCLOSED_WHILE",
+                message="`while` block not closed with `endWhile`.",
+            )
+        )
+
+    for open_block in component_stack:
+        issues.append(
+            AuditIssue(
+                severity="ERROR",
+                file=file_path_str,
+                line=open_block.start_line,
+                code="UNCLOSED_COMP",
+                message=(
+                    f"BeginComp:{open_block.component_name} not closed with "
+                    "rem ---EndComp ---."
+                ),
+            )
+        )
+
+    if extension == ".tweak":
+        for template_key, entry in networkable_blocks.items():
+            if not entry.has_networkable_info:
+                issues.append(
+                    AuditIssue(
+                        severity="WARNING",
+                        file=entry.file_path,
+                        line=entry.line_number,
+                        code="MISSING_NETWORKABLE",
+                        message=(
+                            f"Networked class `{entry.template_class}` "
+                            f"(`{template_key}`) has no `setNetworkableInfo` "
+                            "in this .tweak."
+                        ),
+                    )
+                )
 
     return issues
 
 
-def main() -> int:
+def run_cross_file_checks(
+    defined_templates: dict[str, tuple[str, str, int]],
+    referenced_templates: list[tuple[str, str, int]],
+    hud_gui_indices: set[int],
+    template_gui_indices: list[tuple[int, str, int]],
+) -> list[AuditIssue]:
+    """Verify addTemplate targets and GuiIndex links across multiple files."""
+    cross_file_issues: list[AuditIssue] = []
+
+    for referenced_name, file_path, line_number in referenced_templates:
+        if referenced_name.lower() not in defined_templates:
+            cross_file_issues.append(
+                AuditIssue(
+                    severity="WARNING",
+                    file=file_path,
+                    line=line_number,
+                    code="UNRESOLVED_ADDTEMPLATE",
+                    message=(
+                        f"addTemplate target `{referenced_name}` was not "
+                        "created in scanned files."
+                    ),
+                )
+            )
+
+    if hud_gui_indices:
+        for gui_index, file_path, line_number in template_gui_indices:
+            if gui_index not in hud_gui_indices:
+                cross_file_issues.append(
+                    AuditIssue(
+                        severity="WARNING",
+                        file=file_path,
+                        line=line_number,
+                        code="UNMATCHED_GUIINDEX",
+                        message=(
+                            f"GuiIndex {gui_index} has no matching "
+                            "hudBuilder.setNodeLogicShowVariable in scanned "
+                            "HUD files."
+                        ),
+                    )
+                )
+
+    return cross_file_issues
+
+
+def parse_arguments() -> argparse.Namespace:
+    """Parse CLI arguments for the PR:BF2 script auditor."""
     parser = argparse.ArgumentParser(
-        description="Audit PR:BF2 .con, .tweak, .inc, and .ai scripts for common errors."
+        description=(
+            "Audit PR:BF2 .con, .tweak, .inc, and .ai scripts for "
+            "common errors."
+        )
     )
-    parser.add_argument("paths", nargs="+", type=Path, help="Files or directories to audit.")
+    parser.add_argument(
+        "paths",
+        nargs="+",
+        type=Path,
+        help="Files or directories to audit.",
+    )
     parser.add_argument(
         "--mod-root",
         type=Path,
         default=None,
         help="Optional extracted mod root to check relative asset paths.",
     )
-    parser.add_argument("--json", action="store_true", help="Emit JSON output.")
-    args = parser.parse_args()
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit JSON output.",
+    )
+    return parser.parse_args()
 
-    files = collect_files(args.paths)
-    if not files:
+
+def main() -> int:
+    """Entry point for the PR:BF2 script auditor."""
+    arguments = parse_arguments()
+    script_files = collect_script_files(arguments.paths)
+    if not script_files:
         print("No matching script files found.", file=sys.stderr)
         return 2
 
@@ -554,61 +808,59 @@ def main() -> int:
     referenced_templates: list[tuple[str, str, int]] = []
     hud_gui_indices: set[int] = set()
     template_gui_indices: list[tuple[int, str, int]] = []
-    all_issues: list[Issue] = []
+    all_issues: list[AuditIssue] = []
 
-    for path in files:
-        all_issues.extend(
-            audit_file(
-                path,
-                defined_templates,
-                referenced_templates,
-                hud_gui_indices,
-                template_gui_indices,
-                args.mod_root,
-            )
+    for script_file in script_files:
+        file_issues = audit_file(
+            script_path=script_file,
+            defined_templates=defined_templates,
+            referenced_templates=referenced_templates,
+            hud_gui_indices=hud_gui_indices,
+            template_gui_indices=template_gui_indices,
+            mod_root=arguments.mod_root,
         )
+        all_issues.extend(file_issues)
 
-    # Cross-file checks when multiple files are scanned
-    if len(files) > 1:
-        for ref_name, fpath, lno in referenced_templates:
-            if ref_name.lower() not in defined_templates:
-                all_issues.append(
-                    Issue(
-                        "WARNING",
-                        fpath,
-                        lno,
-                        "UNRESOLVED_ADDTEMPLATE",
-                        f"addTemplate target `{ref_name}` was not created in scanned files.",
-                    )
-                )
-        if hud_gui_indices:
-            for gid, fpath, lno in template_gui_indices:
-                if gid not in hud_gui_indices:
-                    all_issues.append(
-                        Issue(
-                            "WARNING",
-                            fpath,
-                            lno,
-                            "UNMATCHED_GUIINDEX",
-                            f"GuiIndex {gid} has no matching hudBuilder.setNodeLogicShowVariable in scanned HUD files.",
-                        )
-                    )
+    if len(script_files) > 1:
+        cross_file_issues = run_cross_file_checks(
+            defined_templates=defined_templates,
+            referenced_templates=referenced_templates,
+            hud_gui_indices=hud_gui_indices,
+            template_gui_indices=template_gui_indices,
+        )
+        all_issues.extend(cross_file_issues)
 
-    if args.json:
-        print(json.dumps([asdict(i) for i in all_issues], indent=2))
+    if arguments.json:
+        serialized_issues = [asdict(issue) for issue in all_issues]
+        print(json.dumps(serialized_issues, indent=2))
     else:
         if not all_issues:
-            print(f"OK: {len(files)} file(s) audited with 0 issues.")
+            print(f"OK: {len(script_files)} file(s) audited with 0 issues.")
         else:
             for issue in all_issues:
                 print(
-                    f"[{issue.severity}] {issue.file}:{issue.line} ({issue.code}): {issue.message}"
+                    f"[{issue.severity}] {issue.file}:{issue.line} "
+                    f"({issue.code}): {issue.message}"
                 )
-            errors = sum(1 for i in all_issues if i.severity == "ERROR")
-            warnings = sum(1 for i in all_issues if i.severity == "WARNING")
-            print(f"\nSummary: {errors} error(s), {warnings} warning(s) across {len(files)} file(s).")
 
-    return 1 if any(i.severity == "ERROR" for i in all_issues) else 0
+            error_count = 0
+            warning_count = 0
+            for issue in all_issues:
+                if issue.severity == "ERROR":
+                    error_count += 1
+                elif issue.severity == "WARNING":
+                    warning_count += 1
+
+            print(
+                f"\nSummary: {error_count} error(s), "
+                f"{warning_count} warning(s) across "
+                f"{len(script_files)} file(s)."
+            )
+
+    for issue in all_issues:
+        if issue.severity == "ERROR":
+            return 1
+    return 0
 
 
 if __name__ == "__main__":

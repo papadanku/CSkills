@@ -1,0 +1,261 @@
+# Console ObjectTemplate (textureName to weaponHud.deviationFactor)
+
+- `objectTemplate.textureName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.textureOffsetVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.textureTileFactor <float>`
+    - Returns: `float`
+- `objectTemplate.throwStrength <float>`
+    - Returns: `float`
+- `objectTemplate.throwStrength2 <float>`
+    - Returns: `float`
+- `objectTemplate.Timeout <float>`
+    - Returns: `float`
+- `objectTemplate.timeToGetControl <float>`
+    - Returns: `float`
+- `objectTemplate.timeToLive <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.timeToLive <float>`
+    - Returns: `float`
+- `objectTemplate.timeToLiveAfterDeath <float>`
+    - Returns: `float`
+- `objectTemplate.timeToLoseControl <float>`
+    - Returns: `float`
+- `objectTemplate.timeToRemoveTK <float>`
+    - Returns: `float`
+- `objectTemplate.toggleMouseLook <bool>`
+    - Returns: `bool`
+- `objectTemplate.toggleWeapon <bool>`
+    - Returns: `bool`
+- `objectTemplate.tolerance <float>`
+    - Returns: `float`
+- `objectTemplate.torque <float>`
+    - Returns: `float`
+- `objectTemplate.tracerConvergeDistance <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - At what distance the tracers (which start from the gunbarrel) and the projectile which start from the camera converges.
+    - Only relevant if `FireInCameraDof` is checked.
+- `objectTemplate.tracerInterval <int>`
+    - Returns: `int`
+    - Used in Projectiles (Weapons)
+    - Set one for tracer on every shot, 2 for every other, and so on.
+- `objectTemplate.tracerScaler <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - How long the tracer effect will be as default.
+- `objectTemplate.tracerSizeModifier <float>`
+    - Returns: `float`
+    - Used in Projectiles (Weapons)
+    - How fat the tracer will be.
+- `objectTemplate.tracerTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.trackTurnAcceleration <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnHighAmplitude <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnHighOffset <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnLowAmplitude <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnLowOffset <float>`
+    - Returns: `float`
+- `objectTemplate.trackTurnSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.trailEffectTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.Transparency <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.transparencyGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.treeCollisionDiameter <float>`
+    - Returns: `float`
+- `objectTemplate.triggerForEachActivatingPlayer <bool>`
+    - Returns: `bool`
+- `objectTemplate.triggerId <int>`
+    - Returns: `int`
+- `objectTemplate.triggerRadius <float>`
+    - Returns: `float`
+- `objectTemplate.turnVelocity <float>`
+    - Returns: `float`
+- `ObjectTemplate.type <world::IObjectTemplate_ptrproxy>`
+    - Returns: `std::string`
+- `objectTemplate.type <int>`
+    - Returns: `int`
+- `objectTemplate.uavVehicleFlightHeight <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleRadius <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleSampleResolution <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.uavVehicleTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.unableToChangeTeam <bool>`
+    - Returns: `bool`
+- `objectTemplate.unlockIndex <int>`
+    - Returns: `int`
+- `objectTemplate.unlockLevel <int>`
+    - Returns: `int`
+- `ObjectTemplate.update <world::IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `ObjectTemplate.updateAll`
+    - Returns: `void`
+- `objectTemplate.upDropBoost <float>`
+    - Returns: `float`
+- `objectTemplate.upThrowBoost <float>`
+    - Returns: `float`
+- `objectTemplate.upThrowBoost2 <float>`
+    - Returns: `float`
+- `objectTemplate.useAbsoluteDirection <bool>`
+    - Returns: `bool`
+- `objectTemplate.useButtonRadius <float>`
+    - Returns: `float`
+- `objectTemplate.useCameraOrientation <bool>`
+    - Returns: `bool`
+- `objectTemplate.usedByAi <bool>`
+    - Returns: `bool`
+- `objectTemplate.useDeAcceleration <bool>`
+    - Returns: `bool`
+- `objectTemplate.usedOnTransparentMaterials <bool>`
+    - Returns: `bool`
+- `objectTemplate.usedOnTransparentSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.useGeomPart <int>`
+    - Returns: `int`
+- `objectTemplate.useProjectileCamera <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleCameraShake <CameraShakeTriggers>`
+    - Returns: `CameraShakeTriggers`
+- `objectTemplate.vehicleCategory <dice::hfe::world::VehicleCategory>`
+    - Returns: `dice::hfe::world::VehicleCategory`
+- `objectTemplate.vehicleFov <float>`
+    - Returns: `float`
+- `objectTemplate.vehicleHud.AbilityIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.addAbilityIcon <std::string>`
+    - Returns: `void`
+- `objectTemplate.vehicleHud.addShowOnCamMode <int>`
+    - Returns: `void`
+- `objectTemplate.vehicleHud.addVehicleIcon <std::string>`
+    - Returns: `void`
+- `objectTemplate.vehicleHud.disableOnSprint <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.displaySelectionOnEnter <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.enablePostProcessingOnGuiIndex <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.getShowOnCamMode <int>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.guiIndex <int>`
+    - Returns: `int`
+    - Vehicles and Weapons `.tweak`
+    - Defines the Vehicle General User Inferface Index to use like the Blackhawk green HUD.
+    - Gui Index is located in the `.con`\ s of `menu\\HUD\\HudSetup\\Vehicles`
+- `objectTemplate.vehicleHud.hasTurretIcon <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.hudName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.injurySound <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.isCoDriver <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.maxClimbSpeed <int>`
+    - Returns: `int`
+- `objectTemplate.vehicleHud.miniMapIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.miniMapIconLeaderSize <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.miniMapIconSize <int>`
+    - Returns: `int`
+- `objectTemplate.vehicleHud.pantingSound <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.showCrossHair <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.showInfo <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.showOnCamMode <int>`
+    - Returns: `int`
+- `objectTemplate.vehicleHud.spottedIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.spottedIconSize <int>`
+    - Returns: `int`
+- `objectTemplate.vehicleHud.standardHelpEnabled <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.typeIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.useChildHud <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.usePlayerIcon <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.useSelectionIcons <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.useVehicleCommRose <bool>`
+    - Returns: `bool`
+- `objectTemplate.vehicleHud.vehicleIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.vehicleHud.vehicleIconPos <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.vehicleHud.vehicleType <int>`
+    - Returns: `int`
+- `objectTemplate.velocity <float>`
+    - Returns: `float`
+    - Used in `GenericFirearms` (Weapons, Projectiles)
+    - The speed of the projectile measured in Rate of Fire (ROF)
+    - Lower ROF are affected by gravity/bullet drop while higher ones fire with lower bullet drop
+- `objectTemplate.visibleOn3dMap <bool>`
+    - Returns: `bool`
+- `objectTemplate.volume <float>`
+    - Returns: `float`
+
+    The loudness of the sound.
+
+- `objectTemplate.volumeEnvelope <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.volumeGroup <int>`
+    - Returns: `int`
+- `objectTemplate.warningHud.firstWarningSound <std::string>`
+    - Returns: `std::string`
+    - Used in Vehicle `.tweak`
+    - Defines the 1st warning sound when getting locked onto.
+    - Uses the file path pointing to a `.wav` or an `.wav` file along with usual sound configuration code. *Beep Beep Beep*
+- `objectTemplate.warningHud.secondWarningSound <std::string>`
+    - Returns: `std::string`
+    - Used in Vehicle `.tweak`
+    - Defines the 2nd warning sound when getting locked onto.
+    - Uses the file path pointing to a `.wav` or an `.wav` file along with usual sound configuration code. *Beeeeeeeeeeep*
+- `objectTemplate.warningHud.warningIcon <std::string>`
+    - Returns: `std::string`
+    - Used in Vehicle `.tweak`
+    - Defines the location of the warning icon.
+    - Example: `ObjectTemplate.WarningHud.warningIcon Ingame\GeneralIcons\Action_Icons\mylaserlockicon.tga`
+- `objectTemplate.warningHud.warningType <int>`
+    - Returns: `int`
+- `objectTemplate.waterHeight <float>`
+    - Returns: `float`
+- `objectTemplate.waterSurfaceOffset <float>`
+    - Returns: `float`
+- `objectTemplate.weaponHud.addShowOnCamMode <int>`
+    - Returns: `void`
+- `objectTemplate.weaponHud.altCrosshairIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.altGuiIndex <int>`
+    - Returns: `int`
+- `objectTemplate.weaponHud.altWeaponIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.ammoBarBackIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.ammoBarFrontIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.ammoIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.clipIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.crosshairIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.weaponHud.crosshairIconSize <int>`
+    - Returns: `int`
+- `objectTemplate.weaponHud.deviationFactor <int>`
+    - Returns: `int`

@@ -1,0 +1,267 @@
+# Console Gameplay: Game Commands
+
+## game
+
+- `game.allowToggleFullscreen <bool>`
+    - Returns: `bool`
+- `game.lockFps <int>`
+    - Returns: `int`
+
+    Sets a fps cap, makes it so that the fps can't go higher than the given number.
+
+- `game.radioMessage <TargetChannel std::string>`
+    - Returns: `void`
+- `game.sayAll <std::string>`
+    - Returns: `void`
+- `game.sayTeam <int std::string>`
+    - Returns: `void`
+- `game.simulationRate <int>`
+    - Returns: `int`
+    - `HudElementsDemoRecComm.con`
+    - In Battlerecorder it sets the speed for the decrease speed and increase speed buttons.
+    - Can be increased, though some users report no difference as it is dependent on the Demo FPS (Default is 30 settings must be recorded higher something like 60) and Game FPS
+- `game.toggleFullscreen`
+    - Returns: `void`
+    - ~ Console
+    - Toggles Full-Screen and Windowed mode
+    - It will give you the nasty side-effect of seethrough terrain that would need the client to disconnect and reconnect to fix.
+- `game.unload`
+    - Returns: `bool`
+
+## gameLogic
+
+- `gameLogic.AddInvalidDropVehicleObject <std::string bool>`
+    - Returns: `void`
+- `gameLogic.becomeSquadLeader <bool>`
+    - Returns: `bool`
+- `gameLogic.createObject <std::string>`
+    - Returns: `void`
+- `gameLogic.damageForBeingOutSideWorld <float>`
+    - Returns: `float`
+- `gameLogic.defaultLevel <std::string>`
+    - Returns: `std::string`
+- `gameLogic.defaultTimeToNextAIWave <float>`
+    - Returns: `float`
+- `gameLogic.enableVoHelp <bool>`
+    - Returns: `bool`
+    - Enables the Voice Over Tips feature from vBF2.
+    - Uses `prhelp.utxt` in localization for std::strings/anything with HUD_HELP definitions
+    - HudElementsHelp.con in Menu for the size, color, fade in time, create more messages and VoiceMessages_Help.con for voiceovers
+- `gameLogic.extraUAVVehicleFlightHeight <float>`
+    - Returns: `float`
+- `gameLogic.feslEnvironment <int>`
+    - Returns: `int`
+- `gameLogic.getBeforeSpawnCameraDirection`
+    - Returns: `Vec3`
+- `gameLogic.getBeforeSpawnCameraPosition`
+    - Returns: `Vec3`
+- `gameLogic.getDefaultNumberOfTickets <U32>`
+    - Returns: `U32`
+- `gameLogic.getDefaultNumberOfTicketsEx <U32 U32>`
+    - Returns: `U32`
+- `gameLogic.getNumberOfTickets <U32>`
+    - Returns: `U32`
+- `gameLogic.getTeamDropVehicle <int>`
+    - Returns: `std::string`
+- `gameLogic.getTeamLanguage <int>`
+    - Returns: `std::string`
+- `gameLogic.getTeamName <int>`
+    - Returns: `std::string`
+- `gameLogic.getTicketLossAtEndPerMin`
+    - Returns: `float`
+- `gameLogic.getTicketLossPerMin <U32>`
+    - Returns: `float`
+- `gameLogic.hitIndicationThreshold <float>`
+    - Returns: `float`
+- `gameLogic.maximumLevelViewDistance <float>`
+    - Returns: `float`
+- `gameLogic.messages.addHelpMessage <std::string std::string>`
+    - Returns: `int`
+- `gameLogic.messages.addMessage <std::string>`
+    - Returns: `int`
+- `gameLogic.messages.addRadioFilter <std::string std::string>`
+    - Returns: `int`
+- `gameLogic.messages.addRadioVoice <std::string std::string std::string>`
+    - Returns: `int`
+- `gameLogic.messages.playHelpMessage <std::string>`
+    - Returns: `int`
+- `gameLogic.messages.playRadioMessage <int std::string std::string>`
+    - Returns: `int`
+- `gameLogic.messages.setVolumes <float float>`
+    - Returns: `void`
+- `gameLogic.noVehiclesOmit <std::string>`
+    - Returns: `void`
+- `gameLogic.outputPlayerStats <bool>`
+    - Returns: `bool`
+- `gameLogic.printCameraCoordToConsole`
+    - Returns: `void`
+- `gameLogic.refreshTriggerables`
+    - Returns: `void`
+- `gameLogic.remoteCommand <int int int>`
+    - Returns: `bool`
+- `gameLogic.reset`
+    - Returns: `void`
+- `gameLogic.roundNr <int>`
+    - Returns: `int`
+- `gameLogic.setAirMouseInverted <bool>`
+    - Returns: `void`
+- `gameLogic.setAirMouseSensitivity <float>`
+    - Returns: `float`
+- `gameLogic.setBeforeSpawnCamera <Vec3 Vec3>`
+    - Returns: `void`
+- `gameLogic.setDefaultNumberOfTickets <U32 U32>`
+    - Returns: `void`
+- `gameLogic.setDefaultNumberOfTicketsEx <U32 U32 U32>`
+    - Returns: `void`
+- `gameLogic.setDropVehicleDeviationRadius <int int>`
+    - Returns: `void`
+- `gameLogic.setKit <int KitType std::string>`
+    - Returns: `void`
+- `gameLogic.setNumberOfTickets <U32 U32>`
+    - Returns: `void`
+- `gameLogic.setNumDropVehiclesForTeam <int int>`
+    - Returns: `void`
+- `gameLogic.setTeamDropVehicle <int std::string>`
+    - Returns: `void`
+- `gameLogic.setTeamFlag <int std::string>`
+    - Returns: `void`
+- `gameLogic.setTeamLanguage <int std::string>`
+    - Returns: `void`
+- `gameLogic.setTeamName <int std::string>`
+    - Returns: `void`
+- `gameLogic.setTicketLossAtEndPerMin <float>`
+    - Returns: `void`
+- `gameLogic.setTicketLossPerMin <U32 float>`
+    - Returns: `void`
+- `gameLogic.spawnAtCameraPosition <bool>`
+    - Returns: `bool`
+- `gameLogic.spawnObjectSpeed <float>`
+    - Returns: `float`
+- `gameLogic.spawnPlayers <bool>`
+    - Returns: `bool`
+- `gameLogic.supplyDropHeight <float>`
+    - Returns: `float`
+- `gameLogic.supplyDropNumSecsToLive <float>`
+    - Returns: `float`
+- `gameLogic.teleport`
+    - Returns: `void`
+- `gameLogic.teleportCameraTo <Vec3>`
+    - Returns: `void`
+- `gameLogic.teleportTo <Vec3>`
+    - Returns: `void`
+- `gameLogic.timeAllowedOutSideWorld <float>`
+    - Returns: `float`
+- `gameLogic.timeToNextAIWave <float>`
+    - Returns: `float`
+- `gameLogic.togglePause`
+    - Returns: `void`
+
+    Console ~ Command
+
+    Pauses the game. Pressing `P` in COOP and Local does the same thing.
+
+- `gameLogic.vehicleDropHeight <float>`
+    - Returns: `float`
+
+## gameServerSettings
+
+- `gameServerSettings.setAdminScript <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setAllowNATNegotation <bool>`
+    - Returns: `void`
+- `gameServerSettings.setAutoBalanceTeam <bool>`
+    - Returns: `void`
+- `gameServerSettings.setAutoRecord <bool>`
+    - Returns: `void`
+- `gameServerSettings.setAutoRecordRounds <int>`
+    - Returns: `void`
+- `gameServerSettings.setCommunityLogoURL <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setCoopBotCount <int>`
+    - Returns: `void`
+- `gameServerSettings.setCoopBotDifficulty <float>`
+    - Returns: `void`
+- `gameServerSettings.setCoopBotRatio <float>`
+    - Returns: `void`
+- `gameServerSettings.setDemoDownloadURL <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setDemoHook <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setDemoIndexURL <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setEndDelay <int>`
+    - Returns: `void`
+- `gameServerSettings.setFriendlyFireWithMines <bool>`
+    - Returns: `void`
+- `gameServerSettings.setGameMode <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setGameSpyPort <int>`
+    - Returns: `void`
+- `gameServerSettings.setInterfaceIP <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setInternet <bool>`
+    - Returns: `void`
+- `gameServerSettings.setManDownTime <float>`
+    - Returns: `void`
+- `gameServerSettings.setMaxPlayers <int>`
+    - Returns: `void`
+- `gameServerSettings.setMinPlayersForVoting <int>`
+    - Returns: `void`
+- `gameServerSettings.setNoVehicles <float>`
+    - Returns: `void`
+- `gameServerSettings.setPassword <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setPunishTeamKills <bool>`
+    - Returns: `void`
+- `gameServerSettings.setRoundsPerMap <int>`
+    - Returns: `void`
+- `gameServerSettings.setScoreLimit <int>`
+    - Returns: `void`
+- `gameServerSettings.setServerName <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setSoldierFF <int>`
+    - Returns: `void`
+- `gameServerSettings.setSoldierSplashFF <int>`
+    - Returns: `void`
+- `gameServerSettings.setSpawnTime <float>`
+    - Returns: `void`
+- `gameServerSettings.setSponsorLogoURL <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setSponsorText <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setStartDelay <int>`
+    - Returns: `void`
+- `gameServerSettings.setSvPunkBuster <bool>`
+    - Returns: `void`
+- `gameServerSettings.setTeamRatio <float>`
+    - Returns: `void`
+- `gameServerSettings.setTeamVoteOnly <bool>`
+    - Returns: `void`
+- `gameServerSettings.setTicketRatio <int>`
+    - Returns: `void`
+- `gameServerSettings.setTimeBeforeRestartMap <float>`
+    - Returns: `void`
+- `gameServerSettings.setTimeLimit <int>`
+    - Returns: `void`
+- `gameServerSettings.setVehicleFF <int>`
+    - Returns: `void`
+- `gameServerSettings.setVehicleSplashFF <int>`
+    - Returns: `void`
+- `gameServerSettings.setVoipBFClientPort <int>`
+    - Returns: `void`
+- `gameServerSettings.setVoipBFServerPort <int>`
+    - Returns: `void`
+- `gameServerSettings.setVoipEnabled <bool>`
+    - Returns: `void`
+- `gameServerSettings.setVoipQuality <int>`
+    - Returns: `void`
+- `gameServerSettings.setVoipServerPort <int>`
+    - Returns: `void`
+- `gameServerSettings.setVoipServerRemote <bool>`
+    - Returns: `void`
+- `gameServerSettings.setVoipServerRemoteIP <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setVoipSharedPassword <std::string>`
+    - Returns: `void`
+- `gameServerSettings.setVoteTime <int>`
+    - Returns: `void`

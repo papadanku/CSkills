@@ -1,0 +1,236 @@
+# Console Vars.set (Vars.set to demo-fspeed)
+
+- `Vars.set <std::string std::string>`
+    - Returns: `void`
+- `EngineRunningTimer`
+    - Default: `5.000000`
+- `anim-soldier-1p-speed-crouch`
+    - Default: `1.700000`
+- `anim-soldier-1p-speed-prone`
+    - Default: `3.000000`
+- `anim-soldier-spring-clamp`
+    - Default: `0.001000`
+- `anim-soldier-spring-zoom-factor`
+    - Default: `6.000000`
+- `anim_offsetBackwardTime`
+    - Default: `0.500000`
+- `anim_playCameraAnimations`
+    - Default: `1`
+- `anim_playSoldierAnimations`
+    - Default: `1`
+- `anim_playSoldierPostAnimations`
+    - Default: `1`
+- `anim_playVehicleAnimations`
+    - Default: `1`
+- `anim_playWeaponAnimations`
+    - Default: `1`
+- `anim_skipSync`
+    - Default: `0`
+- `anim_smoothSet`
+    - Default: `10.000000`
+- `anim_startJumpAtSpeed`
+    - Default: `2.500000`
+- `anim_startLandAtHeight`
+    - Default: `1.000000`
+- `anim_startLandAtSpeed`
+    - Default: `-0.500000`
+- `anim_startLeftOffset`
+    - Default: `0.200000`
+- `anim_startRightOffset`
+    - Default: `0.700000`
+- `anim_test`
+    - Default: `0.250000`
+- `armor-invunerable-time`
+    - Default: `1.000000`
+- `armor-invunerable-time-afterwreck`
+    - Default: `1.000000`
+- `armor-max-soldier-wrecktime`
+    - Default: `60.000000`
+- `armor-water-safetycheck-time`
+    - Default: `2.500000`
+- `cFric`
+    - Default: `1.000000`
+- `cRest`
+    - Default: `1.000000`
+- `cam-dist`
+    - Default: `2.000000`
+- `cam-fast`
+    - Default: `10.000000`
+- `cam-interpolate-attachobject`
+    - Default: `1.200000`
+- `cam-normal`
+    - Default: `1.000000`
+- `cam-slow`
+    - Default: `0.100000`
+- `cam-stiffness`
+    - Default: `1.500000`
+- `cam_use_acc`
+    - Default: `0.000000`
+- `camera-check-closevehicle-freq`
+    - Default: `1.000000`
+- `camera-expshake-amp`
+    - Default: `5.000000`
+- `camera-expshake-freq`
+    - Default: `10.000000`
+- `camera-expshake-insidevehicle-mod`
+    - Default: `5.000000`
+- `camera-expshake-time`
+    - Default: `0.400000`
+- `camera-movement-speed-on-crouch`
+    - Default: `0.150000`
+- `camera-movement-speed-on-prone`
+    - Default: `0.100000`
+- `camera-movement-speed-on-stand`
+    - Default: `0.100000`
+- `camera-recoil-amplitude`
+    - Default: `0.600000`
+- `camera-recoil-speedmod`
+    - Default: `1.000000`
+- `camera-recoil-type`
+    - Default: `0`
+- `camera-shake-amp`
+    - Default: `2.0`
+- `camera-shake-amplitude`
+    - Default: `0.200000`
+- `camera-shake-distance`
+    - Default: `7.000000`
+- `camera-shake-freq`
+    - Default: `10.0`
+- `camera-shake-frequency`
+    - Default: `10.000000`
+- `camera-shake-time`
+    - Default: `0.2`
+- `camera-surface-snap-offset`
+    - Default: `0.090000`
+- `coll-cull-sphere-obb`
+    - Default: `1`
+- `coll-depth`
+    - Default: `3.000000`
+- `coll-draw-cyl`
+    - Default: `0`
+- `coll-draw-int`
+    - Default: `0`
+- `coll-draw-line-width`
+    - Default: `0.010000`
+- `coll-draw-lines`
+    - Default: `0`
+- `coll-draw-point-physics-radius`
+    - Default: `0.000000`
+- `coll-draw-soldier`
+    - Default: `0`
+- `coll-draw-tested_faces`
+    - Default: `0`
+- `coll-dump-all-tests`
+    - Default: `0`
+- `coll-edge`
+    - Default: `1`
+- `coll-edge-limit`
+    - Default: `0.866000`
+- `coll-forceOff-debugmeshes`
+    - Default: `0`
+- `coll-load-debugmeshes`
+    - Default: `0`
+- `coll-normal-limit`
+    - Default: `0.100000`
+- `coll-obb-cull-mode`
+    - Default: `1`
+- `coll-obb-cull-radius`
+    - Default: `0.577350`
+- `coll-obb-cull-vertex-limit`
+    - Default: `10`
+- `coll-soldier-collision-adjust-mod`
+    - Default: `2.000000`
+- `coll-soldier-collision-test-count`
+    - Default: `8`
+- `coll-soldier-collision-test-count-start-backAt`
+    - Default: `3`
+- `coll-soldier-collision-test-radius-mod`
+    - Default: `0.999000`
+- `coll-soldier-crouch-height`
+    - Default: `1.400000`
+- `coll-soldier-crush-depth`
+    - Default: `0.050000`
+- `coll-soldier-debug-proj-hit`
+    - Default: `0`
+- `coll-soldier-extend-ray`
+    - Default: `0.900000`
+- `coll-soldier-overrun-impact-mod`
+    - Default: `2.500000`
+- `coll-soldier-pivot-height`
+    - Default: `1.000000`
+- `coll-soldier-prone-height`
+    - Default: `0.800000`
+- `coll-soldier-radius`
+    - Default: `0.250000`
+- `coll-soldier-stand-height`
+    - Default: `1.700000`
+- `coll-static-vertex-limit`
+    - Default: `20`
+- `coll-use-cyl`
+    - Default: `1`
+- `coll-use-cyl-normal`
+    - Default: `1`
+- `coll-use-face`
+    - Default: `1`
+- `coll-use-fast-sphere-at-length`
+    - Default: `0.010000`
+- `coll-vel-dot-norm`
+    - Default: `0`
+- `collision-debug-default-terrain`
+    - Default: `0`
+- `collision-impact-speed-limit`
+    - Default: `4.000000`
+- `collision-skip-multcolls`
+    - Default: `1`
+- `collision-skip-multcolls-debug`
+    - Default: `0`
+- `collision-skip-multcolls-th`
+    - Default: `0.010000`
+- `collision-test-lod-distance-factor`
+    - Default: `0.060000`
+- `collision-test-lod-min-distance`
+    - Default: `25.000000`
+- `collision-test-projectile-lod-distance-factor`
+    - Default: `3.000000`
+- `collision-use-cubic-speedmod`
+    - Default: `0`
+- `collision-use-mod-on-soldier`
+    - Default: `1`
+- `conn-packetsize-override`
+    - Default: `0`
+- `damage-angle-mod-choke`
+    - Default: `0.000000`
+- `deathcam-terrainoffset`
+    - Default: `0.800000`
+- `debug-draw-test-ray`
+    - Default: `0`
+- `debug-engine <bool>`
+    - Returns: `bool`
+    - Default: `0`
+    - Activate in Console in Debugger
+    - Shows the RPM, Speed, Acceleration in a 3d text
+    - May need !restart to work and is somewhat buggy
+- `debug-outputNewObject`
+    - Default: `0`
+- `debug-spring <bool>`
+    - Returns: `bool`
+    - Default: `0`
+    - Activate in Console in Debugger and normal
+    - Shows lines when approaching a vehicle.
+    - You can see what direction the vehicle will go when turning and has a bunch of other information regarding wheels"
+- `demo-cam-360-capture`
+    - Default: `0`
+- `demo-cam-360-capture-move`
+    - Default: `0.000000`
+- `demo-cam-mouse-wheel-scale`
+    - Default: `0.850000`
+- `demo-cam-offset`
+    - Default: `1`
+- `demo-cam-offset-min`
+    - Default: `0.200000`
+- `demo-cam-offset-slow`
+    - Default: `0.800000`
+- `demo-cam-offset-speed`
+    - Default: `1.000000`
+- `demo-fspeed`
+    - Default: `100.000000`

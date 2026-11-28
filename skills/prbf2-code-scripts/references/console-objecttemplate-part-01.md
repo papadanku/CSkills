@@ -1,0 +1,262 @@
+# Console ObjectTemplate (3dMapIcon to animationSystem1P)
+
+- `objectTemplate.3dMapIcon <int>`
+    - Returns: `int`
+    - Used in GenericFirearms (Mine etc) .tweak
+    - The image number sequence referenced in `Objects.dds`.
+    - Use the vBF2 file and count the images. 9 is the mine icon.
+    - Using this system, you could have custom 3D Mine Icons, as long as they are the same size as the original.
+- `objectTemplate.ability.hasAmmoAbility <bool>`
+    - Returns: `bool`
+- `objectTemplate.ability.hasHealingAbility <bool>`
+    - Returns: `bool`
+- `objectTemplate.ability.hasRepairingAbility <bool>`
+    - Returns: `bool`
+- `objectTemplate.ability.radarRadius <int>`
+    - Returns: `int`
+- `objectTemplate.abilityHud.ammoSound <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.abilityHud.healingSound <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.abilityHud.repairingSound <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.abilityInVehicleMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.abilityInVehicleRadius <float>`
+    - Returns: `float`
+- `objectTemplate.abilityInVehicleStrength <float>`
+    - Returns: `float`
+- `objectTemplate.abilityRestoreRate <float>`
+    - Returns: `float`
+- `objectTemplate.acceleration <Math::Vec3>`
+    - Returns: `Math::Vec3`
+- `objectTemplate.acceleration <float>`
+    - Returns: `float`
+- `objectTemplate.accumulate <bool>`
+    - Returns: `bool`
+- `ObjectTemplate.active <world::IObjectTemplate_ptrproxy>`
+    - Returns: `world::IObjectTemplate_ptrproxy`
+- `ObjectTemplate.activeSafe <std::string world::IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `objectTemplate.addAmmoType <int int float>`
+    - Returns: `void`
+- `objectTemplate.addChild <bool>`
+    - Returns: `bool`
+- `objectTemplate.addEmitterSpeed <bool>`
+    - Returns: `bool`
+- `objectTemplate.addKitVehicleMod <std::string int>`
+    - Returns: `void`
+- `objectTemplate.addLinePoint <Vec2>`
+    - Returns: `void`
+- `objectTemplate.addPcoPosId <int>`
+    - Returns: `void`
+- `objectTemplate.addTargetObjectTypeToWatch <int>`
+    - Returns: `void`
+- `objectTemplate.addTemplate <std::string>`
+    - Returns: `void`
+- `objectTemplate.addToCollisionGroup <U32>`
+    - Returns: `void`
+- `objectTemplate.addToProjectileList <bool>`
+    - Returns: `bool`
+- `objectTemplate.addTriggerableTarget <std::string>`
+    - Returns: `void`
+- `objectTemplate.addVehicleType <std::string int float>`
+    - Returns: `void`
+- `objectTemplate.addVehicleType <VehicleCategory>`
+    - Returns: `void`
+- `objectTemplate.addWorkOnMaterial <int>`
+    - Returns: `void`
+- `objectTemplate.affectingType <int>`
+    - Returns: `int`
+- `objectTemplate.affectLightmappedObjects <bool>`
+    - Returns: `bool`
+- `objectTemplate.AgeScaleFactorFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.AgeScaleFactorUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.airFlowAffect <float>`
+    - Returns: `float`
+- `objectTemplate.airFriction <float>`
+    - Returns: `float`
+- `objectTemplate.airResistance <float>`
+    - Returns: `float`
+- `objectTemplate.airResistanceGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.aiTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.alignEffectTransformation <bool>`
+    - Returns: `bool`
+- `objectTemplate.alignRotationToSpeed <bool>`
+    - Returns: `bool`
+- `objectTemplate.allowDucking <bool>`
+    - Returns: `bool`
+- `objectTemplate.allowInsideDynamicLights <bool>`
+    - Returns: `bool`
+- `objectTemplate.allowInsideStaticSun <bool>`
+    - Returns: `bool`
+- `objectTemplate.alphaCull <float>`
+    - Returns: `float`
+- `objectTemplate.alphaIntensityFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.alphaIntensityUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.alphaOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.alternateTemplate0 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.alternateTemplate1 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.alternateTemplate2 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.alternateTemplate3 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.alternateTemplate4 <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.altSoldierExitPosition <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.ammo.abilityCost <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.abilityDrain <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.abilityMaterial <int>`
+    - Returns: `int`
+- `objectTemplate.ammo.abilityRadius <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.abilityStrength <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.ammoType <int>`
+    - Returns: `int`
+- `objectTemplate.ammo.autoReload <bool>`
+    - Returns: `bool`
+- `objectTemplate.ammo.changeMagAt <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.firstShotExtraTime <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.instantReloadOnEnable <bool>`
+    - Returns: `bool`
+- `objectTemplate.ammo.lastShotExtraTime <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.magLinkWeapon <std::string>`
+    - Returns: `std::string`
+    - Weapons, Vehicles `.tweak`
+    - Allows two weapons to share the same amount of bullets and magazines.
+    - Enter the weapon name to maglink.
+    - The weapon that's referenced must also have the same code.
+    - Weapons with fire selector code causes it to not work properly (citation needed)
+- `objectTemplate.ammo.magSize <int>`
+    - Returns: `int`
+    - Weapons `.tweak`
+    - Number of bullets in a magazine.
+    - -1 for Infinity
+    - Maximum non-infinity allowed is 1023
+    - Any more will cause a crash
+
+    In the Battlerecorder, it doesn't pickup a gun that fires for 10 seconds on with 1000 bullets for some reason. Tested with the L4Bren on Auto.
+
+- `objectTemplate.ammo.minimumTimeUntilReload <float>`
+    - Returns: `float`
+- `objectTemplate.ammo.nrOfMags <int>`
+    - Returns: `int`
+
+    Number of magazines allowed for a weapon.
+
+- `objectTemplate.ammo.onlyActiveWhileFiring <bool>`
+    - Returns: `bool`
+
+    Prevents the Medibag and Ammo Bag from being thrown when firing. Used in PR's Medikit and Repair Bag
+
+- `objectTemplate.ammo.reloadAmount <int>`
+    - Returns: `int`
+- `objectTemplate.ammo.reloadTime <float>`
+    - Returns: `float`
+    - Time in seconds of how long it takes to reload.
+    - Must be the same number as the reload animation time from AnimationSystem1p.inc to sync properly.
+- `objectTemplate.ammo.reloadWithoutPlayer <bool>`
+    - Returns: `bool`
+    - If enabled, weapon will autoreload regardless client settings for autoreload.
+    - 1 - Enabled
+    - 0 - Disabled
+- `objectTemplate.ammo.replenishingType <ReplenishingType>`
+    - Returns: `ReplenishingType`
+- `objectTemplate.ammo.toggleWhenNoAmmo <bool>`
+    - Returns: `bool`
+    - Weapons `.tweak`
+    - When no ammo, switch to previous selected weapon.
+- `objectTemplate.ammoStorageSize <float>`
+    - Returns: `float`
+- `objectTemplate.anchor <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.anchorOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.animatedUVRotation <int>`
+    - Returns: `int`
+- `objectTemplate.animatedUVRotationIndex <int>`
+    - Returns: `int`
+- `objectTemplate.animatedUVRotationRadius <float>`
+    - Returns: `float`
+- `objectTemplate.animatedUVRotationReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.animatedUVRotationScale <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animatedUVTranslation <bool>`
+    - Returns: `bool`
+- `objectTemplate.animatedUVTranslationIndex <int>`
+    - Returns: `int`
+- `objectTemplate.animatedUVTranslationMax <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animatedUVTranslationReverse <bool>`
+    - Returns: `bool`
+- `objectTemplate.animatedUVTranslationSize <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animatedUVTranslationSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.animation.animateOnZoom <bool>`
+    - Returns: `bool`
+- `objectTemplate.animation.loopingFire <float>`
+    - Returns: `float`
+- `objectTemplate.animation.shiftDelay <float>`
+    - Returns: `float`
+- `objectTemplate.animation.useShiftAnimation <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationEnable <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationFrameCount <int>`
+    - Returns: `int`
+- `objectTemplate.animationFrameCountX <int>`
+    - Returns: `int`
+- `objectTemplate.animationFrameHeight <int>`
+    - Returns: `int`
+- `objectTemplate.animationFrameWidth <int>`
+    - Returns: `int`
+- `objectTemplate.animationPlayOnce <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationRandomizedStartFrame <bool>`
+    - Returns: `bool`
+- `objectTemplate.animationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.animationSystem1P <std::string>`
+    - Returns: `void`

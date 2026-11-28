@@ -1,0 +1,261 @@
+# Console ObjectTemplate (detonation.flashbangAdditiveGlowMaxRampTime to engineName)
+
+- `objectTemplate.detonation.flashbangAdditiveGlowMaxRampTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangAdditiveGlowMinAlpha <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangAdditiveGlowMinHealTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangAdditiveGlowMinHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMaxAlpha <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMaxHealTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMaxHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMaxRampTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMinAlpha <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMinHealTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangBillboardMinHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMaxAlpha <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMaxHealTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMaxHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMaxRampTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMinAlpha <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMinHealTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangMotionBlurMinHoldTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.flashbangRadiusWithNightVision <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.invisibleAtEndEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.maxDepthForExplosion <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.minDetonationSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.playMaterialEffectAtSurface <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.radiusDetonateWithAirVehicles <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.replenishingStrength <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.replenishingType <ReplenishingType>`
+    - Returns: `ReplenishingType`
+- `objectTemplate.detonation.showMineIndicationIcon <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.stopAtEndEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.timeUntilCanDetonate <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.triggerAngle <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.triggerRadius <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.triggerTime <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.triggerType <RadiusTriggerType>`
+    - Returns: `RadiusTriggerType`
+- `objectTemplate.detonation.triggerVictimMinSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.detonation.useCollisionNormal <bool>`
+    - Returns: `bool`
+- `objectTemplate.detonation.useMMOnEndEffect <bool>`
+    - Returns: `bool`
+- `objectTemplate.deviation.devModCrouch <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.devModLie <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.devModStand <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.devModZoom <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.fireDevAdd <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.fireDevMax <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.fireDevSub <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.minDev <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.miscDevAddJump <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.miscDevMax <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.miscDevSub <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.radius <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.setFireDev <float float float>`
+    - Returns: `void`
+- `objectTemplate.deviation.setMiscDev <float float float>`
+    - Returns: `void`
+- `objectTemplate.deviation.setSpeedDev <float float float>`
+    - Returns: `void`
+- `objectTemplate.deviation.setTurnDev <float float float>`
+    - Returns: `void`
+- `objectTemplate.deviation.speedDevAddForward <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.speedDevAddStrafe <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.speedDevMax <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.speedDevSub <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.subProjectileDev <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.turnDevAddPitch <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.turnDevAddYaw <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.turnDevMax <float>`
+    - Returns: `float`
+- `objectTemplate.deviation.turnDevSub <float>`
+    - Returns: `float`
+- `objectTemplate.differential <float>`
+    - Returns: `float`
+- `objectTemplate.direction <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.directionalScale <float>`
+    - Returns: `float`
+- `objectTemplate.disableIfEnemyInsideRadius <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableInputWhileDucking <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableSpawnPointsOnEnter <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableWhenEmptyVehicle <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableWhenEmptyVehicleDelay <float>`
+    - Returns: `float`
+- `objectTemplate.disableWhenLosingControl <bool>`
+    - Returns: `bool`
+- `objectTemplate.disableWhenWreck <bool>`
+    - Returns: `bool`
+- `objectTemplate.dismountAngle <float>`
+    - Returns: `float`
+- `objectTemplate.dismountCheckOffset <float>`
+    - Returns: `float`
+- `objectTemplate.distance <float>`
+    - Returns: `float`
+- `objectTemplate.distanceCannotEnter <float>`
+    - Returns: `float`
+- `objectTemplate.distToMinDamage <float>`
+    - Returns: `float`
+- `objectTemplate.distToStartLoseDamage <float>`
+    - Returns: `float`
+- `objectTemplate.dontAllowExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.dontClearTeamOnExit <bool>`
+    - Returns: `bool`
+- `objectTemplate.drag <float>`
+    - Returns: `float`
+    - How much the drag from the body of a vehicle affects its speed.
+    - Without it, a vehicle will have an infinite top speed.
+- `objectTemplate.drag <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.dragModifier <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.dragModifier <float>`
+    - Returns: `float`
+- `objectTemplate.dragOffset <Vec3>`
+    - Returns: `Vec3`
+
+    To offset the drag using 0/0/0 - `X/Y/Z`
+
+- `objectTemplate.dragOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.drawOrder <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.dropHeadwear <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.dropStrength <float>`
+    - Returns: `float`
+- `objectTemplate.effectChangeWaterHeight <float>`
+    - Returns: `float`
+- `objectTemplate.effectOnSpawn <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.effectTemplateBaseName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.elasticity <float>`
+    - Returns: `float`
+- `objectTemplate.emitDelay <float>`
+    - Returns: `float`
+- `objectTemplate.emitDirection <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.emitDirectionZFromSpeedDof <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitFrequency <float>`
+    - Returns: `float`
+- `objectTemplate.emitFrequencyScaleFactorLowerBound <float>`
+    - Returns: `float`
+- `objectTemplate.emitPrio <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.emitRadius <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.emitRangeX <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.emitRangeY <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.emitRangeZ <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.emitScaleFactorFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitScaleFactorUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitSpeed <float>`
+    - Returns: `float`
+- `objectTemplate.emitSpeedGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.emitSpeedScaleFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.emitSpeedScaleUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.emitterSpeedScale <float>`
+    - Returns: `float`
+- `objectTemplate.emitterType <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.emitTime <float>`
+    - Returns: `float`
+- `objectTemplate.enabled <bool>`
+    - Returns: `bool`
+- `objectTemplate.enemyTicketLossWhenCaptured <int>`
+    - Returns: `int`
+- `objectTemplate.engineInfluence <float>`
+    - Returns: `float`
+- `objectTemplate.engineName <std::string>`
+    - Returns: `std::string`

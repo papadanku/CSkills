@@ -1,0 +1,262 @@
+# Console ObjectTemplate (setSoldierExitLocation to templateHasBeenUsed)
+
+- `objectTemplate.setSoldierExitLocation <Vec3 Vec3>`
+    - Returns: `void`
+- `objectTemplate.setSpawnAsParaTroper <bool>`
+    - Returns: `void`
+- `objectTemplate.setSpawnDelay <float>`
+    - Returns: `void`
+- `objectTemplate.setSpawnPositionOffset <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.setSpawnPreventionDelay <float>`
+    - Returns: `void`
+- `objectTemplate.setSpawnRotation <Math::Vec3>`
+    - Returns: `void`
+- `objectTemplate.setTeamGeometry <int std::string>`
+    - Returns: `void`
+- `objectTemplate.setToolTipType <dice::hfe::world::ToolTipType>`
+    - Returns: `void`
+- `objectTemplate.setVehicleType <dice::hfe::world::VehicleType>`
+    - Returns: `void`
+- `objectTemplate.shadowIntensity <float>`
+    - Returns: `float`
+- `objectTemplate.shakeFactor <float>`
+    - Returns: `float`
+- `objectTemplate.sharedStorageSize <float>`
+    - Returns: `float`
+- `objectTemplate.showInFirstPerson <bool>`
+    - Returns: `bool`
+- `objectTemplate.showInThirdPerson <bool>`
+    - Returns: `bool`
+- `objectTemplate.showOnMinimap <bool>`
+    - Returns: `bool`
+- `objectTemplate.signalTriggerId <int>`
+    - Returns: `int`
+- `objectTemplate.sinkingSpeedMod <float>`
+    - Returns: `float`
+- `objectTemplate.size <float>`
+    - Returns: `float`
+- `objectTemplate.size <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.sizeGraph <Vec4>`
+    - Returns: `Vec4`
+- `objectTemplate.sizeModifier <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.sizeModifierX <float>`
+    - Returns: `float`
+- `objectTemplate.sizeModifierY <float>`
+    - Returns: `float`
+- `objectTemplate.sizeModifierZ <float>`
+    - Returns: `float`
+- `objectTemplate.sizeOverTime <OverTimeDistribution>`
+    - Returns: `OverTimeDistribution`
+- `objectTemplate.skeleton <std::string>`
+    - Returns: `void`
+- `objectTemplate.skeleton1P <std::string>`
+    - Returns: `void`
+- `objectTemplate.skeleton3P <std::string>`
+    - Returns: `void`
+- `objectTemplate.snapToZeroOnNoInput <bool>`
+    - Returns: `bool`
+- `objectTemplate.softness <float>`
+    - Returns: `float`
+- `objectTemplate.soldierExitPosition <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.soldierExitRotation <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.sound.maxSoundsPerBurst <int>`
+    - Returns: `int`
+- `objectTemplate.sound.noisy <bool>`
+    - Returns: `bool`
+- `objectTemplate.soundFilename <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.soundFilter <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.soundIntensityFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.soundIntensityUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.soundRadius <float>`
+    - Returns: `float`
+- `objectTemplate.spawnDelay <float>`
+    - Returns: `void`
+- `objectTemplate.spawnDelayAtStart <bool>`
+    - Returns: `bool`
+- `objectTemplate.spawnOffset <Vec3>`
+    - Returns: `Vec3`
+- `objectTemplate.speccolor <Vec3ColorFloatIntensity>`
+    - Returns: `Vec3ColorFloatIntensity`
+- `objectTemplate.specialToggleWeaponInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.speed <float>`
+    - Returns: `float`
+- `objectTemplate.speedFromParticle <float>`
+    - Returns: `float`
+- `objectTemplate.speedFromPhysics <bool>`
+    - Returns: `bool`
+- `objectTemplate.spinWhenNoEngineInAir <float>`
+    - Returns: `float`
+- `objectTemplate.sprintDissipationTime <float>`
+    - Returns: `float`
+- `objectTemplate.sprintFactor <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear1Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear2Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear3Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear4Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintGear5Dampen <float>`
+    - Returns: `float`
+- `objectTemplate.sprintLimit <float>`
+    - Returns: `float`
+- `objectTemplate.sprintLossAtJump <float>`
+    - Returns: `float`
+- `objectTemplate.sprintRecoverTime <float>`
+    - Returns: `float`
+- `objectTemplate.sprintStaminaDissipationFactor <float>`
+    - Returns: `float`
+- `objectTemplate.startAgeFromAcceleration <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromAltitude <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromEngine <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromRotationalSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromSpeed <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeFromSpeedInDof <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeRange <Vec2>`
+    - Returns: `Vec2`
+- `objectTemplate.startAgeUsed <bool>`
+    - Returns: `bool`
+- `objectTemplate.startAtCreation <bool>`
+    - Returns: `bool`
+- `objectTemplate.startAutoRotateOnEnter <bool>`
+    - Returns: `bool`
+- `objectTemplate.startDelay <float>`
+    - Returns: `float`
+- `objectTemplate.startDistance <float>`
+    - Returns: `float`
+- `objectTemplate.startLodPercentageOfLodDistance <float>`
+    - Returns: `float`
+- `objectTemplate.startOnEffects <int>`
+    - Returns: `int`
+- `objectTemplate.startProbability <float>`
+    - Returns: `float`
+- `objectTemplate.startRotation <RandomDistribution>`
+    - Returns: `RandomDistribution`
+- `objectTemplate.startTeam <int>`
+    - Returns: `int`
+- `objectTemplate.stopOnEffects <int>`
+    - Returns: `int`
+- `objectTemplate.stopType <int>`
+    - Returns: `int`
+- `objectTemplate.strategicObject.3dMapIcon <int>`
+    - Returns: `int`
+- `objectTemplate.strategicObject.destroyedIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.strategicObject.intactIcon <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.strategicObject.isOnePiece <bool>`
+    - Returns: `bool`
+- `objectTemplate.strategicObject.part <int>`
+    - Returns: `int`
+- `objectTemplate.strategicObject.strategicObjectName <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.strength <float>`
+    - Returns: `float`
+- `objectTemplate.supplyGroupId <int>`
+    - Returns: `int`
+- `objectTemplate.supplyGroupNeeded <int int bool>`
+    - Returns: `void`
+- `objectTemplate.supplyValueNeededTeam1 <int>`
+    - Returns: `int`
+- `objectTemplate.supplyValueNeededTeam2 <int>`
+    - Returns: `int`
+- `objectTemplate.supplyValueTeam1 <int>`
+    - Returns: `int`
+- `objectTemplate.supplyValueTeam2 <int>`
+    - Returns: `int`
+- `objectTemplate.supportsEmitter <bool>`
+    - Returns: `bool`
+- `objectTemplate.supportsGlow <bool>`
+    - Returns: `bool`
+- `objectTemplate.supportsPerPixel <bool>`
+    - Returns: `bool`
+- `objectTemplate.supportsPerVertex <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.connectionEffect <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.target.connectionEffectOnlyWhenZoomed <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.disableFireWhenActiveMissile <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.disableGuidanceOnReload <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.lockAngle <float>`
+    - Returns: `float`
+- `objectTemplate.target.lockDelay <float>`
+    - Returns: `float`
+- `objectTemplate.target.loseLockDelay <float>`
+    - Returns: `float`
+- `objectTemplate.target.maxDistance <float>`
+    - Returns: `float`
+- `objectTemplate.target.maxVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.target.minVelocity <float>`
+    - Returns: `float`
+- `objectTemplate.target.onLockChangeToWeapon <bool std::string>`
+    - Returns: `void`
+- `objectTemplate.target.sendVehicleLockWarning <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.setTargetAtMaxDistance <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.targetInput <io::PlayerInputMap>`
+    - Returns: `io::PlayerInputMap`
+- `objectTemplate.target.targetObjectTemplate <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.target.targetSystem <TargetSystem>`
+    - Returns: `TargetSystem`
+- `objectTemplate.target.updateInterval <float>`
+    - Returns: `float`
+- `objectTemplate.target.useCameraDirectionToTarget <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.useDynamicVelocity <bool>`
+    - Returns: `bool`
+- `objectTemplate.target.velocityModifier <float>`
+    - Returns: `float`
+- `objectTemplate.targetType <TargetType>`
+    - Returns: `TargetType`
+- `objectTemplate.team <int>`
+    - Returns: `int`
+- `objectTemplate.team <U32>`
+    - Returns: `U32`
+- `objectTemplate.team <int>`
+    - Returns: `void`
+- `objectTemplate.teamChange <bool>`
+    - Returns: `bool`
+- `objectTemplate.teamFromClosestCP <bool>`
+    - Returns: `bool`
+- `objectTemplate.teamOnVehicle <bool>`
+    - Returns: `bool`
+- `objectTemplate.template <std::string>`
+    - Returns: `std::string`
+- `objectTemplate.templateHasBeenUsed <bool>`
+    - Returns: `bool`

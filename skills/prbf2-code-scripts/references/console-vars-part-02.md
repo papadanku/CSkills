@@ -1,0 +1,236 @@
+# Console Vars.set (demo-slomo-cam to phy-fri-wheel2)
+
+- `demo-slomo-cam`
+    - Default: `0.000000`
+- `detonation-collface-offset`
+    - Default: `0.070000`
+- `detonation-collface-offset-speedmod`
+    - Default: `0.050000`
+- `detonation-collface-offset-speedmod-max`
+    - Default: `500.000000`
+- `engine-audio-material-tweak`
+    - Default: `10.000000`
+- `engine-audio-sway-amplitude-first`
+    - Default: `0.050000`
+- `engine-audio-sway-amplitude-last`
+    - Default: `0.010000`
+- `engine-audio-sway-frequency-first`
+    - Default: `80.000000`
+- `engine-audio-sway-frequency-last`
+    - Default: `35.000000`
+- `engine-audio-sway-time-first`
+    - Default: `0.700000`
+- `engine-audio-sway-time-last`
+    - Default: `0.700000`
+- `engine-inertia`
+    - Default: `0.050000`
+- `engine-inertia2`
+    - Default: `0.990000`
+- `engine-inertia3`
+    - Default: `0.960000`
+- `engine-slope-no-gear-up-limit`
+    - Default: `0.174000`
+- `engine-slope-torque-mod-1st-gear`
+    - Default: `0.000000`
+- `engine-sound-smooth-time`
+    - Default: `0.100000`
+- `event-delay`
+    - Default: `0`
+- `event-delay-ticks`
+    - Default: `32`
+- `explosion-camshake-insidevehicle-mod`
+    - Default: `0.200000`
+- `explosion-camshake-maxdamage`
+    - Default: `150.000000`
+- `explosion-camshake-maxforce`
+    - Default: `20.000000`
+- `explosion-camshake-mod`
+    - Default: `4.000000`
+- `explosion-camshake-ownvehicle-mod`
+    - Default: `0.100000`
+- `explosion-hotspot`
+    - Default: `0.200000`
+- `explosion-hotspot-ray`
+    - Default: `0.020000`
+- `explosion-hotspot-ray-max`
+    - Default: `0.500000`
+- `explosion-latencyComp`
+    - Default: `1`
+- `explosion-soldier-expforce-ymod`
+    - Default: `5.000000`
+- `fb-mod`
+    - Default: `1.000000`
+- `feedback-mod`
+    - Default: `1.000000`
+- `fire-delay-after-jump`
+    - Default: `1.100000`
+- `fire-delay-from-prone`
+    - Default: `0.600000`
+- `flying_height`
+    - Default: `110.000000`
+- `follow-component-prediction-factor`
+    - Default: `0.100000`
+- `force-reg-limit`
+    - Default: `20.000000`
+- `hack-ignore-asserts`
+    - Default: `1`
+- `hc_dump`
+    - Default: `0`
+- `hc_freeze`
+    - Default: `0`
+- `hc_normals`
+    - Default: `0`
+- `hc_water`
+    - Default: `0`
+- `ignoreFriendlyTimer`
+    - Default: `1.000000`
+- `jump-delay-after-prone`
+    - Default: `1.200000`
+
+    Delay in seconds after prone to block the jump input.
+
+    - `0`: Allows jumping when pressing space while moving from prone to standing
+- `ladder-bottom-marginal`
+    - Default: `0.050000`
+- `ladder-climb-speed-mod`
+    - Default: `0.045000`
+- `ladder-down-angle-limit`
+    - Default: `35.000000`
+- `ladder-down-ray-mag`
+    - Default: `0.200000`
+- `ladder-down-ray-mag-skid`
+    - Default: `0.300000`
+- `ladder-end-camera-offset`
+    - Default: `0.400000`
+- `ladder-exit-offset`
+    - Default: `0.750000`
+- `ladder-getoff-ray-min`
+    - Default: `0.300000`
+- `ladder-getoff-speed-mod`
+    - Default: `1.150000`
+- `ladder-offset-top`
+    - Default: `0.360000`
+- `ladder-ray-debug`
+    - Default: `0`
+- `ladder-ray-debug2`
+    - Default: `0`
+- `ladder-skid-speed-mod`
+    - Default: `4.000000`
+- `ladder-soldier-dist`
+    - Default: `0.600000`
+- `ladder-soldier-start-getoff`
+    - Default: `1.800000`
+- `ladder-step-size`
+    - Default: `0.300000`
+- `ladder-top-exit-offset`
+    - Default: `0.750000`
+- `ladder-up-ray-mag-skid`
+    - Default: `1.700000`
+- `ladder-water-limit`
+    - Default: `1.200000`
+- `local-prediction`
+    - Default: `0`
+- `local-prediction-confirmtime`
+    - Default: `30`
+- `local-prediction-lerpTime`
+    - Default: `1.000000`
+- `local-prediction-minDelay`
+    - Default: `0.150000`
+- `maxDistKillMissile`
+    - Default: `15.000000`
+- `network-engine-fullPrecision`
+    - Default: `0`
+- `network-spring-fullPrecision`
+    - Default: `0`
+- `objectManager-cullHandleUpdateOnClientFactor`
+    - Default: `0.500000`
+- `objectspawner-draw-lines`
+    - Default: `0`
+- `objectspawner-inner-circle`
+    - Default: `0.300000`
+- `objectspawner-num-tries`
+    - Default: `7`
+- `old-turn-limit`
+    - Default: `1.000000`
+- `old-turn-mod`
+    - Default: `1.500000`
+- `opt-late-loading`
+    - Default: `0`
+- `opt-nosound`
+    - Default: `1`
+- `overheadCamera-acceleration`
+    - Default: `250.000000`
+- `overheadCamera-maxPositionDelta`
+    - Default: `7.000000`
+- `p-pos-damp`
+    - Default: `0.990000`
+- `p-pos-damp-water`
+    - Default: `0.900000`
+- `p-rot-damp`
+    - Default: `0.990000`
+- `p-rot-damp-water`
+    - Default: `0.900000`
+- `parachute-collapse-angle`
+    - Default: `0.300000`
+- `parachute-collapse-time`
+    - Default: `0.050000`
+- `parachute-collapse-time-water`
+    - Default: `0.050000`
+- `parachute-debug`
+    - Default: `0`
+- `parachute-spawn-debug`
+    - Default: `0`
+- `parachute-start-landing-height`
+    - Default: `8.000000`
+- `pco-exitpos-testlod`
+    - Default: `2`
+- `pco-min-playing-ticks`
+    - Default: `20`
+- `pco-show-gcs-stats`
+    - Default: `0`
+- `pco-unmanned-max-minor-axis`
+    - Default: `0.400000`
+- `pco-unmanned-min-major-axis`
+    - Default: `0.600000`
+- `phy-ang-vel`
+    - Default: `0.500000`
+- `phy-break-mod`
+    - Default: `0.950000`
+- `phy-bsp-stats`
+    - Default: `0`
+- `phy-contact-adjust-gravity-count`
+    - Default: `2`
+- `phy-convert-collision-meshes`
+    - Default: `0`
+- `phy-damage-frame-count`
+    - Default: `3`
+- `phy-damage-scale`
+    - Default: `100.000000`
+- `phy-damage-scale-limit`
+    - Default: `0.500000`
+- `phy-draw-soldier-bullet-collision`
+    - Default: `0`
+- `phy-engine-inertia`
+    - Default: `0.050000`
+- `phy-engine-slope`
+    - Default: `1.000000`
+- `phy-force-awake`
+    - Default: `0`
+- `phy-force-sleeping`
+    - Default: `0`
+- `phy-fri-dyn`
+    - Default: `0.800000`
+- `phy-fri-exp`
+    - Default: `3`
+- `phy-fri-lat`
+    - Default: `5.000000`
+- `phy-fri-mod`
+    - Default: `1.000000`
+- `phy-fri-mul`
+    - Default: `1.000000`
+- `phy-fri-stat`
+    - Default: `1.200000`
+- `phy-fri-wheel`
+    - Default: `0.990000`
+- `phy-fri-wheel2`
+    - Default: `1.000000`

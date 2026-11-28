@@ -1,0 +1,232 @@
+# Console Graphics: Renderer
+
+- `renderer.allowA2M <bool>`
+    - Returns: `bool`
+- `renderer.allowOnDemandPostProcessing <bool>`
+    - Returns: `bool`
+- `renderer.ambientIlluminationRange <Vec4>`
+    - Returns: `Vec4`
+- `renderer.ambientSun <bool>`
+    - Returns: `bool`
+- `renderer.clearColor <BaseVector3>`
+    - Returns: `BaseVector3`
+- `renderer.coronaFadeSpeed <float>`
+    - Returns: `float`
+- `renderer.disableFadeOnRoads <bool>`
+    - Returns: `bool`
+- `renderer.distanceCullConst <float>`
+    - Returns: `float`
+- `renderer.distanceCullConstPCO <float>`
+    - Returns: `float`
+- `renderer.divAccum <float>`
+    - Returns: `float`
+- `renderer.draw1pMeshes <bool>`
+    - Returns: `bool`
+- `renderer.draw1pZOnly <bool>`
+    - Returns: `bool`
+- `renderer.drawBundledMeshes <bool>`
+    - Returns: `bool`
+- `renderer.drawConsole <bool>`
+    - Returns: `bool`
+
+    Turns off access to the in-game console if set to 0
+
+- `renderer.drawDeferred <bool>`
+    - Returns: `bool`
+- `renderer.drawFps <int>`
+    - Returns: `int`
+
+    Displays the current frames per seconds and the time in milliseconds between frames
+
+- `renderer.drawGraphs <bool>`
+    - Returns: `bool`
+- `renderer.drawHud <bool>`
+    - Returns: `bool`
+
+    Turns the heads up display (HUD) on or off
+
+- `renderer.drawNametags <bool>`
+    - Returns: `bool`
+- `renderer.drawObjects <bool>`
+    - Returns: `bool`
+- `renderer.drawOvergrowth <bool>`
+    - Returns: `bool`
+- `renderer.drawParticles <bool>`
+    - Returns: `bool`
+- `renderer.drawPostProduction <bool>`
+    - Returns: `bool`
+- `renderer.drawRoads <bool>`
+    - Returns: `bool`
+- `renderer.drawSkinnedMeshes <bool>`
+    - Returns: `bool`
+- `renderer.drawSkyDome <bool>`
+    - Returns: `bool`
+- `renderer.drawStaticMeshes <bool>`
+    - Returns: `bool`
+- `renderer.drawSunFlare <bool>`
+    - Returns: `bool`
+- `renderer.drawTerrain <bool>`
+    - Returns: `bool`
+- `renderer.drawTrees <bool>`
+    - Returns: `bool`
+- `renderer.drawUndergrowth <bool>`
+    - Returns: `bool`
+- `renderer.drawWatermark <bool>`
+    - Returns: `bool`
+- `renderer.dumpScreen <std::string>`
+    - Returns: `void`
+- `renderer.enableHWOcclusion <bool>`
+    - Returns: `bool`
+- `renderer.fakeHDRBlendingFactor <float>`
+    - Returns: `float`
+- `renderer.fakeHDRBlendingTimeDark <double>`
+    - Returns: `double`
+- `renderer.fakeHDRBlendingTimeLight <double>`
+    - Returns: `double`
+- `renderer.fakeHDREnabled <bool>`
+    - Returns: `bool`
+- `renderer.fakeHDRHorizWeights <std::string>`
+    - Returns: `std::string`
+- `renderer.fakeHDRPassGate <float>`
+    - Returns: `float`
+- `renderer.fakeHDRVertWeights <std::string>`
+    - Returns: `std::string`
+- `renderer.fakeHDRWeights <std::string>`
+    - Returns: `std::string`
+- `Renderer.fieldOfView1p <float>`
+    - Returns: `float`
+- `renderer.fogColor <Vec3>`
+    - Returns: `Vec3`
+- `renderer.fogStartEndAndBase <Vec4>`
+    - Returns: `Vec4`
+- `renderer.forceBundledMeshLod <int>`
+    - Returns: `int`
+- `renderer.forceSkinnedMeshLod <int>`
+    - Returns: `int`
+- `renderer.forceStaticMeshMaxPolyPercentage <int>`
+    - Returns: `int`
+- `renderer.forceStaticMeshSkipLod <int>`
+    - Returns: `int`
+- `renderer.getQualityLodDistanceBM <int>`
+    - Returns: `float`
+- `renderer.getQualityLodDistanceSKM <int>`
+    - Returns: `float`
+- `renderer.getQualityLodDistanceSTM <int>`
+    - Returns: `float`
+- `renderer.globalBundleMeshLodDistanceScale <float>`
+    - Returns: `float`
+- `renderer.globalSkinnedMeshLodDistanceScale <float>`
+    - Returns: `float`
+- `renderer.globalStaticMeshLodDistanceScale <float>`
+    - Returns: `float`
+- `renderer.glowEnabled <bool>`
+    - Returns: `bool`
+- `renderer.glowStrength <float>`
+    - Returns: `float`
+- `renderer.isNightMap <bool>`
+    - Returns: `bool`
+- `renderer.lightBlurStrength <float>`
+    - Returns: `float`
+- `renderer.listScreenModes`
+    - Returns: `void`
+- `renderer.makeTopWorldScreen <U32 std::string Vec3>`
+    - Returns: `void`
+- `renderer.minCullDistance <float>`
+    - Returns: `float`
+- `renderer.nightMode <uint>`
+    - Returns: `uint`
+- `renderer.nightVisionEnabled <bool>`
+    - Returns: `bool`
+- `renderer.nightVisionGradient <std::string>`
+    - Returns: `std::string`
+- `renderer.nightVisionMaxPower <float>`
+    - Returns: `float`
+- `renderer.nightVisionRegenRPS <float>`
+    - Returns: `float`
+- `renderer.occlusionObjectsMaxFrames <int>`
+    - Returns: `int`
+- `renderer.occlusionTerrainMaxFrames <int>`
+    - Returns: `int`
+- `renderer.presentAsync <bool>`
+    - Returns: `bool`
+- `renderer.presentSpinIfBusy <bool>`
+    - Returns: `bool`
+- `renderer.qualityLodEnabled <bool>`
+    - Returns: `bool`
+- `renderer.renderAheadLimit <uint>`
+    - Returns: `uint`
+- `renderer.roadDepthBias <float>`
+    - Returns: `float`
+- `renderer.roadLodDistMod <float>`
+    - Returns: `float`
+- `renderer.roadSlopeScaleDepthBias <float>`
+    - Returns: `float`
+- `renderer.screenDumpPath <std::string>`
+    - Returns: `std::string`
+- `renderer.screenMode <int>`
+    - Returns: `int`
+- `renderer.setQualityLodDistanceALL <int float>`
+    - Returns: `void`
+- `renderer.setQualityLodDistanceBM <int float>`
+    - Returns: `void`
+- `renderer.setQualityLodDistanceSKM <int float>`
+    - Returns: `void`
+- `renderer.setQualityLodDistanceSTM <int float>`
+    - Returns: `void`
+- `Renderer.soldier.debugCharacterMode <int>`
+    - Returns: `int`
+- `Renderer.soldier.debugDrawCollision <bool>`
+    - Returns: `bool`
+- `Renderer.soldier.debugDrawSkeletons <bool>`
+    - Returns: `bool`
+- `renderer.stopRenderMovie`
+    - Returns: `void`
+- `renderer.tearGasStrength <float>`
+    - Returns: `float`
+- `renderer.tvAmbient <float>`
+    - Returns: `float`
+- `renderer.tvColor <Vec3>`
+    - Returns: `Vec3`
+- `renderer.tvEnabled <bool>`
+    - Returns: `bool`
+- `renderer.tvGranularity <float>`
+    - Returns: `float`
+- `renderer.tvInterference <float>`
+    - Returns: `float`
+- `renderer.tweakFarPlane1p <float>`
+    - Returns: `float`
+- `renderer.tweakNearPlane <float>`
+    - Returns: `float`
+- `renderer.tweakNearPlane1p <float>`
+    - Returns: `float`
+- `renderer.vsync <bool>`
+    - Returns: `bool`
+- `renderer.waterAnimSpeed <float>`
+    - Returns: `float`
+
+    Sets the water speed.
+
+- `renderer.waterColor <Vec3>`
+    - Returns: `Vec3`
+- `renderer.waterFogColor <Vec3>`
+    - Returns: `Vec3`
+- `renderer.waterFogStartEndAndBase <Vec4>`
+    - Returns: `Vec4`
+- `renderer.watermarkFilename <std::string>`
+    - Returns: `std::string`
+- `renderer.watermarkPos <Vec2>`
+    - Returns: `Vec2`
+- `renderer.watermarkScale <float>`
+    - Returns: `float`
+- `renderer.waterNormalMap <std::string>`
+    - Returns: `std::string`
+- `renderer.waterScroll <Vec2>`
+    - Returns: `Vec2`
+- `renderer.waterSpecularColor <Vec4>`
+    - Returns: `Vec4`
+- `renderer.waterSpecularPower <float>`
+    - Returns: `float`
+- `renderer.xpPerfFlags <int>`
+    - Returns: `int`
+- `renderer.xpPerfFlags2 <int>`
+    - Returns: `int`

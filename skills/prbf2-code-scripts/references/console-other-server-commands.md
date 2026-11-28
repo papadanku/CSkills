@@ -1,0 +1,151 @@
+# Console Other: Server Commands (sv)
+
+- `sv.adminScript <std::string>`
+    - Returns: `std::string`
+- `sv.allowExternalViews <bool>`
+    - Returns: `bool`
+- `sv.allowFreeCam <bool>`
+    - Returns: `bool`
+- `sv.allowNATNegotiation <bool>`
+    - Returns: `bool`
+- `sv.allowNoseCam <bool>`
+    - Returns: `bool`
+- `sv.autoBalanceTeam <bool>`
+    - Returns: `bool`
+- `sv.autoDemoHook <std::string>`
+    - Returns: `std::string`
+- `sv.autoRecord <bool>`
+    - Returns: `bool`
+- `sv.communityLogoURL <std::string>`
+    - Returns: `std::string`
+- `sv.configFile <std::string>`
+    - Returns: `std::string`
+- `sv.coopBotCount <int>`
+    - Returns: `int`
+- `sv.coopBotDifficulty <float>`
+    - Returns: `float`
+- `sv.coopBotRatio <float>`
+    - Returns: `float`
+- `sv.demoDownloadURL <std::string>`
+    - Returns: `std::string`
+- `sv.demoIndexURL <std::string>`
+    - Returns: `std::string`
+- `sv.demoQuality <int>`
+    - Returns: `int`
+- `sv.endDelay <int>`
+    - Returns: `int`
+- `sv.endOfRoundDelay <int>`
+    - Returns: `int`
+- `sv.friendlyFireWithMines <bool>`
+    - Returns: `bool`
+- `sv.gameSpyPort <int>`
+    - Returns: `int`
+- `sv.hitIndicator <bool>`
+    - Returns: `bool`
+- `sv.interfaceIP <std::string>`
+    - Returns: `std::string`
+- `sv.internet <bool>`
+    - Returns: `std::string`
+    - 1 - Adds the server to the server list.
+    - Tested this with the `PRBF2_repo_w32ded.exe` shortcut tool
+- `sv.load`
+    - Returns: `bool`
+- `sv.manDownTime <float>`
+    - Returns: `float`
+- `sv.maxConnectionType <ConnectionType>`
+    - Returns: `ConnectionType`
+- `sv.maxPlayers <int>`
+    - Returns: `std::string`
+    - Increases the player number count in the W32 Dedicated to the number specified.
+    - Effect Unknown.
+    - Maximum allowed is 100 though not sure if it's a BF2 thing or not
+- `sv.minPlayersForVoting <int>`
+    - Returns: `int`
+- `sv.notEnoughPlayersRestartDelay <float>`
+    - Returns: `float`
+- `sv.noVehicles <float>`
+    - Returns: `float`
+- `sv.numPlayersNeededToStart <int>`
+    - Returns: `int`
+- `sv.numReservedSlots <int>`
+    - Returns: `std::string`
+- `sv.password <std::string>`
+    - Returns: `std::string`
+- `sv.punkBuster <bool>`
+    - Returns: `bool`
+- `sv.radioBlockedDurationTime <int>`
+    - Returns: `int`
+- `sv.radioMaxSpamFlagCount <int>`
+    - Returns: `int`
+- `sv.ranked <bool>`
+    - Returns: `bool`
+- `sv.roundsPerMap <int>`
+    - Returns: `int`
+- `sv.save`
+    - Returns: `bool`
+- `sv.scoreLimit <int>`
+    - Returns: `int`
+- `sv.serverIP <std::string>`
+    - Returns: `std::string`
+- `sv.serverName <std::string>`
+    - Returns: `std::string`
+- `sv.serverPort <int>`
+    - Returns: `std::string`
+- `sv.soldierFriendlyFire <int>`
+    - Returns: `int`
+- `sv.soldierSplashFriendlyFire <int>`
+    - Returns: `int`
+- `sv.spawnTime <float>`
+    - Returns: `float`
+- `sv.sponsorLogoURL <std::string>`
+    - Returns: `std::string`
+- `sv.sponsorText <std::string>`
+    - Returns: `std::string`
+- `sv.startDelay <int>`
+    - Returns: `int`
+- `sv.teamRatioPercent <float>`
+    - Returns: `float`
+- `sv.teamVoteOnly <bool>`
+    - Returns: `bool`
+- `sv.ticketRatio <int>`
+    - Returns: `int`
+- `sv.timeBeforeRestartMap <float>`
+    - Returns: `float`
+- `sv.timeLimit <int>`
+    - Returns: `int`
+- `sv.tkNumPunishToKick <int>`
+    - Returns: `int`
+- `sv.tkPunishByDefault <bool>`
+    - Returns: `bool`
+- `sv.tkPunishEnabled <bool>`
+    - Returns: `bool`
+- `sv.useGlobalRank <bool>`
+    - Returns: `bool`
+- `sv.useGlobalUnlocks <bool>`
+    - Returns: `bool`
+- `sv.vehicleFriendlyFire <int>`
+    - Returns: `int`
+- `sv.vehicleSplashFriendlyFire <int>`
+    - Returns: `int`
+- `sv.voipBFClientPort <int>`
+    - Returns: `int`
+- `sv.voipBFServerPort <int>`
+    - Returns: `int`
+- `sv.voipEnabled <bool>`
+    - Returns: `bool`
+- `sv.voipQuality <int>`
+    - Returns: `int`
+- `sv.voipServerPort <int>`
+    - Returns: `int`
+- `sv.voipServerRemote <bool>`
+    - Returns: `bool`
+- `sv.voipServerRemoteIP <std::string>`
+    - Returns: `std::string`
+- `sv.voipSharedPassword <std::string>`
+    - Returns: `std::string`
+- `sv.voteTime <int>`
+    - Returns: `int`
+- `sv.votingEnabled <bool>`
+    - Returns: `bool`
+- `sv.welcomeMessage <std::string>`
+    - Returns: `std::string`

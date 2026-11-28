@@ -1,0 +1,141 @@
+# Console Objects: Geometry Templates and Materials
+
+## Geometry Template
+
+- `geometryTemplate.active <IGeometryTemplate*>`
+    - Returns: `IGeometryTemplate\*`
+- `geometryTemplate.color <Vec3>`
+    - Returns: `Vec3`
+- `geometryTemplate.compressVertexData <bool>`
+    - Returns: `bool`
+- `GeometryTemplate.create <std::string std::string>`
+    - Returns: `IGeometryTemplate\*`
+    - Used in `.con` files
+    - Creates a Geometry Mesh template from the geometry mesh name so it can be used in other files without creating a duplicate mesh
+- `geometryTemplate.depth <float>`
+    - Returns: `float`
+- `geometryTemplate.doNotGenerateLightmaps <bool>`
+    - Returns: `bool`
+- `geometryTemplate.dumpInstances`
+    - Returns: `void`
+- `geometryTemplate.glowFadeOutDistEnd <float>`
+    - Returns: `float`
+- `geometryTemplate.glowFadeOutDistStart <float>`
+    - Returns: `float`
+- `geometryTemplate.glowing <bool>`
+    - Returns: `bool`
+- `geometryTemplate.height <float>`
+    - Returns: `float`
+- `geometryTemplate.ignoreLeafLighting <bool>`
+    - Returns: `bool`
+- `geometryTemplate.innerRadius <float>`
+    - Returns: `float`
+- `geometryTemplate.lenght <float>`
+    - Returns: `float`
+- `geometryTemplate.length <float>`
+    - Returns: `float`
+- `geometryTemplate.lightmapOverride <bool>`
+    - Returns: `bool`
+- `geometryTemplate.maxSkip3pLods <uint>`
+    - Returns: `uint`
+- `geometryTemplate.maxSkipWreckLods <uint>`
+    - Returns: `uint`
+- `geometryTemplate.maxTextureRepeat <int>`
+    - Returns: `int`
+- `geometryTemplate.meshDetailLevel <int>`
+    - Returns: `int`
+- `geometryTemplate.name`
+    - Returns: `std::string`
+- `geometryTemplate.noLighting <bool>`
+    - Returns: `bool`
+- `geometryTemplate.nrOfAnimatedUVMatrix <int>`
+    - Returns: `int`
+- `geometryTemplate.outerRadius <float>`
+    - Returns: `float`
+- `GeometryTemplate.printInfo <bool>`
+    - Returns: `std::string`
+- `geometryTemplate.radius1 <float>`
+    - Returns: `float`
+- `geometryTemplate.radius2 <float>`
+    - Returns: `float`
+- `geometryTemplate.rings <uint>`
+    - Returns: `uint`
+- `geometryTemplate.setLightmapSizeAll <int int int>`
+    - Returns: `void`
+- `geometryTemplate.setMaterialParallaxHeightScale <int int int>`
+    - Returns: `void`
+- `geometryTemplate.setMaterialReflectionScale <int int int>`
+    - Returns: `void`
+- `geometryTemplate.setSpecularStaticGloss <int int int>`
+    - Returns: `void`
+- `geometryTemplate.setSubGeometryLodDistance <int int float>`
+    - Returns: `void`
+- `geometryTemplate.shader <std::string>`
+    - Returns: `std::string`
+- `geometryTemplate.shadowDetailLevel <int>`
+    - Returns: `int`
+- `geometryTemplate.sides <uint>`
+    - Returns: `uint`
+- `geometryTemplate.slices <uint>`
+    - Returns: `uint`
+- `geometryTemplate.stacks <uint>`
+    - Returns: `uint`
+- `geometryTemplate.tesselation <BaseVector2>`
+    - Returns: `BaseVector2`
+- `geometryTemplate.texture <std::string>`
+    - Returns: `std::string`
+- `geometryTemplate.useRadiusForShadowDepth <bool>`
+    - Returns: `bool`
+- `geometryTemplate.useRadiusForShadowSpatial <bool>`
+    - Returns: `bool`
+- `geometryTemplate.width <float>`
+    - Returns: `float`
+
+## Material
+
+- `material.active <unsigned int>`
+    - Returns: `unsigned int`
+- `material.damageLoss <float>`
+    - Returns: `float`
+- `material.elasticity <float>`
+    - Returns: `float`
+- `material.friction <float>`
+    - Returns: `float`
+- `material.hasWaterPhysics <bool>`
+    - Returns: `bool`
+- `material.isBarbwire <bool>`
+    - Returns: `bool`
+- `material.isOneSided <bool>`
+    - Returns: `bool`
+- `material.isSeeThrough <bool>`
+    - Returns: `bool`
+- `materialManager.attMaterial <unsigned int>`
+    - Returns: `void`
+- `materialManager.createCell <unsigned int unsigned int>`
+    - Returns: `void`
+- `materialManager.damageMod <float>`
+    - Returns: `float`
+- `materialManager.defMaterial <unsigned int>`
+    - Returns: `void`
+- `materialManager.setDecalTemplate <unsigned int IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `materialManager.setEffectTemplate <unsigned int IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `materialManager.setSoundTemplate <unsigned int IObjectTemplate_ptrproxy>`
+    - Returns: `void`
+- `material.maxDamageLoss <float>`
+    - Returns: `float`
+- `material.minDamageLoss <float>`
+    - Returns: `float`
+- `material.name <std::string>`
+    - Returns: `std::string`
+- `material.overrideNeverPenetrate <bool>`
+    - Returns: `bool`
+- `material.penetrationDeviation <float>`
+    - Returns: `float`
+- `material.projectileCollisionHardness <float>`
+    - Returns: `float`
+- `material.resistance <float>`
+    - Returns: `float`
+- `material.type <int>`
+    - Returns: `int`
