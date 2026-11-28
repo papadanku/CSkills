@@ -13,13 +13,20 @@ This skill provides expert guidance for developing, debugging, documenting, and 
 - **Engine Context:** Code runs inside the BF2 dedicated/listen server Python environment managed by the game engine (`host`, `bf2`, and native C extension modules like `_realitycore`).
 - **Platform Considerations:** Scripts must respect platform differences between Windows and Linux server builds (e.g., checking `rmemory.isWindowsListenServer` where virtual table pointers or memory hooks differ).
 
-## 2. Naming & Coding Conventions
+## 2. Code Style, Readability & Anti-Code-Golfing Rules
 
-Adhere strictly to the established Project Reality codebase patterns (blending PEP8 with PR idioms):
+- **No Code Golfing:** Never write compressed, clever one-liners, deeply nested comprehensions, chained ternaries, or single-line `if`/`for` statements to save lines. Prioritize clarity and maintainability over brevity.
+- **Proper Indentation:** Always use **4 spaces per indentation level** (never tabs, and never mix tabs and spaces). Break long expressions cleanly across lines using parentheses.
+- **Detailed Variable Names:** Always use clear, descriptive variable names that communicate intent (e.g., `targetPlayer`, `vehiclePosition`, `distanceSquared`, `remainingSupplyCount`). Avoid cryptic abbreviations or single-letter names (e.g., `p`, `v`, `x`, `d`, `tmp`).
+- **Follow PEP-8:** Follow the bundled [PEP-8 Style Guide](references/pep8-style-guide.md) for indentation, 79-character line limits, blank lines, whitespace around operators, import grouping, and `is None` / `is not None` comparisons, harmonized with PR:BF2's repository naming conventions below.
+
+## 3. Naming & Coding Conventions
+
+Adhere strictly to the established Project Reality codebase patterns (following PEP-8 formatting with PR naming idioms):
 
 - **Classes:** Use `PascalCase` (e.g., `ReportSupplies`, `DeviationOnSwitch`, `ProjectileHandler`).
 - **Functions & Methods:** Use `camelCase` (e.g., `playerConnect`, `playerChangeWeapon`, `calcDistanceSquared`, `sendRoundStatistics`).
-- **Global Variables & Constants:** Use `g_` prefix followed by camelCase or snake_case (e.g., `g_maxPlayers`, `g_serverName`, `g_supply_objects`).
+- **Global Variables & Constants:** Use `g_` prefix followed by camelCase or snake_case (e.g., `g_maxPlayers`, `g_serverName`, `g_supply_objects`), and `UPPER_SNAKE_CASE` for module-level constants.
 - **Module Aliasing:** When importing internal PR modules, use standard short `r` aliases for namespacing clarity:
 
     ```python
@@ -36,7 +43,7 @@ Adhere strictly to the established Project Reality codebase patterns (blending P
     import realityzones as rzones
     ```
 
-## 3. Core Architectural Patterns
+## 4. Core Architectural Patterns
 
 ### A. Static Class / Namespace Pattern (`@classmethod`)
 
@@ -44,25 +51,26 @@ Rather than instantiating heavy stateful objects everywhere, feature handlers an
 
 ```python
 class FeatureHandler:
-    trackedItems = set()
+    trackedPlayers = set()
 
     @classmethod
     def init(cls):
         if rmemory.isWindowsListenServer:
             return
+
         rtimer.repeatingTask(cls.refresh, 1.0)
         host.registerHandler('PlayerConnect', cls.playerConnect, 1)
 
     @classmethod
-    def playerConnect(cls, player):
-        cls.trackedItems.add(player)
+    def playerConnect(cls, connectingPlayer):
+        cls.trackedPlayers.add(connectingPlayer)
 
     @classmethod
     def refresh(cls, args=None):
-        for player in bf2.playerManager.getPlayers():
-            if player not in cls.trackedItems:
+        for activePlayer in bf2.playerManager.getPlayers():
+            if activePlayer not in cls.trackedPlayers:
                 continue
-            # Logic here
+            # Handler logic here
 ```
 
 ### B. Event Handling & Priorities
@@ -79,10 +87,11 @@ class FeatureHandler:
 
 - Use `rdebug.debugMessage(message, category)` for targeted runtime diagnostics.
 
-## 4. Reference Documentation Index
+## 5. Reference Documentation Index
 
-For deeper diving, consult the bundled reference files:
+All reference material is stored locally within this skill:
 
+- [PEP-8 Style Guide](references/pep8-style-guide.md)
 - [Coding Standards](references/coding-standards.md)
 - [Common Architectural Patterns](references/common-patterns.md)
 - [Debugging & Memory Safety Playbook](references/debugging-playbook.md)

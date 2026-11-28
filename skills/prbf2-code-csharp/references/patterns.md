@@ -3,7 +3,7 @@
 
 ## 1. Standard Script Skeleton
 
-Every `.csx` script should follow this established structure:
+Every `.csx` script should follow this established structure, using 4-space indentation, Allman braces, and detailed variable names:
 
 ```csharp
 #category "4 • Find Missing Objects"
@@ -25,11 +25,11 @@ using Reality.BF2.Console;
 
 public class FindMissingSounds
 {
-    private static ScriptResult GenerateScriptResult(bool success, string header, string message)
+    private static ScriptResult GenerateScriptResult(bool isSuccess, string header, string message)
     {
-        return new ScriptResult()
+        return new ScriptResult
         {
-            Success = success,
+            Success = isSuccess,
             Header = header,
             Message = message
         };
@@ -44,73 +44,80 @@ public class FindMissingSounds
         ScriptProgress.Maximum = 0;
         ScriptProgress.Show();
 
-        ParallelOptions parallelOptions = new ParallelOptions()
+        var parallelOptions = new ParallelOptions
         {
             MaxDegreeOfParallelism = Build.GetParallelism()
         };
 
         try
         {
-            string[] sounds = SoundUtilities.GetFiles(Directories.CurrentModDirectory).ToArray();
-            StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            string[] soundFilePaths = SoundUtilities.GetFiles(Directories.CurrentModDirectory).ToArray();
+            var reportWriter = new StringWriter(CultureInfo.InvariantCulture);
 
-            int counter = 0;
-            int numMissing = 0;
-            string error = null;
+            int processedFileCount = 0;
+            int missingSoundCount = 0;
+            string errorMessage = null;
 
             ScriptProgress.Indeterminate = false;
-            ScriptProgress.Maximum = sounds.Length;
+            ScriptProgress.Maximum = soundFilePaths.Length;
 
-            Parallel.ForEach(sounds, parallelOptions, (soundFilePath, loopState) =>
+            Parallel.ForEach(soundFilePaths, parallelOptions, (soundFilePath, loopState) =>
             {
-                ScriptProgress.Value = Interlocked.Increment(ref counter);
-                ScriptProgress.Text = String.Format("Validating sounds • {0}/{1}", ScriptProgress.Value, ScriptProgress.Maximum);
+                ScriptProgress.Value = Interlocked.Increment(ref processedFileCount);
+                ScriptProgress.Text = string.Format(
+                    "Validating sounds • {0}/{1}",
+                    ScriptProgress.Value,
+                    ScriptProgress.Maximum
+                );
 
                 try
                 {
-                    Sound sound = SoundUtilities.ValidateFile(soundFilePath);
-                    if (sound.MissingSounds.Length > 0)
+                    Sound soundRecord = SoundUtilities.ValidateFile(soundFilePath);
+                    if (soundRecord.MissingSounds.Length > 0)
                     {
-                        Interlocked.Increment(ref numMissing);
-                        lock (stringWriter)
+                        Interlocked.Increment(ref missingSoundCount);
+                        lock (reportWriter)
                         {
-                            stringWriter.WriteLine(sound.File);
-                            stringWriter.WriteLine("Is missing the following sounds:");
-                            foreach (string missing in sound.MissingSounds)
+                            reportWriter.WriteLine(soundRecord.File);
+                            reportWriter.WriteLine("Is missing the following sounds:");
+                            foreach (string missingSoundPath in soundRecord.MissingSounds)
                             {
-                                stringWriter.WriteLine("\t" + missing);
+                                reportWriter.WriteLine("\t" + missingSoundPath);
                             }
-                            stringWriter.WriteLine();
+                            reportWriter.WriteLine();
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception loopException)
                 {
-                    error = ex.ToString();
+                    errorMessage = loopException.ToString();
                     loopState.Break();
                 }
             });
 
-            if (error != null)
+            if (errorMessage != null)
             {
-                return GenerateScriptResult(false, "Error", error);
+                return GenerateScriptResult(false, "Error", errorMessage);
             }
 
             string outputPath = Path.Combine(Directories.CurrentModDirectory, "MissingSounds.txt");
-            if (numMissing > 0)
+            if (missingSoundCount > 0)
             {
-                File.WriteAllText(outputPath, stringWriter.ToString());
+                File.WriteAllText(outputPath, reportWriter.ToString());
                 return GenerateScriptResult(true, "Scan Complete", "Missing sounds found!\nDetails in:\n\n" + outputPath);
             }
             else
             {
-                if (File.Exists(outputPath)) File.Delete(outputPath);
+                if (File.Exists(outputPath))
+                {
+                    File.Delete(outputPath);
+                }
                 return GenerateScriptResult(true, "Scan Complete", "There are no missing sounds!");
             }
         }
-        catch (Exception e)
+        catch (Exception unhandledException)
         {
-            return GenerateScriptResult(false, "Error", e.ToString());
+            return GenerateScriptResult(false, "Error", unhandledException.ToString());
         }
     }
 }
@@ -123,16 +130,16 @@ FindMissingSounds.Main();
 ## 2. Parallel Processing & Thread Safety
 
 - **Degree of Parallelism**: Always configure via `Build.GetParallelism()`.
-- **Counters**: Use `Interlocked.Increment(ref counter)` or `Interlocked.Add(ref total, value)`.
+- **Counters**: Use `Interlocked.Increment(ref processedCounter)` or `Interlocked.Add(ref totalBytes, itemSize)`.
 - **Writers/Collections**: Protect shared streams (`StringWriter`) or non-thread-safe collections with `lock (syncObject)`.
 
 ```csharp
-ParallelOptions po = new ParallelOptions()
+var parallelOptions = new ParallelOptions
 {
     MaxDegreeOfParallelism = Build.GetParallelism()
 };
 
-Parallel.ForEach(items, po, (item, loopState) =>
+Parallel.ForEach(assetFilePaths, parallelOptions, (assetFilePath, loopState) =>
 {
     // Thread-safe operations
 });
@@ -153,6 +160,6 @@ ScriptProgress.Show();
 // During execution:
 ScriptProgress.Indeterminate = false;
 ScriptProgress.Value = currentIndex;
-ScriptProgress.Maximum = totalCount;
-ScriptProgress.Text = String.Format("Processing • {0}/{1}", ScriptProgress.Value, ScriptProgress.Maximum);
+ScriptProgress.Maximum = totalFileCount;
+ScriptProgress.Text = string.Format("Processing • {0}/{1}", ScriptProgress.Value, ScriptProgress.Maximum);
 ```
